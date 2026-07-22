@@ -9,6 +9,8 @@ Output rows are field-level, enriched with table and data model descriptions.
 
 ## Files
 - `index.html`
+- `embedded.html`
+- `embed.html`
 - `styles.css`
 - `app.js`
 
@@ -44,11 +46,13 @@ All files are self-contained in `data_models/`.
 ## Iframe Embed Example
 ```html
 <iframe
-  src="https://YOUR-HOST/data_models/index.html?data_model_name=credible&expand=model"
-  title="Data Model Explorer"
+  src="https://YOUR-HOST/data_models/embedded.html?data_model_name=credible"
+  title="Credible data model"
   width="100%"
   height="720"
   style="border:0;border-radius:12px;"
   loading="lazy"
 ></iframe>
 ```
+
+Use `embed.html` to pick a model and generate the iframe snippet automatically.

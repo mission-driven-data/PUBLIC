@@ -6,22 +6,27 @@
   };
 
   const params = new URLSearchParams(window.location.search);
-  const filters = {
-    dataModelName: normalize(params.get("data_model_name")),
-    tableName: normalize(params.get("table_name")),
-    fieldName: normalize(params.get("field_name")),
-  };
-  const expandParam = normalize(params.get("expand")) || "all";
-  const requestedColumns = parseList(params.get("cols"));
+  const mode = detectMode();
 
   const statusBanner = document.getElementById("statusBanner");
   const rowCountEl = document.getElementById("rowCount");
   const copyEmbedBtn = document.getElementById("copyEmbedBtn");
 
+  const embeddedTitle = document.getElementById("embeddedTitle");
+  const embeddedDescription = document.getElementById("embeddedDescription");
+
+  const modelSelect = document.getElementById("modelSelect");
+  const embedUrl = document.getElementById("embedUrl");
+  const embedCode = document.getElementById("embedCode");
+  const copyUrlBtn = document.getElementById("copyUrlBtn");
+  const copyCodeBtn = document.getElementById("copyCodeBtn");
+  const embedStatus = document.getElementById("embedStatus");
+
   const collapsedModels = new Set();
   const collapsedTables = new Set();
-  const defaultModelCollapsed = expandParam === "none";
-  const defaultTableCollapsed = expandParam === "none" || expandParam === "model";
+  const defaultModelCollapsed = normalize(params.get("expand")) === "none";
+  const defaultTableCollapsed =
+    normalize(params.get("expand")) === "none" || normalize(params.get("expand")) === "model";
   const expandedModelOverrides = new Set();
   const expandedTableOverrides = new Set();
 
@@ -29,35 +34,33 @@
 
   async function init() {
     try {
-      setStatus("Loading CSV data...");
       const [dmRows, tableRows, fieldRows] = await Promise.all([
         loadCsv(FILES.dataModels),
         loadCsv(FILES.tables),
         loadCsv(FILES.fields),
       ]);
 
-      const joined = buildJoinedRows(dmRows, tableRows, fieldRows);
-      const filtered = applyFilters(joined);
+      const context = buildContext(dmRows, tableRows, fieldRows);
 
-      if (!filtered.length) {
-        setStatus("No matching rows found for current URL filters.");
+      if (mode === "embedded") {
+        initEmbeddedPage(context);
+      } else if (mode === "embed") {
+        initEmbedGeneratorPage(context);
       } else {
-        setStatus("");
+        initExplorerPage(context);
       }
-
-      const table = createDataTable(filtered);
-      updateVisibleColumns(table);
-      bindEmbedCopy();
-      updateCount(table.rows({ search: "applied" }).count());
-      table.on("draw", function () {
-        decorateGroups(table);
-        updateCount(table.rows({ search: "applied" }).count());
-      });
-      decorateGroups(table);
     } catch (error) {
-      setStatus("Failed to load table data.", true);
+      if (statusBanner) {
+        setStatus("Failed to load table data.", true);
+      }
       console.error(error);
     }
+  }
+
+  function detectMode() {
+    if (document.getElementById("modelSelect")) return "embed";
+    if (document.getElementById("embeddedTitle")) return "embedded";
+    return "explorer";
   }
 
   function loadCsv(path) {
@@ -72,52 +75,189 @@
     });
   }
 
-  function buildJoinedRows(dmRows, tableRows, fieldRows) {
-    const dmByName = new Map();
+  function buildContext(dmRows, tableRows, fieldRows) {
+    const modelDescriptions = new Map();
     dmRows.forEach((row) => {
-      dmByName.set(clean(row["Data Model Name"]), clean(row["Data Model Description"]));
+      const modelName = clean(row["Data Model Name"]);
+      if (!modelName) return;
+      modelDescriptions.set(modelName, clean(row["Data Model Description"]));
     });
 
     const tableInfoByTable = new Map();
     tableRows.forEach((row) => {
       const tableName = clean(row["Table Name"]);
+      if (!tableName) return;
       tableInfoByTable.set(tableName, {
         dataModelName: clean(row["Data Model Name"]),
         tableDescription: clean(row["Table Description"]),
       });
     });
 
-    const merged = [];
+    const rows = [];
     fieldRows.forEach((row) => {
       const tableName = clean(row["Table Name"]);
       const tableInfo = tableInfoByTable.get(tableName);
       if (!tableInfo) return;
 
       const dataModelName = tableInfo.dataModelName;
-      merged.push({
+      rows.push({
         data_model_name: dataModelName,
         table_name: tableName,
         field_name: clean(row["Field Name"]),
-        data_model_description: dmByName.get(dataModelName) || "",
+        data_model_description: modelDescriptions.get(dataModelName) || "",
         table_description: tableInfo.tableDescription,
         field_description: clean(row["Field Description"]),
       });
     });
 
-    return merged;
+    const modelNames = Array.from(modelDescriptions.keys()).sort((a, b) =>
+      a.localeCompare(b, undefined, { sensitivity: "base" })
+    );
+
+    return {
+      rows,
+      modelDescriptions,
+      modelNames,
+    };
   }
 
-  function applyFilters(rows) {
-    return rows.filter((row) => {
-      return (
-        matches(row.data_model_name, filters.dataModelName) &&
-        matches(row.table_name, filters.tableName) &&
-        matches(row.field_name, filters.fieldName)
-      );
+  function initExplorerPage(context) {
+    const filtered = applyFilters(context.rows);
+    if (!filtered.length) {
+      setStatus("No matching rows found for current URL filters.");
+    } else {
+      setStatus("");
+    }
+
+    const table = createExplorerTable(filtered);
+    updateVisibleColumns(table);
+    bindEmbedCopy();
+    updateCount(table.rows({ search: "applied" }).count());
+    table.on("draw", function () {
+      decorateGroups(table);
+      updateCount(table.rows({ search: "applied" }).count());
+    });
+    decorateGroups(table);
+  }
+
+  function initEmbeddedPage(context) {
+    const selectedModel = clean(params.get("data_model_name"));
+    const normalizedSelectedModel = normalize(selectedModel);
+    const modelRows = selectedModel
+      ? context.rows.filter((row) => normalize(row.data_model_name) === normalizedSelectedModel)
+      : [];
+
+    const modelName = modelRows[0]?.data_model_name || selectedModel;
+    const modelDescription =
+      (modelName && context.modelDescriptions.get(modelName)) ||
+      (modelRows[0]?.data_model_description || "");
+
+    if (embeddedTitle) {
+      embeddedTitle.textContent = modelName || "Select a data model";
+    }
+    if (embeddedDescription) {
+      embeddedDescription.textContent =
+        modelDescription ||
+        "Provide a data_model_name URL parameter to show a single model's table and field documentation.";
+    }
+    document.title = modelName ? `${modelName} - Embedded Data Model` : "Embedded Data Model";
+
+    if (!selectedModel) {
+      setStatus("No data_model_name URL parameter was supplied.", true);
+    } else if (!modelRows.length) {
+      setStatus(`No rows found for data model "${selectedModel}".`, true);
+    } else {
+      setStatus("");
+    }
+
+    const table = createEmbeddedTable(modelRows);
+    updateCount(table.rows({ search: "applied" }).count());
+    table.on("draw", function () {
+      updateCount(table.rows({ search: "applied" }).count());
     });
   }
 
-  function createDataTable(rows) {
+  function initEmbedGeneratorPage(context) {
+    populateModelSelect(context.modelNames);
+
+    const preferredModel = clean(params.get("data_model_name")) || context.modelNames[0] || "";
+    if (preferredModel) {
+      modelSelect.value = preferredModel;
+    }
+
+    modelSelect.addEventListener("change", () => {
+      updateEmbedOutputs();
+    });
+
+    copyUrlBtn?.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(embedUrl.value);
+        setEmbedStatus("Embed URL copied to clipboard.");
+      } catch (err) {
+        setEmbedStatus("Could not copy the URL automatically.");
+        console.log(embedUrl.value);
+      }
+    });
+
+    copyCodeBtn?.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(embedCode.value);
+        setEmbedStatus("Embed code copied to clipboard.");
+      } catch (err) {
+        setEmbedStatus("Could not copy the embed code automatically.");
+        console.log(embedCode.value);
+      }
+    });
+
+    updateEmbedOutputs();
+  }
+
+  function populateModelSelect(modelNames) {
+    if (!modelSelect) return;
+    modelSelect.innerHTML = "";
+
+    modelNames.forEach((modelName) => {
+      const option = document.createElement("option");
+      option.value = modelName;
+      option.textContent = modelName;
+      modelSelect.appendChild(option);
+    });
+  }
+
+  function updateEmbedOutputs() {
+    const selectedModel = modelSelect?.value || "";
+    const url = buildEmbeddedUrl(selectedModel);
+    const iframe = buildEmbedCode(url, selectedModel);
+
+    if (embedUrl) {
+      embedUrl.value = url;
+    }
+    if (embedCode) {
+      embedCode.value = iframe;
+    }
+    if (embedStatus) {
+      setEmbedStatus(
+        selectedModel
+          ? `Generating embed code for ${selectedModel}.`
+          : "Select a data model to generate embed code."
+      );
+    }
+  }
+
+  function buildEmbeddedUrl(modelName) {
+    const url = new URL("embedded.html", window.location.href);
+    if (modelName) {
+      url.searchParams.set("data_model_name", modelName);
+    }
+    return url.toString();
+  }
+
+  function buildEmbedCode(url, modelName) {
+    const safeTitle = modelName ? `${escapeAttribute(modelName)} data model` : "Embedded data model";
+    return `<iframe src="${escapeAttribute(url)}" title="${safeTitle}" width="100%" height="720" style="border:0;border-radius:12px;" loading="lazy"></iframe>`;
+  }
+
+  function createExplorerTable(rows) {
     return new DataTable("#modelTable", {
       data: rows,
       columns: [
@@ -135,7 +275,11 @@
         { data: "table_description", name: "table_description" },
         { data: "field_description", name: "field_description" },
       ],
-      order: [[0, "asc"], [1, "asc"], [2, "asc"]],
+      order: [
+        [0, "asc"],
+        [1, "asc"],
+        [2, "asc"],
+      ],
       pageLength: 100,
       lengthMenu: [25, 50, 100, 250, 500],
       autoWidth: false,
@@ -146,7 +290,46 @@
     });
   }
 
+  function createEmbeddedTable(rows) {
+    return new DataTable("#modelTable", {
+      data: rows,
+      columns: [
+        { data: "table_name", name: "table_name" },
+        { data: "field_name", name: "field_name" },
+        { data: "field_description", name: "field_description" },
+      ],
+      order: [
+        [0, "asc"],
+        [1, "asc"],
+      ],
+      pageLength: 100,
+      lengthMenu: [25, 50, 100, 250, 500],
+      autoWidth: false,
+      deferRender: true,
+      language: {
+        search: "Search all columns:",
+      },
+    });
+  }
+
+  function applyFilters(rows) {
+    const filters = {
+      dataModelName: normalize(params.get("data_model_name")),
+      tableName: normalize(params.get("table_name")),
+      fieldName: normalize(params.get("field_name")),
+    };
+
+    return rows.filter((row) => {
+      return (
+        matches(row.data_model_name, filters.dataModelName) &&
+        matches(row.table_name, filters.tableName) &&
+        matches(row.field_name, filters.fieldName)
+      );
+    });
+  }
+
   function updateVisibleColumns(table) {
+    const requestedColumns = parseList(params.get("cols"));
     if (!requestedColumns.length) return;
     const allowed = new Set([
       "data_model_name",
@@ -156,7 +339,7 @@
       "table_description",
       "field_description",
     ]);
-    const wanted = new Set(requestedColumns.filter((c) => allowed.has(c)));
+    const wanted = new Set(requestedColumns.filter((column) => allowed.has(column)));
     if (!wanted.size) return;
 
     table.columns().every(function () {
@@ -170,15 +353,13 @@
     const rows = table.rows({ page: "current" }).nodes();
     let lastModel = "";
     let lastTable = "";
-    let modelCount = 0;
-    let tableCount = 0;
 
     const modelCounts = new Map();
     const tableCounts = new Map();
-    table.rows({ page: "current" }).data().each((r) => {
-      modelCounts.set(r.data_model_name, (modelCounts.get(r.data_model_name) || 0) + 1);
-      const tKey = `${r.data_model_name}||${r.table_name}`;
-      tableCounts.set(tKey, (tableCounts.get(tKey) || 0) + 1);
+    table.rows({ page: "current" }).data().each((row) => {
+      modelCounts.set(row.data_model_name, (modelCounts.get(row.data_model_name) || 0) + 1);
+      const tableKey = `${row.data_model_name}||${row.table_name}`;
+      tableCounts.set(tableKey, (tableCounts.get(tableKey) || 0) + 1);
     });
 
     table.rows({ page: "current" }).every(function () {
@@ -189,12 +370,12 @@
       const tableKey = `${model}||${tableName}`;
 
       if (model !== lastModel) {
-        modelCount = modelCounts.get(model) || 0;
+        const modelCount = modelCounts.get(model) || 0;
         const collapsed = isCollapsedModel(model);
         $(rowNode).before(
-          `<tr class="group-row model-level" data-model="${escapeAttr(model)}">
+          `<tr class="group-row model-level" data-model="${escapeAttribute(model)}">
             <td colspan="6">
-              <button class="toggle-btn model-toggle" data-model="${escapeAttr(model)}">${collapsed ? "▶" : "▼"} ${escapeHtml(model)}</button>
+              <button class="toggle-btn model-toggle" data-model="${escapeAttribute(model)}">${collapsed ? "▶" : "▼"} ${escapeHtml(model)}</button>
               <span class="count-chip">${modelCount} fields</span>
             </td>
           </tr>`
@@ -204,12 +385,12 @@
       }
 
       if (tableName !== lastTable) {
-        tableCount = tableCounts.get(tableKey) || 0;
+        const tableCount = tableCounts.get(tableKey) || 0;
         const collapsed = isCollapsedTable(tableKey) || isCollapsedModel(model);
         $(rowNode).before(
-          `<tr class="group-row table-level" data-model="${escapeAttr(model)}" data-table="${escapeAttr(tableKey)}">
+          `<tr class="group-row table-level" data-model="${escapeAttribute(model)}" data-table="${escapeAttribute(tableKey)}">
             <td colspan="6">
-              <button class="toggle-btn table-toggle" data-model="${escapeAttr(model)}" data-table="${escapeAttr(tableKey)}">${collapsed ? "▶" : "▼"} ${escapeHtml(tableName)}</button>
+              <button class="toggle-btn table-toggle" data-model="${escapeAttribute(model)}" data-table="${escapeAttribute(tableKey)}">${collapsed ? "▶" : "▼"} ${escapeHtml(tableName)}</button>
               <span class="count-chip">${tableCount} fields</span>
             </td>
           </tr>`
@@ -253,9 +434,11 @@
   }
 
   function bindEmbedCopy() {
+    if (!copyEmbedBtn) return;
+
     copyEmbedBtn.addEventListener("click", async () => {
       const src = window.location.href;
-      const iframe = `<iframe src="${src}" title="Data Model Explorer" width="100%" height="720" style="border:0;border-radius:12px;" loading="lazy"></iframe>`;
+      const iframe = `<iframe src="${escapeAttribute(src)}" title="Data Model Explorer" width="100%" height="720" style="border:0;border-radius:12px;" loading="lazy"></iframe>`;
       try {
         await navigator.clipboard.writeText(iframe);
         setStatus("Embed code copied to clipboard.");
@@ -267,11 +450,19 @@
   }
 
   function setStatus(message, isError) {
+    if (!statusBanner) return;
     statusBanner.textContent = message || "";
     statusBanner.classList.toggle("error", !!isError);
   }
 
+  function setEmbedStatus(message) {
+    if (!embedStatus) return;
+    embedStatus.textContent = message || "";
+    embedStatus.classList.remove("error");
+  }
+
   function updateCount(count) {
+    if (!rowCountEl) return;
     rowCountEl.textContent = `${count} rows`;
   }
 
@@ -296,7 +487,7 @@
     if (!value) return [];
     return value
       .split(",")
-      .map((x) => normalize(x))
+      .map((item) => normalize(item))
       .filter(Boolean);
   }
 
@@ -317,7 +508,7 @@
       .replaceAll("'", "&#39;");
   }
 
-  function escapeAttr(value) {
-    return escapeHtml(value).replaceAll('"', "&quot;");
+  function escapeAttribute(value) {
+    return escapeHtml(value);
   }
 })();

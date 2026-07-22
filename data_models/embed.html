@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Embed Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="section">
+      <div class="header-card card">
+        <div>
+          <p class="label">Mission Driven Data</p>
+          <h1>Embed Generator</h1>
+          <p class="subhead">Pick a data model and generate the iframe code for the embedded documentation view.</p>
+        </div>
+      </div>
+
+      <div class="card form-card">
+        <div class="form-grid">
+          <label class="form-field">
+            <span>Data Model</span>
+            <select id="modelSelect" class="form-control"></select>
+          </label>
+
+          <label class="form-field">
+            <span>Embed URL</span>
+            <input id="embedUrl" class="form-control" type="text" readonly />
+          </label>
+
+          <label class="form-field form-field-wide">
+            <span>Embed Code</span>
+            <textarea id="embedCode" class="form-control code-box" rows="5" readonly></textarea>
+          </label>
+        </div>
+
+        <div class="button-row">
+          <button id="copyUrlBtn" class="button-secondary" type="button">Copy URL</button>
+          <button id="copyCodeBtn" class="button-secondary" type="button">Copy Embed Code</button>
+        </div>
+
+        <div id="embedStatus" class="status-banner" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
