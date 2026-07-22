@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Model Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="section">
+      <div class="header-card card">
+        <div>
+          <p class="label">Mission Driven Data</p>
+          <h1>Data Model Explorer</h1>
+          <p class="subhead">Interactive documentation view across data models, tables, and fields.</p>
+        </div>
+        <div class="header-meta">
+          <span id="rowCount" class="pill">0 rows</span>
+          <button id="copyEmbedBtn" class="button-secondary" type="button">Copy Embed Code</button>
+        </div>
+      </div>
+
+      <div class="card table-card">
+        <div id="statusBanner" class="status-banner" aria-live="polite"></div>
+        <div class="table-wrap">
+          <table id="modelTable" class="display" width="100%">
+            <thead>
+              <tr>
+                <th>Data Model</th>
+                <th>Table</th>
+                <th>Field</th>
+                <th>Data Model Description</th>
+                <th>Table Description</th>
+                <th>Field Description</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

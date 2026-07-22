@@ -5596,6 +5596,7 @@ _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Page ID,Unique ID of the Page.
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Answer Date,When a time span is just one day.
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Answer Time,
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Answer Number,
+_MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Tx Content ID,"Identifier for the specific treatment plan content element when documentation is linked to TxPlus. A value of -1 means the answer is not linked to a TxPlus content element, including answers associated to Credible Plan or otherwise unattached to treatment plan content."
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS_MULTISELECT,Multiselect ID Fuzzy A1,
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS_MULTISELECT,Appointment ID,Unique ID of the Appointment.
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS_MULTISELECT,Question ID,Unique ID of the Question.
@@ -7390,6 +7391,480 @@ _MDD_JCT_CREDIBLE_VITAL_MEASURES,Measure LOINC,The loinc code mapped for the mea
 _MDD_JCT_CREDIBLE_VITAL_MEASURES,Measure Value,"The value as recorded, kept as text."
 _MDD_JCT_CREDIBLE_VITAL_MEASURES,Measure Value Float,The value parsed into a number when possible.
 _MDD_JCT_CREDIBLE_VITAL_MEASURES,Measure LOINC Link,
+_MDD_JCT_CSS_SURVEYS,Survey ID,Survey ID for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey ID CSS,Survey ID CSS for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey ID SurveyMonkey,Survey ID SurveyMonkey for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey Name,Survey Name for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey Nickname,Survey Nickname for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey Link,Survey Link for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey Details Name,Survey Details Name for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey Category,Survey Category for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey Language,Survey Language for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey Question Count,Survey Question Count for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey Page Count,Survey Page Count for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey Response Count,Survey Response Count for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey Created Date Time,Survey Created Date Time for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey Updated Date Time,Survey Updated Date Time for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey Analyze Link,Survey Analyze Link for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey Edit Link,Survey Edit Link for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey Collect Link,Survey Collect Link for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey Summary Link,Survey Summary Link for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey Preview Link,Survey Preview Link for the Survey entity.
+_MDD_JCT_CSS_SURVEYS,Survey Source Database,Survey Source Database for the Survey entity.
+_MDD_JCT_CSS_SURVEY_PAGES,Survey Page ID,Survey Page ID for the Survey Page entity.
+_MDD_JCT_CSS_SURVEY_PAGES,Survey Page ID CSS,Survey Page ID CSS for the Survey Page entity.
+_MDD_JCT_CSS_SURVEY_PAGES,Survey Page ID SurveyMonkey,Survey Page ID SurveyMonkey for the Survey Page entity.
+_MDD_JCT_CSS_SURVEY_PAGES,Survey ID,Survey ID for the Survey Page entity.
+_MDD_JCT_CSS_SURVEY_PAGES,Survey ID CSS,Survey ID CSS for the Survey Page entity.
+_MDD_JCT_CSS_SURVEY_PAGES,Survey Page Name,Survey Page Name for the Survey Page entity.
+_MDD_JCT_CSS_SURVEY_PAGES,Survey Page Description,Survey Page Description for the Survey Page entity.
+_MDD_JCT_CSS_SURVEY_PAGES,Survey Page Order,Survey Page Order for the Survey Page entity.
+_MDD_JCT_CSS_SURVEY_PAGES,Survey Page Question Count,Survey Page Question Count for the Survey Page entity.
+_MDD_JCT_CSS_SURVEY_PAGES,Survey Page Link,Survey Page Link for the Survey Page entity.
+_MDD_JCT_CSS_SURVEY_PAGES,Survey Page Source Database,Survey Page Source Database for the Survey Page entity.
+_MDD_JCT_CSS_SURVEY_QUESTIONS,Survey Question ID,Survey Question ID for the Survey Question entity.
+_MDD_JCT_CSS_SURVEY_QUESTIONS,Survey Question ID CSS,Survey Question ID CSS for the Survey Question entity.
+_MDD_JCT_CSS_SURVEY_QUESTIONS,Survey Question ID SurveyMonkey,Survey Question ID SurveyMonkey for the Survey Question entity.
+_MDD_JCT_CSS_SURVEY_QUESTIONS,Survey ID,Survey ID for the Survey Question entity.
+_MDD_JCT_CSS_SURVEY_QUESTIONS,Survey ID CSS,Survey ID CSS for the Survey Question entity.
+_MDD_JCT_CSS_SURVEY_QUESTIONS,Survey Page ID,Survey Page ID for the Survey Question entity.
+_MDD_JCT_CSS_SURVEY_QUESTIONS,Survey Page ID SurveyMonkey,Survey Page ID SurveyMonkey for the Survey Question entity.
+_MDD_JCT_CSS_SURVEY_QUESTIONS,Survey Question Order,Survey Question Order for the Survey Question entity.
+_MDD_JCT_CSS_SURVEY_QUESTIONS,Survey Question Visible,Survey Question Visible for the Survey Question entity.
+_MDD_JCT_CSS_SURVEY_QUESTIONS,Survey Question Is Visible,Survey Question Is Visible for the Survey Question entity.
+_MDD_JCT_CSS_SURVEY_QUESTIONS,Survey Question Family,Survey Question Family for the Survey Question entity.
+_MDD_JCT_CSS_SURVEY_QUESTIONS,Survey Question Subtype,Survey Question Subtype for the Survey Question entity.
+_MDD_JCT_CSS_SURVEY_QUESTIONS,Survey Question Text,Survey Question Text for the Survey Question entity.
+_MDD_JCT_CSS_SURVEY_QUESTIONS,Survey Question Text Raw,Survey Question Text Raw for the Survey Question entity.
+_MDD_JCT_CSS_SURVEY_QUESTIONS,Survey Question Link,Survey Question Link for the Survey Question entity.
+_MDD_JCT_CSS_SURVEY_QUESTIONS,Survey Question Source Database,Survey Question Source Database for the Survey Question entity.
+_MDD_JCT_CSS_SURVEY_SECTIONS,Survey Section ID,Survey Section ID for the Survey Section entity.
+_MDD_JCT_CSS_SURVEY_SECTIONS,Survey Section ID CSS,Survey Section ID CSS for the Survey Section entity.
+_MDD_JCT_CSS_SURVEY_SECTIONS,Survey ID,Survey ID for the Survey Section entity.
+_MDD_JCT_CSS_SURVEY_SECTIONS,Survey ID CSS,Survey ID CSS for the Survey Section entity.
+_MDD_JCT_CSS_SURVEY_SECTIONS,Survey Page ID,Survey Page ID for the Survey Section entity.
+_MDD_JCT_CSS_SURVEY_SECTIONS,Survey Page ID SurveyMonkey,Survey Page ID SurveyMonkey for the Survey Section entity.
+_MDD_JCT_CSS_SURVEY_SECTIONS,Survey Question ID,Survey Question ID for the Survey Section entity.
+_MDD_JCT_CSS_SURVEY_SECTIONS,Survey Question ID SurveyMonkey,Survey Question ID SurveyMonkey for the Survey Section entity.
+_MDD_JCT_CSS_SURVEY_SECTIONS,Survey Section Name,Survey Section Name for the Survey Section entity.
+_MDD_JCT_CSS_SURVEY_SECTIONS,Survey Section Source Database,Survey Section Source Database for the Survey Section entity.
+_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,Survey Answer Choice ID,Survey Answer Choice ID for the Survey Answer Choice entity.
+_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,Survey Answer Choice ID CSS,Survey Answer Choice ID CSS for the Survey Answer Choice entity.
+_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,Survey Answer Choice ID SurveyMonkey,Survey Answer Choice ID SurveyMonkey for the Survey Answer Choice entity.
+_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,Survey ID,Survey ID for the Survey Answer Choice entity.
+_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,Survey ID CSS,Survey ID CSS for the Survey Answer Choice entity.
+_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,Survey Question ID,Survey Question ID for the Survey Answer Choice entity.
+_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,Survey Question ID SurveyMonkey,Survey Question ID SurveyMonkey for the Survey Answer Choice entity.
+_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,Survey Page ID,Survey Page ID for the Survey Answer Choice entity.
+_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,Survey Page ID SurveyMonkey,Survey Page ID SurveyMonkey for the Survey Answer Choice entity.
+_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,Survey Answer Choice Order,Survey Answer Choice Order for the Survey Answer Choice entity.
+_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,Survey Answer Choice Visible,Survey Answer Choice Visible for the Survey Answer Choice entity.
+_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,Survey Answer Choice Is Visible,Survey Answer Choice Is Visible for the Survey Answer Choice entity.
+_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,Survey Answer Choice Text,Survey Answer Choice Text for the Survey Answer Choice entity.
+_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,Survey Answer Choice Weight,Survey Answer Choice Weight for the Survey Answer Choice entity.
+_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,Survey Answer Choice Is NA Raw,Survey Answer Choice Is NA Raw for the Survey Answer Choice entity.
+_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,Survey Answer Choice Description,Survey Answer Choice Description for the Survey Answer Choice entity.
+_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,Survey Answer Choice Source Database,Survey Answer Choice Source Database for the Survey Answer Choice entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response ID,Survey Response ID for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response ID CSS,Survey Response ID CSS for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response ID SurveyMonkey,Survey Response ID SurveyMonkey for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey ID,Survey ID for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey ID CSS,Survey ID CSS for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Collector ID,Survey Collector ID for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Recipient ID,Survey Recipient ID for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response Total Time Seconds,Survey Response Total Time Seconds for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response Status,Survey Response Status for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response Collection Mode,Survey Response Collection Mode for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response Language,Survey Response Language for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response IP Address,Survey Response IP Address for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response Custom Value,Survey Response Custom Value for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response Created Date Time,Survey Response Created Date Time for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response Created Date,Survey Response Created Date for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response Created Month,Survey Response Created Month for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response Created Year,Survey Response Created Year for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response Updated Date Time,Survey Response Updated Date Time for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response Link,Survey Response Link for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response Edit Link,Survey Response Edit Link for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response Analyze Link,Survey Response Analyze Link for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_RESPONSES,Survey Response Source Database,Survey Response Source Database for the Survey Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Question Response ID,Survey Question Response ID for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Question Response ID CSS,Survey Question Response ID CSS for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey ID,Survey ID for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey ID CSS,Survey ID CSS for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Response ID,Survey Response ID for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Response ID CSS,Survey Response ID CSS for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Question ID,Survey Question ID for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Question ID SurveyMonkey,Survey Question ID SurveyMonkey for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Page ID,Survey Page ID for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Page ID SurveyMonkey,Survey Page ID SurveyMonkey for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Answer Choice ID,Survey Answer Choice ID for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Answer Choice ID SurveyMonkey,Survey Answer Choice ID SurveyMonkey for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Answer Row ID SurveyMonkey,Survey Answer Row ID SurveyMonkey for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Answer Other ID SurveyMonkey,Survey Answer Other ID SurveyMonkey for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Question Response Text,Survey Question Response Text for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Question Response Free Text,Survey Question Response Free Text for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Question Text Display,Agency-configured wording displayed for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Question Response Weight,Survey Question Response Weight for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Question Response Source Database,Survey Question Response Source Database for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response ID,Survey Response ID for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response ID CSS,Survey Response ID CSS for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Gender,Survey Response Gender for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Age Group,Survey Response Age Group for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Completer Type,Survey Response Completer Type for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Completer Self Or Other,Survey Response Completer Self Or Other for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Primary Language,Survey Response Primary Language for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response County,Survey Response County for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Access Appointment Ease,Survey Response Access Appointment Ease for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Access Appointment Schedule,Survey Response Access Appointment Schedule for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Access Between Appointment Help,Survey Response Access Between Appointment Help for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Quality Staff Respect,Survey Response Quality Staff Respect for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Quality Staff Explanation,Survey Response Quality Staff Explanation for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Quality Provider Listening,Survey Response Quality Provider Listening for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Quality Treatment Decision Involvement,Survey Response Quality Treatment Decision Involvement for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Culture Respect,Survey Response Culture Respect for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Identity Need Sensitivity,Survey Response Identity Need Sensitivity for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Preferred Language Availability,Survey Response Preferred Language Availability for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Service Location Convenience,Survey Response Service Location Convenience for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Service Access Difficulty,Survey Response Service Access Difficulty for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Support System Strengthening,Survey Response Support System Strengthening for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Crisis Coping Improvement,Survey Response Crisis Coping Improvement for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Mental Health Improvement,Survey Response Mental Health Improvement for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Recommend Organization,Survey Response Recommend Organization for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Overall Satisfaction,Survey Response Overall Satisfaction for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Doing Well Comment,Survey Response Doing Well Comment for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Improvement Comment,Survey Response Improvement Comment for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Additional Comment,Survey Response Additional Comment for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Evening Weekend Appointment Help,Survey Response Evening Weekend Appointment Help for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Evening Weekend Time Preference,Survey Response Evening Weekend Time Preference for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Race,Survey Response Race for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Program,Survey Response Program for the Survey Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Response ID,Survey Question Response ID for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Response ID CSS,Survey Question Response ID CSS for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response ID,Survey Response ID for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Gender,Survey Response Gender for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Race,Survey Response Race for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Program,Survey Response Program for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Age Group,Survey Response Age Group for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Completer Type,Survey Response Completer Type for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Completer Self Or Other,Survey Response Completer Self Or Other for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Primary Language,Survey Response Primary Language for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response County,Survey Response County for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Section ID,Survey Section ID for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Section Name,Survey Section Name for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Text,Survey Question Text for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Response Weight,Survey Question Response Weight for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Response Interpretation,Survey Question Response Interpretation for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Response Is Top 2 Box,Survey Question Response Is Top 2 Box for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Average Score,Survey Question Average Score for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Top 2 Box Percent,Survey Question Top 2 Box Percent for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Section Average Score,Survey Section Average Score for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Section Top 2 Box Decimal,Survey Section Top 2 Box Decimal for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Section Top 2 Box Percent,Survey Section Top 2 Box Percent for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Overall Top 2 Box Decimal,Survey Overall Top 2 Box Decimal for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Overall Top 2 Box Percent,Survey Overall Top 2 Box Percent for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Overall Satisfaction Average Score,Survey Overall Satisfaction Average Score for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Created Date Time,Survey Response Created Date Time for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Created Date,Survey Response Created Date for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Created Month,Survey Response Created Month for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Created Year,Survey Response Created Year for the Survey Question Response entity.
+_MDD_JCT_ENTRA_AGENCY,Agency ID,Unique ID of the Agency.
+_MDD_JCT_ENTRA_AGENCY,Tenant ID,Unique ID of the Tenant.
+_MDD_JCT_ENTRA_AGENCY,Agency Address Street,Address component value.
+_MDD_JCT_ENTRA_AGENCY,Agency Address City,Address component value.
+_MDD_JCT_ENTRA_AGENCY,Agency Address State,Address component value.
+_MDD_JCT_ENTRA_AGENCY,Agency Address Zip,Address component value.
+_MDD_JCT_ENTRA_AGENCY,Agency Address Country,Address component value.
+_MDD_JCT_ENTRA_AGENCY,Tenent Created Date,Date or date/time associated with the record.
+_MDD_JCT_ENTRA_AGENCY,Agency Name,Name or display label for the agency record.
+_MDD_JCT_ENTRA_AGENCY,Tenant OnPrem Last Sync Date,Date or date/time associated with the record.
+_MDD_JCT_ENTRA_AGENCY,Tenant OnPrem Sync Enabled,Tenant OnPrem Sync Enabled value for the agency record.
+_MDD_JCT_ENTRA_AGENCY,Agency MFA Enforcement,Agency MFA Enforcement value for the agency record.
+_MDD_JCT_ENTRA_USERS,User ID,Unique ID of the User.
+_MDD_JCT_ENTRA_USERS,User ID UPN,Identifier value for user upn.
+_MDD_JCT_ENTRA_USERS,User ID Payroll,Identifier value for user payroll.
+_MDD_JCT_ENTRA_USERS,User ID SID,Identifier value for user sid.
+_MDD_JCT_ENTRA_USERS,User ID SID OnPrem,Identifier value for user sid onprem.
+_MDD_JCT_ENTRA_USERS,User ID Immutable OnPrem,Identifier value for user immutable onprem.
+_MDD_JCT_ENTRA_USERS,User Username,User Username value for the user record.
+_MDD_JCT_ENTRA_USERS,User Name First,First name value.
+_MDD_JCT_ENTRA_USERS,User Name Last,Last name value.
+_MDD_JCT_ENTRA_USERS,User Name First & Last,Name formatted as first name followed by last name.
+_MDD_JCT_ENTRA_USERS,User Name Last & First w/Initial,Name formatted as last name followed by first name.
+_MDD_JCT_ENTRA_USERS,User Email Primary,Email address or email-related value.
+_MDD_JCT_ENTRA_USERS,User Phone Primary,Phone number or phone-related classification value.
+_MDD_JCT_ENTRA_USERS,User Address 1,Address component value.
+_MDD_JCT_ENTRA_USERS,User Address 2,Address component value.
+_MDD_JCT_ENTRA_USERS,User Address City,Address component value.
+_MDD_JCT_ENTRA_USERS,User Address State,Address component value.
+_MDD_JCT_ENTRA_USERS,User Address Zip,Address component value.
+_MDD_JCT_ENTRA_USERS,User Address Country,Address component value.
+_MDD_JCT_ENTRA_USERS,User Company,User Company value for the user record.
+_MDD_JCT_ENTRA_USERS,User Office Location,User Office Location value for the user record.
+_MDD_JCT_ENTRA_USERS,User Usage Location,User Usage Location value for the user record.
+_MDD_JCT_ENTRA_USERS,User Job Title,User Job Title value for the user record.
+_MDD_JCT_ENTRA_USERS,User Department,User Department value for the user record.
+_MDD_JCT_ENTRA_USERS,User Type,Type or category classification for the record.
+_MDD_JCT_ENTRA_USERS,User Is Active,True/false or status-like indicator for the record.
+_MDD_JCT_ENTRA_USERS,User Status,Status classification for the record.
+_MDD_JCT_ENTRA_USERS,User Employment Status,Status classification for the record.
+_MDD_JCT_ENTRA_USERS,User Is External User State,True/false or status-like indicator for the record.
+_MDD_JCT_ENTRA_USERS,User Is External User,True/false or status-like indicator for the record.
+_MDD_JCT_ENTRA_USERS,User Is External User Updated Date,Date or date/time associated with the record.
+_MDD_JCT_ENTRA_USERS,User Password Set Status,Status classification for the record.
+_MDD_JCT_ENTRA_USERS,User Password On Next Login,User Password On Next Login value for the user record.
+_MDD_JCT_ENTRA_USERS,User Tenure Today Days,User Tenure Today Days value for the user record.
+_MDD_JCT_ENTRA_USERS,User Tenure Today Years,User Tenure Today Years value for the user record.
+_MDD_JCT_ENTRA_USERS,User OnPrem Last Sync Date,Date or date/time associated with the record.
+_MDD_JCT_ENTRA_USERS,User OnPrem SAM Account Name,Name or display label for the user record.
+_MDD_JCT_ENTRA_USERS,User OnPrem Sync Enabled,User OnPrem Sync Enabled value for the user record.
+_MDD_JCT_ENTRA_USERS,User Link,Portal URL for opening the corresponding Microsoft Entra record.
+_MDD_JCT_ENTRA_USERS,User MFA Most Secure Method,User MFA Most Secure Method value for the user record.
+_MDD_JCT_ENTRA_USERS,User MFA Least Secure Method,User MFA Least Secure Method value for the user record.
+_MDD_JCT_ENTRA_USERS,User MFA Method Count,Count of related records or events at this grain.
+_MDD_JCT_ENTRA_USERS,User ID FA0,Identifier value for user fa0.
+_MDD_JCT_ENTRA_USERS,User ID UPN Username,Identifier value for user upn username.
+_MDD_JCT_ENTRA_USERS,User ID UPN Domain,Identifier value for user upn domain.
+_MDD_JCT_ENTRA_USERS,User Username Short,User Username Short value for the user record.
+_MDD_JCT_ENTRA_USERS,User ID UPN TLD,Identifier value for user upn tld.
+_MDD_JCT_ENTRA_USERS,User Name Last & First w/Initial Non-Null,Name formatted as last name followed by first name.
+_MDD_JCT_ENTRA_USERS,User MFA Method Not Set,User MFA Method Not Set value for the user record.
+_MDD_JCT_ENTRA_USERS,User MFA Method Phone Only,Phone number or phone-related classification value.
+_MDD_JCT_ENTRA_USERS,User MFA Method Color,Report-facing color or risk-level classification value.
+_MDD_JCT_ENTRA_USERS,User Login Days Last 30,User Login Days Last 30 value for the user record.
+_MDD_JCT_ENTRA_USERS,User Logins in Last 90 Days,User Logins in Last 90 Days value for the user record.
+_MDD_JCT_ENTRA_USERS,User Logins in Last 60 Days,User Logins in Last 60 Days value for the user record.
+_MDD_JCT_ENTRA_USERS,User Logins in Last 30 Days,User Logins in Last 30 Days value for the user record.
+_MDD_JCT_ENTRA_GROUPS,Group ID,Unique ID of the Group.
+_MDD_JCT_ENTRA_GROUPS,Group ID External,Identifier value for group external.
+_MDD_JCT_ENTRA_GROUPS,Group ID SID,Identifier value for group sid.
+_MDD_JCT_ENTRA_GROUPS,Group Name,Name or display label for the group record.
+_MDD_JCT_ENTRA_GROUPS,Group Name Nickname,Name or display label for the group record.
+_MDD_JCT_ENTRA_GROUPS,Group Preferred Language,Group Preferred Language value for the group record.
+_MDD_JCT_ENTRA_GROUPS,Group Created Date,Date or date/time associated with the record.
+_MDD_JCT_ENTRA_GROUPS,Group Description,Group Description value for the group record.
+_MDD_JCT_ENTRA_GROUPS,Group Email Primary,Email address or email-related value.
+_MDD_JCT_ENTRA_GROUPS,Group Email Primary Nickname,Email address or email-related value.
+_MDD_JCT_ENTRA_GROUPS,Group Email Enabled,Email address or email-related value.
+_MDD_JCT_ENTRA_GROUPS,Group Expiration Date,Date or date/time associated with the record.
+_MDD_JCT_ENTRA_GROUPS,Group Expiration Status,Status classification for the record.
+_MDD_JCT_ENTRA_GROUPS,Group Dynamic Membership Rule,Group Dynamic Membership Rule value for the group record.
+_MDD_JCT_ENTRA_GROUPS,Group Is Assignable To Role,True/false or status-like indicator for the record.
+_MDD_JCT_ENTRA_GROUPS,Group OnPrem Last Sync Date,Date or date/time associated with the record.
+_MDD_JCT_ENTRA_GROUPS,Group OnPrem SAM Account Name,Name or display label for the group record.
+_MDD_JCT_ENTRA_GROUPS,Group OnPrem Sync Enabled,Group OnPrem Sync Enabled value for the group record.
+_MDD_JCT_ENTRA_GROUPS,Group Is Security Group,True/false or status-like indicator for the record.
+_MDD_JCT_ENTRA_GROUPS,Group Visibility,Group Visibility value for the group record.
+_MDD_JCT_ENTRA_GROUPS,Group Link,Portal URL for opening the corresponding Microsoft Entra record.
+_MDD_JCT_ENTRA_GROUPS,Group ID FA0,Identifier value for group fa0.
+_MDD_JCT_ENTRA_GROUPS,Group ID SID OnPrem,Identifier value for group sid onprem.
+_MDD_JCT_ENTRA_GROUPS,Group Name Short,Name or display label for the group record.
+_MDD_JCT_ENTRA_GROUPS,Group Name Sequence ASC,Name or display label for the group record.
+_MDD_JCT_ENTRA_GROUPS,Group Membership Count (All),Count of related records or events at this grain.
+_MDD_JCT_ENTRA_GROUPS,Group Membership Count (Active),Count of related records or events at this grain.
+_MDD_JCT_ENTRA_GROUPS,Group Name Medium,Name or display label for the group record.
+_MDD_JCT_ENTRA_LOGINS,Login ID,Unique ID of the Login.
+_MDD_JCT_ENTRA_LOGINS,Login Created Date,Date or date/time associated with the record.
+_MDD_JCT_ENTRA_LOGINS,User Display Name,Name or display label for the login record.
+_MDD_JCT_ENTRA_LOGINS,User ID UPN,Identifier value for user upn.
+_MDD_JCT_ENTRA_LOGINS,User ID,Unique ID of the User.
+_MDD_JCT_ENTRA_LOGINS,App ID,Unique ID of the App.
+_MDD_JCT_ENTRA_LOGINS,App Display Name,Name or display label for the login record.
+_MDD_JCT_ENTRA_LOGINS,Login IP Address,Address component value.
+_MDD_JCT_ENTRA_LOGINS,Login App Used,Login App Used value for the login record.
+_MDD_JCT_ENTRA_LOGINS,Correlation ID,Unique ID of the Correlation.
+_MDD_JCT_ENTRA_LOGINS,Login Conditional Access Status,Status classification for the record.
+_MDD_JCT_ENTRA_LOGINS,Is Interactive,True/false or status-like indicator for the record.
+_MDD_JCT_ENTRA_LOGINS,Login Risk Detail,Login Risk Detail value for the login record.
+_MDD_JCT_ENTRA_LOGINS,Login Risk Level Aggregated,Report-facing color or risk-level classification value.
+_MDD_JCT_ENTRA_LOGINS,Login Risk Level During Sign-In,Report-facing color or risk-level classification value.
+_MDD_JCT_ENTRA_LOGINS,Login Risk State,Login Risk State value for the login record.
+_MDD_JCT_ENTRA_LOGINS,Resource Display Name,Name or display label for the login record.
+_MDD_JCT_ENTRA_LOGINS,Resource ID,Unique ID of the Resource.
+_MDD_JCT_ENTRA_MFA_DEFINITIONS,Definition,Definition value for the mfa definition record.
+_MDD_JCT_ENTRA_MFA_DEFINITIONS,MFA Type ID,Unique ID of the MFA Type.
+_MDD_JCT_ENTRA_MFA_DEFINITIONS,Authentication Type,Type or category classification for the record.
+_MDD_JCT_ENTRA_MFA_DEFINITIONS,Authentication Type Short,Type or category classification for the record.
+_MDD_JCT_ENTRA_MFA_DEFINITIONS,Authentication Security Rank,Rank or ordered priority value.
+_MDD_JCT_ENTRA_MFA_DEFINITIONS,Authentication Is MFA Capable,True/false or status-like indicator for the record.
+_MDD_JCT_ENTRA_MFA_DEFINITIONS,Authentication MFA Color,Report-facing color or risk-level classification value.
+_MDD_JCT_ENTRA_MFA_DEFINITIONS,Authentication Type Sort Order,Type or category classification for the record.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,User ID,Unique ID of the User.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication ID,Unique ID of the Authentication.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Type,Type or category classification for the record.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Phone Name,Name or display label for the authentication method record.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication PC Name,Name or display label for the authentication method record.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Device Name,Name or display label for the authentication method record.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Is MFA Capable,True/false or status-like indicator for the record.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Security Rank,Rank or ordered priority value.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Is Phone Based,Phone number or phone-related classification value.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Phone Type,Phone number or phone-related classification value.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Phone Is SMS Capable,Phone number or phone-related classification value.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Phone,Phone number or phone-related classification value.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authenticaiton Phone Sign-In State,Phone number or phone-related classification value.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Email Address,Email address or email-related value.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Email Address Username,Email address or email-related value.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Email Address Domain,Email address or email-related value.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Email Address TLD,Email address or email-related value.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Security Rank Sequence ASC,Rank or ordered priority value.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Security Rank Sequence DESC,Rank or ordered priority value.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Type Short,Type or category classification for the record.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Is MFA Explanation,True/false or status-like indicator for the record.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication MFA Color,Report-facing color or risk-level classification value.
+_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Authentication Type Sort Order,Type or category classification for the record.
+_MDD_JCT_ENTRA_USERS_MFA,User ID,Unique ID of the User.
+_MDD_JCT_ENTRA_USERS_MFA,Authentication Type,Type or category classification for the record.
+_MDD_JCT_ENTRA_USERS_MFA,Authentication Type Short,Type or category classification for the record.
+_MDD_JCT_ENTRA_USERS_MFA,Authentication Device Name,Name or display label for the user mfa record.
+_MDD_JCT_ENTRA_USERS_MFA,Authentication Is Phone Based,Phone number or phone-related classification value.
+_MDD_JCT_ENTRA_USERS_MFA,Authentication PC Name,Name or display label for the user mfa record.
+_MDD_JCT_ENTRA_USERS_MFA,Authentication Phone,Phone number or phone-related classification value.
+_MDD_JCT_ENTRA_USERS_MFA,Authentication Phone Is SMS Capable,Phone number or phone-related classification value.
+_MDD_JCT_ENTRA_USERS_MFA,Authentication Phone Name,Name or display label for the user mfa record.
+_MDD_JCT_ENTRA_USERS_MFA,Authentication Phone Type,Phone number or phone-related classification value.
+_MDD_JCT_ENTRA_USERS_MFA,Authentication Security Rank,Rank or ordered priority value.
+_MDD_JCT_ENTRA_USERS_MFA,Authentication Security Rank Sequence ASC,Rank or ordered priority value.
+_MDD_JCT_ENTRA_USERS_MFA,Authentication Is MFA Explanation,True/false or status-like indicator for the record.
+_MDD_JCT_ENTRA_USERS_MFA,Authentication Configured for User,Authentication Configured for User value for the user mfa record.
+_MDD_JCT_ENTRA_USERS_MFA,Authentication MFA Color,Report-facing color or risk-level classification value.
+_MDD_JCT_ENTRA_USERS_MFA,Authentication Type Sort Order,Type or category classification for the record.
+_MDD_JCT_ENTRA_USERS_MFA,User MFA Auth ID FA0,Identifier value for user mfa auth fa0.
+_MDD_JCT_ENTRA_USERS_MFA,Auth Configured MFA Risk Level,Report-facing color or risk-level classification value.
+_MDD_JCT_ENTRA_USER_GROUPS,User ID,Unique ID of the User.
+_MDD_JCT_ENTRA_USER_GROUPS,Group ID,Unique ID of the Group.
+_MDD_JCT_ENTRA_USER_GROUPS,User ID UPN,Identifier value for user upn.
+_MDD_JCT_ENTRA_USER_GROUPS,User ID Payroll,Identifier value for user payroll.
+_MDD_JCT_ENTRA_USER_GROUPS,User ID SID,Identifier value for user sid.
+_MDD_JCT_ENTRA_USER_GROUPS,User ID SID OnPrem,Identifier value for user sid onprem.
+_MDD_JCT_ENTRA_USER_GROUPS,User ID Immutable OnPrem,Identifier value for user immutable onprem.
+_MDD_JCT_ENTRA_USER_GROUPS,User Username,User Username value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Name First,First name value.
+_MDD_JCT_ENTRA_USER_GROUPS,User Name Last,Last name value.
+_MDD_JCT_ENTRA_USER_GROUPS,User Name First & Last,Name formatted as first name followed by last name.
+_MDD_JCT_ENTRA_USER_GROUPS,User Name Last & First w/Initial,Name formatted as last name followed by first name.
+_MDD_JCT_ENTRA_USER_GROUPS,User Email Primary,Email address or email-related value.
+_MDD_JCT_ENTRA_USER_GROUPS,User Phone Primary,Phone number or phone-related classification value.
+_MDD_JCT_ENTRA_USER_GROUPS,User Address 1,Address component value.
+_MDD_JCT_ENTRA_USER_GROUPS,User Address 2,Address component value.
+_MDD_JCT_ENTRA_USER_GROUPS,User Address City,Address component value.
+_MDD_JCT_ENTRA_USER_GROUPS,User Address State,Address component value.
+_MDD_JCT_ENTRA_USER_GROUPS,User Address Zip,Address component value.
+_MDD_JCT_ENTRA_USER_GROUPS,User Address Country,Address component value.
+_MDD_JCT_ENTRA_USER_GROUPS,User Company,User Company value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Office Location,User Office Location value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Usage Location,User Usage Location value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Job Title,User Job Title value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Department,User Department value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Type,Type or category classification for the record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Is Active,True/false or status-like indicator for the record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Status,Status classification for the record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Employment Status,Status classification for the record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Is External User State,True/false or status-like indicator for the record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Is External User,True/false or status-like indicator for the record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Is External User Updated Date,Date or date/time associated with the record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Password Set Status,Status classification for the record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Password On Next Login,User Password On Next Login value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Tenure Today Days,User Tenure Today Days value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Tenure Today Years,User Tenure Today Years value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User OnPrem Last Sync Date,Date or date/time associated with the record.
+_MDD_JCT_ENTRA_USER_GROUPS,User OnPrem SAM Account Name,Name or display label for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User OnPrem Sync Enabled,User OnPrem Sync Enabled value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Link,Portal URL for opening the corresponding Microsoft Entra record.
+_MDD_JCT_ENTRA_USER_GROUPS,User MFA Most Secure Method,User MFA Most Secure Method value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User MFA Least Secure Method,User MFA Least Secure Method value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User MFA Method Count,Count of related records or events at this grain.
+_MDD_JCT_ENTRA_USER_GROUPS,User ID FA0,Identifier value for user fa0.
+_MDD_JCT_ENTRA_USER_GROUPS,User ID UPN Username,Identifier value for user upn username.
+_MDD_JCT_ENTRA_USER_GROUPS,User ID UPN Domain,Identifier value for user upn domain.
+_MDD_JCT_ENTRA_USER_GROUPS,User Username Short,User Username Short value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User ID UPN TLD,Identifier value for user upn tld.
+_MDD_JCT_ENTRA_USER_GROUPS,User Name Last & First w/Initial Non-Null,Name formatted as last name followed by first name.
+_MDD_JCT_ENTRA_USER_GROUPS,User MFA Method Not Set,User MFA Method Not Set value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User MFA Method Phone Only,Phone number or phone-related classification value.
+_MDD_JCT_ENTRA_USER_GROUPS,User MFA Method Color,Report-facing color or risk-level classification value.
+_MDD_JCT_ENTRA_USER_GROUPS,User Login Days Last 30,User Login Days Last 30 value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Logins in Last 90 Days,User Logins in Last 90 Days value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Logins in Last 60 Days,User Logins in Last 60 Days value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Logins in Last 30 Days,User Logins in Last 30 Days value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group ID External,Identifier value for group external.
+_MDD_JCT_ENTRA_USER_GROUPS,Group ID SID,Identifier value for group sid.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Name,Name or display label for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Name Nickname,Name or display label for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Preferred Language,Group Preferred Language value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Created Date,Date or date/time associated with the record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Description,Group Description value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Email Primary,Email address or email-related value.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Email Primary Nickname,Email address or email-related value.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Email Enabled,Email address or email-related value.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Expiration Date,Date or date/time associated with the record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Expiration Status,Status classification for the record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Dynamic Membership Rule,Group Dynamic Membership Rule value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Is Assignable To Role,True/false or status-like indicator for the record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group OnPrem Last Sync Date,Date or date/time associated with the record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group OnPrem SAM Account Name,Name or display label for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group OnPrem Sync Enabled,Group OnPrem Sync Enabled value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Is Security Group,True/false or status-like indicator for the record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Visibility,Group Visibility value for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Link,Portal URL for opening the corresponding Microsoft Entra record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group ID FA0,Identifier value for group fa0.
+_MDD_JCT_ENTRA_USER_GROUPS,Group ID SID OnPrem,Identifier value for group sid onprem.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Name Short,Name or display label for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Name Sequence ASC,Name or display label for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Membership Count (All),Count of related records or events at this grain.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Membership Count (Active),Count of related records or events at this grain.
+_MDD_JCT_ENTRA_USER_GROUPS,Group Name Medium,Name or display label for the _mdd_jct_entra_user_groups record.
+_MDD_JCT_ENTRA_USER_GROUP_MEMBERSHIP_STATUS,Group ID,Unique ID of the Group.
+_MDD_JCT_ENTRA_USER_GROUP_MEMBERSHIP_STATUS,User ID,Unique ID of the User.
+_MDD_JCT_ENTRA_USER_GROUP_MEMBERSHIP_STATUS,User Group Membership Count,Count of related records or events at this grain.
+_MDD_JCT_ENTRA_USER_GROUP_MEMBERSHIP_STATUS,User Group Membership Status,Status classification for the record.
+_MDD_JCT_ENTRA_USER_GROUP_MEMBERSHIP_STATUS,User Group Membership Status Bit,Status classification for the record.
+_MDD_JCT_ENTRA_USER_LOGIN_HISTORY_SUMMARY,User ID,Unique ID of the User.
+_MDD_JCT_ENTRA_USER_LOGIN_HISTORY_SUMMARY,User Login Days Last 30,User Login Days Last 30 value for the user login summary record.
+_MDD_JCT_ENTRA_LINKS_USERS,User ID,Unique ID of the User.
+_MDD_JCT_ENTRA_LINKS_USERS,User Link,Portal URL for opening the corresponding Microsoft Entra record.
+_MDD_JCT_ENTRA_LINKS_GROUPS,Group ID,Unique ID of the Group.
+_MDD_JCT_ENTRA_LINKS_GROUPS,Group Link,Portal URL for opening the corresponding Microsoft Entra record.
+_MDD_JCT_ENTRA_USERS_UNPIVOT,id,Technical row identifier emitted by the unpivot procedure for the source table row.
+_MDD_JCT_ENTRA_USERS_UNPIVOT,table_name,Name of the source table represented by the unpivoted row.
+_MDD_JCT_ENTRA_USERS_UNPIVOT,field_name,Name of the source field represented by the unpivoted row.
+_MDD_JCT_ENTRA_USERS_UNPIVOT,data_type,SQL data type bucket used by the unpivot procedure for the source value.
+_MDD_JCT_ENTRA_USERS_UNPIVOT,bigint_value,Unpivoted source value stored in the [bigint_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_UNPIVOT,float_value,Unpivoted source value stored in the [float_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_UNPIVOT,nvarchar_value,Unpivoted source value stored in the [nvarchar_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_UNPIVOT,datetime_value,Unpivoted source value stored in the [datetime_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_UNPIVOT,bit_value,Unpivoted source value stored in the [bit_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_UNPIVOT,decimal_value,Unpivoted source value stored in the [decimal_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_UNPIVOT,time_value,Unpivoted source value stored in the [time_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_UNPIVOT,date_value,Unpivoted source value stored in the [date_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_UNPIVOT,numeric_value,Unpivoted source value stored in the [numeric_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_UNPIVOT,all_value,Unpivoted source value stored in the [all_value] type-specific value column.
+_MDD_JCT_ENTRA_GROUPS_UNPIVOT,id,Technical row identifier emitted by the unpivot procedure for the source table row.
+_MDD_JCT_ENTRA_GROUPS_UNPIVOT,table_name,Name of the source table represented by the unpivoted row.
+_MDD_JCT_ENTRA_GROUPS_UNPIVOT,field_name,Name of the source field represented by the unpivoted row.
+_MDD_JCT_ENTRA_GROUPS_UNPIVOT,data_type,SQL data type bucket used by the unpivot procedure for the source value.
+_MDD_JCT_ENTRA_GROUPS_UNPIVOT,bigint_value,Unpivoted source value stored in the [bigint_value] type-specific value column.
+_MDD_JCT_ENTRA_GROUPS_UNPIVOT,float_value,Unpivoted source value stored in the [float_value] type-specific value column.
+_MDD_JCT_ENTRA_GROUPS_UNPIVOT,nvarchar_value,Unpivoted source value stored in the [nvarchar_value] type-specific value column.
+_MDD_JCT_ENTRA_GROUPS_UNPIVOT,datetime_value,Unpivoted source value stored in the [datetime_value] type-specific value column.
+_MDD_JCT_ENTRA_GROUPS_UNPIVOT,bit_value,Unpivoted source value stored in the [bit_value] type-specific value column.
+_MDD_JCT_ENTRA_GROUPS_UNPIVOT,decimal_value,Unpivoted source value stored in the [decimal_value] type-specific value column.
+_MDD_JCT_ENTRA_GROUPS_UNPIVOT,time_value,Unpivoted source value stored in the [time_value] type-specific value column.
+_MDD_JCT_ENTRA_GROUPS_UNPIVOT,date_value,Unpivoted source value stored in the [date_value] type-specific value column.
+_MDD_JCT_ENTRA_GROUPS_UNPIVOT,numeric_value,Unpivoted source value stored in the [numeric_value] type-specific value column.
+_MDD_JCT_ENTRA_GROUPS_UNPIVOT,all_value,Unpivoted source value stored in the [all_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,id,Technical row identifier emitted by the unpivot procedure for the source table row.
+_MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,table_name,Name of the source table represented by the unpivoted row.
+_MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,field_name,Name of the source field represented by the unpivoted row.
+_MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,data_type,SQL data type bucket used by the unpivot procedure for the source value.
+_MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,bigint_value,Unpivoted source value stored in the [bigint_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,float_value,Unpivoted source value stored in the [float_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,nvarchar_value,Unpivoted source value stored in the [nvarchar_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,datetime_value,Unpivoted source value stored in the [datetime_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,bit_value,Unpivoted source value stored in the [bit_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,decimal_value,Unpivoted source value stored in the [decimal_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,time_value,Unpivoted source value stored in the [time_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,date_value,Unpivoted source value stored in the [date_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,numeric_value,Unpivoted source value stored in the [numeric_value] type-specific value column.
+_MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,all_value,Unpivoted source value stored in the [all_value] type-specific value column.
 _MDD_JCT_QUICKMAR_CLIENTS,Client ID,Unique ID of the Client.
 _MDD_JCT_QUICKMAR_CLIENTS,Client ID Pharmacy,The client's pharmacy-facing ID.
 _MDD_JCT_QUICKMAR_CLIENTS,Client ID MRN,The client's medical record number.
@@ -8927,3 +9402,70 @@ _MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VOCABULARY,Code,The loinc code mapped for t
 _MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VOCABULARY,CodeSystem,The code system value sent in the NPH extract.
 _MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VOCABULARY,DisplayName,A human-friendly name for the measure type.
 _MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VOCABULARY,CodeSystemName,The code system name value sent in the NPH extract.
+_MDD_JCT_X_MYRC_CLIENTS,Client ID,Unique identifier of the client in the agency's MyRC extract.
+_MDD_JCT_X_MYRC_CLIENTS,Client Name First,Client given name supplied in the MyRC extract.
+_MDD_JCT_X_MYRC_CLIENTS,Client Name Middle,Client middle name or middle initial supplied in the MyRC extract.
+_MDD_JCT_X_MYRC_CLIENTS,Client Name Last,Client family name supplied in the MyRC extract.
+_MDD_JCT_X_MYRC_CLIENTS,Client SSN,Client Social Security number supplied in the MyRC extract.
+_MDD_JCT_X_MYRC_CLIENTS,Client Date of Birth,Birth date of the client.
+_MDD_JCT_X_MYRC_CLIENTS,Client MyRC ROI Expiration Date,The date the client's release of information for MyRC expires.
+_MDD_JCT_X_MYRC_CLIENTS,Client Is Eligible for MyRC,Indicates whether the client's MyRC ROI expiration date is on or after the extension execution date.
+_MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client Address ID,Deterministic identifier of the client address row.
+_MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client ID,Unique identifier of the client in the agency's MyRC extract.
+_MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client Address ID Source,"Agency-supplied source identifier for the client address, when available."
+_MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client Address Type,Address type supplied for the client address.
+_MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client Address Line 1,Primary street line of the client address.
+_MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client Address Line 2,Secondary street line of the client address.
+_MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client Address City,City of the client address.
+_MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client Address State,State or province of the client address.
+_MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client Address Postal Code,Postal code of the client address.
+_MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client Address County,County of the client address.
+_MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client Address Is Primary,Indicates whether the source row marked the address as primary.
+_MDD_JCT_X_MYRC_CLIENT_PHONES,Client Phone ID,Deterministic identifier of the client phone row.
+_MDD_JCT_X_MYRC_CLIENT_PHONES,Client ID,Unique identifier of the client in the agency's MyRC extract.
+_MDD_JCT_X_MYRC_CLIENT_PHONES,Client Phone ID Source,"Agency-supplied source identifier for the client phone, when available."
+_MDD_JCT_X_MYRC_CLIENT_PHONES,Client Phone Type,Phone type supplied for the client phone.
+_MDD_JCT_X_MYRC_CLIENT_PHONES,Client Phone Number,Phone number value supplied for the client phone.
+_MDD_JCT_X_MYRC_CLIENT_PHONES,Client Phone Notes,Notes supplied for the client phone.
+_MDD_JCT_X_MYRC_CLIENT_PHONES,Client Phone Is Primary,Indicates whether the source row marked the phone as primary.
+_MDD_JCT_X_MYRC_CLIENT_RACES,Client Race ID,Deterministic identifier of the client race row.
+_MDD_JCT_X_MYRC_CLIENT_RACES,Client ID,Unique identifier of the client in the agency's MyRC extract.
+_MDD_JCT_X_MYRC_CLIENT_RACES,Client Race ID Source,"Agency-supplied source identifier for the client race, when available."
+_MDD_JCT_X_MYRC_CLIENT_RACES,Client Race,Race value associated with the client.
+_MDD_JCT_X_MYRC_CLIENT_RACES,Client Race Is Primary,Indicates whether the source row marked the race value as primary.
+_MDD_JCT_X_MYRC_CLIENT_GENDERS,Client Gender ID,Deterministic identifier of the client gender row.
+_MDD_JCT_X_MYRC_CLIENT_GENDERS,Client ID,Unique identifier of the client in the agency's MyRC extract.
+_MDD_JCT_X_MYRC_CLIENT_GENDERS,Client Gender ID Source,"Agency-supplied source identifier for the client gender value, when available."
+_MDD_JCT_X_MYRC_CLIENT_GENDERS,Client Gender,Gender value associated with the client.
+_MDD_JCT_X_MYRC_CLIENT_GENDERS,Client Gender Is Primary,Indicates whether the source row marked the gender value as primary.
+_MDD_JCT_X_MYRC_PROGRAMS,Program ID,Unique identifier of the program in the agency's MyRC extract.
+_MDD_JCT_X_MYRC_PROGRAMS,Program Name,Name of the program supplied by the agency to avoid MyRC-side translation of program IDs.
+_MDD_JCT_X_MYRC_ENROLLMENTS,Enrollment ID,Unique identifier of the enrollment or program episode in the agency's MyRC extract.
+_MDD_JCT_X_MYRC_ENROLLMENTS,Client ID,Unique identifier of the client in the agency's MyRC extract.
+_MDD_JCT_X_MYRC_ENROLLMENTS,Program ID,Unique identifier of the program in the agency's MyRC extract.
+_MDD_JCT_X_MYRC_ENROLLMENTS,Enrollment Intake Date,The date the enrollment or service began.
+_MDD_JCT_X_MYRC_ENROLLMENTS,Enrollment Status Change Date,The source-system date on which the enrollment status changed.
+_MDD_JCT_X_MYRC_ENROLLMENTS,Enrollment Discharge Date,The source-system discharge date for the enrollment.
+_MDD_JCT_X_MYRC_ENROLLMENTS,Enrollment End Date,"The date the enrollment or service ended, derived from Enrollment Status, Enrollment Discharge Date, and Enrollment Status Change Date."
+_MDD_JCT_X_MYRC_ENROLLMENTS,Enrollment Status,Current status value supplied for the enrollment.
+_MDD_JCT_X_MYRC_ENROLLMENTS,Enrollment Is Eligible for MyRC,Indicates whether the enrollment's client is currently eligible for MyRC.
+_MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,Enrollment Provider ID,Deterministic identifier of the enrollment-provider relationship row.
+_MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,Enrollment ID,Unique identifier of the enrollment or program episode in the agency's MyRC extract.
+_MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,Provider ID,"Agency-supplied source identifier for the provider, when available."
+_MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,Provider Name First,Provider given name supplied in the MyRC extract.
+_MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,Provider Name Middle,Provider middle name supplied in the MyRC extract.
+_MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,Provider Name Last,Provider family name supplied in the MyRC extract.
+_MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,Provider Name,Full provider name derived from the available provider name components.
+_MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,Provider Role,Role value supplied for the provider assignment.
+_MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,Provider Is Primary,Indicates whether the source row marked the provider assignment as primary.
+_MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Enrollment Referral ID,Deterministic identifier of the enrollment-referral relationship row.
+_MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Enrollment ID,Unique identifier of the enrollment or program episode in the agency's MyRC extract.
+_MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Referral ID,"Agency-supplied source identifier for the referral, when available."
+_MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Referral Agency,Agency or organization associated with the referral.
+_MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Referring Provider ID,"Agency-supplied source identifier for the referring provider, when available."
+_MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Referring Provider Name First,Referring provider given name supplied in the MyRC extract.
+_MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Referring Provider Name Last,Referring provider family name supplied in the MyRC extract.
+_MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Referring Provider Name,Full referring provider name derived from the available first and last name components.
+_MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Referring Provider Address,Address supplied for the referring provider.
+_MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Referring Provider Phone,Phone value supplied for the referring provider.
+_MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Referral Information,Free-form referral information supplied in the MyRC extract.

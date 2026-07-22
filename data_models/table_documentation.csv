@@ -163,6 +163,30 @@ _MDD_JCT_CREDIBLE,_MDD_JCT_CREDIBLE_USER_ROLES_CLINICAL,One row per Role record 
 _MDD_JCT_CREDIBLE,_MDD_JCT_CREDIBLE_VITALS,One row per Vital record in the Credible module.
 _MDD_JCT_CREDIBLE,_MDD_JCT_CREDIBLE_VITALS_CURRENT,One row per Vital record in the Credible module.
 _MDD_JCT_CREDIBLE,_MDD_JCT_CREDIBLE_VITAL_MEASURES,One row per Vital record in the Credible module.
+_MDD_JCT_CSS,_MDD_JCT_CSS_SURVEYS,One row per SurveyMonkey survey downloaded for CSS.
+_MDD_JCT_CSS,_MDD_JCT_CSS_SURVEY_PAGES,One row per page within a CSS survey.
+_MDD_JCT_CSS,_MDD_JCT_CSS_SURVEY_QUESTIONS,One row per question within a CSS survey.
+_MDD_JCT_CSS,_MDD_JCT_CSS_SURVEY_SECTIONS,One row per presentation section header within a CSS survey.
+_MDD_JCT_CSS,_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,One row per configured answer choice for a CSS survey question.
+_MDD_JCT_CSS,_MDD_JCT_CSS_SURVEY_RESPONSES,One row per submitted CSS survey response.
+_MDD_JCT_CSS,_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,One row per answer to one CSS survey question within one submitted response.
+_MDD_JCT_CSS,_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,One row per submitted CSS survey response pivoted for the PnP dashboard.
+_MDD_JCT_CSS,_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,One row per CSS survey answer at the PnP dashboard scored-question grain.
+_MDD_JCT_ENTRA,_MDD_JCT_ENTRA_AGENCY,Tenant-level agency and Microsoft Entra organization details.
+_MDD_JCT_ENTRA,_MDD_JCT_ENTRA_USERS,One row per Microsoft Entra user account.
+_MDD_JCT_ENTRA,_MDD_JCT_ENTRA_GROUPS,One row per Microsoft Entra group.
+_MDD_JCT_ENTRA,_MDD_JCT_ENTRA_LOGINS,Microsoft Entra sign-in event history.
+_MDD_JCT_ENTRA,_MDD_JCT_ENTRA_MFA_DEFINITIONS,Reference definition for Microsoft Entra authentication method types and MFA risk/display semantics.
+_MDD_JCT_ENTRA,_MDD_JCT_ENTRA_AUTHENTICATION_METHODS,Configured authentication method for a Microsoft Entra user.
+_MDD_JCT_ENTRA,_MDD_JCT_ENTRA_USERS_MFA,User-by-MFA-method reporting status used to show configured and missing MFA methods.
+_MDD_JCT_ENTRA,_MDD_JCT_ENTRA_USER_GROUPS,"Relationship table joining Microsoft Entra users to groups, enriched with user and group attributes after SQL merge processing."
+_MDD_JCT_ENTRA,_MDD_JCT_ENTRA_USER_GROUP_MEMBERSHIP_STATUS,Relationship-status matrix indicating whether each user is or is not a member of each group.
+_MDD_JCT_ENTRA,_MDD_JCT_ENTRA_USER_LOGIN_HISTORY_SUMMARY,Thirty-day login day count summarized by user.
+_MDD_JCT_ENTRA,_MDD_JCT_ENTRA_LINKS_USERS,Portal link for a Microsoft Entra user.
+_MDD_JCT_ENTRA,_MDD_JCT_ENTRA_LINKS_GROUPS,Portal link for a Microsoft Entra group.
+_MDD_JCT_ENTRA,_MDD_JCT_ENTRA_USERS_UNPIVOT,Technical unpivot-procedure output for the Microsoft Entra users table.
+_MDD_JCT_ENTRA,_MDD_JCT_ENTRA_GROUPS_UNPIVOT,Technical unpivot-procedure output for the Microsoft Entra groups table.
+_MDD_JCT_ENTRA,_MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,Technical unpivot-procedure output for the Microsoft Entra user MFA table.
 _MDD_JCT_QUICKMAR,_MDD_JCT_QUICKMAR_CLIENTS,"One row per client (patient) in QuickMAR, tied to a specific location, also known as a Facility."
 _MDD_JCT_QUICKMAR,_MDD_JCT_QUICKMAR_EMAR_OVERVIEW,One row per overview metric returned by QuickMAR for a location.
 _MDD_JCT_QUICKMAR,_MDD_JCT_QUICKMAR_LOCATIONS,One row per QuickMAR location (a facility or site) that appears in the source data.
@@ -277,3 +301,12 @@ _MDD_JCT_X_CREDIBLE_NPH,_MDD_JCT_X_CREDIBLE_NPH_VISIT_VOCABULARY,NPH extension o
 _MDD_JCT_X_CREDIBLE_NPH,_MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VITALSIGN,NPH extension output for Vitalsign.
 _MDD_JCT_X_CREDIBLE_NPH,_MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VITALSIGNSET,NPH extension output for Vitalsignset.
 _MDD_JCT_X_CREDIBLE_NPH,_MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VOCABULARY,NPH extension output for Vocabulary.
+_MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_CLIENTS,A person whose information is included in the agency's MyRC extract.
+_MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_CLIENT_ADDRESSES,A distinct address associated with a client.
+_MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_CLIENT_PHONES,A distinct telephone contact value associated with a client.
+_MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_CLIENT_RACES,A race value associated with a client. MyRC does not impose a controlled race vocabulary.
+_MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_CLIENT_GENDERS,A gender value associated with a client. Known MyRC values are examples and not a closed vocabulary.
+_MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_PROGRAMS,An agency program in which a client may be enrolled. Program Name is supplied to avoid MyRC-side translation of agency-specific Program IDs.
+_MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_ENROLLMENTS,A client's participation in an agency program. A client may have multiple enrollments.
+_MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,"Relationship rows linking enrollments to distinct provider assignments. Multiple providers, including multiple primary providers, may exist for one enrollment."
+_MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Relationship rows linking enrollments to distinct referral records. Multiple referrals may exist for one enrollment.
