@@ -8,11 +8,83 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css?v=2026-07-22" />
+  <style>
+    .embed-shell {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .form-card {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .form-field {
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .form-field span {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--mdd-medium-grey);
+    }
+
+    .form-field-wide {
+      grid-column: 1 / -1;
+    }
+
+    .form-control {
+      width: 100%;
+      min-height: 42px;
+      padding: 0.65rem 0.8rem;
+      border-radius: 12px;
+      border: 1px solid var(--mdd-border);
+      background: #fff;
+      color: var(--mdd-text);
+      font: inherit;
+    }
+
+    .form-control:focus {
+      outline: 2px solid rgba(0, 138, 216, 0.18);
+      border-color: rgba(0, 138, 216, 0.45);
+    }
+
+    .code-box {
+      min-height: 140px;
+      font-family: var(--mdd-font-mono);
+      resize: vertical;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .helper-text {
+      color: var(--mdd-medium-grey);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 880px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <main class="page">
     <section class="section">
-      <div class="header-card card">
+      <div class="header-card card embed-shell">
         <div>
           <p class="label">Mission Driven Data</p>
           <h1>Embed Generator</h1>
@@ -20,11 +92,13 @@
         </div>
       </div>
 
-      <div class="card form-card">
+      <div class="card form-card embed-shell">
         <div class="form-grid">
           <label class="form-field">
             <span>Data Model</span>
-            <select id="modelSelect" class="form-control"></select>
+            <select id="modelSelect" class="form-control">
+              <option value="">Loading data models...</option>
+            </select>
           </label>
 
           <label class="form-field">
@@ -48,9 +122,197 @@
     </section>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
-  <script src="./app.js?v=2026-07-22"></script>
+  <script>
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      const modelSelect = document.getElementById("modelSelect");
+      const embedUrl = document.getElementById("embedUrl");
+      const embedCode = document.getElementById("embedCode");
+      const copyUrlBtn = document.getElementById("copyUrlBtn");
+      const copyCodeBtn = document.getElementById("copyCodeBtn");
+      const embedStatus = document.getElementById("embedStatus");
+
+      const dataUrl = "./data_model_documentation.csv";
+
+      init().catch((error) => {
+        console.error(error);
+        setStatus("Failed to load data models.", true);
+      });
+
+      async function init() {
+        const csvText = await fetchText(dataUrl);
+        const models = parseDataModels(csvText);
+        populateSelect(models);
+
+        const preferredModel = clean(params.get("data_model_name")) || models[0] || "";
+        if (preferredModel) {
+          modelSelect.value = preferredModel;
+        }
+
+        modelSelect.addEventListener("change", updateOutputs);
+        copyUrlBtn.addEventListener("click", copyUrl);
+        copyCodeBtn.addEventListener("click", copyCode);
+
+        updateOutputs();
+      }
+
+      async function fetchText(path) {
+        const response = await fetch(path, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`Failed to load ${path}: ${response.status}`);
+        }
+        return response.text();
+      }
+
+      function parseDataModels(csvText) {
+        const rows = parseCsv(csvText);
+        const models = rows
+          .map((row) => clean(row["Data Model Name"]))
+          .filter(Boolean);
+        return Array.from(new Set(models)).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" }));
+      }
+
+      function populateSelect(models) {
+        modelSelect.innerHTML = "";
+
+        if (!models.length) {
+          const option = document.createElement("option");
+          option.value = "";
+          option.textContent = "No data models found";
+          modelSelect.appendChild(option);
+          modelSelect.disabled = true;
+          return;
+        }
+
+        models.forEach((model) => {
+          const option = document.createElement("option");
+          option.value = model;
+          option.textContent = model;
+          modelSelect.appendChild(option);
+        });
+      }
+
+      function updateOutputs() {
+        const modelName = modelSelect.value || "";
+        const url = buildEmbeddedUrl(modelName);
+        const iframe = buildEmbedCode(url, modelName);
+
+        embedUrl.value = url;
+        embedCode.value = iframe;
+        setStatus(modelName ? `Generating embed code for ${modelName}.` : "Select a data model to generate embed code.");
+      }
+
+      function buildEmbeddedUrl(modelName) {
+        const url = new URL("embedded.html", window.location.href);
+        if (modelName) {
+          url.searchParams.set("data_model_name", modelName);
+        }
+        return url.toString();
+      }
+
+      function buildEmbedCode(url, modelName) {
+        const safeTitle = modelName ? `${escapeAttribute(modelName)} data model` : "Embedded data model";
+        return `<iframe src="${escapeAttribute(url)}" title="${safeTitle}" width="100%" height="720" style="border:0;border-radius:12px;" loading="lazy"></iframe>`;
+      }
+
+      async function copyUrl() {
+        try {
+          await navigator.clipboard.writeText(embedUrl.value);
+          setStatus("Embed URL copied to clipboard.");
+        } catch (error) {
+          setStatus("Could not copy the URL automatically.");
+          console.log(embedUrl.value);
+        }
+      }
+
+      async function copyCode() {
+        try {
+          await navigator.clipboard.writeText(embedCode.value);
+          setStatus("Embed code copied to clipboard.");
+        } catch (error) {
+          setStatus("Could not copy the embed code automatically.");
+          console.log(embedCode.value);
+        }
+      }
+
+      function setStatus(message, isError) {
+        embedStatus.textContent = message || "";
+        embedStatus.classList.toggle("error", !!isError);
+      }
+
+      function parseCsv(text) {
+        const rows = [];
+        let row = [];
+        let cell = "";
+        let inQuotes = false;
+
+        for (let i = 0; i < text.length; i += 1) {
+          const char = text[i];
+          const next = text[i + 1];
+
+          if (inQuotes) {
+            if (char === '"' && next === '"') {
+              cell += '"';
+              i += 1;
+            } else if (char === '"') {
+              inQuotes = false;
+            } else {
+              cell += char;
+            }
+            continue;
+          }
+
+          if (char === '"') {
+            inQuotes = true;
+          } else if (char === ",") {
+            row.push(cell);
+            cell = "";
+          } else if (char === "\n") {
+            row.push(cell);
+            if (row.some((value) => value.trim() !== "")) {
+              rows.push(row);
+            }
+            row = [];
+            cell = "";
+          } else if (char === "\r") {
+            continue;
+          } else {
+            cell += char;
+          }
+        }
+
+        row.push(cell);
+        if (row.some((value) => value.trim() !== "")) {
+          rows.push(row);
+        }
+
+        if (!rows.length) {
+          return [];
+        }
+
+        const headers = rows.shift().map((header) => header.trim());
+        return rows.map((values) => {
+          const record = {};
+          headers.forEach((header, index) => {
+            record[header] = values[index] ?? "";
+          });
+          return record;
+        });
+      }
+
+      function clean(value) {
+        return (value || "").toString().trim();
+      }
+
+      function escapeAttribute(value) {
+        return clean(value)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#39;");
+      }
+    })();
+  </script>
 </body>
 </html>
