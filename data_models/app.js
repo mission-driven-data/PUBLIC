@@ -302,13 +302,11 @@
         [0, "asc"],
         [1, "asc"],
       ],
+      searching: false,
       pageLength: 100,
       lengthMenu: [25, 50, 100, 250, 500],
       autoWidth: false,
       deferRender: true,
-      language: {
-        search: "Search all columns:",
-      },
     });
   }
 
