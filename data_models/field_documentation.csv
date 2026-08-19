@@ -8251,6 +8251,373 @@ _MDD_JCT_QUICKMAR_VITAL_MEASURES,Medication Cart ID,Unique ID of the Medication 
 _MDD_JCT_QUICKMAR_VITAL_MEASURES,Treatment Cart ID,Unique ID of the Treatment Cart.
 _MDD_JCT_QUICKMAR_VITAL_MEASURES,Client Picture Taken Date,The date and time the client photo was taken.
 _MDD_JCT_QUICKMAR_VITAL_MEASURES,Client Picture Uploaded Date,The date and time the client photo was uploaded.
+_MDD_JCT_RIPPLING_AGENCY,Agency ID,Unique ID of the Agency legal entity represented by this row.
+_MDD_JCT_RIPPLING_AGENCY,Agency ID FEIN,"Tax identifier of the Rippling legal entity, labeled as FEIN by the Rippling JCT module."
+_MDD_JCT_RIPPLING_AGENCY,Agency Name,Legal name of the Rippling legal entity treated as the agency.
+_MDD_JCT_RIPPLING_AGE_GROUPS,Age,Whole-number age value used to map an individual into an age group.
+_MDD_JCT_RIPPLING_AGE_GROUPS,Age Group,A set of predefined age ranges used to group individuals into reporting categories.
+_MDD_JCT_RIPPLING_AGE_GROUPS,Age Group Sort Order,The order by which age groups are sorted in visualizations.
+_MDD_JCT_RIPPLING_TENURE_GROUPS,Tenure,Whole-number tenure value in years used to map an employee into a tenure group.
+_MDD_JCT_RIPPLING_TENURE_GROUPS,Tenure Group,Configured reporting range assigned to an employee tenure value.
+_MDD_JCT_RIPPLING_TENURE_GROUPS,Tenure Group Sort Order,Configured display order for tenure groups.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee ID User ID,Rippling User identifier associated with the employee row.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee ID,"Canonical employee identifier used by this module; it is the Rippling Worker ID when a worker exists, otherwise USER_ followed by the Rippling User ID."
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee ID Agency,Worker number assigned within the organization.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee ID External,Rippling Worker identifier for the employee.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Name First & Last,Employee legal first and family names formatted in first-name then last-name order.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Name First & Last & Employee ID,Employee legal first and family names followed by the agency employee ID in parentheses.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Name Last & First,"Employee legal family and given names formatted in last-name, first-name order."
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Name Last & First & Employee ID,Employee legal family and given names followed by the agency employee ID in parentheses.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Name Last,The employee's legal family name.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Name First,The employee's legal given name.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Name Middle,The employee's middle name or names.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Name Preferred First,The employee's preferred given name.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Name Preferred Last,The employee's preferred family name.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Name Preferred First & Last,Employee preferred given and family names formatted in first-name then last-name order.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Name Preferred First & Last & Employee ID,Employee preferred first-last name followed by the agency employee ID in parentheses.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Name Preferred Last & First,"Employee preferred family and given names formatted in last-name, first-name order."
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Name Preferred Last & First & Employee ID,Employee preferred last-first name followed by the agency employee ID in parentheses.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Name First & Last w/Initial,"Employee legal first and last name with the middle-name value included when present; despite the field label, the current SQL uses the full middle-name value rather than only an initial."
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Name First & Last w/Initial & Employee ID,"Employee legal first-to-last name with middle-name value when present, followed by the Rippling Worker ID in parentheses; the label says initial but the current SQL uses the full middle-name value."
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Name Last & First w/Initial,"Employee legal last-first name with the middle-name value included when present; despite the field label, the current SQL uses the full middle-name value rather than only an initial."
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Name Last & First w/Initial & Employee ID,"Employee legal last-first name with middle-name value when present, followed by the Rippling Worker ID in parentheses; the label says initial but the current SQL uses the full middle-name value."
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Date of Birth,The employee's date of birth.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Age in Years,Employee age expressed as a decimal number of years calculated from date of birth through the current database time.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Age In Years Old,Employee age in completed whole years as of the current database date.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Gender,Rippling gender value recorded for the worker.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Supervisor ID,Rippling Worker ID of the employee's manager.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Supervisor ID Agency,Organization worker number of the employee's manager.
+_MDD_JCT_RIPPLING_EMPLOYEES,Cost Center ID,Identifier of the department used by this module as the employee's cost center.
+_MDD_JCT_RIPPLING_EMPLOYEES,Cost Center Name,Name of the Rippling department modeled by this module as a cost center.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Job Title,Worker's job title in Rippling.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Pay ID,Identifier of the compensation package associated with the worker.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Pay Hourly,Reserved employee hourly-pay field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Benefits Class,Reserved employee benefits-class field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Benefits Date Effective,Reserved benefits effective-date field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Benefits Salary,Reserved benefits salary field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Benefits Salary Date Effective,Reserved benefits-salary effective-date field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Type Code,Rippling employment-type identifier assigned to the worker.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Type Label,Display label of the Rippling company employment type.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Pay Type,"Compensation time period configured for the worker's employment type, such as hourly or salaried."
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Type,"Rippling worker-engagement classification from the employment type, such as employee or contractor."
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Type Amount Worked,"Rippling amount-worked classification from the employment type, such as full-time, part-time, or temporary."
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Hire Date,Start date of the worker's employment or engagement in Rippling.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Hire Date Fiscal Year,Organization fiscal year containing the employee hire date.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Termination Date,End date of the worker's employment or engagement in Rippling.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Termination Date Fiscal Year,Organization fiscal year containing the employee termination date.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Termination Status,Module-derived termination indicator based on whether Employee Termination Date is populated with a value other than blank or 1900-01-01.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Status,Module-derived active/inactive status based on the worker end date; this field does not directly use Rippling's Worker status value.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Tenure Days,Elapsed whole days of tenure from the worker start date to the current database time.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Tenure Years,Elapsed tenure in years from the worker start date to the current database time using 365.25 days per year.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Tax SUI State,Reserved employee state-unemployment-insurance tax field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Tax Status Code,Reserved employee tax-status code field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Tax Status,Reserved employee tax-status description field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Ethnicity ID,Raw Rippling ethnicity classification value recorded for the worker.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Ethnicity,"Human-readable form of the Rippling ethnicity value, created by replacing underscores with spaces and applying title case."
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Race ID,Raw Rippling race classification value recorded for the worker.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Race,Rippling race classification value recorded for the worker; the current module does not transform the source value for display.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Email Home,Employee personal email address normalized to lowercase.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Email Work,Employee work email address normalized to lowercase.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Username,Globally unique Rippling User username used for direct authentication into the associated company.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Is Vendor User,Indicates whether the module identifies the employee as a Rippling vendor user because the username contains rippling.com.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Is External User,Indicates whether the module identifies the employee as external; current logic is identical to Employee Is Vendor User and returns TRUE when the username contains rippling.com.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Tenure Group,Configured tenure group corresponding to Employee Tenure Years.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Tenure Group Sort Order,Configured display order of the employee's tenure group.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Address Home ID FA0,Run-local sequential identifier of the employee's home-address row; it is not stable across module executions.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Address Home 1,Street-address line for the employee's home address.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Address Home 2,Second line of the employee's home address; currently NULL because Address 2 is not populated.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Address Home City,City/locality of the employee's home address.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Address Home State,State/region of the employee's home address.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Address Home Zip,Postal code of the employee's home address.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Address Home County,County of the employee's home address; currently NULL because Address County is not populated.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Address Home Country,Country of the employee's home address.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Address Work ID FA0,Run-local sequential identifier of the employee's work-address row; it is not stable across module executions.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Address Work 1,Street-address line for the employee's work address.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Address Work 2,Second line of the employee's work address; currently NULL because Address 2 is not populated.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Address Work City,City/locality of the employee's work address.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Address Work State,State/region of the employee's work address.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Address Work Zip,Postal code of the employee's work address.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Address Work County,County of the employee's work address; currently NULL because Address County is not populated.
+_MDD_JCT_RIPPLING_EMPLOYEES,Employee Address Work Country,Country of the employee's work address.
+_MDD_JCT_RIPPLING_EMPLOYEES,RLS String,Pipe-delimited list of work email addresses authorized by the supervisory hierarchy to view records associated with the employee.
+_MDD_JCT_RIPPLING_ADDRESSES,Address ID FA0,Run-local sequential address identifier generated with ROW_NUMBER; it is recalculated each module execution and is not a stable source identifier.
+_MDD_JCT_RIPPLING_ADDRESSES,Address ID,"Synthetic address identifier made from object category, address type, and object identifier."
+_MDD_JCT_RIPPLING_ADDRESSES,Object Category,Type of business object to which the contact or demographic record belongs; current Rippling rows use Employee.
+_MDD_JCT_RIPPLING_ADDRESSES,Object Category ID,Module-specific numeric code for Object Category. Current Rippling outputs use different codes by contact/demographic table and these codes are not Rippling API identifiers.
+_MDD_JCT_RIPPLING_ADDRESSES,Object ID,Identifier of the business object associated with the row. Its exact source depends on the row type; nested User child-table id values are propagated from the parent User ID by CommonWSDataset rather than supplied as native address/phone IDs by Rippling.
+_MDD_JCT_RIPPLING_ADDRESSES,Address Type,Module classification of the address as Home or Work.
+_MDD_JCT_RIPPLING_ADDRESSES,Address Type ID,Module-specific numeric code for Address Type: 1 for Home and 2 for Work.
+_MDD_JCT_RIPPLING_ADDRESSES,Address 1,Street-address component of the Rippling User address.
+_MDD_JCT_RIPPLING_ADDRESSES,Address 2,Reserved second address-line field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_ADDRESSES,Address City,City/locality component of the Rippling User address.
+_MDD_JCT_RIPPLING_ADDRESSES,Address State,State/region component of the Rippling User address.
+_MDD_JCT_RIPPLING_ADDRESSES,Address Zip,Postal-code component of the Rippling User address.
+_MDD_JCT_RIPPLING_ADDRESSES,Address County,Reserved county field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_ADDRESSES,Address Country,Country component of the Rippling User address.
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_HOME,Employee Address Home ID FA0,Run-local sequential identifier of the employee's home-address row; it is not stable across module executions.
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_HOME,Employee ID,"Canonical employee identifier used by this module; it is the Rippling Worker ID when a worker exists, otherwise USER_ followed by the Rippling User ID."
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_HOME,Employee Address Home 1,Street-address line for the employee's home address.
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_HOME,Employee Address Home 2,Second line of the employee's home address; currently NULL because Address 2 is not populated.
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_HOME,Employee Address Home City,City/locality of the employee's home address.
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_HOME,Employee Address Home State,State/region of the employee's home address.
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_HOME,Employee Address Home Zip,Postal code of the employee's home address.
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_HOME,Employee Address Home County,County of the employee's home address; currently NULL because Address County is not populated.
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_HOME,Employee Address Home Country,Country of the employee's home address.
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_WORK,Employee Address Work ID FA0,Run-local sequential identifier of the employee's work-address row; it is not stable across module executions.
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_WORK,Employee ID,"Canonical employee identifier used by this module; it is the Rippling Worker ID when a worker exists, otherwise USER_ followed by the Rippling User ID."
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_WORK,Employee Address Work 1,Street-address line for the employee's work address.
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_WORK,Employee Address Work 2,Second line of the employee's work address; currently NULL because Address 2 is not populated.
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_WORK,Employee Address Work City,City/locality of the employee's work address.
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_WORK,Employee Address Work State,State/region of the employee's work address.
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_WORK,Employee Address Work Zip,Postal code of the employee's work address.
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_WORK,Employee Address Work County,County of the employee's work address; currently NULL because Address County is not populated.
+_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_WORK,Employee Address Work Country,Country of the employee's work address.
+_MDD_JCT_RIPPLING_EMAIL,Email ID,"Synthetic email identifier made from object category, email type, and object identifier."
+_MDD_JCT_RIPPLING_EMAIL,Object Category,Type of business object to which the contact or demographic record belongs; current Rippling rows use Employee.
+_MDD_JCT_RIPPLING_EMAIL,Object Category ID,Module-specific numeric code for Object Category. Current Rippling outputs use different codes by contact/demographic table and these codes are not Rippling API identifiers.
+_MDD_JCT_RIPPLING_EMAIL,Object ID,Identifier of the business object associated with the row. Its exact source depends on the row type; nested User child-table id values are propagated from the parent User ID by CommonWSDataset rather than supplied as native address/phone IDs by Rippling.
+_MDD_JCT_RIPPLING_EMAIL,Email Type,Module classification of the email address as Home or Work.
+_MDD_JCT_RIPPLING_EMAIL,Email Type ID,Module-specific numeric code for Email Type: 3 for Home and 1 for Work.
+_MDD_JCT_RIPPLING_EMAIL,Email Address,Trimmed lowercase employee email address sourced from either personal_email or work_email.
+_MDD_JCT_RIPPLING_EMAIL,Email Username,"Portion of Email Address before the domain separator, parsed by the JCT email parser."
+_MDD_JCT_RIPPLING_EMAIL,Email Domain,Domain portion of Email Address parsed by the JCT email parser.
+_MDD_JCT_RIPPLING_EMAIL,Email TLD,Top-level-domain portion of Email Address parsed by the JCT email parser.
+_MDD_JCT_RIPPLING_PHONE,Phone ID,"Synthetic phone identifier made from object category, phone type, and object identifier."
+_MDD_JCT_RIPPLING_PHONE,Object Category,Type of business object to which the contact or demographic record belongs; current Rippling rows use Employee.
+_MDD_JCT_RIPPLING_PHONE,Object Category ID,Module-specific numeric code for Object Category. Current Rippling outputs use different codes by contact/demographic table and these codes are not Rippling API identifiers.
+_MDD_JCT_RIPPLING_PHONE,Object ID,Identifier of the business object associated with the row. Its exact source depends on the row type; nested User child-table id values are propagated from the parent User ID by CommonWSDataset rather than supplied as native address/phone IDs by Rippling.
+_MDD_JCT_RIPPLING_PHONE,Phone Type,"Module classification of the phone number as Home or Work, based on Rippling User phone-number type."
+_MDD_JCT_RIPPLING_PHONE,Phone Type ID,Module-specific numeric code for Phone Type: 2 for Home and 4 for Work.
+_MDD_JCT_RIPPLING_PHONE,Phone Number,"Display value of the Rippling User phone number. Rippling separately documents a canonical RFC3966 value, but this module selects the display field."
+_MDD_JCT_RIPPLING_ETHNICITY,Ethnicity ID Fuzzy A0,Run-local sequential ethnicity-row identifier generated with ROW_NUMBER; it is recalculated each module execution and is not stable.
+_MDD_JCT_RIPPLING_ETHNICITY,Ethnicity ID,"Synthetic ethnicity identifier made from object category, ethnicity type, and object identifier."
+_MDD_JCT_RIPPLING_ETHNICITY,Object Category,Type of business object to which the contact or demographic record belongs; current Rippling rows use Employee.
+_MDD_JCT_RIPPLING_ETHNICITY,Object Category ID,Module-specific numeric code for Object Category. Current Rippling outputs use different codes by contact/demographic table and these codes are not Rippling API identifiers.
+_MDD_JCT_RIPPLING_ETHNICITY,Object ID,Identifier of the business object associated with the row. Its exact source depends on the row type; nested User child-table id values are propagated from the parent User ID by CommonWSDataset rather than supplied as native address/phone IDs by Rippling.
+_MDD_JCT_RIPPLING_ETHNICITY,Ethnicity Type,Module classification of the ethnicity record; current rows are labeled Primary.
+_MDD_JCT_RIPPLING_ETHNICITY,Ethnicity Lookup ID,Raw Rippling ethnicity classification value recorded for the worker.
+_MDD_JCT_RIPPLING_ETHNICITY,Ethnicity,"Human-readable form of the Rippling ethnicity value, created by replacing underscores with spaces and applying title case."
+_MDD_JCT_RIPPLING_ETHNICITY,Ethnicity Type ID,Module-specific numeric code for Ethnicity Type; current Primary rows use 1.
+_MDD_JCT_RIPPLING_COST_CENTERS,Cost Center ID,Identifier of the department used by this module as the employee's cost center.
+_MDD_JCT_RIPPLING_COST_CENTERS,Cost Center Name,Name of the Rippling department modeled by this module as a cost center.
+_MDD_JCT_RIPPLING_SUPERVISORY_RELATIONSHIPS,Supervisor Employee ID,Canonical Employee ID of the supervisor resolved from the supervisor's Rippling Worker ID.
+_MDD_JCT_RIPPLING_SUPERVISORY_RELATIONSHIPS,Supervisor Employee ID Agency,Organization worker number of the supervisor.
+_MDD_JCT_RIPPLING_SUPERVISORY_RELATIONSHIPS,Employee ID Agency,Worker number assigned within the organization.
+_MDD_JCT_RIPPLING_SUPERVISORY_RELATIONSHIPS,Employee ID,"Canonical employee identifier used by this module; it is the Rippling Worker ID when a worker exists, otherwise USER_ followed by the Rippling User ID."
+_MDD_JCT_RIPPLING_SUPERVISORY_RELATIONSHIPS,Supervisor Employee ID External,Rippling Worker ID of the supervisor represented by the relationship.
+_MDD_JCT_RIPPLING_SUPERVISORY_RELATIONSHIPS,Supervisory Relationship Type,Indicates whether the supervisor relationship is direct or was reached indirectly through the management hierarchy.
+_MDD_JCT_RIPPLING_SUPERVISORY_RELATIONSHIPS,Supervisor Name,First-last display name of the supervisor.
+_MDD_JCT_RIPPLING_SUPERVISORY_RELATIONSHIPS,Supervisor Job Title,Job title of the supervisor.
+_MDD_JCT_RIPPLING_SUPERVISORY_RELATIONSHIPS,Employee Name,First-last display name of the employee in the relationship.
+_MDD_JCT_RIPPLING_SUPERVISORY_RELATIONSHIPS,Employee Job Title,Worker's job title in Rippling.
+_MDD_JCT_RIPPLING_PAY_PERIODS,Pay Period ID FA0,Run-local sequential pay-period identifier generated with ROW_NUMBER; it is recalculated each module execution and is not a stable Rippling identifier.
+_MDD_JCT_RIPPLING_PAY_PERIODS,Pay Period Start,Start date of the pay period associated with a Rippling time entry.
+_MDD_JCT_RIPPLING_PAY_PERIODS,Pay Period End,End date of the pay period associated with a Rippling time entry.
+_MDD_JCT_RIPPLING_PAY_PERIODS,Pay Date,Date the module treats as pay date; current Rippling SQL sets it equal to Pay Period End rather than reading a distinct Rippling pay-date field.
+_MDD_JCT_RIPPLING_PAY_PERIODS,Pay Date Sequence ASC,Sequential order of pay periods from earliest to latest Pay Period End.
+_MDD_JCT_RIPPLING_PAY_PERIODS,Pay Date Sequence DESC,Sequential order of pay periods from latest to earliest Pay Period End.
+_MDD_JCT_RIPPLING_PAY_PERIOD_DAYS,Date,Calendar date contained within the pay period.
+_MDD_JCT_RIPPLING_PAY_PERIOD_DAYS,Pay Period ID FA0,Run-local sequential pay-period identifier generated with ROW_NUMBER; it is recalculated each module execution and is not a stable Rippling identifier.
+_MDD_JCT_RIPPLING_PAY_PERIOD_DAYS,Pay Period Start,Start date of the pay period associated with a Rippling time entry.
+_MDD_JCT_RIPPLING_PAY_PERIOD_DAYS,Pay Period End,End date of the pay period associated with a Rippling time entry.
+_MDD_JCT_RIPPLING_PAY_PERIOD_DAYS,Pay Date,Date the module treats as pay date; current Rippling SQL sets it equal to Pay Period End rather than reading a distinct Rippling pay-date field.
+_MDD_JCT_RIPPLING_PAY_PERIOD_DAYS,Pay Date Sequence ASC,Sequential order of pay periods from earliest to latest Pay Period End.
+_MDD_JCT_RIPPLING_PAY_PERIOD_DAYS,Pay Date Sequence DESC,Sequential order of pay periods from latest to earliest Pay Period End.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Punch ID,Rippling TimeEntry identifier for the time-clock punch.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee ID,"Canonical employee identifier used by this module; it is the Rippling Worker ID when a worker exists, otherwise USER_ followed by the Rippling User ID."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Punch Start,Start timestamp of the Rippling TimeEntry.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Punch End,End timestamp of the Rippling TimeEntry.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Punch Status,"Status of the Rippling TimeEntry, such as DRAFT, APPROVED, PAID, or FINALIZED according to current Rippling documentation."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Time Card ID,Identifier of the Rippling time card associated with the TimeEntry.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Punch Duration (Minutes),Elapsed whole minutes between Punch Start and Punch End.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Punch Duration (Hours),Elapsed punch duration in decimal hours calculated from whole elapsed minutes.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Pay Period Start,Start date of the pay period associated with a Rippling time entry.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Pay Period End,End date of the pay period associated with a Rippling time entry.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee ID User ID,Rippling User identifier associated with the employee row.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee ID Agency,Worker number assigned within the organization.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee ID External,Rippling Worker identifier for the employee.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Name First & Last,Employee legal first and family names formatted in first-name then last-name order.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Name First & Last & Employee ID,Employee legal first and family names followed by the agency employee ID in parentheses.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Name Last & First,"Employee legal family and given names formatted in last-name, first-name order."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Name Last & First & Employee ID,Employee legal family and given names followed by the agency employee ID in parentheses.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Name Last,The employee's legal family name.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Name First,The employee's legal given name.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Name Middle,The employee's middle name or names.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Name Preferred First,The employee's preferred given name.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Name Preferred Last,The employee's preferred family name.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Name Preferred First & Last,Employee preferred given and family names formatted in first-name then last-name order.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Name Preferred First & Last & Employee ID,Employee preferred first-last name followed by the agency employee ID in parentheses.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Name Preferred Last & First,"Employee preferred family and given names formatted in last-name, first-name order."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Name Preferred Last & First & Employee ID,Employee preferred last-first name followed by the agency employee ID in parentheses.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Name First & Last w/Initial,"Employee legal first and last name with the middle-name value included when present; despite the field label, the current SQL uses the full middle-name value rather than only an initial."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Name First & Last w/Initial & Employee ID,"Employee legal first-to-last name with middle-name value when present, followed by the Rippling Worker ID in parentheses; the label says initial but the current SQL uses the full middle-name value."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Name Last & First w/Initial,"Employee legal last-first name with the middle-name value included when present; despite the field label, the current SQL uses the full middle-name value rather than only an initial."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Name Last & First w/Initial & Employee ID,"Employee legal last-first name with middle-name value when present, followed by the Rippling Worker ID in parentheses; the label says initial but the current SQL uses the full middle-name value."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Date of Birth,The employee's date of birth.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Age in Years,Employee age expressed as a decimal number of years calculated from date of birth through the current database time.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Age In Years Old,Employee age in completed whole years as of the current database date.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Gender,Rippling gender value recorded for the worker.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Supervisor ID,Rippling Worker ID of the employee's manager.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Supervisor ID Agency,Organization worker number of the employee's manager.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Cost Center ID,Identifier of the department used by this module as the employee's cost center.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Cost Center Name,Name of the Rippling department modeled by this module as a cost center.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Job Title,Worker's job title in Rippling.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Pay ID,Identifier of the compensation package associated with the worker.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Pay Hourly,Reserved employee hourly-pay field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Benefits Class,Reserved employee benefits-class field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Benefits Date Effective,Reserved benefits effective-date field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Benefits Salary,Reserved benefits salary field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Benefits Salary Date Effective,Reserved benefits-salary effective-date field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Type Code,Rippling employment-type identifier assigned to the worker.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Type Label,Display label of the Rippling company employment type.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Pay Type,"Compensation time period configured for the worker's employment type, such as hourly or salaried."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Type,"Rippling worker-engagement classification from the employment type, such as employee or contractor."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Type Amount Worked,"Rippling amount-worked classification from the employment type, such as full-time, part-time, or temporary."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Hire Date,Start date of the worker's employment or engagement in Rippling.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Hire Date Fiscal Year,Organization fiscal year containing the employee hire date.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Termination Date,End date of the worker's employment or engagement in Rippling.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Termination Date Fiscal Year,Organization fiscal year containing the employee termination date.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Termination Status,Module-derived termination indicator based on whether Employee Termination Date is populated with a value other than blank or 1900-01-01.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Status,Module-derived active/inactive status based on the worker end date; this field does not directly use Rippling's Worker status value.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Tenure Days,Elapsed whole days of tenure from the worker start date to the current database time.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Tenure Years,Elapsed tenure in years from the worker start date to the current database time using 365.25 days per year.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Tax SUI State,Reserved employee state-unemployment-insurance tax field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Tax Status Code,Reserved employee tax-status code field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Tax Status,Reserved employee tax-status description field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Ethnicity ID,Raw Rippling ethnicity classification value recorded for the worker.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Ethnicity,"Human-readable form of the Rippling ethnicity value, created by replacing underscores with spaces and applying title case."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Race ID,Raw Rippling race classification value recorded for the worker.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Race,Rippling race classification value recorded for the worker; the current module does not transform the source value for display.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Email Home,Employee personal email address normalized to lowercase.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Email Work,Employee work email address normalized to lowercase.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Username,Globally unique Rippling User username used for direct authentication into the associated company.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Is Vendor User,Indicates whether the module identifies the employee as a Rippling vendor user because the username contains rippling.com.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Is External User,Indicates whether the module identifies the employee as external; current logic is identical to Employee Is Vendor User and returns TRUE when the username contains rippling.com.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Tenure Group,Configured tenure group corresponding to Employee Tenure Years.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Tenure Group Sort Order,Configured display order of the employee's tenure group.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Address Home ID FA0,Run-local sequential identifier of the employee's home-address row; it is not stable across module executions.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Address Home 1,Street-address line for the employee's home address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Address Home 2,Second line of the employee's home address; currently NULL because Address 2 is not populated.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Address Home City,City/locality of the employee's home address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Address Home State,State/region of the employee's home address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Address Home Zip,Postal code of the employee's home address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Address Home County,County of the employee's home address; currently NULL because Address County is not populated.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Address Home Country,Country of the employee's home address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Address Work ID FA0,Run-local sequential identifier of the employee's work-address row; it is not stable across module executions.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Address Work 1,Street-address line for the employee's work address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Address Work 2,Second line of the employee's work address; currently NULL because Address 2 is not populated.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Address Work City,City/locality of the employee's work address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Address Work State,State/region of the employee's work address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Address Work Zip,Postal code of the employee's work address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Address Work County,County of the employee's work address; currently NULL because Address County is not populated.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,Employee Address Work Country,Country of the employee's work address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Punch Segment ID A0,Run-local sequential punch-segment identifier generated with ROW_NUMBER; it is recalculated each module execution and is not stable.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Punch ID,Rippling TimeEntry identifier for the time-clock punch.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Punch Segment Start,Start timestamp of the continuous TimeEntry segment.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Punch Segment End,End timestamp of the continuous TimeEntry segment.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Punch Segment Duration (Minutes),Elapsed whole minutes between Punch Segment Start and Punch Segment End.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Punch Segment Duration (Hours),Elapsed segment duration in decimal hours calculated from whole elapsed minutes.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Punch Segment OT Multiplier,"Overtime multiplier for the segment, defaulted by the module to 1 when Rippling's ot_multiplier is NULL."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Punch Segment Name,"Display name of the segment; when Rippling display_name is NULL and break_type_id is present, the module labels the segment Break."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Punch Segment Is Break,"Text flag produced by the current SQL. The current expression returns True when break_type_id is NULL and False when break_type_id is present, which appears inverted relative to Punch Segment Name's Break fallback logic."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Punch Segment Pay Rate,Effective segment pay rate after applying the overtime multiplier when one is present.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Punch Segment Pay,Calculated pay for the segment using effective pay rate multiplied by segment duration in hours.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee ID,"Canonical employee identifier used by this module; it is the Rippling Worker ID when a worker exists, otherwise USER_ followed by the Rippling User ID."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Punch Start,Start timestamp of the Rippling TimeEntry.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Punch End,End timestamp of the Rippling TimeEntry.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Punch Status,"Status of the Rippling TimeEntry, such as DRAFT, APPROVED, PAID, or FINALIZED according to current Rippling documentation."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Time Card ID,Identifier of the Rippling time card associated with the TimeEntry.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Punch Duration (Minutes),Elapsed whole minutes between Punch Start and Punch End.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Punch Duration (Hours),Elapsed punch duration in decimal hours calculated from whole elapsed minutes.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Pay Period Start,Start date of the pay period associated with a Rippling time entry.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Pay Period End,End date of the pay period associated with a Rippling time entry.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee ID User ID,Rippling User identifier associated with the employee row.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee ID Agency,Worker number assigned within the organization.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee ID External,Rippling Worker identifier for the employee.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Name First & Last,Employee legal first and family names formatted in first-name then last-name order.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Name First & Last & Employee ID,Employee legal first and family names followed by the agency employee ID in parentheses.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Name Last & First,"Employee legal family and given names formatted in last-name, first-name order."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Name Last & First & Employee ID,Employee legal family and given names followed by the agency employee ID in parentheses.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Name Last,The employee's legal family name.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Name First,The employee's legal given name.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Name Middle,The employee's middle name or names.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Name Preferred First,The employee's preferred given name.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Name Preferred Last,The employee's preferred family name.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Name Preferred First & Last,Employee preferred given and family names formatted in first-name then last-name order.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Name Preferred First & Last & Employee ID,Employee preferred first-last name followed by the agency employee ID in parentheses.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Name Preferred Last & First,"Employee preferred family and given names formatted in last-name, first-name order."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Name Preferred Last & First & Employee ID,Employee preferred last-first name followed by the agency employee ID in parentheses.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Name First & Last w/Initial,"Employee legal first and last name with the middle-name value included when present; despite the field label, the current SQL uses the full middle-name value rather than only an initial."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Name First & Last w/Initial & Employee ID,"Employee legal first-to-last name with middle-name value when present, followed by the Rippling Worker ID in parentheses; the label says initial but the current SQL uses the full middle-name value."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Name Last & First w/Initial,"Employee legal last-first name with the middle-name value included when present; despite the field label, the current SQL uses the full middle-name value rather than only an initial."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Name Last & First w/Initial & Employee ID,"Employee legal last-first name with middle-name value when present, followed by the Rippling Worker ID in parentheses; the label says initial but the current SQL uses the full middle-name value."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Date of Birth,The employee's date of birth.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Age in Years,Employee age expressed as a decimal number of years calculated from date of birth through the current database time.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Age In Years Old,Employee age in completed whole years as of the current database date.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Gender,Rippling gender value recorded for the worker.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Supervisor ID,Rippling Worker ID of the employee's manager.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Supervisor ID Agency,Organization worker number of the employee's manager.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Cost Center ID,Identifier of the department used by this module as the employee's cost center.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Cost Center Name,Name of the Rippling department modeled by this module as a cost center.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Job Title,Worker's job title in Rippling.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Pay ID,Identifier of the compensation package associated with the worker.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Pay Hourly,Reserved employee hourly-pay field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Benefits Class,Reserved employee benefits-class field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Benefits Date Effective,Reserved benefits effective-date field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Benefits Salary,Reserved benefits salary field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Benefits Salary Date Effective,Reserved benefits-salary effective-date field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Type Code,Rippling employment-type identifier assigned to the worker.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Type Label,Display label of the Rippling company employment type.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Pay Type,"Compensation time period configured for the worker's employment type, such as hourly or salaried."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Type,"Rippling worker-engagement classification from the employment type, such as employee or contractor."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Type Amount Worked,"Rippling amount-worked classification from the employment type, such as full-time, part-time, or temporary."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Hire Date,Start date of the worker's employment or engagement in Rippling.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Hire Date Fiscal Year,Organization fiscal year containing the employee hire date.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Termination Date,End date of the worker's employment or engagement in Rippling.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Termination Date Fiscal Year,Organization fiscal year containing the employee termination date.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Termination Status,Module-derived termination indicator based on whether Employee Termination Date is populated with a value other than blank or 1900-01-01.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Status,Module-derived active/inactive status based on the worker end date; this field does not directly use Rippling's Worker status value.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Tenure Days,Elapsed whole days of tenure from the worker start date to the current database time.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Tenure Years,Elapsed tenure in years from the worker start date to the current database time using 365.25 days per year.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Tax SUI State,Reserved employee state-unemployment-insurance tax field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Tax Status Code,Reserved employee tax-status code field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Tax Status,Reserved employee tax-status description field; the current Rippling module always sets it to NULL.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Ethnicity ID,Raw Rippling ethnicity classification value recorded for the worker.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Ethnicity,"Human-readable form of the Rippling ethnicity value, created by replacing underscores with spaces and applying title case."
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Race ID,Raw Rippling race classification value recorded for the worker.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Race,Rippling race classification value recorded for the worker; the current module does not transform the source value for display.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Email Home,Employee personal email address normalized to lowercase.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Email Work,Employee work email address normalized to lowercase.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Username,Globally unique Rippling User username used for direct authentication into the associated company.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Is Vendor User,Indicates whether the module identifies the employee as a Rippling vendor user because the username contains rippling.com.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Is External User,Indicates whether the module identifies the employee as external; current logic is identical to Employee Is Vendor User and returns TRUE when the username contains rippling.com.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Tenure Group,Configured tenure group corresponding to Employee Tenure Years.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Tenure Group Sort Order,Configured display order of the employee's tenure group.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Home ID FA0,Run-local sequential identifier of the employee's home-address row; it is not stable across module executions.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Home 1,Street-address line for the employee's home address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Home 2,Second line of the employee's home address; currently NULL because Address 2 is not populated.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Home City,City/locality of the employee's home address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Home State,State/region of the employee's home address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Home Zip,Postal code of the employee's home address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Home County,County of the employee's home address; currently NULL because Address County is not populated.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Home Country,Country of the employee's home address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Work ID FA0,Run-local sequential identifier of the employee's work-address row; it is not stable across module executions.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Work 1,Street-address line for the employee's work address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Work 2,Second line of the employee's work address; currently NULL because Address 2 is not populated.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Work City,City/locality of the employee's work address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Work State,State/region of the employee's work address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Work Zip,Postal code of the employee's work address.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Work County,County of the employee's work address; currently NULL because Address County is not populated.
+_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Work Country,Country of the employee's work address.
+_MDD_JCT_RIPPLING_RLS_UPNS,Employee ID External,Rippling Worker identifier for the employee.
+_MDD_JCT_RIPPLING_RLS_UPNS,Employee ID,"Canonical employee identifier used by this module; it is the Rippling Worker ID when a worker exists, otherwise USER_ followed by the Rippling User ID."
+_MDD_JCT_RIPPLING_RLS_UPNS,Employee Email for RLS,Active employee work email address used as the row-level-security user principal value.
+_MDD_JCT_RIPPLING_RLS_ALWAYS_SUPERVISES,Employee ID,"Canonical employee identifier used by this module; it is the Rippling Worker ID when a worker exists, otherwise USER_ followed by the Rippling User ID."
+_MDD_JCT_RIPPLING_RLS_SUPERVISORY_HIERARCHY,Employee ID,"Canonical employee identifier used by this module; it is the Rippling Worker ID when a worker exists, otherwise USER_ followed by the Rippling User ID."
+_MDD_JCT_RIPPLING_RLS_SUPERVISORY_HIERARCHY,Supervisor Employee ID,Canonical Employee ID of the supervisor resolved from the supervisor's Rippling Worker ID.
+_MDD_JCT_RIPPLING_RLS_SUPERVISORY,Employee ID,"Canonical employee identifier used by this module; it is the Rippling Worker ID when a worker exists, otherwise USER_ followed by the Rippling User ID."
+_MDD_JCT_RIPPLING_RLS_SUPERVISORY,RLS String,Pipe-delimited list of work email addresses authorized by the supervisory hierarchy to view records associated with the employee.
+_MDD_JCT_RIPPLING_RLS_SUPERVISORY,Employee ID Agency,Worker number assigned within the organization.
 _MDD_JCT_X_CREDIBLE_CCBHC_UMD_AGENCY_CONTEXT,Agency ID Hash,SHA2-256 hash of Agency ID concatenated with Agency Domain.
 _MDD_JCT_X_CREDIBLE_CCBHC_UMD_USER_CREDENTIALS,User ID,User identifier from Credible credential records.
 _MDD_JCT_X_CREDIBLE_CCBHC_UMD_USER_CREDENTIALS,Employee_Credential,Pipe-delimited credential names per user.

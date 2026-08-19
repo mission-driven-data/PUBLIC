@@ -4,6 +4,7 @@ _MDD_JCT_CREDIBLE,This is a data model designed to make it easy to interact with
 _MDD_JCT_CSS,Canonical CSS SurveyMonkey model and PnP dashboard outputs built from SR_CSS shared tables.
 _MDD_JCT_ENTRA,"Canonical JCT model for Microsoft Entra ID users, groups, sign-ins, authentication methods, MFA reporting, tenant information, and report-facing unpivot outputs."
 _MDD_JCT_QUICKMAR,This is a data model designed to make it easy to interact with data from the QuickMAR eMAR system.
+_MDD_JCT_RIPPLING,"Canonical Rippling Payroll / HRIS model built from normalized Rippling REST API shared-resource tables. Source API JSON is recursively normalized by CommonWSDataset into SR parent/child tables, then _MDD_JCT_RIPPLING.SQL composes employees, organization structures, contact media, pay periods, time punches, segments, supervisory relationships, and RLS support outputs. Field semantics use SQL/code and the supplied SR discovery pack as structural evidence, with official Rippling REST API documentation used for source-field meaning where available."
 _MDD_JCT_X_CREDIBLE_CCBHC_UMD,Produces CCBHC UMD service-level output for Credible with agency and proxy identifiers.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE,"Data model for Mission Driven Data's integration between Credible and Eleos, preserving Eleos-requested field mappings, source references, and export semantics."
 _MDD_JCT_X_CREDIBLE_FINANCIALS,"Semantic documentation for Credible financial, accounting, and general ledger extension outputs."

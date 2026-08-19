@@ -196,6 +196,26 @@ _MDD_JCT_QUICKMAR,_MDD_JCT_QUICKMAR_ORDER_ITEMS,"One row per order item in Quick
 _MDD_JCT_QUICKMAR,_MDD_JCT_QUICKMAR_ORDER_MISSED,"One row per scheduled medication administration that is considered missed by module logic, with related order item and client details merged in."
 _MDD_JCT_QUICKMAR,_MDD_JCT_QUICKMAR_TELEMETRY,"One row per captured QuickMAR API or ETL telemetry record used to understand API calls, statuses, and errors."
 _MDD_JCT_QUICKMAR,_MDD_JCT_QUICKMAR_VITAL_MEASURES,"One row per vital measurement recorded in QuickMAR, with related client and order details merged in."
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_AGENCY,Represents Rippling legal entities as agencies for the Payroll / HRIS module.
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_AGE_GROUPS,Provides configured reporting bands for whole-number ages.
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_TENURE_GROUPS,Provides configured reporting bands for employee tenure in whole years.
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_EMPLOYEES,"Canonical employee/staff record assembled from Rippling User and Worker data, employment type, department/cost-center data, tenure groupings, employee addresses, and row-level-security metadata."
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_ADDRESSES,Normalizes employee home and work addresses from Rippling User address objects into a common address entity.
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_HOME,Employee-only home-address projection used both as a persisted helper entity and as a source for fields merged into Employee.
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_ADDRESSES_EMPLOYEE_WORK,Employee-only work-address projection used both as a persisted helper entity and as a source for fields merged into Employee.
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_EMAIL,Normalizes employee personal and work email addresses into a contact-medium entity and derives email components.
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_PHONE,Normalizes employee home and work phone-number display values from Rippling User data.
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_ETHNICITY,Represents the employee's primary Rippling ethnicity classification as a descriptive attribute.
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_COST_CENTERS,Models Rippling departments as payroll/HRIS cost centers.
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_SUPERVISORY_RELATIONSHIPS,Represents direct and recursively derived indirect employee-to-supervisor relationships.
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_PAY_PERIODS,Builds distinct payroll periods observed on Rippling TimeEntry responses and assigns module sequencing fields.
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_PAY_PERIOD_DAYS,Expands each observed pay period to one row for every calendar date within the period.
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_TIMECLOCK_PUNCHES,"Represents Rippling TimeEntry clock/work periods, enriched with final employee attributes available before the module's later RLS merge."
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_TIMECLOCK_PUNCH_SEGMENTS,"Represents continuous work/break segments nested inside Rippling TimeEntry data, enriched with parent punch and employee attributes."
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_RLS_UPNS,Technical row-level-security lookup of active employees to their work-email user principal values.
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_RLS_ALWAYS_SUPERVISES,Persistent operational list of employees granted universal supervisory visibility for Rippling row-level security.
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_RLS_SUPERVISORY_HIERARCHY,"Technical employee-to-supervisor visibility relationship used to implement row-level security. It includes direct/indirect supervisors, self visibility, and configured universal supervisors."
+_MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_RLS_SUPERVISORY,Aggregates supervisory user-principal emails into a row-level-security access string for each employee.
 _MDD_JCT_X_CREDIBLE_CCBHC_UMD,_MDD_JCT_X_CREDIBLE_CCBHC_UMD_AGENCY_CONTEXT,"One-row agency context table used to stamp static agency values onto UMD output, including passthrough columns from [_MDD_JCT_X_CREDIBLE_CCBHC_UMD_AGENCY_CONTEXT_CUSTOM] when present."
 _MDD_JCT_X_CREDIBLE_CCBHC_UMD,_MDD_JCT_X_CREDIBLE_CCBHC_UMD_USER_CREDENTIALS,Aggregated credential strings per user for UMD enrichment.
 _MDD_JCT_X_CREDIBLE_CCBHC_UMD,_MDD_JCT_X_CREDIBLE_CCBHC_UMD_CLIENT_ACTIVE_DIAGNOSIS,Client/date diagnosis rollup for UMD enrichment.
