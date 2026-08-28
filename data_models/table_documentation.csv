@@ -321,6 +321,11 @@ _MDD_JCT_X_CREDIBLE_NPH,_MDD_JCT_X_CREDIBLE_NPH_VISIT_VOCABULARY,NPH extension o
 _MDD_JCT_X_CREDIBLE_NPH,_MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VITALSIGN,NPH extension output for Vitalsign.
 _MDD_JCT_X_CREDIBLE_NPH,_MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VITALSIGNSET,NPH extension output for Vitalsignset.
 _MDD_JCT_X_CREDIBLE_NPH,_MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VOCABULARY,NPH extension output for Vocabulary.
+_MDD_JCT_X_CREDIBLE_QUICKMAR,_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX,Operational relationship table that deduplicates agency-approved matches between Credible clients and QuickMAR clients.
+_MDD_JCT_X_CREDIBLE_QUICKMAR,_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENTS,Combined cross-system client record used to validate Credible and QuickMAR identity alignment.
+_MDD_JCT_X_CREDIBLE_QUICKMAR,_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Validation output identifying missing or inconsistent client matches between Credible and QuickMAR.
+_MDD_JCT_X_CREDIBLE_QUICKMAR,_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Technical staging output that normalizes Credible medication rows and QuickMAR order-item rows into one reconciliation shape.
+_MDD_JCT_X_CREDIBLE_QUICKMAR,_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Business-facing medication reconciliation output comparing active Credible and QuickMAR medications and flagging approval and cross-system discrepancies.
 _MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_CLIENTS,A person whose information is included in the agency's MyRC extract.
 _MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_CLIENT_ADDRESSES,A distinct address associated with a client.
 _MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_CLIENT_PHONES,A distinct telephone contact value associated with a client.

@@ -10,4 +10,5 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE,"Data model for Mission Driven Data's integ
 _MDD_JCT_X_CREDIBLE_FINANCIALS,"Semantic documentation for Credible financial, accounting, and general ledger extension outputs."
 _MDD_JCT_X_CREDIBLE_MEDICAL_PROFILE,BMI percentile curve and BMI plot-point extension for Credible EHR medical profile analytics.
 _MDD_JCT_X_CREDIBLE_NPH,"Semantic documentation for the Credible NPH extension, with field/table context derived from inline and block SQL comments."
+_MDD_JCT_X_CREDIBLE_QUICKMAR,Semantic documentation for the Credible QuickMAR extension that aligns clients across Credible and QuickMAR and reconciles active medication records across both systems.
 _MDD_JCT_X_MYRC,"Normalizes an agency-supplied MyRC enrollment extract into client, address, phone, race, gender, program, enrollment, provider, and referral entities."

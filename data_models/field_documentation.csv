@@ -9769,6 +9769,110 @@ _MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VOCABULARY,Code,The loinc code mapped for t
 _MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VOCABULARY,CodeSystem,The code system value sent in the NPH extract.
 _MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VOCABULARY,DisplayName,A human-friendly name for the measure type.
 _MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VOCABULARY,CodeSystemName,The code system name value sent in the NPH extract.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX,Client ID Credible,Client ID Credible value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX,Client ID QuickMAR,Client ID QuickMAR value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX,Client Link,Client Link value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENTS,Client Crosswalk ID,Client Crosswalk ID value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENTS,Client ID Credible,Client ID Credible value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENTS,Client ID External Credible,Client ID External Credible value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENTS,Client Name First & Last Credible,Client Name First & Last Credible value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENTS,Client Date of Birth Credible,Client Date of Birth Credible value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENTS,Client Status Credible,Client Status Credible value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENTS,Client ID FA1 Credible,Client ID FA1 Credible value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENTS,Client ID QuickMAR,Client ID QuickMAR value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENTS,Client Name First & Last QuickMAR,Client Name First & Last QuickMAR value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENTS,Client Date of Birth QuickMAR,Client Date of Birth QuickMAR value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENTS,Client Status QuickMAR,Client Status QuickMAR value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENTS,Client ID FA1 QuickMAR,Client ID FA1 QuickMAR value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENTS,Client ID MRN,Client ID MRN value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENTS,Location ID QuickMAR,Location ID QuickMAR value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENTS,Crosswalk Validation,Crosswalk Validation value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Cx_Errors_UID,Cx_Errors_UID value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Total QuickMAR Clients per First & Last Name,Total QuickMAR Clients per First & Last Name value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Total Credible Clients per First & Last Name,Total Credible Clients per First & Last Name value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,DB source,DB source value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Client Crosswalk ID,Client Crosswalk ID value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Crosswalk Validation,Crosswalk Validation value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Count Matching with Error,Count Matching with Error value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Count No Matches,Count No Matches value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Cx Error Type,Cx Error Type value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Cx Error Type Detail,Cx Error Type Detail value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Cx Error Type Detail FA1,Cx Error Type Detail FA1 value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Client ID MRN,Client ID MRN value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Client ID QM,Client ID QM value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Client ID Credible,Client ID Credible value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Client ID External Credible,Client ID External Credible value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Client ID FA1 QM,Client ID FA1 QM value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Client ID FA1 Credible,Client ID FA1 Credible value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Client Name First & Last QM,Client Name First & Last QM value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Client Name First & Last Credible,Client Name First & Last Credible value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Client Date of Birth QM,Client Date of Birth QM value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Client Date of Birth Credible,Client Date of Birth Credible value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Client ID Social Security Number,Client ID Social Security Number value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Client ID Fuzzy A2,Client ID Fuzzy A2 value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Client Status,Client Status value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_CLIENT_CX_ERRORS,Active Ct in Credible Has Active Medications in Credible,Active Ct in Credible Has Active Medications in Credible value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Medication Reconciliation ID,Medication Reconciliation ID value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Client Crosswalk ID,Client Crosswalk ID value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Client ID Credible,Client ID Credible value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Client ID QuickMAR,Client ID QuickMAR value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Location ID QuickMAR,Location ID QuickMAR value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Medication Source System,Medication Source System value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Medication Source Record ID,Medication Source Record ID value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Medication Name,Medication Name value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Medication Status,Medication Status value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Medication Start,Medication Start value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Medication End,Medication End value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Medication Instructions,Medication Instructions value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Medication Strength,Medication Strength value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Medication Strength Unit,Medication Strength Unit value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Medication ID National Drug Code,Medication ID National Drug Code value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Medication ID RxNorm,Medication ID RxNorm value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Medication Order ID,Medication Order ID value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Medication Order Type,Medication Order Type value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Medication Source Status,Medication Source Status value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Medication Approval Status,Medication Approval Status value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,# Days Pending,# Days Pending value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,Medication Prescription Status,Medication Prescription Status value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,client link,client link value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDS,client link medications,client link medications value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Medication Reconciliation ID,Medication Reconciliation ID value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Client Crosswalk ID,Client Crosswalk ID value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Client ID Credible,Client ID Credible value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Client ID QuickMAR,Client ID QuickMAR value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Location ID QuickMAR,Location ID QuickMAR value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Medication Source System,Medication Source System value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Medication Source Record ID,Medication Source Record ID value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Medication Name,Medication Name value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Medication Status,Medication Status value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Medication Start,Medication Start value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Medication End,Medication End value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Medication Instructions,Medication Instructions value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Medication Strength,Medication Strength value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Medication Strength Unit,Medication Strength Unit value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Medication ID National Drug Code,Medication ID National Drug Code value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Medication ID RxNorm,Medication ID RxNorm value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Medication Order ID,Medication Order ID value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Medication Order Type,Medication Order Type value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Medication Source Status,Medication Source Status value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Medication Approval Status,Medication Approval Status value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,# Days Pending,# Days Pending value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Medication Prescription Status,Medication Prescription Status value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,client link,client link value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,client link medications,client link medications value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Flag for Needs review Pending Unapproved,Flag for Needs review Pending Unapproved value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Filter 1,Filter 1 value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Filter 1 Label,Filter 1 Label value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Next Medication Start,Next Medication Start value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Next Medication Order ID,Next Medication Order ID value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Next Medication Instruction,Next Medication Instruction value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Next Medication Status,Next Medication Status value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Next Medication Approval Status,Next Medication Approval Status value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Next Medication # Days in Pending,Next Medication # Days in Pending value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Flag Credible Active Not In QuickMAR,Flag Credible Active Not In QuickMAR value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Filter 2,Filter 2 value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Filter 2 Label,Filter 2 Label value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Flag QuickMAR Active Not In Credible,Flag QuickMAR Active Not In Credible value represented in the Credible QuickMAR extension output.
 _MDD_JCT_X_MYRC_CLIENTS,Client ID,Unique identifier of the client in the agency's MyRC extract.
 _MDD_JCT_X_MYRC_CLIENTS,Client Name First,Client given name supplied in the MyRC extract.
 _MDD_JCT_X_MYRC_CLIENTS,Client Name Middle,Client middle name or middle initial supplied in the MyRC extract.
