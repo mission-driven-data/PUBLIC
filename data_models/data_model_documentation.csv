@@ -1,5 +1,6 @@
 Data Model Name,Data Model Description
 _MDD_JCT,Creates shared framework routines and core reference tables used across JCT modules and extensions.
+_MDD_JCT_ALERTS,Builds the current set of custom JCT Alerts email events and current SQL validation findings using Trigger ID as the sole durable event identity.
 _MDD_JCT_CREDIBLE,This is a data model designed to make it easy to interact with data from the Credible EHR.
 _MDD_JCT_CSS,Canonical CSS SurveyMonkey model and PnP dashboard outputs built from SR_CSS shared tables.
 _MDD_JCT_ENTRA,"Canonical JCT model for Microsoft Entra ID users, groups, sign-ins, authentication methods, MFA reporting, tenant information, and report-facing unpivot outputs."

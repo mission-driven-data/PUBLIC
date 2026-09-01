@@ -48,6 +48,28 @@ _MDD_JCT_REPORT_DESIGN_MDD,hex_visual_color_muted_1,Muted visualization color 1 
 _MDD_JCT_REPORT_DESIGN_MDD,hex_visual_color_muted_2,Muted visualization color 2 in hex format.
 _MDD_JCT_REPORT_DESIGN_MDD,hex_dashboard_background,Dashboard background color in hex format.
 _MDD_JCT_REPORT_DESIGN_MDD,logo_mdd,URL to the Mission Driven Data logo asset.
+_MDD_JCT_ALERTS,Alert ID,"Deterministic identifier for one alert event, derived only from the Trigger ID."
+_MDD_JCT_ALERTS,Alert Source,Comma-separated list of schema-qualified dbo tables or views that contributed valid rows to the alert event.
+_MDD_JCT_ALERTS,Alert JCT,Indicates that the source records are eligible for JCT Alerts processing. Rows in this table have this value normalized to true.
+_MDD_JCT_ALERTS,Trigger ID,Globally unique identifier supplied by source data for the logical alert event. JCT Alerts uses this value alone to determine whether the event has already been processed.
+_MDD_JCT_ALERTS,Alert Recipient,Comma-separated list of distinct normalized lowercase email addresses to which the alert event should be sent.
+_MDD_JCT_ALERTS,Alert Subject,Optional email subject supplied by the alert source.
+_MDD_JCT_ALERTS,Alert Header,Optional prominent heading supplied by the alert source for display in the email body.
+_MDD_JCT_ALERTS,Alert Message,Optional introductory text supplied by the alert source for display before the alert record details.
+_MDD_JCT_ALERTS,Alert Include Fields,Optional ordered list of source data fields that are allowed to appear in the generated alert detail table.
+_MDD_JCT_ALERTS,Alert Exclude Fields,Optional list of source data fields that must be omitted from the generated alert detail table.
+_MDD_JCT_ALERTS,Alert CTA Label,Optional text supplied by the alert source for the email call-to-action button.
+_MDD_JCT_ALERTS,Alert CTA Link,Optional destination link supplied by the alert source for the email call-to-action button.
+_MDD_JCT_ALERTS,Alert Data,JSON object containing the alert event's non-control source fields for display in the generated alert detail table.
+_MDD_JCT_ALERTS_VALIDATION,Alert Validation ID,Identifier for one validation finding within the current JCT Alerts module run.
+_MDD_JCT_ALERTS_VALIDATION,Alert Source,"Schema-qualified dbo source object associated with the validation finding, or a comma-separated list of contributing source objects when the finding applies to a Trigger ID spanning multiple sources."
+_MDD_JCT_ALERTS_VALIDATION,Trigger ID,Source Trigger ID associated with the validation finding when it can be determined.
+_MDD_JCT_ALERTS_VALIDATION,Alert Recipient,Normalized alert recipient value or recipient set associated with the validation finding when it can be determined.
+_MDD_JCT_ALERTS_VALIDATION,Alert Validation Scope,"Indicates whether the validation finding applies to a source object, an individual source row, or an aggregated Trigger ID."
+_MDD_JCT_ALERTS_VALIDATION,Alert Validation Field,Canonical JCT Alerts field associated with the validation finding when the issue concerns a specific field.
+_MDD_JCT_ALERTS_VALIDATION,Alert Validation Code,Stable machine-readable code identifying the type of validation finding.
+_MDD_JCT_ALERTS_VALIDATION,Alert Validation Severity,Severity assigned to the validation finding.
+_MDD_JCT_ALERTS_VALIDATION,Alert Validation Details,Human-readable explanation of the validation finding that does not include alert message content or arbitrary source data.
 _MDD_JCT_CREDIBLE_ACCOUNTS,Account Number,
 _MDD_JCT_CREDIBLE_ACCOUNTS,A1,
 _MDD_JCT_CREDIBLE_ACCOUNTS,A2,
