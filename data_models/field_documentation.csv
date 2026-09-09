@@ -7413,6 +7413,291 @@ _MDD_JCT_CREDIBLE_VITAL_MEASURES,Measure LOINC,The loinc code mapped for the mea
 _MDD_JCT_CREDIBLE_VITAL_MEASURES,Measure Value,"The value as recorded, kept as text."
 _MDD_JCT_CREDIBLE_VITAL_MEASURES,Measure Value Float,The value parsed into a number when possible.
 _MDD_JCT_CREDIBLE_VITAL_MEASURES,Measure LOINC Link,
+_MDD_JCT_CSS_EHR_CLIENTS,Client ID,Client ID for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Name First,Client Name First for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Name Last,Client Name Last for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Name,Client Name for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Name & ID,Client Name & ID for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Link,Client Link for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Status,Client Status for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Invitation Language ID,Client Invitation Language ID for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Invitation Language Name,Client Invitation Language Name for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Consents,Client Consents for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Phone Original,Client Phone Original for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Phone Formatted,Client Phone Formatted for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Phone Status,Client Phone Status for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Filter 1 Name,Client Filter 1 Name for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Filter 1 Value,Client Filter 1 Value for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Filter 2 Name,Client Filter 2 Name for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Filter 2 Value,Client Filter 2 Value for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Filter 3 Name,Client Filter 3 Name for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Filter 3 Value,Client Filter 3 Value for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Count,Client Count for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Phone Count,Client Phone Count for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Validation ID,Client Validation ID for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Validation ID Message,Client Validation ID Message for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Validation Phone,Client Validation Phone for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Validation Phone Message,Client Validation Phone Message for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Phone Sharing,Client Phone Sharing for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Phone Sharing List,Client Phone Sharing List for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Validation Consents,Client Validation Consents for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Validation Consents Message,Client Validation Consents Message for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Validation Count,Client Validation Count for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Validation Count Message,Client Validation Count Message for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Validation Invitation Language ID,Client Validation Invitation Language ID for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Validation Invitation Language ID Message,Client Validation Invitation Language ID Message for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Validation Invitation Language Name,Client Validation Invitation Language Name for the Client entity.
+_MDD_JCT_CSS_EHR_CLIENTS,Client Validation Invitation Language Name Message,Client Validation Invitation Language Name Message for the Client entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode ID,Episode ID for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client ID,Client ID for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Start Original,Episode Start Original for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Start Date,Episode Start Date for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode End Original,Episode End Original for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode End Date,Episode End Date for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Length of Stay Days,Episode Length of Stay Days for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Status,Episode Status for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Program Name,Program Name for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Filter 1 Name,Episode Filter 1 Name for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Filter 1 Value,Episode Filter 1 Value for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Filter 2 Name,Episode Filter 2 Name for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Filter 2 Value,Episode Filter 2 Value for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Filter 3 Name,Episode Filter 3 Name for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Filter 3 Value,Episode Filter 3 Value for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Count,Episode Count for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Name First,Client Name First for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Name Last,Client Name Last for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Name,Client Name for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Name & ID,Client Name & ID for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Link,Client Link for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Status,Client Status for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Invitation Language ID,Client Invitation Language ID for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Invitation Language Name,Client Invitation Language Name for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Consents,Client Consents for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Phone Original,Client Phone Original for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Phone Formatted,Client Phone Formatted for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Phone Status,Client Phone Status for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Filter 1 Name,Client Filter 1 Name for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Filter 1 Value,Client Filter 1 Value for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Filter 2 Name,Client Filter 2 Name for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Filter 2 Value,Client Filter 2 Value for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Filter 3 Name,Client Filter 3 Name for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Filter 3 Value,Client Filter 3 Value for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Count,Client Count for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Phone Count,Client Phone Count for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Validation ID,Client Validation ID for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Validation ID Message,Client Validation ID Message for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Validation Phone,Client Validation Phone for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Validation Phone Message,Client Validation Phone Message for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Phone Sharing,Client Phone Sharing for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Phone Sharing List,Client Phone Sharing List for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Validation Consents,Client Validation Consents for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Validation Consents Message,Client Validation Consents Message for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Validation Count,Client Validation Count for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Validation Count Message,Client Validation Count Message for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Validation Invitation Language ID,Client Validation Invitation Language ID for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Validation Invitation Language ID Message,Client Validation Invitation Language ID Message for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Validation Invitation Language Name,Client Validation Invitation Language Name for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Client Validation Invitation Language Name Message,Client Validation Invitation Language Name Message for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Validation Count,Episode Validation Count for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Validation Count Message,Episode Validation Count Message for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Validation Client ID,Episode Validation Client ID for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Validation Client ID Message,Episode Validation Client ID Message for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Validation Start Date,Episode Validation Start Date for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Validation Start Date Message,Episode Validation Start Date Message for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Validation End Date,Episode Validation End Date for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Validation End Date Message,Episode Validation End Date Message for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Validation Date Range,Episode Validation Date Range for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Validation Date Range Message,Episode Validation Date Range Message for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Validation Status,Episode Validation Status for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Episode Validation Status Message,Episode Validation Status Message for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Program Validation Name,Program Validation Name for the Episode entity.
+_MDD_JCT_CSS_EHR_EPISODES,Program Validation Name Message,Program Validation Name Message for the Episode entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service ID,Service ID for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client ID,Client ID for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Name,Service Name for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Start Original,Service Start Original for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Start Date,Service Start Date for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service End Original,Service End Original for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service End Date,Service End Date for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Filter 1 Name,Service Filter 1 Name for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Filter 1 Value,Service Filter 1 Value for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Filter 2 Name,Service Filter 2 Name for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Filter 2 Value,Service Filter 2 Value for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Filter 3 Name,Service Filter 3 Name for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Filter 3 Value,Service Filter 3 Value for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Count,Service Count for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Name First,Client Name First for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Name Last,Client Name Last for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Name,Client Name for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Name & ID,Client Name & ID for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Link,Client Link for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Status,Client Status for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Invitation Language ID,Client Invitation Language ID for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Invitation Language Name,Client Invitation Language Name for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Consents,Client Consents for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Phone Original,Client Phone Original for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Phone Formatted,Client Phone Formatted for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Phone Status,Client Phone Status for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Filter 1 Name,Client Filter 1 Name for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Filter 1 Value,Client Filter 1 Value for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Filter 2 Name,Client Filter 2 Name for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Filter 2 Value,Client Filter 2 Value for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Filter 3 Name,Client Filter 3 Name for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Filter 3 Value,Client Filter 3 Value for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Count,Client Count for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Phone Count,Client Phone Count for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Validation ID,Client Validation ID for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Validation ID Message,Client Validation ID Message for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Validation Phone,Client Validation Phone for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Validation Phone Message,Client Validation Phone Message for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Phone Sharing,Client Phone Sharing for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Phone Sharing List,Client Phone Sharing List for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Validation Consents,Client Validation Consents for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Validation Consents Message,Client Validation Consents Message for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Validation Count,Client Validation Count for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Validation Count Message,Client Validation Count Message for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Validation Invitation Language ID,Client Validation Invitation Language ID for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Validation Invitation Language ID Message,Client Validation Invitation Language ID Message for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Validation Invitation Language Name,Client Validation Invitation Language Name for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Client Validation Invitation Language Name Message,Client Validation Invitation Language Name Message for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Validation Count,Service Validation Count for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Validation Count Message,Service Validation Count Message for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Validation Client ID,Service Validation Client ID for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Validation Client ID Message,Service Validation Client ID Message for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Validation Start Date,Service Validation Start Date for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Validation Start Date Message,Service Validation Start Date Message for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Validation Name,Service Validation Name for the Service entity.
+_MDD_JCT_CSS_EHR_SERVICES,Service Validation Name Message,Service Validation Name Message for the Service entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Client ID,Client ID for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Episode ID,Episode ID for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Invitation ID,Invitation ID for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Invitation Type,Invitation Type for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Invitation Type ID,Invitation Type ID for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Type Order,Type Order for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Invitation Message Language Name 1,Invitation Message Language Name 1 for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Invitation Message Language Name 2,Invitation Message Language Name 2 for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Invitation Message Language Name 3,Invitation Message Language Name 3 for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Invitation Message Language 1,Invitation Message Language 1 for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Invitation Message Language 2,Invitation Message Language 2 for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Invitation Message Language 3,Invitation Message Language 3 for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Invitation Eligibility Days After Intake Min,Invitation Eligibility Days After Intake Min for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Invitation Eligiblity Days After Intake Max,Invitation Eligiblity Days After Intake Max for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Invitation Requires Intake To Be Open,Invitation Requires Intake To Be Open for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Invitation Intake Lookback Days,Invitation Intake Lookback Days for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Type Invite Every X Days,Type Invite Every X Days for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Type Event Date,Type Event Date for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Type Event Status,Type Event Status for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Type Invitation Status,Type Invitation Status for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,Type Invitation Status Message,Type Invitation Status Message for the Intake Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Client ID,Client ID for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Episode ID,Episode ID for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Invitation ID,Invitation ID for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Invitation Type,Invitation Type for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Invitation Type ID,Invitation Type ID for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Type Order,Type Order for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Invitation Message Language Name 1,Invitation Message Language Name 1 for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Invitation Message Language Name 2,Invitation Message Language Name 2 for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Invitation Message Language Name 3,Invitation Message Language Name 3 for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Invitation Message Language 1,Invitation Message Language 1 for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Invitation Message Language 2,Invitation Message Language 2 for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Invitation Message Language 3,Invitation Message Language 3 for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Invitation Eligibility Days After Discharge Min,Invitation Eligibility Days After Discharge Min for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Invitation Eligiblity Days After Discharge Max,Invitation Eligiblity Days After Discharge Max for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Invitation Requires Discharge To Be Closed,Invitation Requires Discharge To Be Closed for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Invitation Discharge Lookback Days,Invitation Discharge Lookback Days for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Type Invite Every X Days,Type Invite Every X Days for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Type Event Date,Type Event Date for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Type Event Status,Type Event Status for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Type Invitation Status,Type Invitation Status for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,Type Invitation Status Message,Type Invitation Status Message for the Discharge Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Client ID,Client ID for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Service ID,Service ID for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Invitation ID,Invitation ID for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Invitation Type,Invitation Type for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Invitation Type ID,Invitation Type ID for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Type Order,Type Order for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Invitation Message Language Name 1,Invitation Message Language Name 1 for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Invitation Message Language Name 2,Invitation Message Language Name 2 for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Invitation Message Language Name 3,Invitation Message Language Name 3 for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Invitation Message Language 1,Invitation Message Language 1 for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Invitation Message Language 2,Invitation Message Language 2 for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Invitation Message Language 3,Invitation Message Language 3 for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Invitation Eligibility Days After Service Min,Invitation Eligibility Days After Service Min for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Invitation Eligiblity Days After Service Max,Invitation Eligiblity Days After Service Max for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Invitation Service Lookback Days,Invitation Service Lookback Days for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Type Invite Every X Days,Type Invite Every X Days for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Type Event Date,Type Event Date for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Type Event Status,Type Event Status for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Type Invitation Status,Type Invitation Status for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,Type Invitation Status Message,Type Invitation Status Message for the Service Invitation Candidate entity.
+_MDD_JCT_CSS_EHR_CLIENTS_VALIDATION,Client Validation ID,"Unique key for the finding, combining the client ID with the validation message."
+_MDD_JCT_CSS_EHR_CLIENTS_VALIDATION,Client ID,Client ID for the Client Validation entity.
+_MDD_JCT_CSS_EHR_CLIENTS_VALIDATION,Client Validation Message,Plain-English description of the data-quality problem found on this client.
+_MDD_JCT_CSS_EHR_EPISODES_VALIDATION,Episode Validation ID,"Unique key for the finding, combining the episode ID with the validation message."
+_MDD_JCT_CSS_EHR_EPISODES_VALIDATION,Episode ID,Episode ID for the Episode Validation entity.
+_MDD_JCT_CSS_EHR_EPISODES_VALIDATION,Client ID,Client ID for the Episode Validation entity.
+_MDD_JCT_CSS_EHR_EPISODES_VALIDATION,Episode Validation Message,Plain-English description of the data-quality problem found on this episode.
+_MDD_JCT_CSS_EHR_SERVICES_VALIDATION,Service Validation ID,"Unique key for the finding, combining the service ID with the validation message."
+_MDD_JCT_CSS_EHR_SERVICES_VALIDATION,Service ID,Service ID for the Service Validation entity.
+_MDD_JCT_CSS_EHR_SERVICES_VALIDATION,Client ID,Client ID for the Service Validation entity.
+_MDD_JCT_CSS_EHR_SERVICES_VALIDATION,Service Validation Message,Plain-English description of the data-quality problem found on this service.
+_MDD_JCT_CSS_INVITATIONS,Client ID,Client ID for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Client Name,Client Name for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Client Phone Formatted,Client Phone Formatted for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Episode ID,Episode ID for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Service ID,Service ID for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation ID,"Stable identifier for the invitation, encoding the anchor record and slot, for example {ITK123}-{01}-{C456}. Unique within the table."
+_MDD_JCT_CSS_INVITATIONS,Invitation Type,Invitation Type for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Type ID,Invitation Type ID for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Type Order,Type Order for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Message Language Name 1,Invitation Message Language Name 1 for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Message Language Name 2,Invitation Message Language Name 2 for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Message Language Name 3,Invitation Message Language Name 3 for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Message Language 1,Invitation Message Language 1 for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Message Language 2,Invitation Message Language 2 for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Message Language 3,Invitation Message Language 3 for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Message,"The message text that will be sent, already resolved to the client's invitation language."
+_MDD_JCT_CSS_INVITATIONS,Invitation Eligibility Days After Intake Min,Invitation Eligibility Days After Intake Min for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Eligiblity Days After Intake Max,Invitation Eligiblity Days After Intake Max for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Requires Intake To Be Open,Invitation Requires Intake To Be Open for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Intake Lookback Days,Invitation Intake Lookback Days for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Eligibility Days After Discharge Min,Invitation Eligibility Days After Discharge Min for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Eligiblity Days After Discharge Max,Invitation Eligiblity Days After Discharge Max for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Requires Discharge To Be Closed,Invitation Requires Discharge To Be Closed for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Discharge Lookback Days,Invitation Discharge Lookback Days for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Eligibility Days After Service Min,Invitation Eligibility Days After Service Min for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Eligiblity Days After Service Max,Invitation Eligiblity Days After Service Max for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Service Lookback Days,Invitation Service Lookback Days for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Type Invite Every X Days,Type Invite Every X Days for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Type Event Date,Type Event Date for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Type Event Status,Type Event Status for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Type Invitation Status,Type Invitation Status for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Type Invitation Status Message,Type Invitation Status Message for the Invitation entity.
+_MDD_JCT_CSS_INVITATIONS,Invitation Status,Eligibility decision for this invitation. Only rows reading Eligible are sent by Apps/CSS.py.
+_MDD_JCT_CSS_INVITATIONS,Invitation Status Message,"Plain-English reason for the invitation status, written for agency staff."
+_MDD_JCT_CSS_HISTORY,Message ID,Twilio message SID for this send attempt. Unique per attempt.
+_MDD_JCT_CSS_HISTORY,Client ID,Client ID for the Invitation Message entity.
+_MDD_JCT_CSS_HISTORY,Client Name,Client name as currently known. May be blank for historic sends whose client has left the CSS dataset.
+_MDD_JCT_CSS_HISTORY,Episode ID,Episode ID for the Invitation Message entity.
+_MDD_JCT_CSS_HISTORY,Invitation ID,The invitation this message was sent for. Matches [Trigger ID] in the Twilio message archive.
+_MDD_JCT_CSS_HISTORY,Invitation Type,"Name of the invitation slot this message belongs to. Falls back to a type parsed from the invitation ID, suffixed (historic), when the invitation has left the queue."
+_MDD_JCT_CSS_HISTORY,Message Date,Message Date for the Invitation Message entity.
+_MDD_JCT_CSS_HISTORY,Message Content,Message Content for the Invitation Message entity.
+_MDD_JCT_CSS_HISTORY,Message Recipient,Message Recipient for the Invitation Message entity.
+_MDD_JCT_CSS_HISTORY,Message Status,"Delivery status normalized into agency-facing categories: Sent/Delivered, Undelivered, or the title-cased Twilio status."
+_MDD_JCT_CSS_HISTORY,Message Status Update Date,Message Status Update Date for the Invitation Message entity.
+_MDD_JCT_CSS_HISTORY,Message Error Code,Message Error Code for the Invitation Message entity.
+_MDD_JCT_CSS_HISTORY,Message Error Message,"Twilio error text, with invalid-phone-number variants collapsed to Invalid Phone Number."
+_MDD_JCT_CSS_HISTORY,Message Error Plain English Explanation,Message Error Plain English Explanation for the Invitation Message entity.
+_MDD_JCT_CSS_HISTORY,Message Status Full Explanation,"Plain-English explanation of why the message ended in its current status, including the carrier-error explanation when one applies."
+_MDD_JCT_CSS_HISTORY,Message Attempt Number,"Sequence of this attempt within its invitation, oldest first, starting at 1."
+_MDD_JCT_CSS_HISTORY,Message Is Latest Attempt,"1 when this is the most recent attempt for the invitation, otherwise 0. Use to reduce the table to current state."
+_MDD_JCT_CSS_HISTORY,Invitation Outcome,"Delivered when any attempt for this invitation reached the recipient, otherwise Never Delivered. One value per invitation, so it can be counted without double-counting retries."
+_MDD_JCT_CSS_HISTORY,Invitation No Longer In Queue,"1 when the invitation no longer appears in _MDD_JCT_CSS_INVITATIONS, meaning identity came from the crosswalk or the invitation ID rather than the live queue."
+_MDD_JCT_CSS_SMS_SETTINGS,CSS Go Live Date,Date on which the agency begins sending real CSS invitations.
+_MDD_JCT_CSS_SMS_SETTINGS,CSS In Production,"True when the current date has reached the go-live date, otherwise False."
+_MDD_JCT_CSS_SMS_SETTINGS,CSS Maximum Daily Messages,Maximum CSS invitations a single client may receive in one day. Invitations beyond the cap are suppressed as Invalid.
+_MDD_JCT_CSS_SMS_SETTINGS,CSS Maximum Weekly Messages,Maximum CSS invitations a single client may receive in one week.
 _MDD_JCT_CSS_SURVEYS,Survey ID,Survey ID for the Survey entity.
 _MDD_JCT_CSS_SURVEYS,Survey ID CSS,Survey ID CSS for the Survey entity.
 _MDD_JCT_CSS_SURVEYS,Survey ID SurveyMonkey,Survey ID SurveyMonkey for the Survey entity.
@@ -7517,6 +7802,7 @@ _MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Response ID,Survey Response ID for
 _MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Response ID CSS,Survey Response ID CSS for the Survey Question Response entity.
 _MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Question ID,Survey Question ID for the Survey Question Response entity.
 _MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Question ID SurveyMonkey,Survey Question ID SurveyMonkey for the Survey Question Response entity.
+_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Question Key,Survey Question Key for the Survey Question Response entity.
 _MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Page ID,Survey Page ID for the Survey Question Response entity.
 _MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Page ID SurveyMonkey,Survey Page ID SurveyMonkey for the Survey Question Response entity.
 _MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Answer Choice ID,Survey Answer Choice ID for the Survey Question Response entity.
@@ -7525,55 +7811,42 @@ _MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Answer Row ID SurveyMonkey,Survey 
 _MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Answer Other ID SurveyMonkey,Survey Answer Other ID SurveyMonkey for the Survey Question Response entity.
 _MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Question Response Text,Survey Question Response Text for the Survey Question Response entity.
 _MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Question Response Free Text,Survey Question Response Free Text for the Survey Question Response entity.
-_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Question Text Display,Agency-configured wording displayed for the Survey Question Response entity.
 _MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Question Response Weight,Survey Question Response Weight for the Survey Question Response entity.
 _MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,Survey Question Response Source Database,Survey Question Response Source Database for the Survey Question Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response ID,Survey Response ID for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response ID CSS,Survey Response ID CSS for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Gender,Survey Response Gender for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Age Group,Survey Response Age Group for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Completer Type,Survey Response Completer Type for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Completer Self Or Other,Survey Response Completer Self Or Other for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Primary Language,Survey Response Primary Language for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response County,Survey Response County for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Access Appointment Ease,Survey Response Access Appointment Ease for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Access Appointment Schedule,Survey Response Access Appointment Schedule for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Access Between Appointment Help,Survey Response Access Between Appointment Help for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Quality Staff Respect,Survey Response Quality Staff Respect for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Quality Staff Explanation,Survey Response Quality Staff Explanation for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Quality Provider Listening,Survey Response Quality Provider Listening for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Quality Treatment Decision Involvement,Survey Response Quality Treatment Decision Involvement for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Culture Respect,Survey Response Culture Respect for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Identity Need Sensitivity,Survey Response Identity Need Sensitivity for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Preferred Language Availability,Survey Response Preferred Language Availability for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Service Location Convenience,Survey Response Service Location Convenience for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Service Access Difficulty,Survey Response Service Access Difficulty for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Support System Strengthening,Survey Response Support System Strengthening for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Crisis Coping Improvement,Survey Response Crisis Coping Improvement for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Mental Health Improvement,Survey Response Mental Health Improvement for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Recommend Organization,Survey Response Recommend Organization for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Overall Satisfaction,Survey Response Overall Satisfaction for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Doing Well Comment,Survey Response Doing Well Comment for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Improvement Comment,Survey Response Improvement Comment for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Additional Comment,Survey Response Additional Comment for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Evening Weekend Appointment Help,Survey Response Evening Weekend Appointment Help for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Evening Weekend Time Preference,Survey Response Evening Weekend Time Preference for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Race,Survey Response Race for the Survey Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,Survey Response Program,Survey Response Program for the Survey Response entity.
 _MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Response ID,Survey Question Response ID for the Survey Question Response entity.
 _MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Response ID CSS,Survey Question Response ID CSS for the Survey Question Response entity.
 _MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response ID,Survey Response ID for the Survey Question Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Gender,Survey Response Gender for the Survey Question Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Race,Survey Response Race for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Key,Survey Question Key for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 1 Question Key,Survey Response Filter 1 Question Key for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 1 Title,Survey Response Filter 1 Title for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 1 Value,Survey Response Filter 1 Value for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 2 Question Key,Survey Response Filter 2 Question Key for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 2 Title,Survey Response Filter 2 Title for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 2 Value,Survey Response Filter 2 Value for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 3 Question Key,Survey Response Filter 3 Question Key for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 3 Title,Survey Response Filter 3 Title for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 3 Value,Survey Response Filter 3 Value for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 4 Question Key,Survey Response Filter 4 Question Key for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 4 Title,Survey Response Filter 4 Title for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 4 Value,Survey Response Filter 4 Value for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 5 Question Key,Survey Response Filter 5 Question Key for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 5 Title,Survey Response Filter 5 Title for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 5 Value,Survey Response Filter 5 Value for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 6 Question Key,Survey Response Filter 6 Question Key for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 6 Title,Survey Response Filter 6 Title for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 6 Value,Survey Response Filter 6 Value for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 7 Question Key,Survey Response Filter 7 Question Key for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 7 Title,Survey Response Filter 7 Title for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Filter 7 Value,Survey Response Filter 7 Value for the Survey Question Response entity.
 _MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Program,Survey Response Program for the Survey Question Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Age Group,Survey Response Age Group for the Survey Question Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Completer Type,Survey Response Completer Type for the Survey Question Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Completer Self Or Other,Survey Response Completer Self Or Other for the Survey Question Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Primary Language,Survey Response Primary Language for the Survey Question Response entity.
-_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response County,Survey Response County for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Response Program Agg,Survey Response Program Agg for the Survey Question Response entity.
 _MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Section ID,Survey Section ID for the Survey Question Response entity.
 _MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Section Name,Survey Section Name for the Survey Question Response entity.
 _MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Text,Survey Question Text for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Text Display,Survey Question Text Display for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Type,Survey Question Type for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Text Raw,Survey Question Text Raw for the Survey Question Response entity.
+_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Response Text,Survey Question Response Text for the Survey Question Response entity.
 _MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Response Weight,Survey Question Response Weight for the Survey Question Response entity.
 _MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Response Interpretation,Survey Question Response Interpretation for the Survey Question Response entity.
 _MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,Survey Question Response Is Top 2 Box,Survey Question Response Is Top 2 Box for the Survey Question Response entity.

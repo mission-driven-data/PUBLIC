@@ -165,6 +165,18 @@ _MDD_JCT_CREDIBLE,_MDD_JCT_CREDIBLE_USER_ROLES_CLINICAL,One row per Role record 
 _MDD_JCT_CREDIBLE,_MDD_JCT_CREDIBLE_VITALS,One row per Vital record in the Credible module.
 _MDD_JCT_CREDIBLE,_MDD_JCT_CREDIBLE_VITALS_CURRENT,One row per Vital record in the Credible module.
 _MDD_JCT_CREDIBLE,_MDD_JCT_CREDIBLE_VITAL_MEASURES,One row per Vital record in the Credible module.
+_MDD_JCT_CSS,_MDD_JCT_CSS_EHR_CLIENTS,"Formatted and validated client data used by the CSS module. Sourced from the agency-maintained custom table, with phone formatting, validation messages and duplicate detection applied. Rows with no current invitation candidate are pruned during the run."
+_MDD_JCT_CSS,_MDD_JCT_CSS_EHR_EPISODES,"Formatted and validated episode data used by the CSS module. Sourced from the agency-maintained custom table, with phone formatting, validation messages and duplicate detection applied. Rows with no current invitation candidate are pruned during the run."
+_MDD_JCT_CSS,_MDD_JCT_CSS_EHR_SERVICES,"Formatted and validated service data used by the CSS module. Sourced from the agency-maintained custom table, with phone formatting, validation messages and duplicate detection applied. Rows with no current invitation candidate are pruned during the run."
+_MDD_JCT_CSS,_MDD_JCT_CSS_RECIPIENTS_BY_INTAKE_STACKED,"Candidate intake invitations expanded from agency metadata. Each configured invitation slot produces one row per eligible episode, carrying that slot's timing windows, message text per language, and any slot-level status override."
+_MDD_JCT_CSS,_MDD_JCT_CSS_RECIPIENTS_BY_DISCHARGE_STACKED,"Candidate discharge invitations expanded from agency metadata. Each configured invitation slot produces one row per eligible episode, carrying that slot's timing windows, message text per language, and any slot-level status override."
+_MDD_JCT_CSS,_MDD_JCT_CSS_RECIPIENTS_BY_SERVICE_STACKED,"Candidate service invitations expanded from agency metadata. Each configured invitation slot produces one row per eligible service, carrying that slot's timing windows, message text per language, and any slot-level status override."
+_MDD_JCT_CSS,_MDD_JCT_CSS_EHR_CLIENTS_VALIDATION,"Data-quality findings for client records used by CSS. One row per distinct problem found, so a single client may appear more than once. Rows reading 'No Client Validation Errors' are excluded."
+_MDD_JCT_CSS,_MDD_JCT_CSS_EHR_EPISODES_VALIDATION,"Data-quality findings for episode records used by CSS. One row per distinct problem found, so a single episode may appear more than once. Rows reading 'No Episode Validation Errors' are excluded."
+_MDD_JCT_CSS,_MDD_JCT_CSS_EHR_SERVICES_VALIDATION,"Data-quality findings for service records used by CSS. One row per distinct problem found, so a single service may appear more than once. Rows reading 'No Service Validation Errors' are excluded."
+_MDD_JCT_CSS,_MDD_JCT_CSS_INVITATIONS,"The operational send queue. One row per client/episode or client/service invitation slot, carrying the resolved message text, the eligibility decision in [Invitation Status], and a plain-English reason in [Invitation Status Message]. Apps/CSS.py sends only rows whose [Invitation Status] is Eligible."
+_MDD_JCT_CSS,_MDD_JCT_CSS_HISTORY,"Historic record of every SMS invitation attempt, including delivery status and the plain-English explanation of any carrier error. Built from the durable Twilio message archive rather than the current invitation queue, so send history survives after an episode or service ages out of the queue."
+_MDD_JCT_CSS,_MDD_JCT_CSS_SMS_SETTINGS,"The resolved SMS send configuration, converted from agency metadata parameters into a single row for the sender and for reporting. Covers the go-live date, whether sending is currently live, and the daily and weekly per-client message caps."
 _MDD_JCT_CSS,_MDD_JCT_CSS_SURVEYS,One row per SurveyMonkey survey downloaded for CSS.
 _MDD_JCT_CSS,_MDD_JCT_CSS_SURVEY_PAGES,One row per page within a CSS survey.
 _MDD_JCT_CSS,_MDD_JCT_CSS_SURVEY_QUESTIONS,One row per question within a CSS survey.
@@ -172,7 +184,6 @@ _MDD_JCT_CSS,_MDD_JCT_CSS_SURVEY_SECTIONS,One row per presentation section heade
 _MDD_JCT_CSS,_MDD_JCT_CSS_SURVEY_ANSWER_CHOICES,One row per configured answer choice for a CSS survey question.
 _MDD_JCT_CSS,_MDD_JCT_CSS_SURVEY_RESPONSES,One row per submitted CSS survey response.
 _MDD_JCT_CSS,_MDD_JCT_CSS_SURVEY_QUESTION_RESPONSES,One row per answer to one CSS survey question within one submitted response.
-_MDD_JCT_CSS,_MDD_JCT_CSS_PNP_SURVEY_RESPONSES,One row per submitted CSS survey response pivoted for the PnP dashboard.
 _MDD_JCT_CSS,_MDD_JCT_CSS_PNP_SURVEY_QUESTION_RESPONSES,One row per CSS survey answer at the PnP dashboard scored-question grain.
 _MDD_JCT_ENTRA,_MDD_JCT_ENTRA_AGENCY,Tenant-level agency and Microsoft Entra organization details.
 _MDD_JCT_ENTRA,_MDD_JCT_ENTRA_USERS,One row per Microsoft Entra user account.
