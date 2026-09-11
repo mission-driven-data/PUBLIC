@@ -7899,6 +7899,7 @@ _MDD_JCT_ENTRA_USERS,User Usage Location,User Usage Location value for the user 
 _MDD_JCT_ENTRA_USERS,User Job Title,User Job Title value for the user record.
 _MDD_JCT_ENTRA_USERS,User Department,User Department value for the user record.
 _MDD_JCT_ENTRA_USERS,User Type,Type or category classification for the record.
+_MDD_JCT_ENTRA_USERS,User Account Type,"The kind of Microsoft Entra account: Member, Guest, or Shared. Guest accounts stay Guest. Any other account that is not synced from on-premises Active Directory (no on-premises domain name or immutable ID) is labeled Shared. This separates shared mailboxes from staff accounts, but cloud-only staff accounts are labeled Shared too."
 _MDD_JCT_ENTRA_USERS,User Is Active,True/false or status-like indicator for the record.
 _MDD_JCT_ENTRA_USERS,User Status,Status classification for the record.
 _MDD_JCT_ENTRA_USERS,User Employment Status,Status classification for the record.
@@ -8050,6 +8051,7 @@ _MDD_JCT_ENTRA_USER_GROUPS,User Usage Location,User Usage Location value for the
 _MDD_JCT_ENTRA_USER_GROUPS,User Job Title,User Job Title value for the _mdd_jct_entra_user_groups record.
 _MDD_JCT_ENTRA_USER_GROUPS,User Department,User Department value for the _mdd_jct_entra_user_groups record.
 _MDD_JCT_ENTRA_USER_GROUPS,User Type,Type or category classification for the record.
+_MDD_JCT_ENTRA_USER_GROUPS,User Account Type,"The kind of Microsoft Entra account: Member, Guest, or Shared. Guest accounts stay Guest. Any other account that is not synced from on-premises Active Directory (no on-premises domain name or immutable ID) is labeled Shared. This separates shared mailboxes from staff accounts, but cloud-only staff accounts are labeled Shared too."
 _MDD_JCT_ENTRA_USER_GROUPS,User Is Active,True/false or status-like indicator for the record.
 _MDD_JCT_ENTRA_USER_GROUPS,User Status,Status classification for the record.
 _MDD_JCT_ENTRA_USER_GROUPS,User Employment Status,Status classification for the record.
