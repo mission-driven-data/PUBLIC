@@ -10201,6 +10201,11 @@ _MDD_JCT_X_MYRC_CLIENT_RACES,Client ID,Unique identifier of the client in the ag
 _MDD_JCT_X_MYRC_CLIENT_RACES,Client Race ID Source,"Agency-supplied source identifier for the client race, when available."
 _MDD_JCT_X_MYRC_CLIENT_RACES,Client Race,Race value associated with the client.
 _MDD_JCT_X_MYRC_CLIENT_RACES,Client Race Is Primary,Indicates whether the source row marked the race value as primary.
+_MDD_JCT_X_MYRC_CLIENT_ETHNICITIES,Client Ethnicity ID,Deterministic identifier of the client ethnicity row.
+_MDD_JCT_X_MYRC_CLIENT_ETHNICITIES,Client ID,Unique identifier of the client in the agency's MyRC extract.
+_MDD_JCT_X_MYRC_CLIENT_ETHNICITIES,Client Ethnicity ID Source,"Agency-supplied source identifier for the client ethnicity, when available."
+_MDD_JCT_X_MYRC_CLIENT_ETHNICITIES,Client Ethnicity,Ethnicity value associated with the client.
+_MDD_JCT_X_MYRC_CLIENT_ETHNICITIES,Client Ethnicity Is Primary,Indicates whether the source row marked the ethnicity value as primary.
 _MDD_JCT_X_MYRC_CLIENT_GENDERS,Client Gender ID,Deterministic identifier of the client gender row.
 _MDD_JCT_X_MYRC_CLIENT_GENDERS,Client ID,Unique identifier of the client in the agency's MyRC extract.
 _MDD_JCT_X_MYRC_CLIENT_GENDERS,Client Gender ID Source,"Agency-supplied source identifier for the client gender value, when available."

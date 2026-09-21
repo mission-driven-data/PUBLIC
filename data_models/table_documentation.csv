@@ -343,6 +343,7 @@ _MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_CLIENTS,A person whose information is included i
 _MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_CLIENT_ADDRESSES,A distinct address associated with a client.
 _MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_CLIENT_PHONES,A distinct telephone contact value associated with a client.
 _MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_CLIENT_RACES,A race value associated with a client. MyRC does not impose a controlled race vocabulary.
+_MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_CLIENT_ETHNICITIES,An ethnicity value associated with a client. MyRC does not impose a controlled ethnicity vocabulary.
 _MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_CLIENT_GENDERS,A gender value associated with a client. Known MyRC values are examples and not a closed vocabulary.
 _MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_PROGRAMS,An agency program in which a client may be enrolled. Program Name is supplied to avoid MyRC-side translation of agency-specific Program IDs.
 _MDD_JCT_X_MYRC,_MDD_JCT_X_MYRC_ENROLLMENTS,A client's participation in an agency program. A client may have multiple enrollments.
