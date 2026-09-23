@@ -1,0 +1,295 @@
+:root {
+  --mdd-highlight: #ff9f00;
+  --mdd-primary: #008ad8;
+  --mdd-text: #08284d;
+  --mdd-background: #f5f6fa;
+  --mdd-medium-grey: #5276a0;
+  --mdd-surface: #ffffff;
+  --mdd-border: rgba(82, 118, 160, 0.18);
+  --mdd-font-display: "Poppins", sans-serif;
+  --mdd-font-body: "Source Sans Pro", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--mdd-background);
+  color: var(--mdd-text);
+  font-family: var(--mdd-font-body);
+}
+
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 92% 8%, rgba(0, 138, 216, 0.08), transparent 28%),
+    radial-gradient(circle at 6% 94%, rgba(255, 159, 0, 0.08), transparent 24%),
+    var(--mdd-background);
+}
+
+.section {
+  padding: clamp(1rem, 2vw, 2rem);
+}
+
+.card {
+  background: var(--mdd-surface);
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(8, 40, 77, 0.08);
+  padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+.header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.brand-logo {
+  display: block;
+  height: 26px;
+  width: auto;
+  margin-bottom: 0.85rem;
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--mdd-font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  line-height: 1.1;
+  color: var(--mdd-text);
+}
+
+.subhead {
+  margin: 0.45rem 0 0;
+  max-width: 62ch;
+  color: var(--mdd-medium-grey);
+}
+
+.header-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(0, 138, 216, 0.12);
+  color: var(--mdd-primary);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.read-at {
+  font-size: 0.85rem;
+  color: var(--mdd-medium-grey);
+  white-space: nowrap;
+}
+
+.button-secondary {
+  min-height: 36px;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  background: var(--mdd-surface);
+  color: var(--mdd-primary);
+  border: 1px solid rgba(0, 138, 216, 0.22);
+  font-family: var(--mdd-font-body);
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.button-secondary:hover:enabled {
+  box-shadow: 0 10px 22px rgba(0, 138, 216, 0.12);
+}
+
+.button-secondary:disabled {
+  color: var(--mdd-medium-grey);
+  border-color: var(--mdd-border);
+  cursor: default;
+}
+
+.note-card {
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--mdd-highlight);
+}
+
+.note-card p {
+  margin: 0 0 0.7rem;
+  max-width: 78ch;
+  color: var(--mdd-text);
+}
+
+.note-card p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--mdd-primary);
+  font-weight: 600;
+}
+
+.status-banner:empty {
+  display: none;
+}
+
+.status-banner {
+  margin-bottom: 0.75rem;
+  color: var(--mdd-medium-grey);
+  font-weight: 600;
+}
+
+.status-banner.error {
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(185, 58, 19, 0.3);
+  background: rgba(185, 58, 19, 0.06);
+  color: #b93a13;
+}
+
+/* Shown only once there are rows to put in it, by app.js. */
+.table-wrap {
+  display: none;
+  overflow-x: auto;
+}
+
+body.has-list .table-wrap {
+  display: block;
+}
+
+/* DataTables draws its own scrolling body, so the search box and the column headers
+   stay put while the reader scrolls the list. */
+div.dt-scroll-body {
+  border-bottom: 1px solid var(--mdd-border);
+}
+
+table.dataTable thead th {
+  font-family: var(--mdd-font-display);
+  font-weight: 600;
+  color: var(--mdd-text);
+}
+
+table.dataTable tbody td {
+  color: var(--mdd-text);
+}
+
+.dt-search {
+  margin-bottom: 0.6rem;
+}
+
+.dt-search input {
+  min-height: 36px;
+  padding: 0.4rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid var(--mdd-border);
+  font: inherit;
+  color: var(--mdd-text);
+}
+
+.dt-search input:focus {
+  outline: 2px solid rgba(0, 138, 216, 0.18);
+  border-color: rgba(0, 138, 216, 0.45);
+}
+
+/* Embedded in an iframe the page has a fixed budget, so the chrome shrinks and the
+   table takes the space that is left. */
+/* Embedded, the page gets exactly the height its frame gives it, so the header keeps
+   its size and the list takes whatever is left. DataTables sizes its own scroll body
+   with an inline height, so that job is handed back to the flex column here. */
+body.embedded {
+  height: 100vh;
+}
+
+body.embedded .page {
+  height: 100%;
+  min-height: 0;
+}
+
+body.embedded .section,
+body.embedded .table-card,
+body.embedded.has-list .table-wrap,
+body.embedded div.dt-container,
+body.embedded div.dt-layout-row.dt-layout-table,
+body.embedded div.dt-layout-row.dt-layout-table > div.dt-layout-cell,
+body.embedded div.dt-scroll {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+body.embedded .section {
+  height: 100%;
+}
+
+body.embedded .header-card,
+body.embedded div.dt-layout-row:not(.dt-layout-table),
+body.embedded div.dt-scroll-head {
+  flex: 0 0 auto;
+}
+
+body.embedded .table-card,
+body.embedded .table-wrap,
+body.embedded div.dt-container,
+body.embedded div.dt-layout-row.dt-layout-table,
+body.embedded div.dt-layout-row.dt-layout-table > div.dt-layout-cell,
+body.embedded div.dt-scroll,
+body.embedded div.dt-scroll-body {
+  flex: 1 1 auto;
+}
+
+body.embedded div.dt-scroll-body {
+  min-height: 0;
+  height: auto !important;
+  max-height: none !important;
+}
+
+body.embedded .section {
+  padding: 0.85rem;
+}
+
+body.embedded .card {
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(8, 40, 77, 0.07);
+  padding: 0.9rem 1rem;
+}
+
+body.embedded .header-card {
+  margin-bottom: 0.75rem;
+}
+
+body.embedded .brand-logo {
+  height: 20px;
+  margin-bottom: 0.6rem;
+}
+
+body.embedded h1 {
+  font-size: 1.35rem;
+}
+
+body.embedded .subhead {
+  font-size: 0.92rem;
+  max-width: 70ch;
+}
+
+@media (max-width: 880px) {
+  .header-card {
+    flex-direction: column;
+  }
+
+  .header-meta {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
