@@ -9680,7 +9680,7 @@ _MDD_JCT_X_CREDIBLE_NPH_EVENTS,Appointment Updated Date,The appointment updated 
 _MDD_JCT_X_CREDIBLE_NPH_EVENTS,Appointment End,The appointment end value sent in the NPH extract.
 _MDD_JCT_X_CREDIBLE_NPH_EVENTS,Appointment Start,The appointment start value sent in the NPH extract.
 _MDD_JCT_X_CREDIBLE_NPH_EVENTS,EHR Assessment Type Code,The ehr assessment type code value sent in the NPH extract.
-_MDD_JCT_X_CREDIBLE_NPH_EVENTS,Event Type,The event type value sent in the NPH extract.
+_MDD_JCT_X_CREDIBLE_NPH_EVENTS,Event Type,"The event type value sent in the NPH extract. Only CRISIS, ISERV and SDOH are accepted; the agency specifics may emit other values but the extension discards them. CRISIS becomes a Crisis Contact assessment, ISERV an IServ Contact, and SDOH a social drivers screening whose date comes from the event rather than from the service it may sit in."
 _MDD_JCT_X_CREDIBLE_NPH_EVENTS,Score,The score value sent in the NPH extract.
 _MDD_JCT_X_CREDIBLE_NPH_FIRST_CONTACT,EHR Assessment Result ID,The ehr assessment result id value sent in the NPH extract.
 _MDD_JCT_X_CREDIBLE_NPH_FIRST_CONTACT,Appointment ID,The appointment id value sent in the NPH extract.

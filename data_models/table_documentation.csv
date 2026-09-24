@@ -293,7 +293,7 @@ _MDD_JCT_X_CREDIBLE_NPH,_MDD_JCT_X_CREDIBLE_NPH_CRISIS_CONTACT,NPH extension out
 _MDD_JCT_X_CREDIBLE_NPH,_MDD_JCT_X_CREDIBLE_NPH_DIAGNOSIS_DIAGNOSIS,NPH extension output for Diagnosis.
 _MDD_JCT_X_CREDIBLE_NPH,_MDD_JCT_X_CREDIBLE_NPH_DIAGNOSIS_VOCABULARY,NPH extension output for Vocabulary.
 _MDD_JCT_X_CREDIBLE_NPH,_MDD_JCT_X_CREDIBLE_NPH_EHRASSESSMENTRESULT_EHRASSESSMENTRESULT,We need both of these because the first half of the query uses service-based tables created in the agency specifics. The second half of the query uses custom events that must have either a Visit ID or an Episode ID.
-_MDD_JCT_X_CREDIBLE_NPH,_MDD_JCT_X_CREDIBLE_NPH_EHRASSESSMENTRESULT_SCORING,NPH extension output for Scoring.
+_MDD_JCT_X_CREDIBLE_NPH,_MDD_JCT_X_CREDIBLE_NPH_EHRASSESSMENTRESULT_SCORING,NPH extension output for Scoring. Built from a union of two halves. The service-based half scores assessments held in _MDD_JCT_X_CREDIBLE_NPH_ASSESSMENT_RESULTS and takes every date from the service. The custom-event half scores SDOH events held in _MDD_JCT_X_CREDIBLE_NPH_EVENTS and takes every date from the event itself. CRISIS and ISERV events are not scored and do not appear here.
 _MDD_JCT_X_CREDIBLE_NPH,_MDD_JCT_X_CREDIBLE_NPH_EHRASSESSMENTRESULT_VOCABULARY,NPH extension output for Vocabulary.
 _MDD_JCT_X_CREDIBLE_NPH,_MDD_JCT_X_CREDIBLE_NPH_EVENTS,Create a mirror image of the Appointments table so that we can pull this data into the EHR Assessment report using the same fields
 _MDD_JCT_X_CREDIBLE_NPH,_MDD_JCT_X_CREDIBLE_NPH_FIRST_CONTACT,NPH extension output for First Contact.
