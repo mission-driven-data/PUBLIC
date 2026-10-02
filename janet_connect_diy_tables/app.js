@@ -7,25 +7,32 @@
     "https://raw.githubusercontent.com/mission-driven-data/janet/main/configuration.csv";
   const SUPPORT_EMAIL = "solutions@missiondrivendata.com";
 
-  // Two views of the same file. "default" is what Janet Connect downloads on every nightly
-  // run. "all" is every table an agency can ask us to add, with the default ones marked.
+  // Three views of the same file. "included" is what Janet Connect downloads on every
+  // nightly run. "request" is what an agency can ask us to add. "all" is both together.
   const VIEWS = {
-    default: {
-      label: "Included by default",
+    all: {
+      label: "All Tables",
+      file: "janet-connect-all-tables.csv",
+      subhead:
+        "Every Credible table available on your Janet DIY server. The DIY column shows Yes " +
+        "for tables downloaded on every nightly run. To request one marked No, email {mail} " +
+        "and we will add it for your agency.",
+    },
+    request: {
+      label: "Request",
+      file: "janet-connect-requestable-tables.csv",
+      subhead:
+        "Tables you can ask us to add to your Janet DIY server. They are not downloaded by " +
+        "default. To request one, email {mail} and we will add it for your agency.",
+    },
+    included: {
+      label: "Included",
       file: "janet-connect-diy-tables.csv",
       subhead:
         "The Credible tables Janet Connect downloads to your Janet DIY server on every " +
         "nightly run, read live so it is always current. The set grows over time. Need a " +
-        "table that is not here? Switch to All requestable tables to see what we can add, " +
+        "table that is not here? Switch to Request to see what we can add, " +
         "or email {mail} and we will add it for your agency.",
-    },
-    all: {
-      label: "All requestable",
-      file: "janet-connect-requestable-tables.csv",
-      subhead:
-        "Every Credible table you can ask us to add to your Janet DIY server. Tables marked " +
-        "Yes are already included on every nightly run. To request one that is not, email " +
-        "{mail} and we will add it for your agency.",
     },
   };
 
@@ -40,7 +47,8 @@
   const FETCH_TIMEOUT_MS = 15000;
 
   const params = new URLSearchParams(window.location.search);
-  let currentView = params.get("view") === "all" ? "all" : "default";
+  const requestedView = params.get("view");
+  let currentView = VIEWS[requestedView] ? requestedView : "included";
   const wantsAutoDownload = !isEmbedded && params.get("download") === "1";
 
   let parsedRows = [];
@@ -66,7 +74,7 @@
       return;
     }
 
-    if (!viewRows("default").length) {
+    if (!viewRows("included").length) {
       fail(
         "The table list was read but no tables were marked for Janet DIY. Rather than show you " +
           "a list we cannot stand behind, we have left it off. Please email " +
@@ -136,12 +144,12 @@
       .sort((a, b) => compare(a.schema, b.schema) || compare(a.table, b.table));
   }
 
-  // The default view is exactly what it has always been. The all view adds every visible
-  // table, and never drops one that is already in the default set.
+  // Included is exactly what it has always been. Request is every visible table that is not
+  // already included. All Tables is the two together.
   function viewRows(view) {
-    if (view === "all") {
-      return parsedRows.filter((row) => row.isDefault || (!row.hidden && row.community));
-    }
+    const requestable = (row) => !row.isDefault && !row.hidden && row.community;
+    if (view === "all") return parsedRows.filter((row) => row.isDefault || requestable(row));
+    if (view === "request") return parsedRows.filter(requestable);
     return parsedRows.filter((row) => row.isDefault);
   }
 
@@ -150,16 +158,14 @@
     const data = viewRows(view).map((row) => ({
       schema: row.schema,
       table: row.table,
-      included: row.isDefault ? "Yes" : "",
+      diy: row.isDefault ? "Yes" : "No",
     }));
 
     const columns = [
       { data: "schema", title: "Schema", width: "22%" },
       { data: "table", title: "Table" },
+      { data: "diy", title: "DIY", width: "12%" },
     ];
-    if (view === "all") {
-      columns.push({ data: "included", title: "Included by default", width: "24%" });
-    }
 
     // DataTables keeps its own header and body, so the table is torn down and rebuilt
     // when the columns change.
@@ -268,7 +274,7 @@
   }
 
   function saveCsv() {
-    const csv = toCsv(viewRows(currentView), currentView);
+    const csv = toCsv(viewRows(currentView));
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
@@ -280,13 +286,10 @@
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
-  function toCsv(data, view) {
-    const withIncluded = view === "all";
-    const lines = [withIncluded ? "Schema,Table,Included by default" : "Schema,Table"];
+  function toCsv(data) {
+    const lines = ["Schema,Table,DIY"];
     data.forEach((row) => {
-      let line = csvField(row.schema) + "," + csvField(row.table);
-      if (withIncluded) line += "," + (row.isDefault ? "Yes" : "");
-      lines.push(line);
+      lines.push(csvField(row.schema) + "," + csvField(row.table) + "," + (row.isDefault ? "Yes" : "No"));
     });
     return lines.join("\r\n") + "\r\n";
   }
