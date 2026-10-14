@@ -8162,6 +8162,192 @@ _MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,time_value,Unpivoted source value stored in the
 _MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,date_value,Unpivoted source value stored in the [date_value] type-specific value column.
 _MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,numeric_value,Unpivoted source value stored in the [numeric_value] type-specific value column.
 _MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,all_value,Unpivoted source value stored in the [all_value] type-specific value column.
+_MDD_JCT_PAYCOM_AGENCY,Agency ID,Unique ID of the Agency. For Paycom this is the establishment FEIN.
+_MDD_JCT_PAYCOM_AGENCY,Agency ID Paycom,Paycom-sourced copy of the Agency ID (the establishment FEIN).
+_MDD_JCT_PAYCOM_AGENCY,Agency ID FEIN,Federal Employer Identification Number of the agency.
+_MDD_JCT_PAYCOM_AGENCY,Agency Name,Name of the establishment flagged as company headquarters for this FEIN.
+_MDD_JCT_PAYCOM_COST_CENTERS,Cost Center ID,Unique ID of the Cost Center (the Paycom department code).
+_MDD_JCT_PAYCOM_COST_CENTERS,Cost Center ID Paycom,Paycom-sourced copy of the Cost Center ID.
+_MDD_JCT_PAYCOM_COST_CENTERS,Cost Center Name,Name of the Paycom department modeled as a cost center.
+_MDD_JCT_PAYCOM_LABOR_ALLOCATION_CATEGORIES,Labor Allocation Category ID,Unique ID of the Labor Allocation Category (the Paycom catcode).
+_MDD_JCT_PAYCOM_LABOR_ALLOCATION_CATEGORIES,Labor Allocation Category ID Paycom,Paycom-sourced copy of the Labor Allocation Category ID.
+_MDD_JCT_PAYCOM_LABOR_ALLOCATION_CATEGORIES,Labor Allocation Category Name,Description of the labor allocation category.
+_MDD_JCT_PAYCOM_LOCATIONS,Location ID,Unique ID of the Location.
+_MDD_JCT_PAYCOM_LOCATIONS,Location ID Paycom,Paycom-sourced copy of the Location ID.
+_MDD_JCT_PAYCOM_LOCATIONS,Location ID Facility,Facility ID Paycom stores on the location.
+_MDD_JCT_PAYCOM_LOCATIONS,Location Name,Name or description of the location.
+_MDD_JCT_PAYCOM_LOCATIONS,Location Address 1,Street address of the location.
+_MDD_JCT_PAYCOM_LOCATIONS,Location Address City,City of the location address.
+_MDD_JCT_PAYCOM_LOCATIONS,Location Address State,State of the location address.
+_MDD_JCT_PAYCOM_LOCATIONS,Location Address Zip,ZIP code of the location address.
+_MDD_JCT_PAYCOM_LOCATIONS,Location Address Country,Country of the location address.
+_MDD_JCT_PAYCOM_LOCATIONS,Location EEOC Unit Number,EEO-1 unit number of the location.
+_MDD_JCT_PAYCOM_LOCATIONS,Location Hiring Site,"Hiring site value of the location, as Paycom returns it."
+_MDD_JCT_PAYCOM_LOCATIONS,Location VETS 4212 Hiring Location,"VETS-4212 hiring location value of the location, as Paycom returns it."
+_MDD_JCT_PAYCOM_LOCATIONS,Location Hidden,"Whether the location is hidden in Paycom, as Paycom returns it."
+_MDD_JCT_PAYCOM_ESTABLISHMENTS,Establishment ID,Unique ID of the Establishment.
+_MDD_JCT_PAYCOM_ESTABLISHMENTS,Establishment ID Paycom,Paycom-sourced copy of the Establishment ID.
+_MDD_JCT_PAYCOM_ESTABLISHMENTS,Establishment ID FEIN,Federal Employer Identification Number of the establishment.
+_MDD_JCT_PAYCOM_ESTABLISHMENTS,Agency ID,Unique ID of the Agency. For Paycom this is the establishment FEIN.
+_MDD_JCT_PAYCOM_ESTABLISHMENTS,Establishment Name,Name or description of the establishment.
+_MDD_JCT_PAYCOM_ESTABLISHMENTS,Establishment Address 1,Street address of the establishment.
+_MDD_JCT_PAYCOM_ESTABLISHMENTS,Establishment Address City,City of the establishment address.
+_MDD_JCT_PAYCOM_ESTABLISHMENTS,Establishment Address State,State of the establishment address.
+_MDD_JCT_PAYCOM_ESTABLISHMENTS,Establishment Address Zip,ZIP code of the establishment address.
+_MDD_JCT_PAYCOM_ESTABLISHMENTS,Establishment Address Country,Country of the establishment address.
+_MDD_JCT_PAYCOM_ESTABLISHMENTS,Establishment DUNS Code,Dun & Bradstreet DUNS number of the establishment.
+_MDD_JCT_PAYCOM_ESTABLISHMENTS,Establishment NAICS Code,NAICS industry code of the establishment.
+_MDD_JCT_PAYCOM_ESTABLISHMENTS,Establishment Is Company Headquarters,"TRUE when Paycom flags the establishment as company headquarters, FALSE when it does not."
+_MDD_JCT_PAYCOM_EARNING_CODES,Earning Code ID,Unique ID of the Earning Code (the Paycom earn code).
+_MDD_JCT_PAYCOM_EARNING_CODES,Earning Code ID Paycom,Paycom-sourced copy of the Earning Code ID.
+_MDD_JCT_PAYCOM_EARNING_CODES,Earning Code Name,Description of the earning code.
+_MDD_JCT_PAYCOM_EARNING_CODES,Earning Code Is Hidden Online,"TRUE when the earning code is hidden online in Paycom, FALSE when it is not."
+_MDD_JCT_PAYCOM_POSITIONS,Position ID,Unique ID of the Position (the Paycom position code).
+_MDD_JCT_PAYCOM_POSITIONS,Position ID Paycom,Paycom-sourced copy of the Position ID.
+_MDD_JCT_PAYCOM_POSITIONS,Position Title,Title of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Business Title,Business-facing title of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Short Title,Short title of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Family,Position family the position belongs to.
+_MDD_JCT_PAYCOM_POSITIONS,Position Effective Date,"Date the position settings take effect, parsed to a date."
+_MDD_JCT_PAYCOM_POSITIONS,Position Status,Status of the position as Paycom returns it.
+_MDD_JCT_PAYCOM_POSITIONS,Position Management Level,Management level of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Pay Type,"Pay type of the position, such as hourly or salary."
+_MDD_JCT_PAYCOM_POSITIONS,Position Processing Schedule,Payroll processing schedule of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Pay Frequency,Pay frequency of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position DOL Status,Department of Labor status of the position (Paycom field dolSatus).
+_MDD_JCT_PAYCOM_POSITIONS,Position Location,"Location set on the position, as Paycom returns it."
+_MDD_JCT_PAYCOM_POSITIONS,Position Key Location,Key location of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Confidential,"Whether the position is marked confidential, as Paycom returns it."
+_MDD_JCT_PAYCOM_POSITIONS,Position Eligible To Work From Home,"Whether the position is eligible to work from home, as Paycom returns it."
+_MDD_JCT_PAYCOM_POSITIONS,Position Exempt Status,FLSA exempt status of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Labor Allocation Profile,Labor allocation profile set on the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Labor Allocation,Labor allocation set on the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Salary Grade,Salary grade of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Pay Minimum,"Minimum of the pay range for the position, parsed to a number."
+_MDD_JCT_PAYCOM_POSITIONS,Position Pay Midpoint,"Midpoint of the pay range for the position, parsed to a number."
+_MDD_JCT_PAYCOM_POSITIONS,Position Pay Maximum,"Maximum of the pay range for the position, parsed to a number."
+_MDD_JCT_PAYCOM_POSITIONS,Position Pay Rate Step,Pay rate step of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Pay Class,Pay class of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Terminal Access Group,Time clock terminal access group of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Primary Schedule Group,Primary schedule group of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Exception Rule,Time and attendance exception rule of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Earnings Profile,Earnings profile of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Paycode Profile,Paycode profile of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Benefits Eligibility Profile,Benefits eligibility profile of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Document Group,Document group of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position ABBR Calculation Rule,Paycom ABBR calculation rule of the position.
+_MDD_JCT_PAYCOM_POSITIONS,Position Annual Benefits Base Rate,"Annual benefits base rate of the position, parsed to a number."
+_MDD_JCT_PAYCOM_POSITIONS,Position Union Code,Union code of the position.
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level ID,"Unique ID of the Position Level (the Paycom level code, positionCode_levelNumber)."
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level ID Paycom,Paycom-sourced copy of the Position Level ID.
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position ID,Unique ID of the Position (the Paycom position code).
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Number,Level number taken from the part of the level code after the last underscore.
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Title,Title of the position level.
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Business Title,Business-facing title of the position level.
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Location,"Location set on the position level, as Paycom returns it."
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Labor Allocation,Labor allocation set on the position level.
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Salary Grade,Salary grade of the position level.
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Pay Minimum,"Minimum of the pay range for the position level, parsed to a number."
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Pay Midpoint,"Midpoint of the pay range for the position level, parsed to a number."
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Pay Maximum,"Maximum of the pay range for the position level, parsed to a number."
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Pay Rate Step,Pay rate step of the position level.
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Pay Class,Pay class of the position level.
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Terminal Access Group,Time clock terminal access group of the position level.
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Primary Schedule Group,Primary schedule group of the position level.
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Exception Rule,Time and attendance exception rule of the position level.
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Earnings Profile,Earnings profile of the position level.
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Paycode Profile,Paycode profile of the position level.
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Benefits Eligibility Profile,Benefits eligibility profile of the position level.
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Document Group,Document group of the position level.
+_MDD_JCT_PAYCOM_POSITION_LEVELS,Position Level Union Code,Union code of the position level.
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat ID,Unique ID of the Position Seat (the Paycom seat number).
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat ID Paycom,Paycom-sourced copy of the Position Seat ID.
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position ID,Unique ID of the Position (the Paycom position code).
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Status,Status of the position seat as Paycom returns it.
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Title,Title of the position seat.
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Business Title,Business-facing title of the position seat.
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Reports To ID,Seat number of the position seat this seat reports to.
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Dotted Line ID,Seat number of the dotted-line position seat.
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Location,"Location set on the position seat, as Paycom returns it."
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Confidential,"Whether the position seat is marked confidential, as Paycom returns it."
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Key Position,"Whether the seat is marked a key position, as Paycom returns it."
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Eligible To Work From Home,"Whether the position seat is eligible to work from home, as Paycom returns it."
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Labor Allocation Profile,Labor allocation profile set on the position seat.
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Labor Allocation,Labor allocation set on the position seat.
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Pay Class,Pay class of the position seat.
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Terminal Access Group,Time clock terminal access group of the position seat.
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Primary Schedule Group,Primary schedule group of the position seat.
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Additional Schedule Groups,"Additional schedule groups of the seat, as Paycom returns them."
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Exception Rule,Time and attendance exception rule of the position seat.
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Earnings Profile,Earnings profile of the position seat.
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Supervisor Primary,"Primary supervisor of the seat, as Paycom returns it."
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Supervisor Secondary,"Secondary supervisor of the seat, as Paycom returns it."
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Supervisor Tertiary,"Tertiary supervisor of the seat, as Paycom returns it."
+_MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Supervisor Quaternary,"Quaternary supervisor of the seat, as Paycom returns it."
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee ID,Unique ID of the Employee (the Paycom employee code).
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee ID Paycom,Paycom-sourced copy of the Employee ID.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee ID Agency,Agency-facing employee number; for Paycom the employee code.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee ID External,"Employee badge number, named as in the PaycomPR module."
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee ID Clock Sequence,Time clock sequence number of the employee.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Name,Employee display name as Paycom returns it.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Name Last,Last name of the employee.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Name First,First name of the employee.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Name First & Last,"Employee first name, a space, then last name."
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Name First & Last & Employee ID,Employee first and last name followed by the employee ID in parentheses.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Name Last & First,"Employee last name, a comma, then first name."
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Name Last & First & Employee ID,Employee last and first name followed by the employee ID in parentheses.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Gender,"Gender of the employee, as Paycom returns it."
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Status,"Employee status code as Paycom returns it. Not mapped to words, because the API documentation does not list the codes."
+_MDD_JCT_PAYCOM_EMPLOYEES,Cost Center ID,Unique ID of the Cost Center (the Paycom department code).
+_MDD_JCT_PAYCOM_EMPLOYEES,Cost Center ID Paycom,Paycom-sourced copy of the Cost Center ID.
+_MDD_JCT_PAYCOM_EMPLOYEES,Cost Center Name,Name of the Paycom department modeled as a cost center.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Address Home ID,Unique ID of the Employee Home Address; equal to the Employee ID.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Address Home ID Paycom,Paycom-sourced copy of the Employee Home Address ID.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Address Home 1,Street address of the employee home address.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Address Home City,City of the employee home address.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Address Home State,State of the employee home address.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Address Home Zip,ZIP code of the employee home address.
+_MDD_JCT_PAYCOM_EMPLOYEE_LABOR_ALLOCATIONS,Employee Labor Allocation ID,"Unique ID of the Employee Labor Allocation: employee code, a hyphen, then the slot number."
+_MDD_JCT_PAYCOM_EMPLOYEE_LABOR_ALLOCATIONS,Employee Labor Allocation ID Paycom,Paycom-sourced copy of the Employee Labor Allocation ID.
+_MDD_JCT_PAYCOM_EMPLOYEE_LABOR_ALLOCATIONS,Employee ID,Unique ID of the Employee (the Paycom employee code).
+_MDD_JCT_PAYCOM_EMPLOYEE_LABOR_ALLOCATIONS,Employee Labor Allocation Category Number,"Slot number 1 to 20 (cat1 to cat20 in the directory). Likely matches a labor allocation category code, but this is not confirmed."
+_MDD_JCT_PAYCOM_EMPLOYEE_LABOR_ALLOCATIONS,Employee Labor Allocation Code,Labor allocation detail code in that slot for the employee.
+_MDD_JCT_PAYCOM_EMPLOYEE_LABOR_ALLOCATIONS,Employee Labor Allocation Name,Labor allocation description in that slot for the employee.
+_MDD_JCT_PAYCOM_NEW_HIRES,New Hire ID,"Unique ID of the New Hire: employee code, a hyphen, then the time added in ISO format."
+_MDD_JCT_PAYCOM_NEW_HIRES,New Hire ID Paycom,Paycom-sourced copy of the New Hire ID.
+_MDD_JCT_PAYCOM_NEW_HIRES,Employee ID,Unique ID of the Employee (the Paycom employee code).
+_MDD_JCT_PAYCOM_NEW_HIRES,New Hire Employee Name,Name of the new hire as Paycom returns it.
+_MDD_JCT_PAYCOM_NEW_HIRES,New Hire Date Time Added,Date and time the employee was added to Paycom.
+_MDD_JCT_PAYCOM_NEW_HIRES,New Hire Date Added,Date the employee was added to Paycom.
+_MDD_JCT_PAYCOM_NEW_HIRES,New Hire Added By,Who added the employee in Paycom.
+_MDD_JCT_PAYCOM_NEW_HIRES,New Hire Added By User Type,User type of whoever added the employee.
+_MDD_JCT_PAYCOM_ADDRESSES,Address ID,"Unique ID of the Address: object category, address type and object ID joined by hyphens."
+_MDD_JCT_PAYCOM_ADDRESSES,Address ID Paycom,Paycom-sourced copy of the Address ID.
+_MDD_JCT_PAYCOM_ADDRESSES,Object Category,"Kind of record the row belongs to (Employee, Location or Establishment)."
+_MDD_JCT_PAYCOM_ADDRESSES,Object Category ID,"Numeric code for the object category: 2 Employee and 4 Location and 5 Establishment for addresses, 3 Employee for phones."
+_MDD_JCT_PAYCOM_ADDRESSES,Object ID,"ID of the record the row belongs to, within its object category."
+_MDD_JCT_PAYCOM_ADDRESSES,Address Type,Type of address (Home or Work).
+_MDD_JCT_PAYCOM_ADDRESSES,Address Type ID,"Numeric code for the address type: 1 Home, 2 Work."
+_MDD_JCT_PAYCOM_ADDRESSES,Address 1,Street address line.
+_MDD_JCT_PAYCOM_ADDRESSES,Address City,City of the address.
+_MDD_JCT_PAYCOM_ADDRESSES,Address State,State of the address.
+_MDD_JCT_PAYCOM_ADDRESSES,Address Zip,ZIP code of the address.
+_MDD_JCT_PAYCOM_ADDRESSES,Address Country,"Country of the address. Empty for employee addresses, which the directory gives without a country."
+_MDD_JCT_PAYCOM_ADDRESSES_EMPLOYEE_HOME,Employee Address Home ID,Unique ID of the Employee Home Address; equal to the Employee ID.
+_MDD_JCT_PAYCOM_ADDRESSES_EMPLOYEE_HOME,Employee Address Home ID Paycom,Paycom-sourced copy of the Employee Home Address ID.
+_MDD_JCT_PAYCOM_ADDRESSES_EMPLOYEE_HOME,Employee ID,Unique ID of the Employee (the Paycom employee code).
+_MDD_JCT_PAYCOM_ADDRESSES_EMPLOYEE_HOME,Employee Address Home 1,Street address of the employee home address.
+_MDD_JCT_PAYCOM_ADDRESSES_EMPLOYEE_HOME,Employee Address Home City,City of the employee home address.
+_MDD_JCT_PAYCOM_ADDRESSES_EMPLOYEE_HOME,Employee Address Home State,State of the employee home address.
+_MDD_JCT_PAYCOM_ADDRESSES_EMPLOYEE_HOME,Employee Address Home Zip,ZIP code of the employee home address.
+_MDD_JCT_PAYCOM_PHONE,Phone ID,"Unique ID of the Phone Number: object category, phone type and object ID joined by hyphens."
+_MDD_JCT_PAYCOM_PHONE,Phone ID Paycom,Paycom-sourced copy of the Phone ID.
+_MDD_JCT_PAYCOM_PHONE,Object Category,"Kind of record the row belongs to (Employee, Location or Establishment)."
+_MDD_JCT_PAYCOM_PHONE,Object Category ID,"Numeric code for the object category: 2 Employee and 4 Location and 5 Establishment for addresses, 3 Employee for phones."
+_MDD_JCT_PAYCOM_PHONE,Object ID,"ID of the record the row belongs to, within its object category."
+_MDD_JCT_PAYCOM_PHONE,Phone Type,Type of phone number (Home).
+_MDD_JCT_PAYCOM_PHONE,Phone Type ID,"Numeric code for the phone type: 2 Home, as in PaycomPR."
+_MDD_JCT_PAYCOM_PHONE,Phone Number,The phone number as Paycom returns it.
 _MDD_JCT_QUICKMAR_CLIENTS,Client ID,Unique ID of the Client.
 _MDD_JCT_QUICKMAR_CLIENTS,Client ID Pharmacy,The client's pharmacy-facing ID.
 _MDD_JCT_QUICKMAR_CLIENTS,Client ID MRN,The client's medical record number.
@@ -8548,6 +8734,229 @@ _MDD_JCT_QUICKMAR_VITAL_MEASURES,Medication Cart ID,Unique ID of the Medication 
 _MDD_JCT_QUICKMAR_VITAL_MEASURES,Treatment Cart ID,Unique ID of the Treatment Cart.
 _MDD_JCT_QUICKMAR_VITAL_MEASURES,Client Picture Taken Date,The date and time the client photo was taken.
 _MDD_JCT_QUICKMAR_VITAL_MEASURES,Client Picture Uploaded Date,The date and time the client photo was uploaded.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client ID,Unique ID of the Client.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Name First,The client's first name.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Name Last,The client's last name.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Name,The client's first and last name.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Name & ID,The client's name followed by the client ID in parentheses.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Link,Link to the client record in the EHR.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Status,The client's status in the EHR.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Date of Birth Original,The date of birth exactly as the agency specifics supplied it.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Date of Birth,The client's date of birth.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Age,The client's age in whole years as of the day the module ran.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Consents,Whether the client has a consent to receive texts on file: true or false.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Opt In,Whether the client opted in to appointment reminders: true or false.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Message Language ID,"Which of the three configured message languages the client gets: 1, 2 or 3."
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Message Language Name,"The name of the client's message language, from the agency specifics."
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Phone Original,The client's phone exactly as the agency specifics supplied it.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Phone Formatted,"The client's phone formatted for texting, or blank when it cannot be."
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Filter 1 Name,Optional client filter 1 name set by the agency.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Filter 1 Value,Optional client filter 1 value set by the agency.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Filter 2 Name,Optional client filter 2 name set by the agency.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Filter 2 Value,Optional client filter 2 value set by the agency.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Filter 3 Name,Optional client filter 3 name set by the agency.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Filter 3 Value,Optional client filter 3 value set by the agency.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Count,How many rows share this client ID in the custom client data.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Validation ID,"Valid when the client ID is a number greater than 0, else Invalid."
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Validation ID Message,Why the client ID failed validation.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Validation Count,"Valid when the client ID appears once, else Invalid."
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Validation Count Message,Why the client failed the count check.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Validation Consents,"Valid when consents is true or false, else Invalid."
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Validation Consents Message,Why consents failed validation.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Validation Opt In,"Valid when opt in is true or false, else Invalid."
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Validation Opt In Message,Why opt in failed validation.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Validation Message Language,"Valid when the language is 1, 2 or 3 and configured, else Invalid."
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Validation Message Language Message,Why the message language failed validation.
+_MDD_JCT_REMINDERS_EHR_CLIENTS,Client Ineligible Reason,"Why a valid client gets no reminders: no consent, no opt in, or under the minimum age."
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment ID,Unique ID of the Appointment.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Client ID,Unique ID of the Client.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Start Original,The appointment start exactly as the agency specifics supplied it.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Start,The appointment's start date and time.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Date,The appointment's date.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment End Original,The appointment end exactly as the agency specifics supplied it.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment End,The appointment's end date and time.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Staff Name First,First name of the staff member the appointment is with.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Staff Name Last,Last name of the staff member the appointment is with.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Staff Name,First and last name of the staff member.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Staff Name Short,First initial and last name of the staff member.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Program Name,The program the appointment belongs to.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Location Name,Where the appointment takes place.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Visit Type Name,The appointment's visit type.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Status,The appointment's status in the EHR.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Excluded,Whether the agency excluded this appointment from reminders: true or false.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Filter 1 Name,Optional appointment filter 1 name set by the agency.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Filter 1 Value,Optional appointment filter 1 value set by the agency.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Filter 2 Name,Optional appointment filter 2 name set by the agency.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Filter 2 Value,Optional appointment filter 2 value set by the agency.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Filter 3 Name,Optional appointment filter 3 name set by the agency.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Filter 3 Value,Optional appointment filter 3 value set by the agency.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Count,How many rows share this appointment ID in the custom appointment data.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Client Validation Count,"Valid when the client ID appears once, else Invalid."
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Collapsed Into Appointment ID,The earlier back-to-back appointment that gets the reminder instead.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Validation Count,"Valid when the appointment ID appears once, else Invalid."
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Validation Count Message,Why the appointment failed the count check.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Validation Client ID,"Valid when the appointment's client is a valid client, else Invalid."
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Validation Client ID Message,Why the appointment's client ID failed validation.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Validation Start,"Valid when the start reads as a date and time, else Invalid."
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Validation Start Message,Why the appointment start failed validation.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Validation End,"Valid when the end is blank or a date and time after the start, else Invalid."
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Validation End Message,Why the appointment end failed validation.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Validation Excluded,"Valid when excluded is true or false, else Invalid."
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Validation Excluded Message,Why the excluded flag failed validation.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,Appointment Ineligible Reason,Why a valid appointment gets no reminder: excluded or back-to-back.
+_MDD_JCT_REMINDERS_RECIPIENTS,Recipient ID,Unique ID of the Recipient: client ID and recipient type.
+_MDD_JCT_REMINDERS_RECIPIENTS,Client ID,Unique ID of the Client.
+_MDD_JCT_REMINDERS_RECIPIENTS,Client Name,The client's first and last name.
+_MDD_JCT_REMINDERS_RECIPIENTS,Recipient Type,"Who the phone belongs to: Client, or a type the agency named such as Caregiver."
+_MDD_JCT_REMINDERS_RECIPIENTS,Recipient Type Order,"1 for the client's own phone, 2 for extra recipients."
+_MDD_JCT_REMINDERS_RECIPIENTS,Recipient Type Key,"The recipient type in capitals with spaces replaced, as used in the reminder ID."
+_MDD_JCT_REMINDERS_RECIPIENTS,Recipient Phone Original,The recipient's phone exactly as supplied.
+_MDD_JCT_REMINDERS_RECIPIENTS,Recipient Phone Formatted,"The recipient's phone formatted for texting, or blank when it cannot be."
+_MDD_JCT_REMINDERS_RECIPIENTS,Recipient Phone Client Count,How many clients use this phone number as a recipient.
+_MDD_JCT_REMINDERS_RECIPIENTS,Recipient Phone Sharing,True when more than one client uses this phone number.
+_MDD_JCT_REMINDERS_RECIPIENTS,Recipient Phone Sharing List,The clients who share this phone number.
+_MDD_JCT_REMINDERS_RECIPIENTS,Recipient Validation,"Valid when the recipient has a type and a textable phone, else Invalid."
+_MDD_JCT_REMINDERS_RECIPIENTS,Recipient Validation Message,Why the recipient failed validation.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_VALIDATION,Client Validation ID,"Valid when the client ID is a number greater than 0, else Invalid."
+_MDD_JCT_REMINDERS_EHR_CLIENTS_VALIDATION,Client ID,Unique ID of the Client.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_VALIDATION,Client Validation Message,One validation message for the client.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_VALIDATION,Appointment Validation ID,"Appointment ID and validation message joined, unique per message."
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_VALIDATION,Appointment ID,Unique ID of the Appointment.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_VALIDATION,Client ID,Unique ID of the Client.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_VALIDATION,Appointment Validation Message,One validation message for the appointment.
+_MDD_JCT_REMINDERS_SETTINGS,Reminders Go Live Date,The day reminders start sending.
+_MDD_JCT_REMINDERS_SETTINGS,Reminders In Production,True once the go-live date has arrived.
+_MDD_JCT_REMINDERS_SETTINGS,Reminders Slot 1 Days Before,Days before the appointment the first reminder sends; -1 means off.
+_MDD_JCT_REMINDERS_SETTINGS,Reminders Slot 2 Days Before,Days before the appointment the second reminder sends; -1 means off.
+_MDD_JCT_REMINDERS_SETTINGS,Reminders Slot 3 Days Before,Days before the appointment the third reminder sends; -1 means off.
+_MDD_JCT_REMINDERS_SETTINGS,Reminders Minimum Age,The youngest age that gets reminders; -1 means no age rule.
+_MDD_JCT_REMINDERS_SETTINGS,Reminders Require Opt In,True when clients must opt in to get reminders.
+_MDD_JCT_REMINDERS_SETTINGS,Reminders Collapse Back To Back,True when back-to-back appointments share one reminder.
+_MDD_JCT_REMINDERS_SETTINGS,Reminders Include Client Phone,True when the client's own phone is a recipient.
+_MDD_JCT_REMINDERS_SETTINGS,Reminders Language 1,Name of message language 1.
+_MDD_JCT_REMINDERS_SETTINGS,Reminders Language 2,Name of message language 2.
+_MDD_JCT_REMINDERS_SETTINGS,Reminders Language 3,Name of message language 3.
+_MDD_JCT_REMINDERS_SETTINGS,Reminders Message Template 1,"Message template for language 1, before placeholders are filled."
+_MDD_JCT_REMINDERS_SETTINGS,Reminders Message Template 2,"Message template for language 2, before placeholders are filled."
+_MDD_JCT_REMINDERS_SETTINGS,Reminders Message Template 3,"Message template for language 3, before placeholders are filled."
+_MDD_JCT_REMINDERS_SETTINGS,Reminders Opt Out Line,The opt-out line the module adds to every message.
+_MDD_JCT_REMINDERS_SETTINGS,Reminders Template Has Opt Out Wording,True when a template already contains opt-out wording.
+_MDD_JCT_REMINDERS_SETTINGS,Reminders Template Warning,The warning shown when a template contains opt-out wording.
+_MDD_JCT_REMINDERS_QUEUE,Reminder ID,"Unique ID of the Reminder: appointment, slot and recipient type. Also the Twilio trigger ID."
+_MDD_JCT_REMINDERS_QUEUE,Appointment ID,Unique ID of the Appointment.
+_MDD_JCT_REMINDERS_QUEUE,Client ID,Unique ID of the Client.
+_MDD_JCT_REMINDERS_QUEUE,Client Name,The client's first and last name.
+_MDD_JCT_REMINDERS_QUEUE,Recipient ID,Unique ID of the Recipient: client ID and recipient type.
+_MDD_JCT_REMINDERS_QUEUE,Recipient Type,"Who the phone belongs to: Client, or a type the agency named such as Caregiver."
+_MDD_JCT_REMINDERS_QUEUE,Recipient Phone Formatted,"The recipient's phone formatted for texting, or blank when it cannot be."
+_MDD_JCT_REMINDERS_QUEUE,Reminder Slot,"Which reminder this is for the appointment: 1, 2 or 3."
+_MDD_JCT_REMINDERS_QUEUE,Reminder Days Before,Days before the appointment this reminder sends.
+_MDD_JCT_REMINDERS_QUEUE,Reminder Send Date,The day this reminder sends.
+_MDD_JCT_REMINDERS_QUEUE,Appointment Start,The appointment's start date and time.
+_MDD_JCT_REMINDERS_QUEUE,Appointment Date,The appointment's date.
+_MDD_JCT_REMINDERS_QUEUE,Staff Name,First and last name of the staff member.
+_MDD_JCT_REMINDERS_QUEUE,Program Name,The program the appointment belongs to.
+_MDD_JCT_REMINDERS_QUEUE,Location Name,Where the appointment takes place.
+_MDD_JCT_REMINDERS_QUEUE,Visit Type Name,The appointment's visit type.
+_MDD_JCT_REMINDERS_QUEUE,Reminder Message Language,The language of this reminder's message.
+_MDD_JCT_REMINDERS_QUEUE,Reminder Message,"The full text message, with the opt-out line added."
+_MDD_JCT_REMINDERS_QUEUE,Reminder Status,"Sent, Unsubscribed, Outside Window, Ineligible, Invalid, Waiting or Eligible."
+_MDD_JCT_REMINDERS_QUEUE,Reminder Status Message,Plain-English reason for the reminder's status.
+_MDD_JCT_REMINDERS_QUEUE,Reminder Status Order,"Sort order of the status, 1 for Sent through 7 for Eligible."
+_MDD_JCT_REMINDERS_HISTORY,Message ID,Unique ID of the Twilio message.
+_MDD_JCT_REMINDERS_HISTORY,Client ID,Unique ID of the Client.
+_MDD_JCT_REMINDERS_HISTORY,Client Name,The client's first and last name.
+_MDD_JCT_REMINDERS_HISTORY,Appointment ID,Unique ID of the Appointment.
+_MDD_JCT_REMINDERS_HISTORY,Reminder ID,"Unique ID of the Reminder: appointment, slot and recipient type. Also the Twilio trigger ID."
+_MDD_JCT_REMINDERS_HISTORY,Recipient Type,"Who the phone belongs to: Client, or a type the agency named such as Caregiver."
+_MDD_JCT_REMINDERS_HISTORY,Reminder Slot,"Which reminder this is for the appointment: 1, 2 or 3."
+_MDD_JCT_REMINDERS_HISTORY,Message Date,When the message was handed to Twilio.
+_MDD_JCT_REMINDERS_HISTORY,Message Date Only,The date the message was handed to Twilio.
+_MDD_JCT_REMINDERS_HISTORY,Message Content,The text that was sent.
+_MDD_JCT_REMINDERS_HISTORY,Message Recipient,The phone number the message went to.
+_MDD_JCT_REMINDERS_HISTORY,Message Status,Twilio's latest status for the message.
+_MDD_JCT_REMINDERS_HISTORY,Message Outcome,"Delivered, Sent Not Confirmed, Failed or In Progress."
+_MDD_JCT_REMINDERS_HISTORY,Message Status Update Date,When Twilio's status last changed.
+_MDD_JCT_REMINDERS_HISTORY,Message Error Code,"Twilio's error code, when there is one."
+_MDD_JCT_REMINDERS_HISTORY,Message Error Message,"Twilio's error message, when there is one."
+_MDD_JCT_REMINDERS_HISTORY,Message Error Plain English Explanation,"What the Twilio error means, in plain English."
+_MDD_JCT_REMINDERS_HISTORY,Message Status Full Explanation,Plain-English explanation of the message's status.
+_MDD_JCT_REMINDERS_HISTORY,Message Attempt Number,"Which attempt this was for the reminder, counting from 1."
+_MDD_JCT_REMINDERS_HISTORY,Message Is Latest Attempt,"1 for the reminder's latest attempt, else 0."
+_MDD_JCT_REMINDERS_HISTORY,Reminder Outcome,One outcome per reminder across all attempts.
+_MDD_JCT_REMINDERS_HISTORY,Reminder No Longer In Queue,"1 when the reminder has left the queue, else 0."
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client ID,Unique ID of the Client.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Name First,The client's first name.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Name Last,The client's last name.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Name,The client's first and last name.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Name & ID,The client's name followed by the client ID in parentheses.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Link,Link to the client record in the EHR.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Status,The client's status in the EHR.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Date of Birth Original,The date of birth exactly as the agency specifics supplied it.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Date of Birth,The client's date of birth.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Age,The client's age in whole years as of the day the module ran.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Consents,Whether the client has a consent to receive texts on file: true or false.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Opt In,Whether the client opted in to appointment reminders: true or false.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Message Language ID,"Which of the three configured message languages the client gets: 1, 2 or 3."
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Message Language Name,"The name of the client's message language, from the agency specifics."
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Phone Original,The client's phone exactly as the agency specifics supplied it.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Phone Formatted,"The client's phone formatted for texting, or blank when it cannot be."
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Filter 1 Name,Optional client filter 1 name set by the agency.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Filter 1 Value,Optional client filter 1 value set by the agency.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Filter 2 Name,Optional client filter 2 name set by the agency.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Filter 2 Value,Optional client filter 2 value set by the agency.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Filter 3 Name,Optional client filter 3 name set by the agency.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Filter 3 Value,Optional client filter 3 value set by the agency.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Count,How many rows share this client ID in the custom client data.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Validation ID,"Valid when the client ID is a number greater than 0, else Invalid."
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Validation ID Message,Why the client ID failed validation.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Validation Count,"Valid when the client ID appears once, else Invalid."
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Validation Count Message,Why the client failed the count check.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Validation Consents,"Valid when consents is true or false, else Invalid."
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Validation Consents Message,Why consents failed validation.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Validation Opt In,"Valid when opt in is true or false, else Invalid."
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Validation Opt In Message,Why opt in failed validation.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Validation Message Language,"Valid when the language is 1, 2 or 3 and configured, else Invalid."
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Validation Message Language Message,Why the message language failed validation.
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Ineligible Reason,"Why a valid client gets no reminders: no consent, no opt in, or under the minimum age."
+_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,Client Row Number,Row number used to keep one row per client ID.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment ID,Unique ID of the Appointment.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Client ID,Unique ID of the Client.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Start Original,The appointment start exactly as the agency specifics supplied it.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Start,The appointment's start date and time.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Date,The appointment's date.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment End Original,The appointment end exactly as the agency specifics supplied it.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment End,The appointment's end date and time.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Staff Name First,First name of the staff member the appointment is with.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Staff Name Last,Last name of the staff member the appointment is with.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Staff Name,First and last name of the staff member.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Staff Name Short,First initial and last name of the staff member.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Program Name,The program the appointment belongs to.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Location Name,Where the appointment takes place.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Visit Type Name,The appointment's visit type.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Status,The appointment's status in the EHR.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Excluded,Whether the agency excluded this appointment from reminders: true or false.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Filter 1 Name,Optional appointment filter 1 name set by the agency.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Filter 1 Value,Optional appointment filter 1 value set by the agency.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Filter 2 Name,Optional appointment filter 2 name set by the agency.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Filter 2 Value,Optional appointment filter 2 value set by the agency.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Filter 3 Name,Optional appointment filter 3 name set by the agency.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Filter 3 Value,Optional appointment filter 3 value set by the agency.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Count,How many rows share this appointment ID in the custom appointment data.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Client Validation Count,"Valid when the client ID appears once, else Invalid."
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Collapsed Into Appointment ID,The earlier back-to-back appointment that gets the reminder instead.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Validation Count,"Valid when the appointment ID appears once, else Invalid."
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Validation Count Message,Why the appointment failed the count check.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Validation Client ID,"Valid when the appointment's client is a valid client, else Invalid."
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Validation Client ID Message,Why the appointment's client ID failed validation.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Validation Start,"Valid when the start reads as a date and time, else Invalid."
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Validation Start Message,Why the appointment start failed validation.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Validation End,"Valid when the end is blank or a date and time after the start, else Invalid."
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Validation End Message,Why the appointment end failed validation.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Validation Excluded,"Valid when excluded is true or false, else Invalid."
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Validation Excluded Message,Why the excluded flag failed validation.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Ineligible Reason,Why a valid appointment gets no reminder: excluded or back-to-back.
+_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,Appointment Row Number,Row number used to keep one row per appointment ID.
 _MDD_JCT_RIPPLING_AGENCY,Agency ID,Unique ID of the Agency legal entity represented by this row.
 _MDD_JCT_RIPPLING_AGENCY,Agency ID FEIN,"Tax identifier of the Rippling legal entity, labeled as FEIN by the Rippling JCT module."
 _MDD_JCT_RIPPLING_AGENCY,Agency Name,Legal name of the Rippling legal entity treated as the agency.
@@ -8969,6 +9378,87 @@ _MDD_JCT_X_CREDIBLE_CCBHC_UMD_DATA,Service_Is_Integrated_or_Physical_Health,Indi
 _MDD_JCT_X_CREDIBLE_CCBHC_UMD_DATA,Service_Is_Outreach,Indicator of whether the service is outreach-related.
 _MDD_JCT_X_CREDIBLE_CCBHC_UMD_DATA,Client_Responsible_County,Responsible county value supplied from collaboration custom mapping.
 _MDD_JCT_X_CREDIBLE_CCBHC_UMD_DATA,Employee_Type,Employee type value supplied from collaboration custom mapping.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT,Client ID,Unique ID of the Client.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT,Dx 1 ICD10 Code,"The ICD-10 code of coded diagnosis number 1 on the client's current diagnosis snapshot, counted in problem list order among the diagnoses that have an ICD-10 code; empty when there are fewer than 1."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT,Dx 2 ICD10 Code,"The ICD-10 code of coded diagnosis number 2 on the client's current diagnosis snapshot, counted in problem list order among the diagnoses that have an ICD-10 code; empty when there are fewer than 2."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT,Dx 3 ICD10 Code,"The ICD-10 code of coded diagnosis number 3 on the client's current diagnosis snapshot, counted in problem list order among the diagnoses that have an ICD-10 code; empty when there are fewer than 3."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT,Dx 4 ICD10 Code,"The ICD-10 code of coded diagnosis number 4 on the client's current diagnosis snapshot, counted in problem list order among the diagnoses that have an ICD-10 code; empty when there are fewer than 4."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT,Dx 5 ICD10 Code,"The ICD-10 code of coded diagnosis number 5 on the client's current diagnosis snapshot, counted in problem list order among the diagnoses that have an ICD-10 code; empty when there are fewer than 5."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT,Dx 6 ICD10 Code,"The ICD-10 code of coded diagnosis number 6 on the client's current diagnosis snapshot, counted in problem list order among the diagnoses that have an ICD-10 code; empty when there are fewer than 6."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT,Dx 7 ICD10 Code,"The ICD-10 code of coded diagnosis number 7 on the client's current diagnosis snapshot, counted in problem list order among the diagnoses that have an ICD-10 code; empty when there are fewer than 7."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT,Dx 8 ICD10 Code,"The ICD-10 code of coded diagnosis number 8 on the client's current diagnosis snapshot, counted in problem list order among the diagnoses that have an ICD-10 code; empty when there are fewer than 8."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT,Dx 9 ICD10 Code,"The ICD-10 code of coded diagnosis number 9 on the client's current diagnosis snapshot, counted in problem list order among the diagnoses that have an ICD-10 code; empty when there are fewer than 9."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT,Dx 10 ICD10 Code,"The ICD-10 code of coded diagnosis number 10 on the client's current diagnosis snapshot, counted in problem list order among the diagnoses that have an ICD-10 code; empty when there are fewer than 10."
+_MDD_JCT_CREDIBLE_CLIENTS_VALUES_UNPIVOT,id,"The identifier of the source row, from the key column of the table named in [table_name]."
+_MDD_JCT_CREDIBLE_CLIENTS_VALUES_UNPIVOT,table_name,The name of the table the row was unpivoted from.
+_MDD_JCT_CREDIBLE_CLIENTS_VALUES_UNPIVOT,field_name,The name of the source column this row holds a value for.
+_MDD_JCT_CREDIBLE_CLIENTS_VALUES_UNPIVOT,data_type,The SQL Server data type of the source column.
+_MDD_JCT_CREDIBLE_CLIENTS_VALUES_UNPIVOT,bigint_value,The source value when the source column holds whole-number data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_VALUES_UNPIVOT,float_value,The source value when the source column holds floating-point data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_VALUES_UNPIVOT,nvarchar_value,The source value when the source column holds text data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_VALUES_UNPIVOT,datetime_value,The source value when the source column holds date and time data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_VALUES_UNPIVOT,bit_value,The source value when the source column holds true or false data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_VALUES_UNPIVOT,decimal_value,The source value when the source column holds decimal data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_VALUES_UNPIVOT,time_value,The source value when the source column holds time of day data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_VALUES_UNPIVOT,date_value,The source value when the source column holds date data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_VALUES_UNPIVOT,numeric_value,The source value when the source column holds numeric data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_VALUES_UNPIVOT,all_value,"The source value as text, whatever the source column's type."
+_MDD_JCT_CREDIBLE_CLIENTS_EXT_VALUES_UNPIVOT,id,"The identifier of the source row, from the key column of the table named in [table_name]."
+_MDD_JCT_CREDIBLE_CLIENTS_EXT_VALUES_UNPIVOT,table_name,The name of the table the row was unpivoted from.
+_MDD_JCT_CREDIBLE_CLIENTS_EXT_VALUES_UNPIVOT,field_name,The name of the source column this row holds a value for.
+_MDD_JCT_CREDIBLE_CLIENTS_EXT_VALUES_UNPIVOT,data_type,The SQL Server data type of the source column.
+_MDD_JCT_CREDIBLE_CLIENTS_EXT_VALUES_UNPIVOT,bigint_value,The source value when the source column holds whole-number data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_EXT_VALUES_UNPIVOT,float_value,The source value when the source column holds floating-point data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_EXT_VALUES_UNPIVOT,nvarchar_value,The source value when the source column holds text data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_EXT_VALUES_UNPIVOT,datetime_value,The source value when the source column holds date and time data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_EXT_VALUES_UNPIVOT,bit_value,The source value when the source column holds true or false data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_EXT_VALUES_UNPIVOT,decimal_value,The source value when the source column holds decimal data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_EXT_VALUES_UNPIVOT,time_value,The source value when the source column holds time of day data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_EXT_VALUES_UNPIVOT,date_value,The source value when the source column holds date data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_EXT_VALUES_UNPIVOT,numeric_value,The source value when the source column holds numeric data; empty otherwise.
+_MDD_JCT_CREDIBLE_CLIENTS_EXT_VALUES_UNPIVOT,all_value,"The source value as text, whatever the source column's type."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT_UNPIVOT,id,"The identifier of the source row, from the key column of the table named in [table_name]."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT_UNPIVOT,table_name,The name of the table the row was unpivoted from.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT_UNPIVOT,field_name,The name of the source column this row holds a value for.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT_UNPIVOT,data_type,The SQL Server data type of the source column.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT_UNPIVOT,bigint_value,The source value when the source column holds whole-number data; empty otherwise.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT_UNPIVOT,float_value,The source value when the source column holds floating-point data; empty otherwise.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT_UNPIVOT,nvarchar_value,The source value when the source column holds text data; empty otherwise.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT_UNPIVOT,datetime_value,The source value when the source column holds date and time data; empty otherwise.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT_UNPIVOT,bit_value,The source value when the source column holds true or false data; empty otherwise.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT_UNPIVOT,decimal_value,The source value when the source column holds decimal data; empty otherwise.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT_UNPIVOT,time_value,The source value when the source column holds time of day data; empty otherwise.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT_UNPIVOT,date_value,The source value when the source column holds date data; empty otherwise.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT_UNPIVOT,numeric_value,The source value when the source column holds numeric data; empty otherwise.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT_UNPIVOT,all_value,"The source value as text, whatever the source column's type."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_UNPIVOT,Client ID,Unique ID of the Client.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_UNPIVOT,Attribute Category,"Which group of client data the attribute comes from: Clients (fields on the client record), Client Extended (fields on the client extended record) or Diagnoses (current diagnoses)."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_UNPIVOT,Attribute Name,The column name of the client field or diagnosis position as Credible or the extension stores it.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_UNPIVOT,Attribute Is In Data Dictionary,"Custom Labels when the agency's Credible data dictionary gives the field an on-screen label, otherwise No Labels. Diagnoses are always No Labels."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_UNPIVOT,Attribute Name Custom,"The name shown in the report's drop-down: the field's on-screen label from the Credible data dictionary, or z(No Label) followed by the column name when the data dictionary gives it none. Diagnoses use the column name."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_UNPIVOT,Attribute Order,"Sort order for the drop-down: the field's position on its Credible view, or 100000 plus its data dictionary ID when it is on no view; 99 for diagnoses."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_UNPIVOT,Attribute Value,"The client's value for the attribute, as text. Not cut to a set length."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Service ID Universal,"Unique ID of the service record within its tense. Filled on every row, including incomplete and scheduled services, where [Service ID] is empty."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Service Tense ID,"Which kind of service record the row is: 1 completed, 2 incomplete, 3 scheduled in the planner."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Service ID,Unique ID of the completed Service in Credible; empty on incomplete and scheduled services.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Service ID Credible,"The Credible-system copy of [Service ID]: the completed service's ID, empty on incomplete and scheduled services."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Service Tense,"Whether the service was completed, is incomplete, or is scheduled."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Service Start,The date and time the service started.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Service Start Date,The date the service started.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Service Billable,Whether the service is billable.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Service Duration (Hours),"How long the service lasted, in hours."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Client ID,Unique ID of the Client.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Client Status,The client's current status in Credible.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Program ID,Unique ID of the Program.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Program Name,The name of the program.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,User ID,Unique ID of the User.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,User Name Last & First,"The staff member's name, last name first."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_ATTRIBUTE_EXCLUSIONS_CUSTOM,Attribute Category,"Which group of client data the attribute comes from: Clients (fields on the client record), Client Extended (fields on the client extended record) or Diagnoses (current diagnoses)."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_ATTRIBUTE_EXCLUSIONS_CUSTOM,Attribute Name,The column name of the client field or diagnosis position as Credible or the extension stores it.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_METADATA,Parameter,The setting's name.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_METADATA,Value Text,The setting's value when it is text.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_METADATA,Value Datetime,The setting's value when it is a date and time.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_METADATA,Value Integer,The setting's value when it is a whole number.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Service ID,"The unique ID of the service within Credible. Eleos mapping: id (Document identifier (Primary Key, defined by the client))"
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Document Type,"Agency-specific Document Type, as required by Eleos Compliance Data Specifications v2.0, configured and customized on an agency-level. Eleos mapping: document_type (Main document type defined by Eleos as the following list: (Intake, Session Note, Treatment Plan, Assessment, Discharge Document, Other))"
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Document Subtype,"The name of the Credible service, also called Client Visit Type. Within Credible documents (Called Forms) can be applied to more than one service. Providing Eleos with the Service Name ensures the most nuanced interpretation and intent of the document. Eleos mapping: document_subtype (Document subtype (Specific name of the document template, defined by client))"

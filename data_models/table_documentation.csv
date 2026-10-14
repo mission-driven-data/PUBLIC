@@ -200,6 +200,21 @@ _MDD_JCT_ENTRA,_MDD_JCT_ENTRA_LINKS_GROUPS,Portal link for a Microsoft Entra gro
 _MDD_JCT_ENTRA,_MDD_JCT_ENTRA_USERS_UNPIVOT,Technical unpivot-procedure output for the Microsoft Entra users table.
 _MDD_JCT_ENTRA,_MDD_JCT_ENTRA_GROUPS_UNPIVOT,Technical unpivot-procedure output for the Microsoft Entra groups table.
 _MDD_JCT_ENTRA,_MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,Technical unpivot-procedure output for the Microsoft Entra user MFA table.
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_AGENCY,"The Paycom client company. The API has no company record, so the agency is taken from the company establishments and identified by FEIN."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_COST_CENTERS,"Paycom departments, modeled as cost centers as in the PaycomPR, Paylocity and Rippling modules."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_LABOR_ALLOCATION_CATEGORIES,"The labor allocation categories a Paycom client has configured, such as program, grant or funding source."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_LOCATIONS,Company work locations configured in Paycom.
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_ESTABLISHMENTS,Company establishments configured in Paycom: legal or reporting units that carry their own FEIN and address.
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_EARNING_CODES,"The earning codes a Paycom client uses on paychecks, such as regular, overtime and paid time off."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_POSITIONS,"Positions configured in Paycom position management, with their pay, schedule and profile settings."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_POSITION_LEVELS,"Levels within a Paycom position, each with its own pay range and settings."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_POSITION_SEATS,"Fillable slots of a Paycom position, each with its own reporting line and supervisors."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_EMPLOYEES,"Employees in the Paycom employee directory, with the cost center name and home address merged in."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_EMPLOYEE_LABOR_ALLOCATIONS,"The labor allocation values on each employee, one row per filled category slot (cat1 to cat20 in the directory)."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_NEW_HIRES,"Employees added to Paycom. The endpoint returns the last 14 days by default, so this is a rolling window."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_ADDRESSES,"Employee home addresses plus location and establishment work addresses, in the PaycomPR address shape."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_ADDRESSES_EMPLOYEE_HOME,"Employee home addresses selected from the Address entity, one per employee."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_PHONE,"Employee home phone numbers from the employee directory, in the PaycomPR phone shape."
 _MDD_JCT_QUICKMAR,_MDD_JCT_QUICKMAR_CLIENTS,"One row per client (patient) in QuickMAR, tied to a specific location, also known as a Facility."
 _MDD_JCT_QUICKMAR,_MDD_JCT_QUICKMAR_EMAR_OVERVIEW,One row per overview metric returned by QuickMAR for a location.
 _MDD_JCT_QUICKMAR,_MDD_JCT_QUICKMAR_LOCATIONS,One row per QuickMAR location (a facility or site) that appears in the source data.
@@ -209,6 +224,16 @@ _MDD_JCT_QUICKMAR,_MDD_JCT_QUICKMAR_ORDER_ITEMS,"One row per order item in Quick
 _MDD_JCT_QUICKMAR,_MDD_JCT_QUICKMAR_ORDER_MISSED,"One row per scheduled medication administration that is considered missed by module logic, with related order item and client details merged in."
 _MDD_JCT_QUICKMAR,_MDD_JCT_QUICKMAR_TELEMETRY,"One row per captured QuickMAR API or ETL telemetry record used to understand API calls, statuses, and errors."
 _MDD_JCT_QUICKMAR,_MDD_JCT_QUICKMAR_VITAL_MEASURES,"One row per vital measurement recorded in QuickMAR, with related client and order details merged in."
+_MDD_JCT_REMINDERS,_MDD_JCT_REMINDERS_EHR_CLIENTS,"Every client the agency supplied, with formatted phone, age, validation results and the reason a valid client gets no reminders."
+_MDD_JCT_REMINDERS,_MDD_JCT_REMINDERS_EHR_APPOINTMENTS,"Every appointment the agency supplied, with parsed times, staff names, back-to-back collapse and validation results."
+_MDD_JCT_REMINDERS,_MDD_JCT_REMINDERS_RECIPIENTS,Every phone number that gets a client's reminders: the client's own phone plus the extra recipients the agency named.
+_MDD_JCT_REMINDERS,_MDD_JCT_REMINDERS_EHR_CLIENTS_VALIDATION,"Each client validation message, one row per message, with a no-errors row for clean clients."
+_MDD_JCT_REMINDERS,_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_VALIDATION,"Each appointment validation message, one row per message, with a no-errors row for clean appointments."
+_MDD_JCT_REMINDERS,_MDD_JCT_REMINDERS_SETTINGS,"The agency's reminder settings in one row, with a warning when a message template carries opt-out wording."
+_MDD_JCT_REMINDERS,_MDD_JCT_REMINDERS_QUEUE,"The send queue. One row per appointment, reminder slot and recipient whose send date is today or later, with the full message, a status and a plain-English reason. Apps/Reminders.py sends rows whose send date is the day it runs and whose status is Eligible or Waiting."
+_MDD_JCT_REMINDERS,_MDD_JCT_REMINDERS_HISTORY,"One row per Twilio attempt for a reminder, rebuilt each run from the Twilio message archive (source REMINDERS) so history outlives the queue."
+_MDD_JCT_REMINDERS,_MDD_JCT_REMINDERS_EHR_CLIENTS_DEDUPLICATED,"One row per client ID from _MDD_JCT_REMINDERS_EHR_CLIENTS, used for joins."
+_MDD_JCT_REMINDERS,_MDD_JCT_REMINDERS_EHR_APPOINTMENTS_DEDUPLICATED,"One row per appointment ID from _MDD_JCT_REMINDERS_EHR_APPOINTMENTS, used for joins."
 _MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_AGENCY,Represents Rippling legal entities as agencies for the Payroll / HRIS module.
 _MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_AGE_GROUPS,Provides configured reporting bands for whole-number ages.
 _MDD_JCT_RIPPLING,_MDD_JCT_RIPPLING_TENURE_GROUPS,Provides configured reporting bands for employee tenure in whole years.
@@ -234,6 +259,14 @@ _MDD_JCT_X_CREDIBLE_CCBHC_UMD,_MDD_JCT_X_CREDIBLE_CCBHC_UMD_USER_CREDENTIALS,Agg
 _MDD_JCT_X_CREDIBLE_CCBHC_UMD,_MDD_JCT_X_CREDIBLE_CCBHC_UMD_CLIENT_ACTIVE_DIAGNOSIS,Client/date diagnosis rollup for UMD enrichment.
 _MDD_JCT_X_CREDIBLE_CCBHC_UMD,_MDD_JCT_X_CREDIBLE_CCBHC_UMD_CLIENT_ACTIVE_INSURANCE,Client/date insurance rollup for UMD enrichment.
 _MDD_JCT_X_CREDIBLE_CCBHC_UMD,_MDD_JCT_X_CREDIBLE_CCBHC_UMD_DATA,Service-level CCBHC UMD export rows for completed appointments.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION,_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT,"The first ten diagnoses on each client's current Credible diagnosis snapshot, one column per position, used to offer diagnoses in the Client Population report's drop-downs. Replaces the module's former current diagnosis pivot, which JCT no longer builds."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION,_MDD_JCT_CREDIBLE_CLIENTS_VALUES_UNPIVOT,"Unpivot-procedure output: one row for every column of [_MDD_JCT_CREDIBLE_CLIENTS_VALUES] for every row, written by the unpivot procedure this extension calls. The extension reads it to turn client fields into drop-down attributes."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION,_MDD_JCT_CREDIBLE_CLIENTS_EXT_VALUES_UNPIVOT,"Unpivot-procedure output: one row for every column of [_MDD_JCT_CREDIBLE_CLIENTS_EXT_VALUES] for every row, written by the unpivot procedure this extension calls. The extension reads it to turn client extended fields into drop-down attributes."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION,_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT_UNPIVOT,"Unpivot-procedure output: one row for every column of [_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_DX_CURRENT] for every row, written by the unpivot procedure this extension calls. The extension reads it to turn current diagnoses into drop-down attributes."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION,_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_UNPIVOT,"Built from unpivot-procedure output: one row per client attribute, combining the client and client extended text fields listed in the agency's Credible data dictionary and the first ten current diagnoses, with the label and sort order the report's drop-downs use. Attributes listed in the agency's exclusions table are left out."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION,_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,"The services the Client Population report counts: completed, incomplete and scheduled Credible services that start on or after the agency's lookback date, with only the columns the report uses. The lookback is @years_lookback from the agency specifics, two years when it is not set; future scheduled services are always kept."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION,_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_ATTRIBUTE_EXCLUSIONS_CUSTOM,Agency-supplied list of client fields to keep out of the Client Population report's drop-downs. Owned by the agency specifics; the extension creates it empty only when an older agency specifics file has not.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION,_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_METADATA,"Settings the extension's agency specifics write for the extension to read: @years_lookback (years of services to keep, default 2) and @agency_specifics_template (which template the file came from). Created by the agency specifics, not by this SQL file."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE,_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,"Stores all service records that are sent to Eleos. Services are the core data type sent to Eleos, with all other data sent being related to these core services either directly or indirectly. This table lists basic data about the services and is used for agencies to understand what services, and therefore what related data, are considered to be targets for the Eleos Compliance product."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE,_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROGRAMS,Program reference data for any program that appears in the Services table; link key is [Program ID].
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE,_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PATIENTS,Minimal patient/client data needed for compliance for patients appearing in the Services table; link key is [Patient ID]. Eleos terminology uses Patient.
