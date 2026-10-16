@@ -8284,6 +8284,12 @@ _MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Supervisor Primary,"Primary supervi
 _MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Supervisor Secondary,"Secondary supervisor of the seat, as Paycom returns it."
 _MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Supervisor Tertiary,"Tertiary supervisor of the seat, as Paycom returns it."
 _MDD_JCT_PAYCOM_POSITION_SEATS,Position Seat Supervisor Quaternary,"Quaternary supervisor of the seat, as Paycom returns it."
+_MDD_JCT_PAYCOM_AGE_GROUPS,Age,Whole-number age from 0 through 150.
+_MDD_JCT_PAYCOM_AGE_GROUPS,Age Group,Reporting band that the age falls in.
+_MDD_JCT_PAYCOM_AGE_GROUPS,Age Group Sort Order,Sort order of the age band.
+_MDD_JCT_PAYCOM_TENURE_GROUPS,Tenure,Whole-number tenure year from 0 through 150.
+_MDD_JCT_PAYCOM_TENURE_GROUPS,Tenure Group,Reporting band that the tenure year falls in.
+_MDD_JCT_PAYCOM_TENURE_GROUPS,Tenure Group Sort Order,Sort order of the tenure year band.
 _MDD_JCT_PAYCOM_EMPLOYEES,Employee ID,Unique ID of the Employee (the Paycom employee code).
 _MDD_JCT_PAYCOM_EMPLOYEES,Employee ID Paycom,Paycom-sourced copy of the Employee ID.
 _MDD_JCT_PAYCOM_EMPLOYEES,Employee ID Agency,Agency-facing employee number; for Paycom the employee code.
@@ -8299,6 +8305,34 @@ _MDD_JCT_PAYCOM_EMPLOYEES,Employee Name Last & First & Employee ID,Employee last
 _MDD_JCT_PAYCOM_EMPLOYEES,Employee Gender,"Gender of the employee, as Paycom returns it."
 _MDD_JCT_PAYCOM_EMPLOYEES,Employee Status,"Employee status code as Paycom returns it. Not mapped to words, because the API documentation does not list the codes."
 _MDD_JCT_PAYCOM_EMPLOYEES,Cost Center ID,Unique ID of the Cost Center (the Paycom department code).
+_MDD_JCT_PAYCOM_EMPLOYEES,Position ID,Unique ID of the Position (the Paycom position code).
+_MDD_JCT_PAYCOM_EMPLOYEES,Position Seat ID,Unique ID of the Position Seat (the Paycom seat number).
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Job Title,Title of the employee's Paycom position.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Job Title Family,Position family of the employee's Paycom position.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Supervisor ID,"Employee ID of the employee's primary supervisor. Paycom's supervisor code is matched to the supervisor's own employee code, comparing all-digit codes as numbers; empty when no employee matches."
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Supervisor ID Agency,"Agency ID of the employee's primary supervisor, the same value as [Employee Supervisor ID] as in PaycomPR."
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Supervisor Name,Name of the employee's primary supervisor as Paycom returns it.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Supervisor ID Secondary,"Employee ID of the employee's secondary supervisor, matched the same way as [Employee Supervisor ID]."
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Supervisor ID Tertiary,"Employee ID of the employee's tertiary supervisor, matched the same way as [Employee Supervisor ID]."
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Supervisor ID Quaternary,"Employee ID of the employee's quaternary supervisor, matched the same way as [Employee Supervisor ID]."
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Date of Birth,Employee date of birth.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Age in Years,Employee age today in fractional years.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Age In Years Old,Employee age today in whole years.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Hire Date Original,Original hire date of the employee in Paycom.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Rehire Date,Most recent rehire date of the employee in Paycom; empty when never rehired.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Hire Date,"Start of the employee's current employment: the rehire date when there is one, else the original hire date, as in PaycomPR."
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Hire Date Fiscal Year,Fiscal year of [Employee Hire Date] from the JCT date table.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Termination Date,Termination date of the employee in Paycom.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Termination Date Fiscal Year,Fiscal year of [Employee Termination Date] from the JCT date table.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Termination Status,"'Terminated' when the employee has a termination date on or after the latest hire or rehire date, else 'Not Terminated'."
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Tenure Days,"Days from [Employee Hire Date] to the termination date for a terminated employee, or to today otherwise."
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Tenure Years,[Employee Tenure Days] in fractional years.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Email Home,"Personal email address of the employee, trimmed and lower case."
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Email Work,"Work email address of the employee, trimmed and lower case."
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Age Group,Age band of [Employee Age In Years Old] from AGE_GROUPS.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Age Group Sort Order,Sort order of [Employee Age Group].
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Tenure Group,Tenure band of the whole years in [Employee Tenure Years] from TENURE_GROUPS.
+_MDD_JCT_PAYCOM_EMPLOYEES,Employee Tenure Group Sort Order,Sort order of [Employee Tenure Group].
 _MDD_JCT_PAYCOM_EMPLOYEES,Cost Center ID Paycom,Paycom-sourced copy of the Cost Center ID.
 _MDD_JCT_PAYCOM_EMPLOYEES,Cost Center Name,Name of the Paycom department modeled as a cost center.
 _MDD_JCT_PAYCOM_EMPLOYEES,Employee Address Home ID,Unique ID of the Employee Home Address; equal to the Employee ID.
@@ -8307,20 +8341,23 @@ _MDD_JCT_PAYCOM_EMPLOYEES,Employee Address Home 1,Street address of the employee
 _MDD_JCT_PAYCOM_EMPLOYEES,Employee Address Home City,City of the employee home address.
 _MDD_JCT_PAYCOM_EMPLOYEES,Employee Address Home State,State of the employee home address.
 _MDD_JCT_PAYCOM_EMPLOYEES,Employee Address Home Zip,ZIP code of the employee home address.
+_MDD_JCT_PAYCOM_EMPLOYEES,RLS String,"Pipe-separated work email addresses of everyone allowed to see this employee's records: the employee, every supervisor in SUPERVISORY_RELATIONSHIPS and every always-supervisor."
 _MDD_JCT_PAYCOM_EMPLOYEE_LABOR_ALLOCATIONS,Employee Labor Allocation ID,"Unique ID of the Employee Labor Allocation: employee code, a hyphen, then the slot number."
 _MDD_JCT_PAYCOM_EMPLOYEE_LABOR_ALLOCATIONS,Employee Labor Allocation ID Paycom,Paycom-sourced copy of the Employee Labor Allocation ID.
 _MDD_JCT_PAYCOM_EMPLOYEE_LABOR_ALLOCATIONS,Employee ID,Unique ID of the Employee (the Paycom employee code).
 _MDD_JCT_PAYCOM_EMPLOYEE_LABOR_ALLOCATIONS,Employee Labor Allocation Category Number,"Slot number 1 to 20 (cat1 to cat20 in the directory). Likely matches a labor allocation category code, but this is not confirmed."
 _MDD_JCT_PAYCOM_EMPLOYEE_LABOR_ALLOCATIONS,Employee Labor Allocation Code,Labor allocation detail code in that slot for the employee.
 _MDD_JCT_PAYCOM_EMPLOYEE_LABOR_ALLOCATIONS,Employee Labor Allocation Name,Labor allocation description in that slot for the employee.
-_MDD_JCT_PAYCOM_NEW_HIRES,New Hire ID,"Unique ID of the New Hire: employee code, a hyphen, then the time added in ISO format."
+_MDD_JCT_PAYCOM_NEW_HIRES,New Hire ID,Unique ID of the New Hire (the Paycom newHireId).
 _MDD_JCT_PAYCOM_NEW_HIRES,New Hire ID Paycom,Paycom-sourced copy of the New Hire ID.
 _MDD_JCT_PAYCOM_NEW_HIRES,Employee ID,Unique ID of the Employee (the Paycom employee code).
-_MDD_JCT_PAYCOM_NEW_HIRES,New Hire Employee Name,Name of the new hire as Paycom returns it.
+_MDD_JCT_PAYCOM_NEW_HIRES,New Hire Employee Name,"Name of the new hire: first name, a space, then last name."
 _MDD_JCT_PAYCOM_NEW_HIRES,New Hire Date Time Added,Date and time the employee was added to Paycom.
 _MDD_JCT_PAYCOM_NEW_HIRES,New Hire Date Added,Date the employee was added to Paycom.
 _MDD_JCT_PAYCOM_NEW_HIRES,New Hire Added By,Who added the employee in Paycom.
-_MDD_JCT_PAYCOM_NEW_HIRES,New Hire Added By User Type,User type of whoever added the employee.
+_MDD_JCT_PAYCOM_NEW_HIRES,New Hire Added By User Type,"User type code of whoever added the employee in Paycom, as Paycom returns it."
+_MDD_JCT_PAYCOM_NEW_HIRES,New Hire Date Hire,Hire date entered on the Paycom new hire record.
+_MDD_JCT_PAYCOM_NEW_HIRES,New Hire Status,"Status of the new hire record on the Paycom newhireids list, as Paycom returns it."
 _MDD_JCT_PAYCOM_ADDRESSES,Address ID,"Unique ID of the Address: object category, address type and object ID joined by hyphens."
 _MDD_JCT_PAYCOM_ADDRESSES,Address ID Paycom,Paycom-sourced copy of the Address ID.
 _MDD_JCT_PAYCOM_ADDRESSES,Object Category,"Kind of record the row belongs to (Employee, Location or Establishment)."
@@ -8348,6 +8385,218 @@ _MDD_JCT_PAYCOM_PHONE,Object ID,"ID of the record the row belongs to, within its
 _MDD_JCT_PAYCOM_PHONE,Phone Type,Type of phone number (Home).
 _MDD_JCT_PAYCOM_PHONE,Phone Type ID,"Numeric code for the phone type: 2 Home, as in PaycomPR."
 _MDD_JCT_PAYCOM_PHONE,Phone Number,The phone number as Paycom returns it.
+_MDD_JCT_PAYCOM_EMAIL,Email ID,"Unique ID of the Email Address: object category, email type and object ID joined by hyphens."
+_MDD_JCT_PAYCOM_EMAIL,Email ID Paycom,Paycom-sourced copy of the Email ID.
+_MDD_JCT_PAYCOM_EMAIL,Object Category,"Kind of record the row belongs to (Employee, Location or Establishment)."
+_MDD_JCT_PAYCOM_EMAIL,Object Category ID,"Numeric code for the object category: 2 Employee and 4 Location and 5 Establishment for addresses, 3 Employee for phones."
+_MDD_JCT_PAYCOM_EMAIL,Object ID,"ID of the record the row belongs to, within its object category."
+_MDD_JCT_PAYCOM_EMAIL,Email Type,Kind of email address: Work or Home.
+_MDD_JCT_PAYCOM_EMAIL,Email Type ID,"Number for the email type: 1 Work, 3 Home, as in Rippling."
+_MDD_JCT_PAYCOM_EMAIL,Email Address,"Email address, trimmed and lower case. Addresses without an @ and a dot, or with unexpected characters, are left out."
+_MDD_JCT_PAYCOM_EMAIL,Email Username,Username portion of [Email Address] parsed by the JCT email parser.
+_MDD_JCT_PAYCOM_EMAIL,Email Domain,Domain portion of [Email Address] parsed by the JCT email parser.
+_MDD_JCT_PAYCOM_EMAIL,Email TLD,Top-level domain of [Email Address] parsed by the JCT email parser.
+_MDD_JCT_PAYCOM_SUPERVISORY_RELATIONSHIPS,Supervisor Employee ID,Employee ID of the supervisor in the relationship.
+_MDD_JCT_PAYCOM_SUPERVISORY_RELATIONSHIPS,Supervisor Employee ID Agency,Agency employee ID of the supervisor.
+_MDD_JCT_PAYCOM_SUPERVISORY_RELATIONSHIPS,Employee ID Agency,Agency-facing employee number; for Paycom the employee code.
+_MDD_JCT_PAYCOM_SUPERVISORY_RELATIONSHIPS,Employee ID,Unique ID of the Employee (the Paycom employee code).
+_MDD_JCT_PAYCOM_SUPERVISORY_RELATIONSHIPS,Supervisory Relationship Type,"How the supervisor relates to the employee: Direct (primary supervisor), Secondary, Tertiary or Quaternary (Paycom's other named supervisors), or Indirect (higher up the primary supervisor chain). When a person relates more than one way, the closest type is kept."
+_MDD_JCT_PAYCOM_SUPERVISORY_RELATIONSHIPS,Supervisor Name,Supervisor first and last name.
+_MDD_JCT_PAYCOM_SUPERVISORY_RELATIONSHIPS,Supervisor Job Title,Supervisor job title.
+_MDD_JCT_PAYCOM_SUPERVISORY_RELATIONSHIPS,Employee Name,Employee display name as Paycom returns it.
+_MDD_JCT_PAYCOM_SUPERVISORY_RELATIONSHIPS,Employee Job Title,Title of the employee's Paycom position.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch ID,Unique ID of the Time Punch (the Paycom punch ID).
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch ID Paycom,Paycom-sourced copy of the Punch ID.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee ID,Unique ID of the Employee (the Paycom employee code).
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Badge,Badge number recorded on the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Time,Date and time of the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Date,Date of the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Time Added,Date and time the punch was entered in Paycom.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Type,Paycom punch type code as Paycom returns it.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Description,Punch description as Paycom returns it.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Direction,"In or Out, read from the first letter of [Punch Type]; empty for entries that are neither, such as hours entered without a clock."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Entry Type,Paycom entry type code of the punch as Paycom returns it.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Clock Type,Paycom clock type code of the punch as Paycom returns it.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Clock ID,ID of the time clock or source that recorded the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Clock Sequence,Clock sequence number recorded on the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Cost Center ID,Department (cost center) code the punch was charged to. The employee's home department is [Cost Center ID].
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Earn Code,"Paycom earning code of the punch, as in PaycomPR."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Earning Code ID,Unique ID of the Earning Code (the Paycom earn code).
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Tax Profile ID,Paycom tax profile ID on the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Hours,Hours recorded on the punch as Paycom returns them.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Dollar Amount,Dollar amount recorded on the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Units,Units recorded on the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Is Deleted,"'TRUE' when Paycom marks the punch deleted, 'FALSE' when not."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Is Archived,"'TRUE' when Paycom marks the punch archived, 'FALSE' when not."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Start,Start of the worked span: set on an In punch whose next punch for the employee (neither deleted) is an Out punch within 24 hours.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch End,End of the worked span: the time of the Out punch paired with this In punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Duration (Minutes),"Minutes worked: the paired In to Out span on an In punch, or the punch's hours for entries that are neither In nor Out. Empty on Out punches so time is not counted twice."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Duration (Hours),[Punch Duration (Minutes)] in hours.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Effective Time,"Effective (rounded) punch time from the punch audit, current pay period only."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Rounding,"Rounding flag from the punch audit, as Paycom returns it."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Batch,Batch number from the punch audit.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Location,"Location code from the punch audit, as Paycom returns it."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Allocation,"Labor allocation text from the punch audit, as Paycom returns it."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Last Modified,"When the punch was last changed, from the punch audit."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Punch Last Modified By,"Who last changed the punch, from the punch audit."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee ID Paycom,Paycom-sourced copy of the Employee ID.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee ID Agency,Agency-facing employee number; for Paycom the employee code.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee ID External,"Employee badge number, named as in the PaycomPR module."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee ID Clock Sequence,Time clock sequence number of the employee.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Name,Employee display name as Paycom returns it.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Name Last,Last name of the employee.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Name First,First name of the employee.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Name First & Last,"Employee first name, a space, then last name."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Name First & Last & Employee ID,Employee first and last name followed by the employee ID in parentheses.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Name Last & First,"Employee last name, a comma, then first name."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Name Last & First & Employee ID,Employee last and first name followed by the employee ID in parentheses.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Gender,"Gender of the employee, as Paycom returns it."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Status,"Employee status code as Paycom returns it. Not mapped to words, because the API documentation does not list the codes."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Cost Center ID,Unique ID of the Cost Center (the Paycom department code).
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Position ID,Unique ID of the Position (the Paycom position code).
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Position Seat ID,Unique ID of the Position Seat (the Paycom seat number).
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Job Title,Title of the employee's Paycom position.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Job Title Family,Position family of the employee's Paycom position.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Supervisor ID,"Employee ID of the employee's primary supervisor. Paycom's supervisor code is matched to the supervisor's own employee code, comparing all-digit codes as numbers; empty when no employee matches."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Supervisor ID Agency,"Agency ID of the employee's primary supervisor, the same value as [Employee Supervisor ID] as in PaycomPR."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Supervisor Name,Name of the employee's primary supervisor as Paycom returns it.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Supervisor ID Secondary,"Employee ID of the employee's secondary supervisor, matched the same way as [Employee Supervisor ID]."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Supervisor ID Tertiary,"Employee ID of the employee's tertiary supervisor, matched the same way as [Employee Supervisor ID]."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Supervisor ID Quaternary,"Employee ID of the employee's quaternary supervisor, matched the same way as [Employee Supervisor ID]."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Date of Birth,Employee date of birth.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Age in Years,Employee age today in fractional years.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Age In Years Old,Employee age today in whole years.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Hire Date Original,Original hire date of the employee in Paycom.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Rehire Date,Most recent rehire date of the employee in Paycom; empty when never rehired.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Hire Date,"Start of the employee's current employment: the rehire date when there is one, else the original hire date, as in PaycomPR."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Hire Date Fiscal Year,Fiscal year of [Employee Hire Date] from the JCT date table.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Termination Date,Termination date of the employee in Paycom.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Termination Date Fiscal Year,Fiscal year of [Employee Termination Date] from the JCT date table.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Termination Status,"'Terminated' when the employee has a termination date on or after the latest hire or rehire date, else 'Not Terminated'."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Tenure Days,"Days from [Employee Hire Date] to the termination date for a terminated employee, or to today otherwise."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Tenure Years,[Employee Tenure Days] in fractional years.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Email Home,"Personal email address of the employee, trimmed and lower case."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Email Work,"Work email address of the employee, trimmed and lower case."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Age Group,Age band of [Employee Age In Years Old] from AGE_GROUPS.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Age Group Sort Order,Sort order of [Employee Age Group].
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Tenure Group,Tenure band of the whole years in [Employee Tenure Years] from TENURE_GROUPS.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Tenure Group Sort Order,Sort order of [Employee Tenure Group].
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Cost Center ID Paycom,Paycom-sourced copy of the Cost Center ID.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Cost Center Name,Name of the Paycom department modeled as a cost center.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Address Home ID,Unique ID of the Employee Home Address; equal to the Employee ID.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Address Home ID Paycom,Paycom-sourced copy of the Employee Home Address ID.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Address Home 1,Street address of the employee home address.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Address Home City,City of the employee home address.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Address Home State,State of the employee home address.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,Employee Address Home Zip,ZIP code of the employee home address.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Segment ID,"Unique ID of the Time Punch Segment: punch ID, a hyphen, then the labor allocation slot number."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Segment ID Paycom,Paycom-sourced copy of the Punch Segment ID.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch ID,Unique ID of the Time Punch (the Paycom punch ID).
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee ID,Unique ID of the Employee (the Paycom employee code).
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Segment Number,Labor allocation slot number (1 to 20) the segment comes from.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Segment Code,Labor allocation code in this slot on the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Segment Name,Labor allocation description in this slot on the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch ID Paycom,Paycom-sourced copy of the Punch ID.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Badge,Badge number recorded on the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Time,Date and time of the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Date,Date of the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Time Added,Date and time the punch was entered in Paycom.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Type,Paycom punch type code as Paycom returns it.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Description,Punch description as Paycom returns it.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Direction,"In or Out, read from the first letter of [Punch Type]; empty for entries that are neither, such as hours entered without a clock."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Entry Type,Paycom entry type code of the punch as Paycom returns it.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Clock Type,Paycom clock type code of the punch as Paycom returns it.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Clock ID,ID of the time clock or source that recorded the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Clock Sequence,Clock sequence number recorded on the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Cost Center ID,Department (cost center) code the punch was charged to. The employee's home department is [Cost Center ID].
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Earn Code,"Paycom earning code of the punch, as in PaycomPR."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Earning Code ID,Unique ID of the Earning Code (the Paycom earn code).
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Tax Profile ID,Paycom tax profile ID on the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Hours,Hours recorded on the punch as Paycom returns them.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Dollar Amount,Dollar amount recorded on the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Units,Units recorded on the punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Is Deleted,"'TRUE' when Paycom marks the punch deleted, 'FALSE' when not."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Is Archived,"'TRUE' when Paycom marks the punch archived, 'FALSE' when not."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Start,Start of the worked span: set on an In punch whose next punch for the employee (neither deleted) is an Out punch within 24 hours.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch End,End of the worked span: the time of the Out punch paired with this In punch.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Duration (Minutes),"Minutes worked: the paired In to Out span on an In punch, or the punch's hours for entries that are neither In nor Out. Empty on Out punches so time is not counted twice."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Duration (Hours),[Punch Duration (Minutes)] in hours.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Effective Time,"Effective (rounded) punch time from the punch audit, current pay period only."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Rounding,"Rounding flag from the punch audit, as Paycom returns it."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Batch,Batch number from the punch audit.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Location,"Location code from the punch audit, as Paycom returns it."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Allocation,"Labor allocation text from the punch audit, as Paycom returns it."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Last Modified,"When the punch was last changed, from the punch audit."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Punch Last Modified By,"Who last changed the punch, from the punch audit."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee ID Paycom,Paycom-sourced copy of the Employee ID.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee ID Agency,Agency-facing employee number; for Paycom the employee code.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee ID External,"Employee badge number, named as in the PaycomPR module."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee ID Clock Sequence,Time clock sequence number of the employee.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Name,Employee display name as Paycom returns it.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Name Last,Last name of the employee.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Name First,First name of the employee.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Name First & Last,"Employee first name, a space, then last name."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Name First & Last & Employee ID,Employee first and last name followed by the employee ID in parentheses.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Name Last & First,"Employee last name, a comma, then first name."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Name Last & First & Employee ID,Employee last and first name followed by the employee ID in parentheses.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Gender,"Gender of the employee, as Paycom returns it."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Status,"Employee status code as Paycom returns it. Not mapped to words, because the API documentation does not list the codes."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Cost Center ID,Unique ID of the Cost Center (the Paycom department code).
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Position ID,Unique ID of the Position (the Paycom position code).
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Position Seat ID,Unique ID of the Position Seat (the Paycom seat number).
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Job Title,Title of the employee's Paycom position.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Job Title Family,Position family of the employee's Paycom position.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Supervisor ID,"Employee ID of the employee's primary supervisor. Paycom's supervisor code is matched to the supervisor's own employee code, comparing all-digit codes as numbers; empty when no employee matches."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Supervisor ID Agency,"Agency ID of the employee's primary supervisor, the same value as [Employee Supervisor ID] as in PaycomPR."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Supervisor Name,Name of the employee's primary supervisor as Paycom returns it.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Supervisor ID Secondary,"Employee ID of the employee's secondary supervisor, matched the same way as [Employee Supervisor ID]."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Supervisor ID Tertiary,"Employee ID of the employee's tertiary supervisor, matched the same way as [Employee Supervisor ID]."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Supervisor ID Quaternary,"Employee ID of the employee's quaternary supervisor, matched the same way as [Employee Supervisor ID]."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Date of Birth,Employee date of birth.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Age in Years,Employee age today in fractional years.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Age In Years Old,Employee age today in whole years.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Hire Date Original,Original hire date of the employee in Paycom.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Rehire Date,Most recent rehire date of the employee in Paycom; empty when never rehired.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Hire Date,"Start of the employee's current employment: the rehire date when there is one, else the original hire date, as in PaycomPR."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Hire Date Fiscal Year,Fiscal year of [Employee Hire Date] from the JCT date table.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Termination Date,Termination date of the employee in Paycom.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Termination Date Fiscal Year,Fiscal year of [Employee Termination Date] from the JCT date table.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Termination Status,"'Terminated' when the employee has a termination date on or after the latest hire or rehire date, else 'Not Terminated'."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Tenure Days,"Days from [Employee Hire Date] to the termination date for a terminated employee, or to today otherwise."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Tenure Years,[Employee Tenure Days] in fractional years.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Email Home,"Personal email address of the employee, trimmed and lower case."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Email Work,"Work email address of the employee, trimmed and lower case."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Age Group,Age band of [Employee Age In Years Old] from AGE_GROUPS.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Age Group Sort Order,Sort order of [Employee Age Group].
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Tenure Group,Tenure band of the whole years in [Employee Tenure Years] from TENURE_GROUPS.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Tenure Group Sort Order,Sort order of [Employee Tenure Group].
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Cost Center ID Paycom,Paycom-sourced copy of the Cost Center ID.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Cost Center Name,Name of the Paycom department modeled as a cost center.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Home ID,Unique ID of the Employee Home Address; equal to the Employee ID.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Home ID Paycom,Paycom-sourced copy of the Employee Home Address ID.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Home 1,Street address of the employee home address.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Home City,City of the employee home address.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Home State,State of the employee home address.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,Employee Address Home Zip,ZIP code of the employee home address.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_CHANGES,Punch Change ID A0,"Row number ID of the Punch Change, recalculated every run because Paycom gives changes no ID."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_CHANGES,Employee ID,Unique ID of the Employee (the Paycom employee code).
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_CHANGES,Punch ID,Unique ID of the Time Punch (the Paycom punch ID).
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_CHANGES,Punch Change Source,"Which part of the punch audit the row comes from: Changed, Deleted or Timecard Approval."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_CHANGES,Punch Change Time,"When the change, deletion or approval was made."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_CHANGES,Punch Change Date Affected,Work date the change applies to.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_CHANGES,Punch Change Made By,"Who made the change, deletion or approval."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_CHANGES,Punch Change Description,Description of the change as Paycom returns it; 'Punch deleted' for deleted punches.
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_CHANGES,Punch Change Old Value,"Value before the change; for a deleted punch, its punch type and time."
+_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_CHANGES,Punch Change New Value,Value after the change.
+_MDD_JCT_PAYCOM_RLS_UPNS,Employee ID External,"Employee badge number, named as in the PaycomPR module."
+_MDD_JCT_PAYCOM_RLS_UPNS,Employee ID,Unique ID of the Employee (the Paycom employee code).
+_MDD_JCT_PAYCOM_RLS_UPNS,Employee Email for RLS,"Work email of an employee who is not terminated, used as their sign-in name for row level security."
+_MDD_JCT_PAYCOM_RLS_ALWAYS_SUPERVISES,Employee ID,Unique ID of the Employee (the Paycom employee code).
+_MDD_JCT_PAYCOM_RLS_SUPERVISORY_HIERARCHY,Employee ID,Unique ID of the Employee (the Paycom employee code).
+_MDD_JCT_PAYCOM_RLS_SUPERVISORY_HIERARCHY,Supervisor Employee ID,Employee ID of the supervisor in the relationship.
+_MDD_JCT_PAYCOM_RLS_SUPERVISORY,Employee ID,Unique ID of the Employee (the Paycom employee code).
+_MDD_JCT_PAYCOM_RLS_SUPERVISORY,RLS String,"Pipe-separated work email addresses of everyone allowed to see this employee's records: the employee, every supervisor in SUPERVISORY_RELATIONSHIPS and every always-supervisor."
+_MDD_JCT_PAYCOM_RLS_SUPERVISORY,Employee ID Agency,Agency-facing employee number; for Paycom the employee code.
 _MDD_JCT_QUICKMAR_CLIENTS,Client ID,Unique ID of the Client.
 _MDD_JCT_QUICKMAR_CLIENTS,Client ID Pharmacy,The client's pharmacy-facing ID.
 _MDD_JCT_QUICKMAR_CLIENTS,Client ID MRN,The client's medical record number.
@@ -9451,6 +9700,8 @@ _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Client ID,Unique ID of the Client
 _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Client Status,The client's current status in Credible.
 _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Program ID,Unique ID of the Program.
 _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Program Name,The name of the program.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Service Type Name,The name of the service type (Credible visit type) of the service.
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Program Group Without Nulls,"The program's group, or the program's name when the program has no group."
 _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,User ID,Unique ID of the User.
 _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,User Name Last & First,"The staff member's name, last name first."
 _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_ATTRIBUTE_EXCLUSIONS_CUSTOM,Attribute Category,"Which group of client data the attribute comes from: Clients (fields on the client record), Client Extended (fields on the client extended record) or Diagnoses (current diagnoses)."

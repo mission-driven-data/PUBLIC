@@ -209,12 +209,23 @@ _MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_EARNING_CODES,"The earning codes a Paycom client
 _MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_POSITIONS,"Positions configured in Paycom position management, with their pay, schedule and profile settings."
 _MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_POSITION_LEVELS,"Levels within a Paycom position, each with its own pay range and settings."
 _MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_POSITION_SEATS,"Fillable slots of a Paycom position, each with its own reporting line and supervisors."
-_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_EMPLOYEES,"Employees in the Paycom employee directory, with the cost center name and home address merged in."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_AGE_GROUPS,"Provides configured reporting bands for whole-number ages. Bands come from the _CUSTOM table that the Agency Specifics file can define; when it is missing, the module creates it with the sibling modules' default bands."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_TENURE_GROUPS,"Provides configured reporting bands for whole-number tenure years. Bands come from the _CUSTOM table that the Agency Specifics file can define; when it is missing, the module creates it with the sibling modules' default bands."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_EMPLOYEES,"Employees in the Paycom employee directory, with dates, age and tenure groups, email, position and supervisors from GET /employee/:eecode, and the cost center name, home address and row level security string merged in."
 _MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_EMPLOYEE_LABOR_ALLOCATIONS,"The labor allocation values on each employee, one row per filled category slot (cat1 to cat20 in the directory)."
-_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_NEW_HIRES,"Employees added to Paycom. The endpoint returns the last 14 days by default, so this is a rolling window."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_NEW_HIRES,"Paycom new hire records from the per-id detail route, one per newHireId, with who added the employee where GET /employeenewhire (last 14 days) still lists them."
 _MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_ADDRESSES,"Employee home addresses plus location and establishment work addresses, in the PaycomPR address shape."
 _MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_ADDRESSES_EMPLOYEE_HOME,"Employee home addresses selected from the Address entity, one per employee."
 _MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_PHONE,"Employee home phone numbers from the employee directory, in the PaycomPR phone shape."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_EMAIL,"Employee work and personal email addresses from GET /employee/:eecode as a contact-medium entity, with parsed parts."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_SUPERVISORY_RELATIONSHIPS,"Direct, named secondary to quaternary, and recursively derived indirect employee-to-supervisor relationships."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_TIMECLOCK_PUNCHES,"Paycom clock punches from punch history (last 30 days by default), one row per punch, with In and Out punches paired into spans, punch audit detail where Paycom has it, and employee information merged in before the RLS merge."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_SEGMENTS,"The labor allocation categories charged on each Paycom punch (cat1 to cat20), one row per filled slot, with the punch merged in."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_TIMECLOCK_PUNCH_CHANGES,"The Paycom timecard audit trail for the current pay period: punch changes, deleted punches and timecard approvals."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_RLS_UPNS,"Work email sign-in names of employees who are not terminated, for row level security."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_RLS_ALWAYS_SUPERVISES,Employees who may see every employee's records. The agency maintains this list; the module only creates it empty when missing.
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_RLS_SUPERVISORY_HIERARCHY,"Every employee paired with each person allowed to see their records: their supervisors, themselves and the always-supervisors."
+_MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_RLS_SUPERVISORY,Aggregates the work emails of everyone allowed to see an employee into one row level security string.
 _MDD_JCT_QUICKMAR,_MDD_JCT_QUICKMAR_CLIENTS,"One row per client (patient) in QuickMAR, tied to a specific location, also known as a Facility."
 _MDD_JCT_QUICKMAR,_MDD_JCT_QUICKMAR_EMAR_OVERVIEW,One row per overview metric returned by QuickMAR for a location.
 _MDD_JCT_QUICKMAR,_MDD_JCT_QUICKMAR_LOCATIONS,One row per QuickMAR location (a facility or site) that appears in the source data.
