@@ -9686,7 +9686,7 @@ _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_UNPIVOT,Attribute Name,The column name of 
 _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_UNPIVOT,Attribute Is In Data Dictionary,"Custom Labels when the agency's Credible data dictionary gives the field an on-screen label, otherwise No Labels. Diagnoses are always No Labels."
 _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_UNPIVOT,Attribute Name Custom,"The name shown in the report's drop-down: the field's on-screen label from the Credible data dictionary, or z(No Label) followed by the column name when the data dictionary gives it none. Diagnoses use the column name."
 _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_UNPIVOT,Attribute Order,"Sort order for the drop-down: the field's position on its Credible view, or 100000 plus its data dictionary ID when it is on no view; 99 for diagnoses."
-_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_UNPIVOT,Attribute Value,"The client's value for the attribute, as text. Not cut to a set length."
+_MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_UNPIVOT,Attribute Value,"The client's value for the attribute, as text of up to 50 characters. Values over 50 characters are cut to their first 47 characters plus ""...""."
 _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Service ID Universal,"Unique ID of the service record within its tense. Filled on every row, including incomplete and scheduled services, where [Service ID] is empty."
 _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Service Tense ID,"Which kind of service record the row is: 1 completed, 2 incomplete, 3 scheduled in the planner."
 _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_SERVICES,Service ID,Unique ID of the completed Service in Credible; empty on incomplete and scheduled services.
@@ -9710,6 +9710,8 @@ _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_METADATA,Parameter,The setting's name.
 _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_METADATA,Value Text,The setting's value when it is text.
 _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_METADATA,Value Datetime,The setting's value when it is a date and time.
 _MDD_JCT_X_CREDIBLE_CLIENT_POPULATION_METADATA,Value Integer,The setting's value when it is a whole number.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SETTINGS,Parameter,The setting's name.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SETTINGS,Value Integer,The setting's value when it is a whole number.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Service ID,"The unique ID of the service within Credible. Eleos mapping: id (Document identifier (Primary Key, defined by the client))"
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Document Type,"Agency-specific Document Type, as required by Eleos Compliance Data Specifications v2.0, configured and customized on an agency-level. Eleos mapping: document_type (Main document type defined by Eleos as the following list: (Intake, Session Note, Treatment Plan, Assessment, Discharge Document, Other))"
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Document Subtype,"The name of the Credible service, also called Client Visit Type. Within Credible documents (Called Forms) can be applied to more than one service. Providing Eleos with the Service Name ensures the most nuanced interpretation and intent of the document. Eleos mapping: document_subtype (Document subtype (Specific name of the document template, defined by client))"
@@ -9751,14 +9753,20 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Custom Filter 4,"Configurable Eleo
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Custom Filter 4 Name,"Display label for custom filter 4. In this extension, it provides the human-readable meaning of the agency-configured filter value used in Eleos service targeting."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Custom Filter 5,"Configurable Eleos service filter value 5. In this extension, these fields carry agency-specific selection metadata from the extension's services customization layer to support Eleos targeting and dashboard interpretation."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Custom Filter 5 Name,"Display label for custom filter 5. In this extension, it provides the human-readable meaning of the agency-configured filter value used in Eleos service targeting."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROGRAMS,Program ID,The unique ID associated with the program. Eleos mapping: provider_program (Program attached to the service of the document)
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROGRAMS,Program Name,The name of the clinical program attached to a given service Eleos mapping: provider_program (Program attached to the service of the document)
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROGRAMS,Program Group,"In Credible, agencies can optionally fold one or more similar programs into 'Program Groups.' This represents the name of the program group of the program attached to a given service. Eleos mapping: provider_program (Program attached to the service of the document)"
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROGRAMS,Program Is Residential,Indicates whether the agency's Credible administrator has marked this program as residential.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROGRAMS,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROGRAMS,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PATIENTS,Patient ID,"The unique ID of the Credible patient, typically referred to as Client ID. Eleos mapping: patient_id (Identifier of the patient (PAN). Note: This must be the patient identifier visible in the EHR.)"
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PATIENTS,Patient Date of Birth,The date of birth of a given client.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PATIENTS,Patient Created Date,The date and time the client was created in Credible.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PATIENTS,Patient Updated Date,The date and time the client was last updated in Credible.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PATIENTS,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PATIENTS,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROCEDURE_CODES,Service ID,"The unique ID of the service within Credible. Eleos mapping: id (Document identifier (Primary Key, defined by the client))"
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROCEDURE_CODES,Procedure Code Type,Code system for the reported procedure code (CPT or HCPCS).
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROCEDURE_CODES,Procedure Code,Procedure code value selected from CPT or HCPCS depending on which value is present.
@@ -9766,6 +9774,8 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROCEDURE_CODES,Procedure Code Modifier 1,F
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROCEDURE_CODES,Procedure Code Modifier 2,Second CPT procedure modifier associated with the service.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROCEDURE_CODES,Procedure Code Modifier 3,Third CPT procedure modifier associated with the service.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROCEDURE_CODES,Procedure Code Modifier 4,Fourth CPT procedure modifier associated with the service.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROCEDURE_CODES,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROCEDURE_CODES,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Service ID,"The unique ID of the service within Credible. Eleos mapping: id (Document identifier (Primary Key, defined by the client))"
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Tx Plan ID,The unique id of the Treatment Plan Eleos mapping: treatment_plan_id (Identifier of the related active treatment plan for the document Required only for document_type=Progress Notes))
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Tx Plan Start,The start date of the treatment plan. Eleos mapping: service_start_date
@@ -9779,6 +9789,26 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Tx Plan Created In Service ID,The 
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Tx Plan Type Name,"The type of the treatment plan. This is an agency-provided name, set by the agency's Credible Administrator."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Program ID,The unique ID of the clinical program attached to the service. Eleos mapping: provider_program (Program attached to the service of the document)
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Program Name,The name of the clinical program attached to a given service Eleos mapping: provider_program (Program attached to the service of the document)
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Patient ID,"The unique ID of the Credible patient, typically referred to as Client ID. Eleos mapping: patient_id (Identifier of the patient (PAN). Note: This must be the patient identifier visible in the EHR.)"
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan ID,The unique id of the Treatment Plan Eleos mapping: treatment_plan_id (Identifier of the related active treatment plan for the document Required only for document_type=Progress Notes))
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Module,"Identifies which Credible treatment-plan module supplied the plan tied to the service. In this extension context, it is used to normalize plan lineage for Eleos-targeted services across both Credible Plan and TxPlus pathways."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Start,The start date of the treatment plan. Eleos mapping: service_start_date
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Target Date,The target date of the treatment plan. Eleos mapping: The target date of the treatment plan.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan End,The end date of the treatment plan. Eleos mapping: service_end_date
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Created By Name,The first and last name of the individual who created the treatment plan.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Created Date,The date and time the treatment plan was created. Eleos mapping: created_date
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Updated Date,The date and time the treatment plan was updated. Eleos mapping: updated_date (Date/Timestamp representing the last time the document was updated in UTC time)
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Last Updated by Name,The first and last name of the individual who last updated the treatment plan.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Created By Provider ID,"The unique ID of the provider (Credible employee) who created the treatment plan. It is the same ID as [Provider ID] on services and in the Providers table, so that provider is included in the Providers table."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Last Updated By Provider ID,"The unique ID of the provider (Credible employee) who last updated the treatment plan. It is the same ID as [Provider ID] on services and in the Providers table, so that provider is included in the Providers table."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Created In Service ID,The service ID in which the treatment plan was created.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Type Name,"The type of the treatment plan. This is an agency-provided name, set by the agency's Credible Administrator."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Program ID,The unique ID of the clinical program attached to the service. Eleos mapping: provider_program (Program attached to the service of the document)
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Program Name,The name of the clinical program attached to a given service Eleos mapping: provider_program (Program attached to the service of the document)
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CONTENT,Tx Content ID,The unique id of this content.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CONTENT,Tx Plan ID,The unique id of the Treatment Plan Eleos mapping: treatment_plan_id (Identifier of the related active treatment plan for the document Required only for document_type=Progress Notes))
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CONTENT,Tx Content Parent ID,Plan Tree Elements within a Credible Treatment Plan are based in a four-layer hierarchy. This indicates the Tx Content ID under which the existing Content would reside in the Tx Plan.
@@ -9790,6 +9820,8 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CONTENT,Tx Content End Date,The end
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CONTENT,Tx Content Status,Whether the content is listed as active or inactive within the plan.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CONTENT,Tx Title,The title of this Tx Plan Content.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CONTENT,Tx Content,The description of this Tx Plan content.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CONTENT,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CONTENT,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CUSTOM_FIELDS,Tx Content ID,The unique id of this content.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CUSTOM_FIELDS,Tx Title,"The treatment-plan content title associated with the custom-field answer. In this extension context, it helps interpret custom responses within the Eleos-targeted treatment-plan narrative."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CUSTOM_FIELDS,Answer ID,The unique ID associated with the answer.
@@ -9797,6 +9829,8 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CUSTOM_FIELDS,Question Text,The tex
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CUSTOM_FIELDS,Question ID,The unique ID associated with the question or form field within a form.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CUSTOM_FIELDS,Question Format,The type of field on a form.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CUSTOM_FIELDS,Answer,The answer provided to a custom field / question within the Treatment Plan.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CUSTOM_FIELDS,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CUSTOM_FIELDS,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Service ID,"The unique ID of the service within Credible. Eleos mapping: id (Document identifier (Primary Key, defined by the client))"
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Patient ID,"The unique ID of the Credible patient, typically referred to as Client ID."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Dx Code,The ICD10 code assigned to the service. Eleos mapping: diagnosis_code (The ICD-10 code of the diagnosis associated with the billed service)
@@ -9805,6 +9839,8 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Service Dx Sequence ASC,"The order in wh
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Service Dx Sequence DESC,"The order in which a diagnosis appears on a service, descending. Applicable for Agencies with payers that can accept more than one diagnosis per claim."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Dx Code System,
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Dx Code System Name,The diagnosis code system name attached to service diagnosis records in the Eleos extension; this value is standardized to ICD-10 for Eleos delivery context.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX_EPISODES,Patient ID,"The unique ID of the Credible patient, typically referred to as Client ID."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX_EPISODES,Dx Episode Start Date,"Mission Driven Data's best understanding of when a Diagnosis was applied to a client record, given a large number of criteria associated with a diagnosis."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX_EPISODES,Dx Episode End Date,"Mission Driven Data's best understanding of when a Diagnosis was end-dated on a client record, given a large number of criteria associated with a diagnosis."
@@ -9817,6 +9853,8 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX_EPISODES,Dx Is Rule-Out,Indicates whethe
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX_EPISODES,Dx Onset Date,"Indicates the onset date of the diagnosis, if provided."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX_EPISODES,Dx Date,"Indicates the date of diagnosis, if provided."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX_EPISODES,Dx Resolved Date,"Indicates the date a diagnosis is resolved, if provided."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX_EPISODES,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX_EPISODES,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Form Version ID,"Credible documentation occurs within Forms, which are attached to Services. The Form Version ID is the version number of a given form. A new form version represents a change to the form, such as a new or updated field. Form Version ID is the unique ID of the version of the specific form used to document a given service."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Form ID,"Credible documentation occurs within Forms, which are attached to Servicers. The Form ID is the unique ID of the specific form used to document the given service."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Form Name,"The name of the form attached to a given service, used to collect detailed information about the service."
@@ -9824,6 +9862,8 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Form Version Number,"The version numb
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Form Version Build Date,The date and time a form version was built and activiated for use by an agency's Credible Administrator.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Form Version Is Current,"Indicates whether the form version used by the provider for the client is the most updated version of the form. It is common for scheduled services to utilize an older version of a form, as services scheduled in the future are configured to use the Form Version ID of the form associated with the planned service that is current at the time of the scheduling."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Form Version Completed Service Count,The number of completed services for the entire agency that leveraged this the form version associated with a given service.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Service ID,"The unique ID of the service within Credible. Eleos mapping: id (Document identifier (Primary Key, defined by the client))"
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Form ID,"Credible documentation occurs within Forms, which are attached to Servicers. The Form ID is the unique ID of the specific form used to document the given service."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Form Version ID,"Credible documentation occurs within Forms, which are attached to Services. The Form Version ID is the version number of a given form. A new form version represents a change to the form, such as a new or updated field. Form Version ID is the unique ID of the version of the specific form used to document a given service."
@@ -9835,6 +9875,8 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Question Format,The type of fiel
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Answer,The answer provided to a question on a form.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Question Order,The order in which a question appeared on a form.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Answer Note,"Supplemental note text attached to a form answer. In this extension, it carries additional clinical/document context associated with Eleos-targeted service documentation."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_CURRENT,Signature ID,The unique ID of a given signature.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_CURRENT,Service ID,"The unique ID of the service within Credible. Eleos mapping: id (Document identifier (Primary Key, defined by the client))"
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_CURRENT,Provider ID,The unique ID of the provider associated with a given service.
@@ -9850,6 +9892,8 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_CURRENT,Signature Date,The date 
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_CURRENT,Signature Box ID,"The box associated with the signature. In Credible, services can have up to six signature, each in their own box."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_CURRENT,Provider Job Title At Signature,The job title provided at the time of signature.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_CURRENT,Provider Credentials At Signature,Provider credentials provided at the time of signature Eleos mapping: provider_signature_credentials (Credentials from the provider)
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_CURRENT,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_CURRENT,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_PREVIOUS,Signature ID,The unique ID of a given signature.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_PREVIOUS,Service ID,"The unique ID of the service within Credible. Eleos mapping: id (Document identifier (Primary Key, defined by the client))"
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_PREVIOUS,Provider ID,"IF the signature was associated with a provider, the unique ID of the provider. Eleos mapping: authorizing_signed_provider_id (Provider ID of the authorizing provider)"
@@ -9862,6 +9906,8 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_PREVIOUS,Signature Date,The date
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_PREVIOUS,Signature Box ID,"The box associated with the signature. In Credible, services can have up to six signature, each in their own box."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_PREVIOUS,Provider Job Title At Signature,The job title provided at the time of signature.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_PREVIOUS,Provider Credentials At Signature,Provider credentials provided at the time of signature Eleos mapping: provider_signature_credentials (Credentials from the provider)
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_PREVIOUS,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_PREVIOUS,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROVIDERS,Provider ID,The unique ID of the provider associated with a given service. Eleos mapping: provider_id (Identifier of the provider who created the document)
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROVIDERS,Provider Name First,The provider's first name. Eleos mapping: provider_first_name (Provider’s first name)
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROVIDERS,Provider Name Last,The provider's last name. Eleos mapping: provider_last_name (Provider’s last name)
@@ -9876,11 +9922,15 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROVIDERS,Provider ID Provider Number,"A pr
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROVIDERS,Provider Created Date,The date and time the provider's record was created.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROVIDERS,Provider Updated Date,The date and time the provider's record was last updated.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROVIDERS,Provider Job Title,The job title of a provider.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROVIDERS,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROVIDERS,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROVIDER_SUPERVISORS,Provider ID,The unique ID of the provider associated with a given service. Eleos mapping: provider_id (Identifier of the provider who created the document)
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROVIDER_SUPERVISORS,Supervisor Provider ID,The unique ID of a provider's supervisor.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROVIDER_SUPERVISORS,Supervisor Name,The first and last name of a provider's supervisor.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROVIDER_SUPERVISORS,Supervisor Job Title,The job title of a provider's supervisor.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROVIDER_SUPERVISORS,Supervisor Email Primary,The primary email address of a provider's supervisor.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROVIDER_SUPERVISORS,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROVIDER_SUPERVISORS,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_CREDENTIALS,Provider ID,The unique ID of the provider associated with a given service. Eleos mapping: provider_id (Identifier of the provider who created the document)
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_CREDENTIALS,Credential License-Professional Number,"The provided professional ID number for the provider, associated with this credential."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_CREDENTIALS,Credential Start Date,The start date and time associated with the credential for a given provider.
@@ -9891,6 +9941,8 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_CREDENTIALS,Credential Name,"The human-read
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_CREDENTIALS,Credential Group ID,"In Credible, credentials can be grouped into hierarchies to allow bundles of credentials to be configured for billing and compliance all together. This is the unique id of the credential group, if applicable."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_CREDENTIALS,Credential Group Name,The name of the Credential Group associated with a given credential.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_CREDENTIALS,Credential Is Expired,Indicates whether the given credential has expired.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_CREDENTIALS,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_CREDENTIALS,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PNP_SETTINGS,pnp_services_overview_draft_note,Toggle value that controls whether the Plug and Play services overview dashboard displays draft-mode messaging in this Eleos Compliance extension.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PNP_SETTINGS,pnp_services_overview_draft_note_value,"Resolved message text shown in the Plug and Play dashboard based on the draft-note toggle, in the context of Eleos Compliance service review vs production view."
 _MDD_JCT_X_CREDIBLE_FINANCIALS_AGING_BUCKETS,Day,Financial extension attribute captured in [Day].
