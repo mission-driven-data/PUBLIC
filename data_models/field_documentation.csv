@@ -48,6 +48,1038 @@ _MDD_JCT_REPORT_DESIGN_MDD,hex_visual_color_muted_1,Muted visualization color 1 
 _MDD_JCT_REPORT_DESIGN_MDD,hex_visual_color_muted_2,Muted visualization color 2 in hex format.
 _MDD_JCT_REPORT_DESIGN_MDD,hex_dashboard_background,Dashboard background color in hex format.
 _MDD_JCT_REPORT_DESIGN_MDD,logo_mdd,URL to the Mission Driven Data logo asset.
+_MDD_JCT_ADP_ORG_UNIT_TYPES_CUSTOM,Org Unit,The JCT organizational unit this row configures: 'Department' or 'Cost Center'.
+_MDD_JCT_ADP_ORG_UNIT_TYPES_CUSTOM,ADP Type Code,"The ADP assignedOrganizationalUnits typeCode value that means that unit at this agency (ADP: typeCode, ""e.g. department code"")."
+_MDD_JCT_ADP_PAY_CODES_CUSTOM,Pay Code,An ADP pay code (payCode.codeValue) the agency uses.
+_MDD_JCT_ADP_PAY_CODES_CUSTOM,Description,"Description of the pay code, as the agency records it."
+_MDD_JCT_ADP_PAY_CODES_CUSTOM,Is Worked,"1 when hours under this pay code were worked (time on the clock); 0 when paid but not worked, such as leave."
+_MDD_JCT_ADP_PAY_CODES_CUSTOM,Reason,Why the pay code is classified as worked or not worked.
+_MDD_JCT_ADP_AGENCY,Agency ID,"Unique ID of the Agency. ADP's payrollGroupCode on the primary work assignment (""The payroll group relevant to payroll processing for this work assignment"", the WFN company code). It stands in for the agency because worker demographics carries no company ID."
+_MDD_JCT_ADP_AGENCY,Agency ID FEIN,Federal employer ID of the agency. Always empty: worker demographics carries no FEIN.
+_MDD_JCT_ADP_AGENCY,Agency Name,Name of the agency. Always empty: worker demographics carries no company name.
+_MDD_JCT_ADP_CUSTOM_FIELDS,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
+_MDD_JCT_ADP_CUSTOM_FIELDS,Field Category,"Code of the custom field, from the field's nameCode.codeValue on the employee's primary work assignment."
+_MDD_JCT_ADP_CUSTOM_FIELDS,Field Name,"Label of the custom field, from the field's nameCode.shortName."
+_MDD_JCT_ADP_CUSTOM_FIELDS,Field Type,Kind of custom field. Always Dropdown: only ADP code fields are collected.
+_MDD_JCT_ADP_CUSTOM_FIELDS,Field Is Lookup,True for every row: code fields take their values from a list.
+_MDD_JCT_ADP_CUSTOM_FIELDS,Lookup Category,"For CUSTOM_FIELDS, 'cf_' + field code + '_' + field name, grouping the values of one custom field. For LOOKUP, the kind of list the code belongs to: CostCenter, Department or JobCode."
+_MDD_JCT_ADP_CUSTOM_FIELDS,Field Value Code,"Code of the value chosen for the custom field (ADP: ""The code for the related entity"")."
+_MDD_JCT_ADP_CUSTOM_FIELDS,Field Value Label,"Label of the value chosen for the custom field (ADP: ""Short description of the related code"")."
+_MDD_JCT_ADP_CUSTOM_FIELDS,Custom Field Item ID NEW,ADP's itemID of the custom field entry on the work assignment.
+_MDD_JCT_ADP_CUSTOM_FIELDS,Custom Field Work Assignment Item ID NEW,itemID of the work assignment the custom field belongs to (ADP.py assignmentItemID). Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_LOCATIONS,Location ID,"Unique ID of the Location: the home work location code (homeWorkLocation.nameCode.codeValue). On EMPLOYEES, the primary work assignment's home work location."
+_MDD_JCT_ADP_LOCATIONS,Location ID ADP,"The same home work location code, as ADP sends it."
+_MDD_JCT_ADP_LOCATIONS,Location Name,"Short name of the home work location (ADP: ""The location type code and description, e.g. HDQ, headquarters"")."
+_MDD_JCT_ADP_LOCATIONS,Location Name Long,Long name of the home work location.
+_MDD_JCT_ADP_LOCATIONS,Location Address 1,"Street address of the location, as recorded on a work assignment based there. Only some locations carry one."
+_MDD_JCT_ADP_LOCATIONS,Location Address City,City of the location address.
+_MDD_JCT_ADP_LOCATIONS,Location Address State,State of the location address (countrySubdivisionLevel1 code).
+_MDD_JCT_ADP_LOCATIONS,Location Address Zip,Postal code of the location address.
+_MDD_JCT_ADP_LOCATIONS,Location Address Country,Country code of the location address.
+_MDD_JCT_ADP_LOCATIONS,Location Work Assignment Count,Number of work assignments based at the location.
+_MDD_JCT_ADP_ADDRESSES,Address ID,"Unique ID of the Address: Object Category - Address Type - Object ID, for example Employee-Home-<associateOID>."
+_MDD_JCT_ADP_ADDRESSES,Address ID Fuzzy A0,Row number assigned when ADDRESSES is built. Not stable between runs.
+_MDD_JCT_ADP_ADDRESSES,Object Category,"The kind of record this row belongs to. Always Employee for addresses, emails, phones, ethnicity and race; Cost Center for cost centers."
+_MDD_JCT_ADP_ADDRESSES,Object Category ID,"Numeric code for [Object Category]: 3 = Employee, 1 = Cost Center."
+_MDD_JCT_ADP_ADDRESSES,Object ID,"The ID of the record this row belongs to: the employee's ADP associateOID for addresses, emails, phones, ethnicity and race, and the cost number code for cost centers."
+_MDD_JCT_ADP_ADDRESSES,Address Type,Home (the person's legal address) or Work (the home work location address of the primary work assignment).
+_MDD_JCT_ADP_ADDRESSES,Address Type ID,"Numeric code for [Address Type]: 3 = Home, 4 = Work."
+_MDD_JCT_ADP_ADDRESSES,Address 1,First street line of the address (ADP: lineOne).
+_MDD_JCT_ADP_ADDRESSES,Address 2,Second street line of the address (ADP: lineTwo). Empty for work addresses.
+_MDD_JCT_ADP_ADDRESSES,Address City,City of the address (ADP: cityName).
+_MDD_JCT_ADP_ADDRESSES,Address State,"State of the address (ADP: countrySubdivisionLevel1, ""one level below country"")."
+_MDD_JCT_ADP_ADDRESSES,Address Zip,"Postal code of the address (ADP: postalCode). Text, so a leading zero is kept when ADP sends it as text."
+_MDD_JCT_ADP_ADDRESSES,Address County,"County of a home address (ADP: countrySubdivisionLevel2, ""two levels below country""). Empty for work addresses."
+_MDD_JCT_ADP_ADDRESSES,Address Country,Country code of the address.
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_HOME,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_HOME,Employee Address Home ID Fuzzy A0,Row number of the home address in ADDRESSES. Not stable between runs.
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_HOME,Employee Address Home 1,First street line of the employee's legal (home) address.
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_HOME,Employee Address Home 2,Second street line of the employee's legal (home) address.
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_HOME,Employee Address Home City,City of the employee's legal (home) address.
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_HOME,Employee Address Home State,State of the employee's legal (home) address.
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_HOME,Employee Address Home Zip,Postal code of the employee's legal (home) address.
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_HOME,Employee Address Home County,County of the employee's legal (home) address.
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_HOME,Employee Address Home Country,Country code of the employee's legal (home) address.
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_WORK,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_WORK,Employee Address Work ID Fuzzy A0,Row number of the work address in ADDRESSES. Not stable between runs.
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_WORK,Employee Address Work 1,First street line of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_WORK,Employee Address Work 2,Second street line of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_WORK,Employee Address Work City,City of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_WORK,Employee Address Work State,State of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_WORK,Employee Address Work Zip,Postal code of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_WORK,Employee Address Work County,County of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_ADDRESSES_EMPLOYEE_WORK,Employee Address Work Country,Country code of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_EMAIL,Email ID,Unique ID of the Email Address: Object Category - Email Type - Object ID.
+_MDD_JCT_ADP_EMAIL,Object Category,"The kind of record this row belongs to. Always Employee for addresses, emails, phones, ethnicity and race; Cost Center for cost centers."
+_MDD_JCT_ADP_EMAIL,Object Category ID,"Numeric code for [Object Category]: 3 = Employee, 1 = Cost Center."
+_MDD_JCT_ADP_EMAIL,Object ID,"The ID of the record this row belongs to: the employee's ADP associateOID for addresses, emails, phones, ethnicity and race, and the cost number code for cost centers."
+_MDD_JCT_ADP_EMAIL,Email Type,Home (person.communication.emails) or Work (businessCommunication.emails).
+_MDD_JCT_ADP_EMAIL,Email Type ID,"Numeric code for [Email Type]: 3 = Home, 1 = Work."
+_MDD_JCT_ADP_EMAIL,Email Address,"The email address (ADP: emailUri), lower case. When ADP holds several of one type, the one flagged for notifications is kept."
+_MDD_JCT_ADP_EMAIL,Email Username,The part of the email address before the @.
+_MDD_JCT_ADP_EMAIL,Email Domain,The domain of the email address.
+_MDD_JCT_ADP_EMAIL,Email TLD,"The top-level domain of the email address, such as org or com."
+_MDD_JCT_ADP_PHONE,Phone ID Fuzzy A0,Row number assigned when PHONE is built. Not stable between runs.
+_MDD_JCT_ADP_PHONE,Phone ID,Category - Phone Type - Object ID. Not unique: an employee can have two phones with the same type label.
+_MDD_JCT_ADP_PHONE,Object Category,"The kind of record this row belongs to. Always Employee for addresses, emails, phones, ethnicity and race; Cost Center for cost centers."
+_MDD_JCT_ADP_PHONE,Object Category ID,"Numeric code for [Object Category]: 3 = Employee, 1 = Cost Center."
+_MDD_JCT_ADP_PHONE,Object ID,"The ID of the record this row belongs to: the employee's ADP associateOID for addresses, emails, phones, ethnicity and race, and the cost number code for cost centers."
+_MDD_JCT_ADP_PHONE,Phone Type,"The phone's own type label (its nameCode.shortName, joined on entryItemID), else its medium (landline, mobile, fax), else Home or Work."
+_MDD_JCT_ADP_PHONE,Phone Type ID,"Numeric code for the phone context: 2 = personal, 4 = business."
+_MDD_JCT_ADP_PHONE,Phone Number,The phone number as ADP formats it (formattedNumber).
+_MDD_JCT_ADP_PHONE,Phone Country Dialing Code NEW,Country dialing code of the phone (ADP: countryDialing).
+_MDD_JCT_ADP_PHONE,Phone Area Code NEW,Area code of the phone (ADP: areaDialing).
+_MDD_JCT_ADP_PHONE,Phone Dial Number NEW,Local number of the phone (ADP: dialNumber).
+_MDD_JCT_ADP_PHONE,Phone Extension NEW,"Extension of the phone, when ADP sends one."
+_MDD_JCT_ADP_PHONE,Phone Item ID NEW,ADP's itemID of the phone entry.
+_MDD_JCT_ADP_PHONE,Phone Medium NEW,"Which ADP list the phone came from (landlines, mobiles, faxes), recorded by ADP.py when it merges them into one list."
+_MDD_JCT_ADP_PHONE,Phone Context NEW,Personal (person.communication) or Business (businessCommunication).
+_MDD_JCT_ADP_ETHNICITY,Ethnicity ID,Unique ID of the Ethnicity row: Object Category - Ethnicity Type - Object ID.
+_MDD_JCT_ADP_ETHNICITY,Ethnicity ID Fuzzy A0,Row number assigned when ETHNICITY is built. Not stable between runs.
+_MDD_JCT_ADP_ETHNICITY,Object Category,"The kind of record this row belongs to. Always Employee for addresses, emails, phones, ethnicity and race; Cost Center for cost centers."
+_MDD_JCT_ADP_ETHNICITY,Object Category ID,"Numeric code for [Object Category]: 3 = Employee, 1 = Cost Center."
+_MDD_JCT_ADP_ETHNICITY,Object ID,"The ID of the record this row belongs to: the employee's ADP associateOID for addresses, emails, phones, ethnicity and race, and the cost number code for cost centers."
+_MDD_JCT_ADP_ETHNICITY,Ethnicity Type,Always Primary: ADP sends one ethnicity code per person.
+_MDD_JCT_ADP_ETHNICITY,Ethnicity Lookup ID,ADP's ethnicityCode.codeValue for the person.
+_MDD_JCT_ADP_ETHNICITY,Ethnicity,ADP's ethnicity label (ethnicityCode.longName).
+_MDD_JCT_ADP_ETHNICITY,Ethnicity Type ID,Numeric code for [Ethnicity Type]: 1 = Primary.
+_MDD_JCT_ADP_RACE,Race ID,Unique ID of the Race row: Object Category - Race Type - Object ID.
+_MDD_JCT_ADP_RACE,Race ID Fuzzy A0,Row number assigned when RACE is built. Not stable between runs.
+_MDD_JCT_ADP_RACE,Object Category,"The kind of record this row belongs to. Always Employee for addresses, emails, phones, ethnicity and race; Cost Center for cost centers."
+_MDD_JCT_ADP_RACE,Object Category ID,"Numeric code for [Object Category]: 3 = Employee, 1 = Cost Center."
+_MDD_JCT_ADP_RACE,Object ID,"The ID of the record this row belongs to: the employee's ADP associateOID for addresses, emails, phones, ethnicity and race, and the cost number code for cost centers."
+_MDD_JCT_ADP_RACE,Race Type,Always Primary: ADP sends one race code per person.
+_MDD_JCT_ADP_RACE,Race Lookup ID,ADP's raceCode.codeValue for the person.
+_MDD_JCT_ADP_RACE,Race,"ADP's race label (raceCode.shortName, ""Short description of the related code"")."
+_MDD_JCT_ADP_RACE,Race Long Name NEW,ADP's long race label (raceCode.longName).
+_MDD_JCT_ADP_RACE,Race Type ID,Numeric code for [Race Type]: 1 = Primary.
+_MDD_JCT_ADP_COST_CENTERS,Cost Center ID,"Unique ID of the Cost Center: the ADP cost number code (cost-centers validation table nameCode.code; on employees, the primary assignment's org unit of the Cost Center type)."
+_MDD_JCT_ADP_COST_CENTERS,Cost Center ID Fuzzy A0,"Row number of the cost center, ordered by code."
+_MDD_JCT_ADP_COST_CENTERS,Object Category,"The kind of record this row belongs to. Always Employee for addresses, emails, phones, ethnicity and race; Cost Center for cost centers."
+_MDD_JCT_ADP_COST_CENTERS,Object Category ID,"Numeric code for [Object Category]: 3 = Employee, 1 = Cost Center."
+_MDD_JCT_ADP_COST_CENTERS,Object ID,"The ID of the record this row belongs to: the employee's ADP associateOID for addresses, emails, phones, ethnicity and race, and the cost number code for cost centers."
+_MDD_JCT_ADP_COST_CENTERS,Cost Center Type,Always 1. Kept for compatibility with other JCT payroll modules.
+_MDD_JCT_ADP_COST_CENTERS,Cost Center Type ID,Always 1. Kept for compatibility with other JCT payroll modules.
+_MDD_JCT_ADP_COST_CENTERS,Cost Center,Name of the cost center (cost-centers validation table nameCode.name).
+_MDD_JCT_ADP_COST_CENTERS,Cost Center ID ADP NEW,The cost number code as ADP sends it.
+_MDD_JCT_ADP_COST_CENTERS,Cost Center Is Inactive NEW,"ADP inactiveIndicator for the cost center list item (""Indicates if the current item is inactive""). Empty for collections before 10/17/2026."
+_MDD_JCT_ADP_COST_CENTERS,Cost Center Payroll Group Code NEW,Payroll group (company code) the cost center list item belongs to. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_DEPARTMENTS,Department ID NEW,Unique ID of the Department: the ADP departments validation table code.
+_MDD_JCT_ADP_DEPARTMENTS,Department Name NEW,Name of the department in the departments validation table.
+_MDD_JCT_ADP_DEPARTMENTS,Department Is Inactive NEW,ADP inactiveIndicator for the department list item. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_DEPARTMENTS,Department Payroll Group Code NEW,Payroll group (company code) the department is defined in. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_JOBS,Job Code NEW,"Unique ID of the Job: the ADP jobs validation table code (""The code for the related entity"")."
+_MDD_JCT_ADP_JOBS,Job Title NEW,Name of the job in the jobs validation table.
+_MDD_JCT_ADP_JOBS,Job Is Management NEW,"ADP managementPositionIndicator: true when ""this position may manage people""."
+_MDD_JCT_ADP_JOBS,Job Is Inactive NEW,"ADP inactiveIndicator for the job (""Indicates if the current item is inactive"")."
+_MDD_JCT_ADP_JOBS,Job Family Code NEW,Code of the job's job family. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_JOBS,Job Family NEW,"Name of the job's job family, when ADP sends one."
+_MDD_JCT_ADP_JOBS,Job Function Code NEW,Code of the job's job function. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_JOBS,Job Function NEW,"Name of the job's job function, when ADP sends one."
+_MDD_JCT_ADP_JOBS,Job Occupational Class Code NEW,Code of the job's occupational classification (EEO category at most agencies).
+_MDD_JCT_ADP_JOBS,Job Occupational Class NEW,Name of the job's occupational classification.
+_MDD_JCT_ADP_JOBS,Job FLSA Code NEW,"The job's FLSA wage law coverage code (E = exempt, N = non-exempt)."
+_MDD_JCT_ADP_JOBS,Job FLSA Status NEW,"Name of the job's FLSA coverage, when ADP sends one."
+_MDD_JCT_ADP_LOOKUP,Lookup ID,"Unique ID of the Lookup row: category + ""_"" + code."
+_MDD_JCT_ADP_LOOKUP,Lookup Category,"For CUSTOM_FIELDS, 'cf_' + field code + '_' + field name, grouping the values of one custom field. For LOOKUP, the kind of list the code belongs to: CostCenter, Department or JobCode."
+_MDD_JCT_ADP_LOOKUP,Lookup Classification,Same as [Lookup Category].
+_MDD_JCT_ADP_LOOKUP,Lookup Shortcode,The code of the list item.
+_MDD_JCT_ADP_LOOKUP,Lookup Description,The name of the list item.
+_MDD_JCT_ADP_LOOKUP,Lookup Description Short,"The code (cost centers, departments) or name (jobs) of the list item."
+_MDD_JCT_ADP_LOOKUP,Lookup External ID,Always empty. Kept for compatibility with other JCT modules.
+_MDD_JCT_ADP_LOOKUP,Lookup Is Inactive NEW,1 when ADP marks the list item inactive.
+_MDD_JCT_ADP_LOOKUP,Lookup Payroll Group Code NEW,Payroll group the list item belongs to (cost centers and departments).
+_MDD_JCT_ADP_ORG_UNITS,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
+_MDD_JCT_ADP_ORG_UNITS,Associate OID,The employee's ADP associateOID. Same value as [Employee ID]; kept because the agency specifics table this replaced used the name.
+_MDD_JCT_ADP_ORG_UNITS,Org Unit Work Assignment Item ID,itemID of the employee's primary work assignment the org units were read from.
+_MDD_JCT_ADP_ORG_UNITS,Department ID,Code of the employee's department: the assigned organizational unit of the Department type on the primary work assignment (types in _MDD_JCT_ADP_ORG_UNIT_TYPES_CUSTOM).
+_MDD_JCT_ADP_ORG_UNITS,Department Name,Name of the employee's department on the primary work assignment.
+_MDD_JCT_ADP_ORG_UNITS,Department Name Long NEW,"Long name of the employee's department, when ADP sends one."
+_MDD_JCT_ADP_ORG_UNITS,Cost Center ID,"Unique ID of the Cost Center: the ADP cost number code (cost-centers validation table nameCode.code; on employees, the primary assignment's org unit of the Cost Center type)."
+_MDD_JCT_ADP_ORG_UNITS,Cost Center Name,Name of the employee's cost center (Cost Number) on the primary work assignment.
+_MDD_JCT_ADP_ORG_UNITS,Cost Center Name Long NEW,"Long name of the employee's cost center, when ADP sends one."
+_MDD_JCT_ADP_EMPLOYEES,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
+_MDD_JCT_ADP_EMPLOYEES,Employee ID Agency,"ADP's worker ID (workerID.idValue, ""An identifier for a worker, e.g. an Employee ID""; the WFN Associate ID). It is how reportsTo names a supervisor. It is not the payroll file number."
+_MDD_JCT_ADP_EMPLOYEES,Agency ID,"Unique ID of the Agency. ADP's payrollGroupCode on the primary work assignment (""The payroll group relevant to payroll processing for this work assignment"", the WFN company code). It stands in for the agency because worker demographics carries no company ID."
+_MDD_JCT_ADP_EMPLOYEES,Employee Position ID NEW,"Position ID of the primary work assignment (""The position identifier""): payroll group plus payroll file number."
+_MDD_JCT_ADP_EMPLOYEES,Employee Payroll File Number NEW,"Payroll file number of the primary work assignment (""The payroll file number""). Text; a collection before 10/17/2026 may have dropped a leading zero."
+_MDD_JCT_ADP_EMPLOYEES,Employee Name First & Last,The employee's legal first and last name.
+_MDD_JCT_ADP_EMPLOYEES,Employee Name First & Last & Employee ID,"The employee's legal first and last name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_EMPLOYEES,Employee Name Last & First,"The employee's legal last name, then first name."
+_MDD_JCT_ADP_EMPLOYEES,Employee Name Last & First & Employee ID,"The employee's legal last name, then first name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_EMPLOYEES,Employee Name Last,The employee's last name.
+_MDD_JCT_ADP_EMPLOYEES,Employee Name First,The employee's first name.
+_MDD_JCT_ADP_EMPLOYEES,Employee Name Middle,The employee's middle name.
+_MDD_JCT_ADP_EMPLOYEES,Employee Name Suffix,"Generation suffix of the legal name, such as JR (ADP: generationAffixCode, ""e.g. Jr, Sr"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Name Salutation NEW,"Preferred salutation, such as MR or MS (first of ADP preferredSalutations)."
+_MDD_JCT_ADP_EMPLOYEES,Employee Name Preferred First,The employee's preferred first name (ADP: preferredName).
+_MDD_JCT_ADP_EMPLOYEES,Employee Name Preferred Last,The employee's preferred last name.
+_MDD_JCT_ADP_EMPLOYEES,Employee Name Preferred First & Last,"The employee's preferred first and last name, when both parts of the preferred name are recorded."
+_MDD_JCT_ADP_EMPLOYEES,Employee Name Preferred First & Last & Employee ID,"The employee's preferred first and last name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_EMPLOYEES,Employee Name Preferred Last & First,"The employee's preferred last name, then first name, when both parts of the preferred name are recorded."
+_MDD_JCT_ADP_EMPLOYEES,Employee Name Preferred Last & First & Employee ID,"The employee's preferred last name, then first name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_EMPLOYEES,Employee Name Nick NEW,"Nickname (ADP: legalName.nickName, ""A preferred name, e.g. a nickname"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Name Birth Last NEW,Last name at birth (ADP: birthName).
+_MDD_JCT_ADP_EMPLOYEES,Employee Name Formatted NEW,Full legal name as ADP formats it (legalName.formattedName).
+_MDD_JCT_ADP_EMPLOYEES,Employee Name First & Last w/Initial,"The employee's legal first and last name, with the middle name."
+_MDD_JCT_ADP_EMPLOYEES,Employee Name First & Last w/Initial & Employee ID,"The employee's legal first and last name with the middle name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_EMPLOYEES,Employee Name Last & First w/Initial,"The employee's legal last name, then first name, with the middle name."
+_MDD_JCT_ADP_EMPLOYEES,Employee Name Last & First w/Initial & Employee ID,"The employee's legal last name, then first name with the middle name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_EMPLOYEES,Employee DOB,"The employee's date of birth, from HR Workers v2 person.birthDate (""The birth date of the person""). Empty without Workers v2 or when ADP secures the field."
+_MDD_JCT_ADP_EMPLOYEES,Employee Age in Years,"Age in years, with decimals, from [Employee DOB] to today."
+_MDD_JCT_ADP_EMPLOYEES,Employee Age In Years Old,"Age in whole years, from [Employee DOB] to today."
+_MDD_JCT_ADP_EMPLOYEES,Employee Gender,"Gender label (ADP: genderCode.shortName, ""The gender of a person, e.g. Male, Female"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Gender Code NEW,Gender code (ADP: genderCode.codeValue).
+_MDD_JCT_ADP_EMPLOYEES,Employee Marital Status NEW,"Marital status label (""Person marital status, e.g. Married, Divorced"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Marital Status Code NEW,Marital status code.
+_MDD_JCT_ADP_EMPLOYEES,Employee Marital Status Effective Date NEW,Date the marital status took effect.
+_MDD_JCT_ADP_EMPLOYEES,Employee Military Status NEW,"Military status label (""Person military status, e.g. Active, Active Reserve"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Military Status Code NEW,Military status code.
+_MDD_JCT_ADP_EMPLOYEES,Employee Military Discharge Date NEW,Military discharge date.
+_MDD_JCT_ADP_EMPLOYEES,Employee Disabled Indicator NEW,"ADP disabledIndicator: ""Indicates that the person is disabled""."
+_MDD_JCT_ADP_EMPLOYEES,Employee Tobacco User NEW,ADP tobaccoUserIndicator: the person is a tobacco user.
+_MDD_JCT_ADP_EMPLOYEES,Employee Supervisor ID,"[Employee ID Agency] (worker ID) of the supervisor named on the employee's primary work assignment (reportsTo, the person ""to whom a given worker reports"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Supervisor Name,"Name of the supervisor named on the primary work assignment, as ADP formats it."
+_MDD_JCT_ADP_EMPLOYEES,Employee Supervisor ID Secondary,"[Employee ID Agency] of the employee's secondary supervisor: a distinct supervisor named on one of the employee's other work assignments, in assignment order."
+_MDD_JCT_ADP_EMPLOYEES,Employee Supervisor Name Secondary,Name of the employee's secondary supervisor.
+_MDD_JCT_ADP_EMPLOYEES,Employee Supervisor ID Tertiary,"[Employee ID Agency] of the employee's tertiary supervisor: a distinct supervisor named on one of the employee's other work assignments, in assignment order."
+_MDD_JCT_ADP_EMPLOYEES,Employee Supervisor Name Tertiary,Name of the employee's tertiary supervisor.
+_MDD_JCT_ADP_EMPLOYEES,Employee Supervisor ID Quaternary,"[Employee ID Agency] of the employee's quaternary supervisor: a distinct supervisor named on one of the employee's other work assignments, in assignment order."
+_MDD_JCT_ADP_EMPLOYEES,Employee Supervisor Name Quaternary,Name of the employee's quaternary supervisor.
+_MDD_JCT_ADP_EMPLOYEES,Department ID,Code of the employee's department: the assigned organizational unit of the Department type on the primary work assignment (types in _MDD_JCT_ADP_ORG_UNIT_TYPES_CUSTOM).
+_MDD_JCT_ADP_EMPLOYEES,Department Name,Name of the employee's department on the primary work assignment.
+_MDD_JCT_ADP_EMPLOYEES,Cost Center ID,"Unique ID of the Cost Center: the ADP cost number code (cost-centers validation table nameCode.code; on employees, the primary assignment's org unit of the Cost Center type)."
+_MDD_JCT_ADP_EMPLOYEES,Cost Center Name,Name of the employee's cost center (Cost Number) on the primary work assignment.
+_MDD_JCT_ADP_EMPLOYEES,Employee Job Title,"Job title of the primary work assignment (ADP: jobTitle, ""The job title"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Job Code NEW,"Job code of the primary work assignment (ADP: jobCode.codeValue, ""The job code"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Job Title Long NEW,Long description of the job code.
+_MDD_JCT_ADP_EMPLOYEES,Employee Job Title Short NEW,Short description of the job code.
+_MDD_JCT_ADP_EMPLOYEES,Employee Job Function Code NEW,"Job function code of the primary assignment, from HR Workers v2 (jobFunctionCode, ""The job function code"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Job Function NEW,"Job function name of the primary assignment, from HR Workers v2."
+_MDD_JCT_ADP_EMPLOYEES,Employee Occupation Class Code NEW,EEO occupational classification code of the primary assignment (occupationalClassifications entry whose system is EEOC).
+_MDD_JCT_ADP_EMPLOYEES,Employee Occupation Class NEW,"EEO occupational classification name, such as Professionals (ADP: ""A reference to a system used to classify workers ... e.g. EEOC"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Occupation Class System NEW,"The classification system of [Employee Occupation Class NEW], such as EEOC. Empty for collections before 10/17/2026."
+_MDD_JCT_ADP_EMPLOYEES,Employee Job Class Code NEW,Code of the agency's Job Class classification on the primary assignment.
+_MDD_JCT_ADP_EMPLOYEES,Employee Job Class NEW,Name of the agency's Job Class classification on the primary assignment.
+_MDD_JCT_ADP_EMPLOYEES,Employee Type Code,Worker type code of the primary assignment.
+_MDD_JCT_ADP_EMPLOYEES,Employee Type,"Worker type of the primary assignment (ADP workerTypeCode: ""e.g. permanent employee, fixed term employee, apprentice, vendor employee, volunteer ... independent contractor""). Employment category, not full or part time."
+_MDD_JCT_ADP_EMPLOYEES,Employee Pay Cycle Code NEW,Pay cycle code of the primary assignment.
+_MDD_JCT_ADP_EMPLOYEES,Employee Pay Cycle NEW,"Pay cycle of the primary assignment (ADP payCycleCode: ""Describes how often the payee is paid"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee FLSA Code NEW,"FLSA coverage code of the primary assignment: E = Exempt, N = Non-Exempt (wageLawCoverage where wageLawNameCode = FLSA)."
+_MDD_JCT_ADP_EMPLOYEES,Employee FLSA Status NEW,"FLSA coverage of the primary assignment (""The wage hour coverage code, e.g. exempt, non-exempt"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Standard Pay Period Hours NEW,"Standard hours per pay period of the primary assignment (""The standard number of hours per pay period"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Standard Hours NEW,"Standard weekly hours of the primary assignment, from HR Workers v2 standardHours (""typically used to drive the definition of a full time assignment"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee FTE NEW,"Full-time equivalent of the primary assignment, from HR Workers v2 fullTimeEquivalenceRatio (""An FTE of 1.0 means that the person is equivalent to a full-time worker"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Work Level Code NEW,"Work level code of the primary assignment, from HR Workers v2."
+_MDD_JCT_ADP_EMPLOYEES,Employee Work Level NEW,"Full time or part time, from HR Workers v2 workLevelCode (""The work level code, e.g. Fulltime, Parttime"")."
+_MDD_JCT_ADP_EMPLOYEES,Location ID,"Unique ID of the Location: the home work location code (homeWorkLocation.nameCode.codeValue). On EMPLOYEES, the primary work assignment's home work location."
+_MDD_JCT_ADP_EMPLOYEES,Location ID ADP,"The same home work location code, as ADP sends it."
+_MDD_JCT_ADP_EMPLOYEES,Employee Work Location Name NEW,Name of the primary assignment's home work location.
+_MDD_JCT_ADP_EMPLOYEES,Employee Work Location Name Long NEW,Long name of the primary assignment's home work location.
+_MDD_JCT_ADP_EMPLOYEES,Employee Worker Group Code NEW,"Code of a worker group the primary assignment belongs to (first by group type, then code; ADP has no primary group)."
+_MDD_JCT_ADP_EMPLOYEES,Employee Worker Group NEW,"Long name of that worker group (ADP groupCode, ""e.g. BRG, location"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Worker Group Short NEW,Short name of that worker group.
+_MDD_JCT_ADP_EMPLOYEES,Employee Worker Group Type NEW,Type of that worker group (the group's nameCode). Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_EMPLOYEES,Employee Assignment Status Code NEW,Status code of the primary work assignment.
+_MDD_JCT_ADP_EMPLOYEES,Employee Assignment Status NEW,Status of the primary work assignment.
+_MDD_JCT_ADP_EMPLOYEES,Employee Pay Hourly,"Hourly base rate of the primary assignment, from HR Workers v2 baseRemuneration.hourlyRateAmount (""The base or primary pay (i.e. salary, wage) associated to a work assignment""). Empty without Workers v2 or when ADP secures pay fields."
+_MDD_JCT_ADP_EMPLOYEES,Employee Pay Annual NEW,"Annual base rate of the primary assignment, from HR Workers v2 baseRemuneration.annualRateAmount."
+_MDD_JCT_ADP_EMPLOYEES,Employee Pay Rate Date Effective NEW,Effective date of the base remuneration.
+_MDD_JCT_ADP_EMPLOYEES,Employee Pay Type,"Remuneration basis of the primary assignment, from HR Workers v2 remunerationBasisCode (""classifying a work assignment as salaried, salaried plus commission, commission only, hourly or daily"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Pay Type Code NEW,Remuneration basis code of the primary assignment.
+_MDD_JCT_ADP_EMPLOYEES,Employee Benefits Class,Benefits class. Always empty: neither ADP API that is collected carries it.
+_MDD_JCT_ADP_EMPLOYEES,Employee Benefits Date Effective,Benefits effective date. Always empty: neither ADP API that is collected carries it.
+_MDD_JCT_ADP_EMPLOYEES,Employee Benefits Salary,"Annual benefits base rate of the primary assignment, from HR Workers v2 annualBenefitBaseRate (""The annual benefits base rate that can be different from the employee's annual base rate"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Benefits Salary Date Effective,Always empty: ADP gives no effective date for the benefits base rate.
+_MDD_JCT_ADP_EMPLOYEES,Employee ID Badge Number,"Time clock badge of the primary assignment, from HR Workers v2 workerTimeProfile.badgeID (""A badgeID for any employee position used for clock punch"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Time And Attendance NEW,1 when ADP manages time and attendance for the primary assignment (HR Workers v2 timeAndAttendanceIndicator).
+_MDD_JCT_ADP_EMPLOYEES,Employee Payroll Group Code NEW,Payroll group (company code) of the primary assignment.
+_MDD_JCT_ADP_EMPLOYEES,Employee Hire Date,"Hire date of the primary work assignment (""The date the worker is hired into a work assignment""), else the original hire date. Reflects a rehire."
+_MDD_JCT_ADP_EMPLOYEES,Employee Hire Date Fiscal Year,"Fiscal year of [Employee Hire Date], from _MDD_JCT_DATES."
+_MDD_JCT_ADP_EMPLOYEES,Employee Original Hire Date NEW,Date first hired into the organization (workerDates.originalHireDate).
+_MDD_JCT_ADP_EMPLOYEES,Employee Rehire Date NEW,"Most recent rehire date (workerDates.rehireDate, ""the date the worker is rehired ... the most current"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Adjusted Service Date NEW,"Adjusted service date (workerDates.adjustedServiceDate, ""generally adjusted for workers that leave the organization and are rehired""). Tenure is counted from it."
+_MDD_JCT_ADP_EMPLOYEES,Employee Seniority Date NEW,Seniority date of the primary assignment.
+_MDD_JCT_ADP_EMPLOYEES,Employee Actual Start Date NEW,"Date the worker actually started on the primary assignment (""the date the worker actually shows up for work"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Termination Date,"Termination date of the primary assignment, else the worker termination date (""The date an employee is terminated""). A rehired worker can carry an old date; see [Employee Termination Status]."
+_MDD_JCT_ADP_EMPLOYEES,Employee Termination Date Fiscal Year,Fiscal year of [Employee Termination Date].
+_MDD_JCT_ADP_EMPLOYEES,Employee Expected Termination Date NEW,"Expected termination date, from HR Workers v2 workerDates.expectedTerminationDate."
+_MDD_JCT_ADP_EMPLOYEES,Employee Termination Status,"Terminated or Not Terminated. Terminated when ADP's worker status is Terminated or, without a status, when the termination date is on or before today and on or after the latest (re)hire date (Paycom's rule)."
+_MDD_JCT_ADP_EMPLOYEES,Employee Status Code NEW,"ADP worker status (workerStatus.statusCode, ""the status of the worker in the organization at the highest level""): Active, Inactive (leave of absence) or Terminated."
+_MDD_JCT_ADP_EMPLOYEES,Employee Status,Active or Inactive. Inactive means terminated; an employee on leave (ADP status Inactive) stays Active and is flagged in [Employee Is On Leave NEW].
+_MDD_JCT_ADP_EMPLOYEES,Employee Is On Leave NEW,"1 when ADP's worker status is Inactive, ADP's status for a leave of absence."
+_MDD_JCT_ADP_EMPLOYEES,Employee Leave Return Date NEW,"Return date from a leave of absence, from HR Workers v2 workerDates.leaveOfAbsenceReturnDate."
+_MDD_JCT_ADP_EMPLOYEES,Employee Status Reason Code NEW,Reason code of the primary assignment's status.
+_MDD_JCT_ADP_EMPLOYEES,Employee Status Reason NEW,"Reason for the primary assignment's status (""e.g. new hire, rehire, termination"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Tenure Days,"Days from the adjusted service date (else the hire date) to the termination date for a terminated employee, or to today."
+_MDD_JCT_ADP_EMPLOYEES,Employee Tenure Years,"Years, with decimals, from the adjusted service date (else the hire date) to the termination date or today."
+_MDD_JCT_ADP_EMPLOYEES,Employee Tax SUI State,Always empty: not in the ADP APIs collected.
+_MDD_JCT_ADP_EMPLOYEES,Employee Tax Status Code,Always empty: not in the ADP APIs collected.
+_MDD_JCT_ADP_EMPLOYEES,Employee Tax Status,Always empty: not in the ADP APIs collected.
+_MDD_JCT_ADP_EMPLOYEES,Employee Ethnicity,"The employee's ethnicity, from ETHNICITY."
+_MDD_JCT_ADP_EMPLOYEES,Employee Ethnicity ID,The employee's ethnicity code.
+_MDD_JCT_ADP_EMPLOYEES,Employee Race,"The employee's race, from RACE."
+_MDD_JCT_ADP_EMPLOYEES,Employee Race ID,The employee's race code.
+_MDD_JCT_ADP_EMPLOYEES,Employee Race Long Name NEW,The employee's long race label.
+_MDD_JCT_ADP_EMPLOYEES,Employee Email Home,"The employee's personal email, lower case (person.communication.emails)."
+_MDD_JCT_ADP_EMPLOYEES,Employee Email Work,"The employee's work email, lower case (businessCommunication.emails). Used for row level security and the productivity crosswalk."
+_MDD_JCT_ADP_EMPLOYEES,Employee ADP Associate OID NEW,"The employee's ADP associateOID, the same value as [Employee ID]."
+_MDD_JCT_ADP_EMPLOYEES,Employee Primary Work Assignment Item ID NEW,"itemID of the employee's primary work assignment (""The unique identifier of the object in a collection"")."
+_MDD_JCT_ADP_EMPLOYEES,Employee Age Group,Age band of [Employee Age In Years Old].
+_MDD_JCT_ADP_EMPLOYEES,Employee Age Group Sort Order,Sort position of the age band.
+_MDD_JCT_ADP_EMPLOYEES,Employee Tenure Group,Tenure band of [Employee Tenure Years].
+_MDD_JCT_ADP_EMPLOYEES,Employee Tenure Group Sort Order,Sort position of the tenure band.
+_MDD_JCT_ADP_EMPLOYEES,Cost Center ID Fuzzy A0,"Row number of the cost center, ordered by code."
+_MDD_JCT_ADP_EMPLOYEES,Object Category,"The kind of record this row belongs to. Always Employee for addresses, emails, phones, ethnicity and race; Cost Center for cost centers."
+_MDD_JCT_ADP_EMPLOYEES,Object Category ID,"Numeric code for [Object Category]: 3 = Employee, 1 = Cost Center."
+_MDD_JCT_ADP_EMPLOYEES,Object ID,"The ID of the record this row belongs to: the employee's ADP associateOID for addresses, emails, phones, ethnicity and race, and the cost number code for cost centers."
+_MDD_JCT_ADP_EMPLOYEES,Cost Center Type,Always 1. Kept for compatibility with other JCT payroll modules.
+_MDD_JCT_ADP_EMPLOYEES,Cost Center Type ID,Always 1. Kept for compatibility with other JCT payroll modules.
+_MDD_JCT_ADP_EMPLOYEES,Cost Center,Name of the cost center (cost-centers validation table nameCode.name).
+_MDD_JCT_ADP_EMPLOYEES,Cost Center ID ADP NEW,The cost number code as ADP sends it.
+_MDD_JCT_ADP_EMPLOYEES,Cost Center Is Inactive NEW,"ADP inactiveIndicator for the cost center list item (""Indicates if the current item is inactive""). Empty for collections before 10/17/2026."
+_MDD_JCT_ADP_EMPLOYEES,Cost Center Payroll Group Code NEW,Payroll group (company code) the cost center list item belongs to. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_EMPLOYEES,Department ID NEW,Unique ID of the Department: the ADP departments validation table code.
+_MDD_JCT_ADP_EMPLOYEES,Department Name NEW,Name of the department in the departments validation table.
+_MDD_JCT_ADP_EMPLOYEES,Department Is Inactive NEW,ADP inactiveIndicator for the department list item. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_EMPLOYEES,Department Payroll Group Code NEW,Payroll group (company code) the department is defined in. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_EMPLOYEES,Job Code NEW,"Unique ID of the Job: the ADP jobs validation table code (""The code for the related entity"")."
+_MDD_JCT_ADP_EMPLOYEES,Job Title NEW,Name of the job in the jobs validation table.
+_MDD_JCT_ADP_EMPLOYEES,Job Is Management NEW,"ADP managementPositionIndicator: true when ""this position may manage people""."
+_MDD_JCT_ADP_EMPLOYEES,Job Is Inactive NEW,"ADP inactiveIndicator for the job (""Indicates if the current item is inactive"")."
+_MDD_JCT_ADP_EMPLOYEES,Job Family Code NEW,Code of the job's job family. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_EMPLOYEES,Job Family NEW,"Name of the job's job family, when ADP sends one."
+_MDD_JCT_ADP_EMPLOYEES,Job Function Code NEW,Code of the job's job function. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_EMPLOYEES,Job Function NEW,"Name of the job's job function, when ADP sends one."
+_MDD_JCT_ADP_EMPLOYEES,Job Occupational Class Code NEW,Code of the job's occupational classification (EEO category at most agencies).
+_MDD_JCT_ADP_EMPLOYEES,Job Occupational Class NEW,Name of the job's occupational classification.
+_MDD_JCT_ADP_EMPLOYEES,Job FLSA Code NEW,"The job's FLSA wage law coverage code (E = exempt, N = non-exempt)."
+_MDD_JCT_ADP_EMPLOYEES,Job FLSA Status NEW,"Name of the job's FLSA coverage, when ADP sends one."
+_MDD_JCT_ADP_EMPLOYEES,Employee Address Home ID Fuzzy A0,Row number of the home address in ADDRESSES. Not stable between runs.
+_MDD_JCT_ADP_EMPLOYEES,Employee Address Home 1,First street line of the employee's legal (home) address.
+_MDD_JCT_ADP_EMPLOYEES,Employee Address Home 2,Second street line of the employee's legal (home) address.
+_MDD_JCT_ADP_EMPLOYEES,Employee Address Home City,City of the employee's legal (home) address.
+_MDD_JCT_ADP_EMPLOYEES,Employee Address Home State,State of the employee's legal (home) address.
+_MDD_JCT_ADP_EMPLOYEES,Employee Address Home Zip,Postal code of the employee's legal (home) address.
+_MDD_JCT_ADP_EMPLOYEES,Employee Address Home County,County of the employee's legal (home) address.
+_MDD_JCT_ADP_EMPLOYEES,Employee Address Home Country,Country code of the employee's legal (home) address.
+_MDD_JCT_ADP_EMPLOYEES,Employee Address Work ID Fuzzy A0,Row number of the work address in ADDRESSES. Not stable between runs.
+_MDD_JCT_ADP_EMPLOYEES,Employee Address Work 1,First street line of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_EMPLOYEES,Employee Address Work 2,Second street line of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_EMPLOYEES,Employee Address Work City,City of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_EMPLOYEES,Employee Address Work State,State of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_EMPLOYEES,Employee Address Work Zip,Postal code of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_EMPLOYEES,Employee Address Work County,County of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_EMPLOYEES,Employee Address Work Country,Country code of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_EMPLOYEES,RLS String,"Pipe-separated work emails of everyone allowed to see this employee's records: the employee, their direct and indirect supervisors, and the always-supervisors."
+_MDD_JCT_ADP_SUPERVISORY_RELATIONSHIPS,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
+_MDD_JCT_ADP_SUPERVISORY_RELATIONSHIPS,Supervisor Employee ID,[Employee ID] (associateOID) of the supervisor.
+_MDD_JCT_ADP_SUPERVISORY_RELATIONSHIPS,Supervisor Employee ID Agency,[Employee ID Agency] of the supervisor.
+_MDD_JCT_ADP_SUPERVISORY_RELATIONSHIPS,Employee ID Agency,"ADP's worker ID (workerID.idValue, ""An identifier for a worker, e.g. an Employee ID""; the WFN Associate ID). It is how reportsTo names a supervisor. It is not the payroll file number."
+_MDD_JCT_ADP_SUPERVISORY_RELATIONSHIPS,Supervisor Employee ID External,The supervisor's worker ID as the reportsTo chain names it.
+_MDD_JCT_ADP_SUPERVISORY_RELATIONSHIPS,Supervisory Relationship Type,Direct (the primary assignment's supervisor) or Indirect (a supervisor further up the chain).
+_MDD_JCT_ADP_SUPERVISORY_RELATIONSHIPS,Supervisor Name,The supervisor's first and last name.
+_MDD_JCT_ADP_SUPERVISORY_RELATIONSHIPS,Supervisor Job Title,The supervisor's job title.
+_MDD_JCT_ADP_SUPERVISORY_RELATIONSHIPS,Employee Name,The employee's first and last name.
+_MDD_JCT_ADP_SUPERVISORY_RELATIONSHIPS,Employee Job Title,"Job title of the primary work assignment (ADP: jobTitle, ""The job title"")."
+_MDD_JCT_ADP_PAY_PERIODS,Pay Period Start,First day of the time card period (timePeriod.startDate).
+_MDD_JCT_ADP_PAY_PERIODS,Pay Period End,Last day of the time card period (timePeriod.endDate).
+_MDD_JCT_ADP_PAY_PERIODS,Pay Period ID FA0,Row number assigned when PAY_PERIODS is built. Not stable between runs.
+_MDD_JCT_ADP_PAY_PERIODS,Pay Period ID,Unique ID of the Pay Period: start date and end date as YYYYMMDD-YYYYMMDD.
+_MDD_JCT_ADP_PAY_PERIODS,Pay Date,The pay period end date. ADP time cards carry no check date; the real pay date is in ADP's Pay Statements API.
+_MDD_JCT_ADP_PAY_PERIODS,Pay Date Sequence ASC,"Order of the period by end date, oldest first, across all pay cycles."
+_MDD_JCT_ADP_PAY_PERIODS,Pay Date Sequence DESC,"Order of the period by end date, newest first, across all pay cycles."
+_MDD_JCT_ADP_PAY_PERIODS,Pay Period Pay Cycle Code NEW,Pay cycle code of the employees whose cards use this period (the most common one if they differ).
+_MDD_JCT_ADP_PAY_PERIODS,Pay Period Pay Cycle NEW,"Pay cycle of the employees whose cards use this period, such as Bi-weekly."
+_MDD_JCT_ADP_PAY_PERIODS,Pay Period Days NEW,Number of days in the period.
+_MDD_JCT_ADP_PAY_PERIODS,Pay Date Sequence ASC In Pay Cycle NEW,"Order of the period by end date, oldest first, within its pay cycle."
+_MDD_JCT_ADP_PAY_PERIODS,Pay Date Sequence DESC In Pay Cycle NEW,"Order of the period by end date, newest first, within its pay cycle."
+_MDD_JCT_ADP_PAY_PERIOD_DAYS,Date,A calendar date inside the pay period.
+_MDD_JCT_ADP_PAY_PERIOD_DAYS,Pay Period Start,First day of the time card period (timePeriod.startDate).
+_MDD_JCT_ADP_PAY_PERIOD_DAYS,Pay Period End,Last day of the time card period (timePeriod.endDate).
+_MDD_JCT_ADP_PAY_PERIOD_DAYS,Pay Period ID FA0,Row number assigned when PAY_PERIODS is built. Not stable between runs.
+_MDD_JCT_ADP_PAY_PERIOD_DAYS,Pay Period ID,Unique ID of the Pay Period: start date and end date as YYYYMMDD-YYYYMMDD.
+_MDD_JCT_ADP_PAY_PERIOD_DAYS,Pay Date,The pay period end date. ADP time cards carry no check date; the real pay date is in ADP's Pay Statements API.
+_MDD_JCT_ADP_PAY_PERIOD_DAYS,Pay Date Sequence ASC,"Order of the period by end date, oldest first, across all pay cycles."
+_MDD_JCT_ADP_PAY_PERIOD_DAYS,Pay Date Sequence DESC,"Order of the period by end date, newest first, across all pay cycles."
+_MDD_JCT_ADP_PAY_PERIOD_DAYS,Pay Period Pay Cycle Code NEW,Pay cycle code of the employees whose cards use this period (the most common one if they differ).
+_MDD_JCT_ADP_PAY_PERIOD_DAYS,Pay Period Pay Cycle NEW,"Pay cycle of the employees whose cards use this period, such as Bi-weekly."
+_MDD_JCT_ADP_PAY_PERIOD_DAYS,Pay Period Days NEW,Number of days in the period.
+_MDD_JCT_ADP_PAY_PERIOD_DAYS,Pay Date Sequence ASC In Pay Cycle NEW,"Order of the period by end date, oldest first, within its pay cycle."
+_MDD_JCT_ADP_PAY_PERIOD_DAYS,Pay Date Sequence DESC In Pay Cycle NEW,"Order of the period by end date, newest first, within its pay cycle."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Time Card ID NEW,ADP's timeCardID: one employee's time card for one time period.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee ID Agency,"ADP's worker ID (workerID.idValue, ""An identifier for a worker, e.g. an Employee ID""; the WFN Associate ID). It is how reportsTo names a supervisor. It is not the payroll file number."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Time Card Position ID NEW,"Position ID on the time card (""The position identifier"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Pay Period Start,First day of the time card period (timePeriod.startDate).
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Pay Period End,Last day of the time card period (timePeriod.endDate).
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Pay Period Status NEW,Status of the time period as ADP sends it on timePeriod (periodStatus; not in ADP's published schema).
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Time Card Total Period Duration NEW,"Total hours on the card as ADP sends them, an ISO 8601 duration such as PT80H."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Time Card Total Period Hours NEW,"Total hours on the card as a number: totalPeriodHourQuantity when ADP sends it, else the duration converted to hours."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Time Card Has Exceptions NEW,"1 when ADP flags exceptions on the card (exceptionsIndicator, ""True indicates that there are exceptions in the related entity"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Time Card Exception Count NEW,Always empty: the per-worker endpoint does not return exception counts.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Time Card Period Code NEW,"Relative period code (ADP periodCode: ""Symbolic period name. E.g. Current, Previous, and Next""). Changes with the run date; not a period identifier."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Time Card Period Name NEW,Short name of the relative period.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Time Card Period Name Long NEW,Long name of the relative period.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Time Card Processing Status Code NEW,"Processing status code (""e.g. Processed, Error, Unprocessed, Warning"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Time Card Processing Status NEW,Processing status of the card.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Time Card Review Status Code NEW,"Review status code (""Status of the timesheet. E.g. Employee Approved, Manager Approved"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Time Card Review Status NEW,Review (approval) status of the card.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Time Card Review Status Long NEW,Long description of the review status.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Time Card Review Status Date NEW,Date the review status took effect.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Agency ID,"Unique ID of the Agency. ADP's payrollGroupCode on the primary work assignment (""The payroll group relevant to payroll processing for this work assignment"", the WFN company code). It stands in for the agency because worker demographics carries no company ID."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Position ID NEW,"Position ID of the primary work assignment (""The position identifier""): payroll group plus payroll file number."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Payroll File Number NEW,"Payroll file number of the primary work assignment (""The payroll file number""). Text; a collection before 10/17/2026 may have dropped a leading zero."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name First & Last,The employee's legal first and last name.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name First & Last & Employee ID,"The employee's legal first and last name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name Last & First,"The employee's legal last name, then first name."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name Last & First & Employee ID,"The employee's legal last name, then first name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name Last,The employee's last name.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name First,The employee's first name.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name Middle,The employee's middle name.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name Suffix,"Generation suffix of the legal name, such as JR (ADP: generationAffixCode, ""e.g. Jr, Sr"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name Salutation NEW,"Preferred salutation, such as MR or MS (first of ADP preferredSalutations)."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name Preferred First,The employee's preferred first name (ADP: preferredName).
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name Preferred Last,The employee's preferred last name.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name Preferred First & Last,"The employee's preferred first and last name, when both parts of the preferred name are recorded."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name Preferred First & Last & Employee ID,"The employee's preferred first and last name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name Preferred Last & First,"The employee's preferred last name, then first name, when both parts of the preferred name are recorded."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name Preferred Last & First & Employee ID,"The employee's preferred last name, then first name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name Nick NEW,"Nickname (ADP: legalName.nickName, ""A preferred name, e.g. a nickname"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name Birth Last NEW,Last name at birth (ADP: birthName).
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name Formatted NEW,Full legal name as ADP formats it (legalName.formattedName).
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name First & Last w/Initial,"The employee's legal first and last name, with the middle name."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name First & Last w/Initial & Employee ID,"The employee's legal first and last name with the middle name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name Last & First w/Initial,"The employee's legal last name, then first name, with the middle name."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Name Last & First w/Initial & Employee ID,"The employee's legal last name, then first name with the middle name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee DOB,"The employee's date of birth, from HR Workers v2 person.birthDate (""The birth date of the person""). Empty without Workers v2 or when ADP secures the field."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Age in Years,"Age in years, with decimals, from [Employee DOB] to today."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Age In Years Old,"Age in whole years, from [Employee DOB] to today."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Gender,"Gender label (ADP: genderCode.shortName, ""The gender of a person, e.g. Male, Female"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Gender Code NEW,Gender code (ADP: genderCode.codeValue).
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Marital Status NEW,"Marital status label (""Person marital status, e.g. Married, Divorced"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Marital Status Code NEW,Marital status code.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Marital Status Effective Date NEW,Date the marital status took effect.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Military Status NEW,"Military status label (""Person military status, e.g. Active, Active Reserve"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Military Status Code NEW,Military status code.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Military Discharge Date NEW,Military discharge date.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Disabled Indicator NEW,"ADP disabledIndicator: ""Indicates that the person is disabled""."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Tobacco User NEW,ADP tobaccoUserIndicator: the person is a tobacco user.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Supervisor ID,"[Employee ID Agency] (worker ID) of the supervisor named on the employee's primary work assignment (reportsTo, the person ""to whom a given worker reports"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Supervisor Name,"Name of the supervisor named on the primary work assignment, as ADP formats it."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Supervisor ID Secondary,"[Employee ID Agency] of the employee's secondary supervisor: a distinct supervisor named on one of the employee's other work assignments, in assignment order."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Supervisor Name Secondary,Name of the employee's secondary supervisor.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Supervisor ID Tertiary,"[Employee ID Agency] of the employee's tertiary supervisor: a distinct supervisor named on one of the employee's other work assignments, in assignment order."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Supervisor Name Tertiary,Name of the employee's tertiary supervisor.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Supervisor ID Quaternary,"[Employee ID Agency] of the employee's quaternary supervisor: a distinct supervisor named on one of the employee's other work assignments, in assignment order."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Supervisor Name Quaternary,Name of the employee's quaternary supervisor.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Department ID,Code of the employee's department: the assigned organizational unit of the Department type on the primary work assignment (types in _MDD_JCT_ADP_ORG_UNIT_TYPES_CUSTOM).
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Department Name,Name of the employee's department on the primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Cost Center ID,"Unique ID of the Cost Center: the ADP cost number code (cost-centers validation table nameCode.code; on employees, the primary assignment's org unit of the Cost Center type)."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Cost Center Name,Name of the employee's cost center (Cost Number) on the primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Job Title,"Job title of the primary work assignment (ADP: jobTitle, ""The job title"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Job Code NEW,"Job code of the primary work assignment (ADP: jobCode.codeValue, ""The job code"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Job Title Long NEW,Long description of the job code.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Job Title Short NEW,Short description of the job code.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Job Function Code NEW,"Job function code of the primary assignment, from HR Workers v2 (jobFunctionCode, ""The job function code"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Job Function NEW,"Job function name of the primary assignment, from HR Workers v2."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Occupation Class Code NEW,EEO occupational classification code of the primary assignment (occupationalClassifications entry whose system is EEOC).
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Occupation Class NEW,"EEO occupational classification name, such as Professionals (ADP: ""A reference to a system used to classify workers ... e.g. EEOC"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Occupation Class System NEW,"The classification system of [Employee Occupation Class NEW], such as EEOC. Empty for collections before 10/17/2026."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Job Class Code NEW,Code of the agency's Job Class classification on the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Job Class NEW,Name of the agency's Job Class classification on the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Type Code,Worker type code of the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Type,"Worker type of the primary assignment (ADP workerTypeCode: ""e.g. permanent employee, fixed term employee, apprentice, vendor employee, volunteer ... independent contractor""). Employment category, not full or part time."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Pay Cycle Code NEW,Pay cycle code of the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Pay Cycle NEW,"Pay cycle of the primary assignment (ADP payCycleCode: ""Describes how often the payee is paid"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee FLSA Code NEW,"FLSA coverage code of the primary assignment: E = Exempt, N = Non-Exempt (wageLawCoverage where wageLawNameCode = FLSA)."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee FLSA Status NEW,"FLSA coverage of the primary assignment (""The wage hour coverage code, e.g. exempt, non-exempt"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Standard Pay Period Hours NEW,"Standard hours per pay period of the primary assignment (""The standard number of hours per pay period"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Standard Hours NEW,"Standard weekly hours of the primary assignment, from HR Workers v2 standardHours (""typically used to drive the definition of a full time assignment"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee FTE NEW,"Full-time equivalent of the primary assignment, from HR Workers v2 fullTimeEquivalenceRatio (""An FTE of 1.0 means that the person is equivalent to a full-time worker"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Work Level Code NEW,"Work level code of the primary assignment, from HR Workers v2."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Work Level NEW,"Full time or part time, from HR Workers v2 workLevelCode (""The work level code, e.g. Fulltime, Parttime"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Location ID,"Unique ID of the Location: the home work location code (homeWorkLocation.nameCode.codeValue). On EMPLOYEES, the primary work assignment's home work location."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Location ID ADP,"The same home work location code, as ADP sends it."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Work Location Name NEW,Name of the primary assignment's home work location.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Work Location Name Long NEW,Long name of the primary assignment's home work location.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Worker Group Code NEW,"Code of a worker group the primary assignment belongs to (first by group type, then code; ADP has no primary group)."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Worker Group NEW,"Long name of that worker group (ADP groupCode, ""e.g. BRG, location"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Worker Group Short NEW,Short name of that worker group.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Worker Group Type NEW,Type of that worker group (the group's nameCode). Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Assignment Status Code NEW,Status code of the primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Assignment Status NEW,Status of the primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Pay Hourly,"Hourly base rate of the primary assignment, from HR Workers v2 baseRemuneration.hourlyRateAmount (""The base or primary pay (i.e. salary, wage) associated to a work assignment""). Empty without Workers v2 or when ADP secures pay fields."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Pay Annual NEW,"Annual base rate of the primary assignment, from HR Workers v2 baseRemuneration.annualRateAmount."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Pay Rate Date Effective NEW,Effective date of the base remuneration.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Pay Type,"Remuneration basis of the primary assignment, from HR Workers v2 remunerationBasisCode (""classifying a work assignment as salaried, salaried plus commission, commission only, hourly or daily"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Pay Type Code NEW,Remuneration basis code of the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Benefits Class,Benefits class. Always empty: neither ADP API that is collected carries it.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Benefits Date Effective,Benefits effective date. Always empty: neither ADP API that is collected carries it.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Benefits Salary,"Annual benefits base rate of the primary assignment, from HR Workers v2 annualBenefitBaseRate (""The annual benefits base rate that can be different from the employee's annual base rate"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Benefits Salary Date Effective,Always empty: ADP gives no effective date for the benefits base rate.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee ID Badge Number,"Time clock badge of the primary assignment, from HR Workers v2 workerTimeProfile.badgeID (""A badgeID for any employee position used for clock punch"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Time And Attendance NEW,1 when ADP manages time and attendance for the primary assignment (HR Workers v2 timeAndAttendanceIndicator).
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Payroll Group Code NEW,Payroll group (company code) of the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Hire Date,"Hire date of the primary work assignment (""The date the worker is hired into a work assignment""), else the original hire date. Reflects a rehire."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Hire Date Fiscal Year,"Fiscal year of [Employee Hire Date], from _MDD_JCT_DATES."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Original Hire Date NEW,Date first hired into the organization (workerDates.originalHireDate).
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Rehire Date NEW,"Most recent rehire date (workerDates.rehireDate, ""the date the worker is rehired ... the most current"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Adjusted Service Date NEW,"Adjusted service date (workerDates.adjustedServiceDate, ""generally adjusted for workers that leave the organization and are rehired""). Tenure is counted from it."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Seniority Date NEW,Seniority date of the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Actual Start Date NEW,"Date the worker actually started on the primary assignment (""the date the worker actually shows up for work"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Termination Date,"Termination date of the primary assignment, else the worker termination date (""The date an employee is terminated""). A rehired worker can carry an old date; see [Employee Termination Status]."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Termination Date Fiscal Year,Fiscal year of [Employee Termination Date].
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Expected Termination Date NEW,"Expected termination date, from HR Workers v2 workerDates.expectedTerminationDate."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Termination Status,"Terminated or Not Terminated. Terminated when ADP's worker status is Terminated or, without a status, when the termination date is on or before today and on or after the latest (re)hire date (Paycom's rule)."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Status Code NEW,"ADP worker status (workerStatus.statusCode, ""the status of the worker in the organization at the highest level""): Active, Inactive (leave of absence) or Terminated."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Status,Active or Inactive. Inactive means terminated; an employee on leave (ADP status Inactive) stays Active and is flagged in [Employee Is On Leave NEW].
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Is On Leave NEW,"1 when ADP's worker status is Inactive, ADP's status for a leave of absence."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Leave Return Date NEW,"Return date from a leave of absence, from HR Workers v2 workerDates.leaveOfAbsenceReturnDate."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Status Reason Code NEW,Reason code of the primary assignment's status.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Status Reason NEW,"Reason for the primary assignment's status (""e.g. new hire, rehire, termination"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Tenure Days,"Days from the adjusted service date (else the hire date) to the termination date for a terminated employee, or to today."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Tenure Years,"Years, with decimals, from the adjusted service date (else the hire date) to the termination date or today."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Tax SUI State,Always empty: not in the ADP APIs collected.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Tax Status Code,Always empty: not in the ADP APIs collected.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Tax Status,Always empty: not in the ADP APIs collected.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Ethnicity,"The employee's ethnicity, from ETHNICITY."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Ethnicity ID,The employee's ethnicity code.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Race,"The employee's race, from RACE."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Race ID,The employee's race code.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Race Long Name NEW,The employee's long race label.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Email Home,"The employee's personal email, lower case (person.communication.emails)."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Email Work,"The employee's work email, lower case (businessCommunication.emails). Used for row level security and the productivity crosswalk."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee ADP Associate OID NEW,"The employee's ADP associateOID, the same value as [Employee ID]."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Primary Work Assignment Item ID NEW,"itemID of the employee's primary work assignment (""The unique identifier of the object in a collection"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Age Group,Age band of [Employee Age In Years Old].
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Age Group Sort Order,Sort position of the age band.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Tenure Group,Tenure band of [Employee Tenure Years].
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Tenure Group Sort Order,Sort position of the tenure band.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Cost Center ID Fuzzy A0,"Row number of the cost center, ordered by code."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Object Category,"The kind of record this row belongs to. Always Employee for addresses, emails, phones, ethnicity and race; Cost Center for cost centers."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Object Category ID,"Numeric code for [Object Category]: 3 = Employee, 1 = Cost Center."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Object ID,"The ID of the record this row belongs to: the employee's ADP associateOID for addresses, emails, phones, ethnicity and race, and the cost number code for cost centers."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Cost Center Type,Always 1. Kept for compatibility with other JCT payroll modules.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Cost Center Type ID,Always 1. Kept for compatibility with other JCT payroll modules.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Cost Center,Name of the cost center (cost-centers validation table nameCode.name).
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Cost Center ID ADP NEW,The cost number code as ADP sends it.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Cost Center Is Inactive NEW,"ADP inactiveIndicator for the cost center list item (""Indicates if the current item is inactive""). Empty for collections before 10/17/2026."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Cost Center Payroll Group Code NEW,Payroll group (company code) the cost center list item belongs to. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Department ID NEW,Unique ID of the Department: the ADP departments validation table code.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Department Name NEW,Name of the department in the departments validation table.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Department Is Inactive NEW,ADP inactiveIndicator for the department list item. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Department Payroll Group Code NEW,Payroll group (company code) the department is defined in. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Job Code NEW,"Unique ID of the Job: the ADP jobs validation table code (""The code for the related entity"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Job Title NEW,Name of the job in the jobs validation table.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Job Is Management NEW,"ADP managementPositionIndicator: true when ""this position may manage people""."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Job Is Inactive NEW,"ADP inactiveIndicator for the job (""Indicates if the current item is inactive"")."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Job Family Code NEW,Code of the job's job family. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Job Family NEW,"Name of the job's job family, when ADP sends one."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Job Function Code NEW,Code of the job's job function. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Job Function NEW,"Name of the job's job function, when ADP sends one."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Job Occupational Class Code NEW,Code of the job's occupational classification (EEO category at most agencies).
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Job Occupational Class NEW,Name of the job's occupational classification.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Job FLSA Code NEW,"The job's FLSA wage law coverage code (E = exempt, N = non-exempt)."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Job FLSA Status NEW,"Name of the job's FLSA coverage, when ADP sends one."
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Address Home ID Fuzzy A0,Row number of the home address in ADDRESSES. Not stable between runs.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Address Home 1,First street line of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Address Home 2,Second street line of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Address Home City,City of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Address Home State,State of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Address Home Zip,Postal code of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Address Home County,County of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Address Home Country,Country code of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Address Work ID Fuzzy A0,Row number of the work address in ADDRESSES. Not stable between runs.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Address Work 1,First street line of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Address Work 2,Second street line of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Address Work City,City of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Address Work State,State of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Address Work Zip,Postal code of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Address Work County,County of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_TIME_CARDS,Employee Address Work Country,Country code of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Daily Total ID A0 NEW,Row number assigned when DAILY_TOTALS is built. Not stable between runs.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Daily Total Date NEW,"Date of the hours (dailyTotals.entryDate, ""Date of Entry"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Time Card ID NEW,ADP's timeCardID: one employee's time card for one time period.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Daily Total Hours NEW,"Hours for the employee, date, card, pay code and rate: hourQuantity when ADP sends it, else the ISO 8601 timeDuration converted to hours (seconds, days and decimals handled), summed."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Daily Total Pay Code NEW,"Pay code of the hours (payCode: ""the code that the entry is associated to. This may be an earning code, pay code""). Join to EARNING_CODES for worked vs not worked."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Daily Total Pay Code Name NEW,Short description of the pay code.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Daily Total Rate Multiplier NEW,"ADP rate.baseMultiplierValue: ""the base rate value is presumed to be 1, e.g. per one hour, per one month"". The unit the rate is per, not an overtime multiplier."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Daily Total Rate Amount NEW,"ADP rate.amountValue (""The numeric value associated to the rate"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Daily Total Currency NEW,Currency of the rate.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee ID Agency,"ADP's worker ID (workerID.idValue, ""An identifier for a worker, e.g. an Employee ID""; the WFN Associate ID). It is how reportsTo names a supervisor. It is not the payroll file number."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Time Card Position ID NEW,"Position ID on the time card (""The position identifier"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Pay Period Start,First day of the time card period (timePeriod.startDate).
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Pay Period End,Last day of the time card period (timePeriod.endDate).
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Pay Period Status NEW,Status of the time period as ADP sends it on timePeriod (periodStatus; not in ADP's published schema).
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Time Card Total Period Duration NEW,"Total hours on the card as ADP sends them, an ISO 8601 duration such as PT80H."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Time Card Total Period Hours NEW,"Total hours on the card as a number: totalPeriodHourQuantity when ADP sends it, else the duration converted to hours."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Time Card Has Exceptions NEW,"1 when ADP flags exceptions on the card (exceptionsIndicator, ""True indicates that there are exceptions in the related entity"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Time Card Exception Count NEW,Always empty: the per-worker endpoint does not return exception counts.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Time Card Period Code NEW,"Relative period code (ADP periodCode: ""Symbolic period name. E.g. Current, Previous, and Next""). Changes with the run date; not a period identifier."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Time Card Period Name NEW,Short name of the relative period.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Time Card Period Name Long NEW,Long name of the relative period.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Time Card Processing Status Code NEW,"Processing status code (""e.g. Processed, Error, Unprocessed, Warning"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Time Card Processing Status NEW,Processing status of the card.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Time Card Review Status Code NEW,"Review status code (""Status of the timesheet. E.g. Employee Approved, Manager Approved"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Time Card Review Status NEW,Review (approval) status of the card.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Time Card Review Status Long NEW,Long description of the review status.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Time Card Review Status Date NEW,Date the review status took effect.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Agency ID,"Unique ID of the Agency. ADP's payrollGroupCode on the primary work assignment (""The payroll group relevant to payroll processing for this work assignment"", the WFN company code). It stands in for the agency because worker demographics carries no company ID."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Position ID NEW,"Position ID of the primary work assignment (""The position identifier""): payroll group plus payroll file number."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Payroll File Number NEW,"Payroll file number of the primary work assignment (""The payroll file number""). Text; a collection before 10/17/2026 may have dropped a leading zero."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name First & Last,The employee's legal first and last name.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name First & Last & Employee ID,"The employee's legal first and last name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name Last & First,"The employee's legal last name, then first name."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name Last & First & Employee ID,"The employee's legal last name, then first name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name Last,The employee's last name.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name First,The employee's first name.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name Middle,The employee's middle name.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name Suffix,"Generation suffix of the legal name, such as JR (ADP: generationAffixCode, ""e.g. Jr, Sr"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name Salutation NEW,"Preferred salutation, such as MR or MS (first of ADP preferredSalutations)."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name Preferred First,The employee's preferred first name (ADP: preferredName).
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name Preferred Last,The employee's preferred last name.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name Preferred First & Last,"The employee's preferred first and last name, when both parts of the preferred name are recorded."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name Preferred First & Last & Employee ID,"The employee's preferred first and last name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name Preferred Last & First,"The employee's preferred last name, then first name, when both parts of the preferred name are recorded."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name Preferred Last & First & Employee ID,"The employee's preferred last name, then first name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name Nick NEW,"Nickname (ADP: legalName.nickName, ""A preferred name, e.g. a nickname"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name Birth Last NEW,Last name at birth (ADP: birthName).
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name Formatted NEW,Full legal name as ADP formats it (legalName.formattedName).
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name First & Last w/Initial,"The employee's legal first and last name, with the middle name."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name First & Last w/Initial & Employee ID,"The employee's legal first and last name with the middle name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name Last & First w/Initial,"The employee's legal last name, then first name, with the middle name."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Name Last & First w/Initial & Employee ID,"The employee's legal last name, then first name with the middle name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee DOB,"The employee's date of birth, from HR Workers v2 person.birthDate (""The birth date of the person""). Empty without Workers v2 or when ADP secures the field."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Age in Years,"Age in years, with decimals, from [Employee DOB] to today."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Age In Years Old,"Age in whole years, from [Employee DOB] to today."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Gender,"Gender label (ADP: genderCode.shortName, ""The gender of a person, e.g. Male, Female"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Gender Code NEW,Gender code (ADP: genderCode.codeValue).
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Marital Status NEW,"Marital status label (""Person marital status, e.g. Married, Divorced"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Marital Status Code NEW,Marital status code.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Marital Status Effective Date NEW,Date the marital status took effect.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Military Status NEW,"Military status label (""Person military status, e.g. Active, Active Reserve"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Military Status Code NEW,Military status code.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Military Discharge Date NEW,Military discharge date.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Disabled Indicator NEW,"ADP disabledIndicator: ""Indicates that the person is disabled""."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Tobacco User NEW,ADP tobaccoUserIndicator: the person is a tobacco user.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Supervisor ID,"[Employee ID Agency] (worker ID) of the supervisor named on the employee's primary work assignment (reportsTo, the person ""to whom a given worker reports"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Supervisor Name,"Name of the supervisor named on the primary work assignment, as ADP formats it."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Supervisor ID Secondary,"[Employee ID Agency] of the employee's secondary supervisor: a distinct supervisor named on one of the employee's other work assignments, in assignment order."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Supervisor Name Secondary,Name of the employee's secondary supervisor.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Supervisor ID Tertiary,"[Employee ID Agency] of the employee's tertiary supervisor: a distinct supervisor named on one of the employee's other work assignments, in assignment order."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Supervisor Name Tertiary,Name of the employee's tertiary supervisor.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Supervisor ID Quaternary,"[Employee ID Agency] of the employee's quaternary supervisor: a distinct supervisor named on one of the employee's other work assignments, in assignment order."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Supervisor Name Quaternary,Name of the employee's quaternary supervisor.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Department ID,Code of the employee's department: the assigned organizational unit of the Department type on the primary work assignment (types in _MDD_JCT_ADP_ORG_UNIT_TYPES_CUSTOM).
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Department Name,Name of the employee's department on the primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Cost Center ID,"Unique ID of the Cost Center: the ADP cost number code (cost-centers validation table nameCode.code; on employees, the primary assignment's org unit of the Cost Center type)."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Cost Center Name,Name of the employee's cost center (Cost Number) on the primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Job Title,"Job title of the primary work assignment (ADP: jobTitle, ""The job title"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Job Code NEW,"Job code of the primary work assignment (ADP: jobCode.codeValue, ""The job code"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Job Title Long NEW,Long description of the job code.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Job Title Short NEW,Short description of the job code.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Job Function Code NEW,"Job function code of the primary assignment, from HR Workers v2 (jobFunctionCode, ""The job function code"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Job Function NEW,"Job function name of the primary assignment, from HR Workers v2."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Occupation Class Code NEW,EEO occupational classification code of the primary assignment (occupationalClassifications entry whose system is EEOC).
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Occupation Class NEW,"EEO occupational classification name, such as Professionals (ADP: ""A reference to a system used to classify workers ... e.g. EEOC"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Occupation Class System NEW,"The classification system of [Employee Occupation Class NEW], such as EEOC. Empty for collections before 10/17/2026."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Job Class Code NEW,Code of the agency's Job Class classification on the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Job Class NEW,Name of the agency's Job Class classification on the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Type Code,Worker type code of the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Type,"Worker type of the primary assignment (ADP workerTypeCode: ""e.g. permanent employee, fixed term employee, apprentice, vendor employee, volunteer ... independent contractor""). Employment category, not full or part time."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Pay Cycle Code NEW,Pay cycle code of the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Pay Cycle NEW,"Pay cycle of the primary assignment (ADP payCycleCode: ""Describes how often the payee is paid"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee FLSA Code NEW,"FLSA coverage code of the primary assignment: E = Exempt, N = Non-Exempt (wageLawCoverage where wageLawNameCode = FLSA)."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee FLSA Status NEW,"FLSA coverage of the primary assignment (""The wage hour coverage code, e.g. exempt, non-exempt"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Standard Pay Period Hours NEW,"Standard hours per pay period of the primary assignment (""The standard number of hours per pay period"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Standard Hours NEW,"Standard weekly hours of the primary assignment, from HR Workers v2 standardHours (""typically used to drive the definition of a full time assignment"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee FTE NEW,"Full-time equivalent of the primary assignment, from HR Workers v2 fullTimeEquivalenceRatio (""An FTE of 1.0 means that the person is equivalent to a full-time worker"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Work Level Code NEW,"Work level code of the primary assignment, from HR Workers v2."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Work Level NEW,"Full time or part time, from HR Workers v2 workLevelCode (""The work level code, e.g. Fulltime, Parttime"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Location ID,"Unique ID of the Location: the home work location code (homeWorkLocation.nameCode.codeValue). On EMPLOYEES, the primary work assignment's home work location."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Location ID ADP,"The same home work location code, as ADP sends it."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Work Location Name NEW,Name of the primary assignment's home work location.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Work Location Name Long NEW,Long name of the primary assignment's home work location.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Worker Group Code NEW,"Code of a worker group the primary assignment belongs to (first by group type, then code; ADP has no primary group)."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Worker Group NEW,"Long name of that worker group (ADP groupCode, ""e.g. BRG, location"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Worker Group Short NEW,Short name of that worker group.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Worker Group Type NEW,Type of that worker group (the group's nameCode). Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Assignment Status Code NEW,Status code of the primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Assignment Status NEW,Status of the primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Pay Hourly,"Hourly base rate of the primary assignment, from HR Workers v2 baseRemuneration.hourlyRateAmount (""The base or primary pay (i.e. salary, wage) associated to a work assignment""). Empty without Workers v2 or when ADP secures pay fields."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Pay Annual NEW,"Annual base rate of the primary assignment, from HR Workers v2 baseRemuneration.annualRateAmount."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Pay Rate Date Effective NEW,Effective date of the base remuneration.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Pay Type,"Remuneration basis of the primary assignment, from HR Workers v2 remunerationBasisCode (""classifying a work assignment as salaried, salaried plus commission, commission only, hourly or daily"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Pay Type Code NEW,Remuneration basis code of the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Benefits Class,Benefits class. Always empty: neither ADP API that is collected carries it.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Benefits Date Effective,Benefits effective date. Always empty: neither ADP API that is collected carries it.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Benefits Salary,"Annual benefits base rate of the primary assignment, from HR Workers v2 annualBenefitBaseRate (""The annual benefits base rate that can be different from the employee's annual base rate"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Benefits Salary Date Effective,Always empty: ADP gives no effective date for the benefits base rate.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee ID Badge Number,"Time clock badge of the primary assignment, from HR Workers v2 workerTimeProfile.badgeID (""A badgeID for any employee position used for clock punch"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Time And Attendance NEW,1 when ADP manages time and attendance for the primary assignment (HR Workers v2 timeAndAttendanceIndicator).
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Payroll Group Code NEW,Payroll group (company code) of the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Hire Date,"Hire date of the primary work assignment (""The date the worker is hired into a work assignment""), else the original hire date. Reflects a rehire."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Hire Date Fiscal Year,"Fiscal year of [Employee Hire Date], from _MDD_JCT_DATES."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Original Hire Date NEW,Date first hired into the organization (workerDates.originalHireDate).
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Rehire Date NEW,"Most recent rehire date (workerDates.rehireDate, ""the date the worker is rehired ... the most current"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Adjusted Service Date NEW,"Adjusted service date (workerDates.adjustedServiceDate, ""generally adjusted for workers that leave the organization and are rehired""). Tenure is counted from it."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Seniority Date NEW,Seniority date of the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Actual Start Date NEW,"Date the worker actually started on the primary assignment (""the date the worker actually shows up for work"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Termination Date,"Termination date of the primary assignment, else the worker termination date (""The date an employee is terminated""). A rehired worker can carry an old date; see [Employee Termination Status]."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Termination Date Fiscal Year,Fiscal year of [Employee Termination Date].
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Expected Termination Date NEW,"Expected termination date, from HR Workers v2 workerDates.expectedTerminationDate."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Termination Status,"Terminated or Not Terminated. Terminated when ADP's worker status is Terminated or, without a status, when the termination date is on or before today and on or after the latest (re)hire date (Paycom's rule)."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Status Code NEW,"ADP worker status (workerStatus.statusCode, ""the status of the worker in the organization at the highest level""): Active, Inactive (leave of absence) or Terminated."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Status,Active or Inactive. Inactive means terminated; an employee on leave (ADP status Inactive) stays Active and is flagged in [Employee Is On Leave NEW].
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Is On Leave NEW,"1 when ADP's worker status is Inactive, ADP's status for a leave of absence."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Leave Return Date NEW,"Return date from a leave of absence, from HR Workers v2 workerDates.leaveOfAbsenceReturnDate."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Status Reason Code NEW,Reason code of the primary assignment's status.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Status Reason NEW,"Reason for the primary assignment's status (""e.g. new hire, rehire, termination"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Tenure Days,"Days from the adjusted service date (else the hire date) to the termination date for a terminated employee, or to today."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Tenure Years,"Years, with decimals, from the adjusted service date (else the hire date) to the termination date or today."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Tax SUI State,Always empty: not in the ADP APIs collected.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Tax Status Code,Always empty: not in the ADP APIs collected.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Tax Status,Always empty: not in the ADP APIs collected.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Ethnicity,"The employee's ethnicity, from ETHNICITY."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Ethnicity ID,The employee's ethnicity code.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Race,"The employee's race, from RACE."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Race ID,The employee's race code.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Race Long Name NEW,The employee's long race label.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Email Home,"The employee's personal email, lower case (person.communication.emails)."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Email Work,"The employee's work email, lower case (businessCommunication.emails). Used for row level security and the productivity crosswalk."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee ADP Associate OID NEW,"The employee's ADP associateOID, the same value as [Employee ID]."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Primary Work Assignment Item ID NEW,"itemID of the employee's primary work assignment (""The unique identifier of the object in a collection"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Age Group,Age band of [Employee Age In Years Old].
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Age Group Sort Order,Sort position of the age band.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Tenure Group,Tenure band of [Employee Tenure Years].
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Tenure Group Sort Order,Sort position of the tenure band.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Cost Center ID Fuzzy A0,"Row number of the cost center, ordered by code."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Object Category,"The kind of record this row belongs to. Always Employee for addresses, emails, phones, ethnicity and race; Cost Center for cost centers."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Object Category ID,"Numeric code for [Object Category]: 3 = Employee, 1 = Cost Center."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Object ID,"The ID of the record this row belongs to: the employee's ADP associateOID for addresses, emails, phones, ethnicity and race, and the cost number code for cost centers."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Cost Center Type,Always 1. Kept for compatibility with other JCT payroll modules.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Cost Center Type ID,Always 1. Kept for compatibility with other JCT payroll modules.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Cost Center,Name of the cost center (cost-centers validation table nameCode.name).
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Cost Center ID ADP NEW,The cost number code as ADP sends it.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Cost Center Is Inactive NEW,"ADP inactiveIndicator for the cost center list item (""Indicates if the current item is inactive""). Empty for collections before 10/17/2026."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Cost Center Payroll Group Code NEW,Payroll group (company code) the cost center list item belongs to. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Department ID NEW,Unique ID of the Department: the ADP departments validation table code.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Department Name NEW,Name of the department in the departments validation table.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Department Is Inactive NEW,ADP inactiveIndicator for the department list item. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Department Payroll Group Code NEW,Payroll group (company code) the department is defined in. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Job Code NEW,"Unique ID of the Job: the ADP jobs validation table code (""The code for the related entity"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Job Title NEW,Name of the job in the jobs validation table.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Job Is Management NEW,"ADP managementPositionIndicator: true when ""this position may manage people""."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Job Is Inactive NEW,"ADP inactiveIndicator for the job (""Indicates if the current item is inactive"")."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Job Family Code NEW,Code of the job's job family. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Job Family NEW,"Name of the job's job family, when ADP sends one."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Job Function Code NEW,Code of the job's job function. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Job Function NEW,"Name of the job's job function, when ADP sends one."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Job Occupational Class Code NEW,Code of the job's occupational classification (EEO category at most agencies).
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Job Occupational Class NEW,Name of the job's occupational classification.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Job FLSA Code NEW,"The job's FLSA wage law coverage code (E = exempt, N = non-exempt)."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Job FLSA Status NEW,"Name of the job's FLSA coverage, when ADP sends one."
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Address Home ID Fuzzy A0,Row number of the home address in ADDRESSES. Not stable between runs.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Address Home 1,First street line of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Address Home 2,Second street line of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Address Home City,City of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Address Home State,State of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Address Home Zip,Postal code of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Address Home County,County of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Address Home Country,Country code of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Address Work ID Fuzzy A0,Row number of the work address in ADDRESSES. Not stable between runs.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Address Work 1,First street line of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Address Work 2,Second street line of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Address Work City,City of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Address Work State,State of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Address Work Zip,Postal code of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Address Work County,County of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_DAILY_TOTALS,Employee Address Work Country,Country code of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Period Total ID A0 NEW,Row number assigned when PERIOD_TOTALS is built. Not stable between runs.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Time Card ID NEW,ADP's timeCardID: one employee's time card for one time period.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Period Total Hours NEW,"Hours of the period total: hourQuantity when ADP sends it, else timeDuration converted to hours. Sum only rows where [Period Total Is Pay Period Total NEW] = 1."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Period Total Pay Code NEW,Pay code of the period total.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Period Total Pay Code Name NEW,Short description of the period total pay code.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Period Total Amount NEW,Always empty: the sparse amount child is not joined (see the module).
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Period Total Currency NEW,Always empty: see [Period Total Amount NEW].
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Period Total Rate Multiplier NEW,ADP rate.baseMultiplierValue of the period total (the unit the rate is per).
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Period Total Rate Amount NEW,ADP rate.amountValue of the period total.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Period Total Rate Currency NEW,Currency of the period total rate.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Period Total Start Date NEW,"Start of the period the total covers (periodStartDate), when ADP sends it."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Period Total End Date NEW,"End of the period the total covers (periodEndDate), when ADP sends it."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Period Total Is Pay Period Total NEW,"1 when the row is the total for the whole time card period, 0 for a sub-period such as a week. ADP: ""Multiple totals with different periods are permissible (e.g. week 1, week 2, pay period)""."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Period Total Item ID NEW,ADP.py periodTotalItemID: time card ID plus the entry position.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee ID Agency,"ADP's worker ID (workerID.idValue, ""An identifier for a worker, e.g. an Employee ID""; the WFN Associate ID). It is how reportsTo names a supervisor. It is not the payroll file number."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Time Card Position ID NEW,"Position ID on the time card (""The position identifier"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Pay Period Start,First day of the time card period (timePeriod.startDate).
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Pay Period End,Last day of the time card period (timePeriod.endDate).
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Pay Period Status NEW,Status of the time period as ADP sends it on timePeriod (periodStatus; not in ADP's published schema).
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Time Card Total Period Duration NEW,"Total hours on the card as ADP sends them, an ISO 8601 duration such as PT80H."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Time Card Total Period Hours NEW,"Total hours on the card as a number: totalPeriodHourQuantity when ADP sends it, else the duration converted to hours."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Time Card Has Exceptions NEW,"1 when ADP flags exceptions on the card (exceptionsIndicator, ""True indicates that there are exceptions in the related entity"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Time Card Exception Count NEW,Always empty: the per-worker endpoint does not return exception counts.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Time Card Period Code NEW,"Relative period code (ADP periodCode: ""Symbolic period name. E.g. Current, Previous, and Next""). Changes with the run date; not a period identifier."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Time Card Period Name NEW,Short name of the relative period.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Time Card Period Name Long NEW,Long name of the relative period.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Time Card Processing Status Code NEW,"Processing status code (""e.g. Processed, Error, Unprocessed, Warning"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Time Card Processing Status NEW,Processing status of the card.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Time Card Review Status Code NEW,"Review status code (""Status of the timesheet. E.g. Employee Approved, Manager Approved"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Time Card Review Status NEW,Review (approval) status of the card.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Time Card Review Status Long NEW,Long description of the review status.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Time Card Review Status Date NEW,Date the review status took effect.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Agency ID,"Unique ID of the Agency. ADP's payrollGroupCode on the primary work assignment (""The payroll group relevant to payroll processing for this work assignment"", the WFN company code). It stands in for the agency because worker demographics carries no company ID."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Position ID NEW,"Position ID of the primary work assignment (""The position identifier""): payroll group plus payroll file number."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Payroll File Number NEW,"Payroll file number of the primary work assignment (""The payroll file number""). Text; a collection before 10/17/2026 may have dropped a leading zero."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name First & Last,The employee's legal first and last name.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name First & Last & Employee ID,"The employee's legal first and last name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name Last & First,"The employee's legal last name, then first name."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name Last & First & Employee ID,"The employee's legal last name, then first name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name Last,The employee's last name.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name First,The employee's first name.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name Middle,The employee's middle name.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name Suffix,"Generation suffix of the legal name, such as JR (ADP: generationAffixCode, ""e.g. Jr, Sr"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name Salutation NEW,"Preferred salutation, such as MR or MS (first of ADP preferredSalutations)."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name Preferred First,The employee's preferred first name (ADP: preferredName).
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name Preferred Last,The employee's preferred last name.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name Preferred First & Last,"The employee's preferred first and last name, when both parts of the preferred name are recorded."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name Preferred First & Last & Employee ID,"The employee's preferred first and last name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name Preferred Last & First,"The employee's preferred last name, then first name, when both parts of the preferred name are recorded."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name Preferred Last & First & Employee ID,"The employee's preferred last name, then first name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name Nick NEW,"Nickname (ADP: legalName.nickName, ""A preferred name, e.g. a nickname"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name Birth Last NEW,Last name at birth (ADP: birthName).
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name Formatted NEW,Full legal name as ADP formats it (legalName.formattedName).
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name First & Last w/Initial,"The employee's legal first and last name, with the middle name."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name First & Last w/Initial & Employee ID,"The employee's legal first and last name with the middle name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name Last & First w/Initial,"The employee's legal last name, then first name, with the middle name."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Name Last & First w/Initial & Employee ID,"The employee's legal last name, then first name with the middle name, followed by [Employee ID Agency] in parentheses."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee DOB,"The employee's date of birth, from HR Workers v2 person.birthDate (""The birth date of the person""). Empty without Workers v2 or when ADP secures the field."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Age in Years,"Age in years, with decimals, from [Employee DOB] to today."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Age In Years Old,"Age in whole years, from [Employee DOB] to today."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Gender,"Gender label (ADP: genderCode.shortName, ""The gender of a person, e.g. Male, Female"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Gender Code NEW,Gender code (ADP: genderCode.codeValue).
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Marital Status NEW,"Marital status label (""Person marital status, e.g. Married, Divorced"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Marital Status Code NEW,Marital status code.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Marital Status Effective Date NEW,Date the marital status took effect.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Military Status NEW,"Military status label (""Person military status, e.g. Active, Active Reserve"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Military Status Code NEW,Military status code.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Military Discharge Date NEW,Military discharge date.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Disabled Indicator NEW,"ADP disabledIndicator: ""Indicates that the person is disabled""."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Tobacco User NEW,ADP tobaccoUserIndicator: the person is a tobacco user.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Supervisor ID,"[Employee ID Agency] (worker ID) of the supervisor named on the employee's primary work assignment (reportsTo, the person ""to whom a given worker reports"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Supervisor Name,"Name of the supervisor named on the primary work assignment, as ADP formats it."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Supervisor ID Secondary,"[Employee ID Agency] of the employee's secondary supervisor: a distinct supervisor named on one of the employee's other work assignments, in assignment order."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Supervisor Name Secondary,Name of the employee's secondary supervisor.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Supervisor ID Tertiary,"[Employee ID Agency] of the employee's tertiary supervisor: a distinct supervisor named on one of the employee's other work assignments, in assignment order."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Supervisor Name Tertiary,Name of the employee's tertiary supervisor.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Supervisor ID Quaternary,"[Employee ID Agency] of the employee's quaternary supervisor: a distinct supervisor named on one of the employee's other work assignments, in assignment order."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Supervisor Name Quaternary,Name of the employee's quaternary supervisor.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Department ID,Code of the employee's department: the assigned organizational unit of the Department type on the primary work assignment (types in _MDD_JCT_ADP_ORG_UNIT_TYPES_CUSTOM).
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Department Name,Name of the employee's department on the primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Cost Center ID,"Unique ID of the Cost Center: the ADP cost number code (cost-centers validation table nameCode.code; on employees, the primary assignment's org unit of the Cost Center type)."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Cost Center Name,Name of the employee's cost center (Cost Number) on the primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Job Title,"Job title of the primary work assignment (ADP: jobTitle, ""The job title"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Job Code NEW,"Job code of the primary work assignment (ADP: jobCode.codeValue, ""The job code"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Job Title Long NEW,Long description of the job code.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Job Title Short NEW,Short description of the job code.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Job Function Code NEW,"Job function code of the primary assignment, from HR Workers v2 (jobFunctionCode, ""The job function code"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Job Function NEW,"Job function name of the primary assignment, from HR Workers v2."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Occupation Class Code NEW,EEO occupational classification code of the primary assignment (occupationalClassifications entry whose system is EEOC).
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Occupation Class NEW,"EEO occupational classification name, such as Professionals (ADP: ""A reference to a system used to classify workers ... e.g. EEOC"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Occupation Class System NEW,"The classification system of [Employee Occupation Class NEW], such as EEOC. Empty for collections before 10/17/2026."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Job Class Code NEW,Code of the agency's Job Class classification on the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Job Class NEW,Name of the agency's Job Class classification on the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Type Code,Worker type code of the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Type,"Worker type of the primary assignment (ADP workerTypeCode: ""e.g. permanent employee, fixed term employee, apprentice, vendor employee, volunteer ... independent contractor""). Employment category, not full or part time."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Pay Cycle Code NEW,Pay cycle code of the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Pay Cycle NEW,"Pay cycle of the primary assignment (ADP payCycleCode: ""Describes how often the payee is paid"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee FLSA Code NEW,"FLSA coverage code of the primary assignment: E = Exempt, N = Non-Exempt (wageLawCoverage where wageLawNameCode = FLSA)."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee FLSA Status NEW,"FLSA coverage of the primary assignment (""The wage hour coverage code, e.g. exempt, non-exempt"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Standard Pay Period Hours NEW,"Standard hours per pay period of the primary assignment (""The standard number of hours per pay period"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Standard Hours NEW,"Standard weekly hours of the primary assignment, from HR Workers v2 standardHours (""typically used to drive the definition of a full time assignment"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee FTE NEW,"Full-time equivalent of the primary assignment, from HR Workers v2 fullTimeEquivalenceRatio (""An FTE of 1.0 means that the person is equivalent to a full-time worker"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Work Level Code NEW,"Work level code of the primary assignment, from HR Workers v2."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Work Level NEW,"Full time or part time, from HR Workers v2 workLevelCode (""The work level code, e.g. Fulltime, Parttime"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Location ID,"Unique ID of the Location: the home work location code (homeWorkLocation.nameCode.codeValue). On EMPLOYEES, the primary work assignment's home work location."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Location ID ADP,"The same home work location code, as ADP sends it."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Work Location Name NEW,Name of the primary assignment's home work location.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Work Location Name Long NEW,Long name of the primary assignment's home work location.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Worker Group Code NEW,"Code of a worker group the primary assignment belongs to (first by group type, then code; ADP has no primary group)."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Worker Group NEW,"Long name of that worker group (ADP groupCode, ""e.g. BRG, location"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Worker Group Short NEW,Short name of that worker group.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Worker Group Type NEW,Type of that worker group (the group's nameCode). Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Assignment Status Code NEW,Status code of the primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Assignment Status NEW,Status of the primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Pay Hourly,"Hourly base rate of the primary assignment, from HR Workers v2 baseRemuneration.hourlyRateAmount (""The base or primary pay (i.e. salary, wage) associated to a work assignment""). Empty without Workers v2 or when ADP secures pay fields."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Pay Annual NEW,"Annual base rate of the primary assignment, from HR Workers v2 baseRemuneration.annualRateAmount."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Pay Rate Date Effective NEW,Effective date of the base remuneration.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Pay Type,"Remuneration basis of the primary assignment, from HR Workers v2 remunerationBasisCode (""classifying a work assignment as salaried, salaried plus commission, commission only, hourly or daily"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Pay Type Code NEW,Remuneration basis code of the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Benefits Class,Benefits class. Always empty: neither ADP API that is collected carries it.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Benefits Date Effective,Benefits effective date. Always empty: neither ADP API that is collected carries it.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Benefits Salary,"Annual benefits base rate of the primary assignment, from HR Workers v2 annualBenefitBaseRate (""The annual benefits base rate that can be different from the employee's annual base rate"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Benefits Salary Date Effective,Always empty: ADP gives no effective date for the benefits base rate.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee ID Badge Number,"Time clock badge of the primary assignment, from HR Workers v2 workerTimeProfile.badgeID (""A badgeID for any employee position used for clock punch"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Time And Attendance NEW,1 when ADP manages time and attendance for the primary assignment (HR Workers v2 timeAndAttendanceIndicator).
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Payroll Group Code NEW,Payroll group (company code) of the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Hire Date,"Hire date of the primary work assignment (""The date the worker is hired into a work assignment""), else the original hire date. Reflects a rehire."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Hire Date Fiscal Year,"Fiscal year of [Employee Hire Date], from _MDD_JCT_DATES."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Original Hire Date NEW,Date first hired into the organization (workerDates.originalHireDate).
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Rehire Date NEW,"Most recent rehire date (workerDates.rehireDate, ""the date the worker is rehired ... the most current"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Adjusted Service Date NEW,"Adjusted service date (workerDates.adjustedServiceDate, ""generally adjusted for workers that leave the organization and are rehired""). Tenure is counted from it."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Seniority Date NEW,Seniority date of the primary assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Actual Start Date NEW,"Date the worker actually started on the primary assignment (""the date the worker actually shows up for work"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Termination Date,"Termination date of the primary assignment, else the worker termination date (""The date an employee is terminated""). A rehired worker can carry an old date; see [Employee Termination Status]."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Termination Date Fiscal Year,Fiscal year of [Employee Termination Date].
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Expected Termination Date NEW,"Expected termination date, from HR Workers v2 workerDates.expectedTerminationDate."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Termination Status,"Terminated or Not Terminated. Terminated when ADP's worker status is Terminated or, without a status, when the termination date is on or before today and on or after the latest (re)hire date (Paycom's rule)."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Status Code NEW,"ADP worker status (workerStatus.statusCode, ""the status of the worker in the organization at the highest level""): Active, Inactive (leave of absence) or Terminated."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Status,Active or Inactive. Inactive means terminated; an employee on leave (ADP status Inactive) stays Active and is flagged in [Employee Is On Leave NEW].
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Is On Leave NEW,"1 when ADP's worker status is Inactive, ADP's status for a leave of absence."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Leave Return Date NEW,"Return date from a leave of absence, from HR Workers v2 workerDates.leaveOfAbsenceReturnDate."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Status Reason Code NEW,Reason code of the primary assignment's status.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Status Reason NEW,"Reason for the primary assignment's status (""e.g. new hire, rehire, termination"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Tenure Days,"Days from the adjusted service date (else the hire date) to the termination date for a terminated employee, or to today."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Tenure Years,"Years, with decimals, from the adjusted service date (else the hire date) to the termination date or today."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Tax SUI State,Always empty: not in the ADP APIs collected.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Tax Status Code,Always empty: not in the ADP APIs collected.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Tax Status,Always empty: not in the ADP APIs collected.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Ethnicity,"The employee's ethnicity, from ETHNICITY."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Ethnicity ID,The employee's ethnicity code.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Race,"The employee's race, from RACE."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Race ID,The employee's race code.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Race Long Name NEW,The employee's long race label.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Email Home,"The employee's personal email, lower case (person.communication.emails)."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Email Work,"The employee's work email, lower case (businessCommunication.emails). Used for row level security and the productivity crosswalk."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee ADP Associate OID NEW,"The employee's ADP associateOID, the same value as [Employee ID]."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Primary Work Assignment Item ID NEW,"itemID of the employee's primary work assignment (""The unique identifier of the object in a collection"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Age Group,Age band of [Employee Age In Years Old].
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Age Group Sort Order,Sort position of the age band.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Tenure Group,Tenure band of [Employee Tenure Years].
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Tenure Group Sort Order,Sort position of the tenure band.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Cost Center ID Fuzzy A0,"Row number of the cost center, ordered by code."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Object Category,"The kind of record this row belongs to. Always Employee for addresses, emails, phones, ethnicity and race; Cost Center for cost centers."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Object Category ID,"Numeric code for [Object Category]: 3 = Employee, 1 = Cost Center."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Object ID,"The ID of the record this row belongs to: the employee's ADP associateOID for addresses, emails, phones, ethnicity and race, and the cost number code for cost centers."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Cost Center Type,Always 1. Kept for compatibility with other JCT payroll modules.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Cost Center Type ID,Always 1. Kept for compatibility with other JCT payroll modules.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Cost Center,Name of the cost center (cost-centers validation table nameCode.name).
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Cost Center ID ADP NEW,The cost number code as ADP sends it.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Cost Center Is Inactive NEW,"ADP inactiveIndicator for the cost center list item (""Indicates if the current item is inactive""). Empty for collections before 10/17/2026."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Cost Center Payroll Group Code NEW,Payroll group (company code) the cost center list item belongs to. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Department ID NEW,Unique ID of the Department: the ADP departments validation table code.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Department Name NEW,Name of the department in the departments validation table.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Department Is Inactive NEW,ADP inactiveIndicator for the department list item. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Department Payroll Group Code NEW,Payroll group (company code) the department is defined in. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Job Code NEW,"Unique ID of the Job: the ADP jobs validation table code (""The code for the related entity"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Job Title NEW,Name of the job in the jobs validation table.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Job Is Management NEW,"ADP managementPositionIndicator: true when ""this position may manage people""."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Job Is Inactive NEW,"ADP inactiveIndicator for the job (""Indicates if the current item is inactive"")."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Job Family Code NEW,Code of the job's job family. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Job Family NEW,"Name of the job's job family, when ADP sends one."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Job Function Code NEW,Code of the job's job function. Empty for collections before 10/17/2026.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Job Function NEW,"Name of the job's job function, when ADP sends one."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Job Occupational Class Code NEW,Code of the job's occupational classification (EEO category at most agencies).
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Job Occupational Class NEW,Name of the job's occupational classification.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Job FLSA Code NEW,"The job's FLSA wage law coverage code (E = exempt, N = non-exempt)."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Job FLSA Status NEW,"Name of the job's FLSA coverage, when ADP sends one."
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Address Home ID Fuzzy A0,Row number of the home address in ADDRESSES. Not stable between runs.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Address Home 1,First street line of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Address Home 2,Second street line of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Address Home City,City of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Address Home State,State of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Address Home Zip,Postal code of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Address Home County,County of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Address Home Country,Country code of the employee's legal (home) address.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Address Work ID Fuzzy A0,Row number of the work address in ADDRESSES. Not stable between runs.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Address Work 1,First street line of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Address Work 2,Second street line of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Address Work City,City of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Address Work State,State of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Address Work Zip,Postal code of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Address Work County,County of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_PERIOD_TOTALS,Employee Address Work Country,Country code of the home work location address of the employee's primary work assignment.
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Punch ID,Unique ID of the Time Punch: ADP.py timeEntryItemID ({timeCardID}#{day}#{entry}).
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Punch ID ADP,"ADP's entryID for the time entry (""Unique identifier of the entry""), else [Punch ID]."
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Employee ID Agency,"ADP's worker ID (workerID.idValue, ""An identifier for a worker, e.g. an Employee ID""; the WFN Associate ID). It is how reportsTo names a supervisor. It is not the payroll file number."
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Time Card ID NEW,ADP's timeCardID: one employee's time card for one time period.
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Punch Day Entry ID NEW,ADP.py dayEntryItemID of the day the entry belongs to.
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Punch Date,Date of the time entry.
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Punch Start,"Clock-in time (startPeriod.startDateTime), local time. Empty for hours-only entries."
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Punch End,"Clock-out time (endPeriod.endDateTime), local time. Empty for hours-only entries."
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Punch Duration (Minutes),Length of the entry in minutes.
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Punch Duration (Hours),"Length of the entry in hours: hourQuantity, else timeDuration, else clock-out minus clock-in."
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Punch Break Hours NEW,Meal or rest break hours recorded on the entry (breaks).
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Punch Status,"Processing status of the entry (entryStatusCode: ""E.g. Processed. Pending, Error, Warning"")."
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Punch Status Code NEW,Processing status code of the entry.
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Earn Code,"Pay code of the entry (entryCode: ""This may be an earning code, pay code, expense code"")."
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Earn Code Description,Description of the entry pay code.
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Earning Code ID,"Unique ID of the Earning Code: the ADP pay code. On punches, the entry pay code."
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Punch Entry Type Code NEW,"Entry type code (""Examples are hours, amount, timePair"")."
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Punch Entry Type NEW,"Entry type: hours, amount or time pair."
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Punch Source Code NEW,"Entry source code (""Examples are timeclock, manual, import"")."
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Punch Source NEW,"Where the entry came from: time clock, manual or import."
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Punch Review Status NEW,Review (approval) status of the entry.
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Punch Modified NEW,When the entry was last modified (modifiedDateTime).
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Pay Period Start,First day of the time card period (timePeriod.startDate).
+_MDD_JCT_ADP_TIMECLOCK_PUNCHES,Pay Period End,Last day of the time card period (timePeriod.endDate).
+_MDD_JCT_ADP_TIMECLOCK_LABOR_ALLOCATIONS,Labor Allocation ID,Unique ID of the Labor Allocation row (same as [Labor Allocation ID FA0]).
+_MDD_JCT_ADP_TIMECLOCK_LABOR_ALLOCATIONS,Labor Allocation ID FA0,"Row number of the allocation, ordered by card. Stable for an unchanged collection only."
+_MDD_JCT_ADP_TIMECLOCK_LABOR_ALLOCATIONS,Time Card ID NEW,ADP's timeCardID: one employee's time card for one time period.
+_MDD_JCT_ADP_TIMECLOCK_LABOR_ALLOCATIONS,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
+_MDD_JCT_ADP_TIMECLOCK_LABOR_ALLOCATIONS,Labor Allocation Code,"Allocation code (""The code identifying the allocation""), such as a cost number."
+_MDD_JCT_ADP_TIMECLOCK_LABOR_ALLOCATIONS,Labor Allocation Name,Short description of the allocation code.
+_MDD_JCT_ADP_TIMECLOCK_LABOR_ALLOCATIONS,Labor Allocation Type Code,"Allocation type code (""The type of allocation"")."
+_MDD_JCT_ADP_TIMECLOCK_LABOR_ALLOCATIONS,Labor Allocation Type,"Allocation type, such as Department."
+_MDD_JCT_ADP_TIMECLOCK_LABOR_ALLOCATIONS,Pay Period Start,First day of the time card period (timePeriod.startDate).
+_MDD_JCT_ADP_TIMECLOCK_LABOR_ALLOCATIONS,Pay Period End,Last day of the time card period (timePeriod.endDate).
+_MDD_JCT_ADP_TIMECLOCK_PUNCH_LABOR_ALLOCATIONS,Punch Labor Allocation ID,Unique ID of the Punch Labor Allocation row (same as [Punch Labor Allocation ID FA0]).
+_MDD_JCT_ADP_TIMECLOCK_PUNCH_LABOR_ALLOCATIONS,Punch Labor Allocation ID FA0,"Row number of the allocation, ordered by punch. Stable for an unchanged collection only."
+_MDD_JCT_ADP_TIMECLOCK_PUNCH_LABOR_ALLOCATIONS,Punch ID,Unique ID of the Time Punch: ADP.py timeEntryItemID ({timeCardID}#{day}#{entry}).
+_MDD_JCT_ADP_TIMECLOCK_PUNCH_LABOR_ALLOCATIONS,Time Card ID NEW,ADP's timeCardID: one employee's time card for one time period.
+_MDD_JCT_ADP_TIMECLOCK_PUNCH_LABOR_ALLOCATIONS,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
+_MDD_JCT_ADP_TIMECLOCK_PUNCH_LABOR_ALLOCATIONS,Punch Labor Allocation Code,"Allocation code the punch hours were charged to (""Time may be allocated to a department, project, location"")."
+_MDD_JCT_ADP_TIMECLOCK_PUNCH_LABOR_ALLOCATIONS,Punch Labor Allocation Name,Short description of that allocation code.
+_MDD_JCT_ADP_TIMECLOCK_PUNCH_LABOR_ALLOCATIONS,Punch Labor Allocation Type Code,Type code of that allocation.
+_MDD_JCT_ADP_TIMECLOCK_PUNCH_LABOR_ALLOCATIONS,Punch Labor Allocation Type,Type of that allocation.
+_MDD_JCT_ADP_TIMECLOCK_PUNCH_LABOR_ALLOCATIONS,Punch Date,Date of the time entry.
+_MDD_JCT_ADP_TIMECLOCK_PUNCH_LABOR_ALLOCATIONS,Punch Duration (Hours),"Length of the entry in hours: hourQuantity, else timeDuration, else clock-out minus clock-in."
+_MDD_JCT_ADP_EARNING_CODES,Earning Code ID,"Unique ID of the Earning Code: the ADP pay code. On punches, the entry pay code."
+_MDD_JCT_ADP_EARNING_CODES,Earning Code ID ADP,The pay code as ADP sends it.
+_MDD_JCT_ADP_EARNING_CODES,Earning Code Name,ADP's short description of the pay code.
+_MDD_JCT_ADP_EARNING_CODES,Earning Code Description Agency NEW,"The agency's description of the pay code, from _MDD_JCT_ADP_PAY_CODES_CUSTOM."
+_MDD_JCT_ADP_EARNING_CODES,Earning Code Is Worked NEW,"1 when the agency classifies the code as worked time, 0 as paid not worked (from _MDD_JCT_ADP_PAY_CODES_CUSTOM). Empty when unmapped."
+_MDD_JCT_ADP_EARNING_CODES,Earning Code Worked Reason NEW,The agency's reason for the classification.
+_MDD_JCT_ADP_EARNING_CODES,Earning Code Is Unmapped NEW,"1 when the code is missing from _MDD_JCT_ADP_PAY_CODES_CUSTOM, so it counts as neither worked nor leave."
+_MDD_JCT_ADP_EARNING_CODES,Earning Code Daily Total Count NEW,Number of daily total rows carrying the code.
+_MDD_JCT_ADP_EARNING_CODES,Earning Code First Date NEW,First date the code appears in daily totals.
+_MDD_JCT_ADP_EARNING_CODES,Earning Code Last Date NEW,Last date the code appears in daily totals.
+_MDD_JCT_ADP_RLS_UPNS,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
+_MDD_JCT_ADP_RLS_UPNS,Employee ID Agency,"ADP's worker ID (workerID.idValue, ""An identifier for a worker, e.g. an Employee ID""; the WFN Associate ID). It is how reportsTo names a supervisor. It is not the payroll file number."
+_MDD_JCT_ADP_RLS_UPNS,Employee Email for RLS,"The employee's work email, used as their sign-in for row level security."
+_MDD_JCT_ADP_RLS_ALWAYS_SUPERVISES,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
+_MDD_JCT_ADP_RLS_SUPERVISORY_HIERARCHY,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
+_MDD_JCT_ADP_RLS_SUPERVISORY_HIERARCHY,Supervisor Employee ID,[Employee ID] (associateOID) of the supervisor.
+_MDD_JCT_ADP_RLS_SUPERVISORY,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
+_MDD_JCT_ADP_RLS_SUPERVISORY,RLS String,"Pipe-separated work emails of everyone allowed to see this employee's records: the employee, their direct and indirect supervisors, and the always-supervisors."
+_MDD_JCT_ADP_RLS_SUPERVISORY,Employee ID Agency,"ADP's worker ID (workerID.idValue, ""An identifier for a worker, e.g. an Employee ID""; the WFN Associate ID). It is how reportsTo names a supervisor. It is not the payroll file number."
+_MDD_JCT_ADP_AGE_GROUPS,Age,"A whole number of years, 0 to 150, that an employee age can take."
+_MDD_JCT_ADP_AGE_GROUPS,Age Group,"Name of the age band the age falls in, from _MDD_JCT_ADP_AGE_GROUPS_CUSTOM."
+_MDD_JCT_ADP_AGE_GROUPS,Age Group Sort Order,Sort position of the age band.
+_MDD_JCT_ADP_TENURE_GROUPS,Tenure,"A whole number of years, 0 to 150, that employee tenure can take."
+_MDD_JCT_ADP_TENURE_GROUPS,Tenure Group,"Name of the tenure band the tenure falls in, from _MDD_JCT_ADP_TENURE_GROUPS_CUSTOM."
+_MDD_JCT_ADP_TENURE_GROUPS,Tenure Group Sort Order,Sort position of the tenure band.
+_MDD_JCT_ADP_AGE_GROUPS_CUSTOM,Floor,"Lowest whole number of years in the band, inclusive."
+_MDD_JCT_ADP_AGE_GROUPS_CUSTOM,Ceiling,"Highest whole number of years in the band, inclusive."
+_MDD_JCT_ADP_AGE_GROUPS_CUSTOM,GroupName,Name of the band.
+_MDD_JCT_ADP_AGE_GROUPS_CUSTOM,SortOrder,Sort position of the band.
+_MDD_JCT_ADP_TENURE_GROUPS_CUSTOM,Floor,"Lowest whole number of years in the band, inclusive."
+_MDD_JCT_ADP_TENURE_GROUPS_CUSTOM,Ceiling,"Highest whole number of years in the band, inclusive."
+_MDD_JCT_ADP_TENURE_GROUPS_CUSTOM,GroupName,Name of the band.
+_MDD_JCT_ADP_TENURE_GROUPS_CUSTOM,SortOrder,Sort position of the band.
 _MDD_JCT_ALERTS,Alert ID,"Deterministic identifier for one alert event, derived only from the Trigger ID."
 _MDD_JCT_ALERTS,Alert Source,Comma-separated list of schema-qualified dbo tables or views that contributed valid rows to the alert event.
 _MDD_JCT_ALERTS,Alert JCT,Indicates that the source records are eligible for JCT Alerts processing. Rows in this table have this value normalized to true.
@@ -9716,9 +10748,9 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Service ID,"The unique ID of the s
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Document Type,"Agency-specific Document Type, as required by Eleos Compliance Data Specifications v2.0, configured and customized on an agency-level. Eleos mapping: document_type (Main document type defined by Eleos as the following list: (Intake, Session Note, Treatment Plan, Assessment, Discharge Document, Other))"
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Document Subtype,"The name of the Credible service, also called Client Visit Type. Within Credible documents (Called Forms) can be applied to more than one service. Providing Eleos with the Service Name ensures the most nuanced interpretation and intent of the document. Eleos mapping: document_subtype (Document subtype (Specific name of the document template, defined by client))"
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Tx Plan Module,"Identifies which Credible treatment-plan module supplied the plan tied to the service. In this extension context, it is used to normalize plan lineage for Eleos-targeted services across both Credible Plan and TxPlus pathways."
-_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Tx Plan ID,"The treatment-plan identifier associated with the service, standardized for the Eleos Compliance export context so related treatment-plan artifacts can be joined consistently in this extension."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Tx Plan ID,"The ID of the treatment plan tied to the service, written as a module prefix plus Credible's plan ID: 'CP-' for a Credible Plan plan, 'TX-' for a TxPlus plan. Empty when the service has no plan. Also empty when the plan has no content (no Credible Plan component, and no TxPlus problem, goal, objective or intervention), because such a plan is not sent. Matches [Tx Plan ID] in the Tx Plans and Tx Plan Content tables."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Form Version ID,"Credible documentation occurs within Forms, which are attached to Services. The Form Version ID is the version number of a given form. A new form version represents a change to the form, such as a new or updated field. Form Version ID is the unique ID of the version of the specific form used to document a given service."
-_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Form ID,"Credible documentation occurs within Forms, which are attached to Servicers. The Form ID is the unique ID of the specific form used to document the given service."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Form ID,"Credible documentation occurs within Forms, which are attached to Services. The Form ID is the unique ID of the specific form used to document the given service."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Provider ID,The unique ID of the provider associated with a given service. Eleos mapping: provider_id (Identifier of the provider who created the document)
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Provider Name First & Last,The first and last name of the provider associated with a given service.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SERVICES,Program ID,The unique ID of the clinical program attached to the service. Eleos mapping: provider_program (Program attached to the service of the document)
@@ -9779,7 +10811,7 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_PROCEDURE_CODES,Eleos Eligible Rolling,"1 w
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Service ID,"The unique ID of the service within Credible. Eleos mapping: id (Document identifier (Primary Key, defined by the client))"
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Tx Plan ID,The unique id of the Treatment Plan Eleos mapping: treatment_plan_id (Identifier of the related active treatment plan for the document Required only for document_type=Progress Notes))
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Tx Plan Start,The start date of the treatment plan. Eleos mapping: service_start_date
-_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Tx Plan Target Date,The target date of the treatment plan. Eleos mapping: The target date of the treatment plan.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Tx Plan Target Date,The target date of the treatment plan.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Tx Plan End,The end date of the treatment plan. Eleos mapping: service_end_date
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Tx Plan Created By Name,The first and last name of the individual who created the treatment plan.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Tx Plan Created Date,The date and time the treatment plan was created. Eleos mapping: created_date
@@ -9793,9 +10825,9 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Eleos Eligible Initial,"1 when thi
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Patient ID,"The unique ID of the Credible patient, typically referred to as Client ID. Eleos mapping: patient_id (Identifier of the patient (PAN). Note: This must be the patient identifier visible in the EHR.)"
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan ID,The unique id of the Treatment Plan Eleos mapping: treatment_plan_id (Identifier of the related active treatment plan for the document Required only for document_type=Progress Notes))
-_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Module,"Identifies which Credible treatment-plan module supplied the plan tied to the service. In this extension context, it is used to normalize plan lineage for Eleos-targeted services across both Credible Plan and TxPlus pathways."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Module,"Identifies which Credible treatment-plan module the standalone plan was built in, Credible Plan or TxPlus. These plans are not tied to a service."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Start,The start date of the treatment plan. Eleos mapping: service_start_date
-_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Target Date,The target date of the treatment plan. Eleos mapping: The target date of the treatment plan.
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Target Date,The target date of the treatment plan.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan End,The end date of the treatment plan. Eleos mapping: service_end_date
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Created By Name,The first and last name of the individual who created the treatment plan.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLANS_ORPHAN,Tx Plan Created Date,The date and time the treatment plan was created. Eleos mapping: created_date
@@ -9823,7 +10855,6 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CONTENT,Tx Content,The description 
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CONTENT,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CONTENT,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CUSTOM_FIELDS,Tx Content ID,The unique id of this content.
-_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CUSTOM_FIELDS,Tx Title,"The treatment-plan content title associated with the custom-field answer. In this extension context, it helps interpret custom responses within the Eleos-targeted treatment-plan narrative."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CUSTOM_FIELDS,Answer ID,The unique ID associated with the answer.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CUSTOM_FIELDS,Question Text,The text of the question or label associated with the custom field.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CUSTOM_FIELDS,Question ID,The unique ID associated with the question or form field within a form.
@@ -9834,10 +10865,10 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_TX_PLAN_CUSTOM_FIELDS,Eleos Eligible Rollin
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Service ID,"The unique ID of the service within Credible. Eleos mapping: id (Document identifier (Primary Key, defined by the client))"
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Patient ID,"The unique ID of the Credible patient, typically referred to as Client ID."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Dx Code,The ICD10 code assigned to the service. Eleos mapping: diagnosis_code (The ICD-10 code of the diagnosis associated with the billed service)
-_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Service Dx Order,
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Service Dx Order,"The order number Credible records for this diagnosis on the service, as entered there (1, 2, 3 and so on). Service Dx Sequence ASC and DESC give the diagnosis's position among the service's diagnoses."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Service Dx Sequence ASC,"The order in which a diagnosis appears on a service, ascending. Applicable for Agencies with payers that can accept more than one diagnosis per claim."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Service Dx Sequence DESC,"The order in which a diagnosis appears on a service, descending. Applicable for Agencies with payers that can accept more than one diagnosis per claim."
-_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Dx Code System,
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Dx Code System,"The identifier (OID) of the code system the diagnosis code belongs to. Always 2.16.840.1.113883.6.90, the OID for ICD-10-CM. Dx Code System Name gives the name."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Dx Code System Name,The diagnosis code system name attached to service diagnosis records in the Eleos extension; this value is standardized to ICD-10 for Eleos delivery context.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
@@ -9856,7 +10887,7 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX_EPISODES,Dx Resolved Date,"Indicates the
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX_EPISODES,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_DX_EPISODES,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Form Version ID,"Credible documentation occurs within Forms, which are attached to Services. The Form Version ID is the version number of a given form. A new form version represents a change to the form, such as a new or updated field. Form Version ID is the unique ID of the version of the specific form used to document a given service."
-_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Form ID,"Credible documentation occurs within Forms, which are attached to Servicers. The Form ID is the unique ID of the specific form used to document the given service."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Form ID,"Credible documentation occurs within Forms, which are attached to Services. The Form ID is the unique ID of the specific form used to document the given service."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Form Name,"The name of the form attached to a given service, used to collect detailed information about the service."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Form Version Number,"The version number within the specific form. While Form Version ID increments by one for any form's new version, Form Version Number iterates by one only within a specific form."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Form Version Build Date,The date and time a form version was built and activiated for use by an agency's Credible Administrator.
@@ -9865,16 +10896,17 @@ _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Form Version Completed Service Count,
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORMS,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Service ID,"The unique ID of the service within Credible. Eleos mapping: id (Document identifier (Primary Key, defined by the client))"
-_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Form ID,"Credible documentation occurs within Forms, which are attached to Servicers. The Form ID is the unique ID of the specific form used to document the given service."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Form ID,"Credible documentation occurs within Forms, which are attached to Services. The Form ID is the unique ID of the specific form used to document the given service."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Form Version ID,"Credible documentation occurs within Forms, which are attached to Services. The Form Version ID is the version number of a given form. A new form version represents a change to the form, such as a new or updated field. Form Version ID is the unique ID of the version of the specific form used to document a given service."
-_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Page ID,"Credential documentation occurs within FOrms, which have multiple 'categories', referred to as pages in Mission Driven Data's formal data model This is the unique Page ID associated with a given question and answer."
-_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Page Name,"Credential documentation occurs within FOrms, which have multiple 'categories', referred to as pages in Mission Driven Data's formal data model This is the unique Page Name associated with a given question and answer."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Page ID,"Credible documentation occurs within Forms, which have multiple 'categories', referred to as pages in Mission Driven Data's formal data model. This is the unique Page ID associated with a given question and answer."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Page Name,"Credible documentation occurs within Forms, which have multiple 'categories', referred to as pages in Mission Driven Data's formal data model. This is the unique Page Name associated with a given question and answer."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Question,The label associated with a form field within a form.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Question ID,The unique ID associated with the question or form field within a form.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Question Format,The type of field on a form.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Answer,The answer provided to a question on a form.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Question Order,The order in which a question appeared on a form.
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Answer Note,"Supplemental note text attached to a form answer. In this extension, it carries additional clinical/document context associated with Eleos-targeted service documentation."
+_MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Tx Content ID,"The treatment plan content item (plan tree element) the answer was documented against. Uses the same ID as [Tx Content ID] in the Tx Plan Content table, which holds the item when its plan is sent. Empty when the answer is not tied to a plan item."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Eleos Eligible Initial,"1 when this row belongs in the initial send to Eleos, which covers the last lookback_days_initial days (180 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed-initial sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_FORM_PAGES,Eleos Eligible Rolling,"1 when this row belongs in the rolling daily feed to Eleos, which covers the last lookback_days_rolling days (30 by default), and 0 when it does not. Apps/Eleos.py --compliance-feed sends only rows set to 1."
 _MDD_JCT_X_CREDIBLE_ELEOS_COMPLIANCE_SIGNATURES_CURRENT,Signature ID,The unique ID of a given signature.
