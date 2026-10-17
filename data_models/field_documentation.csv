@@ -11999,10 +11999,13 @@ _MDD_JCT_X_MYRC_CLIENTS,Client ID,Unique identifier of the client in the agency'
 _MDD_JCT_X_MYRC_CLIENTS,Client Name First,Client given name supplied in the MyRC extract.
 _MDD_JCT_X_MYRC_CLIENTS,Client Name Middle,Client middle name or middle initial supplied in the MyRC extract.
 _MDD_JCT_X_MYRC_CLIENTS,Client Name Last,Client family name supplied in the MyRC extract.
-_MDD_JCT_X_MYRC_CLIENTS,Client SSN,Client Social Security number supplied in the MyRC extract.
+_MDD_JCT_X_MYRC_CLIENTS,Client SSN Last Four,"Last four digits of the client's Social Security number. Blank when the source number is missing, is a known placeholder, or could never have been issued."
 _MDD_JCT_X_MYRC_CLIENTS,Client Date of Birth,Birth date of the client.
 _MDD_JCT_X_MYRC_CLIENTS,Client MyRC ROI Expiration Date,The date the client's release of information for MyRC expires.
 _MDD_JCT_X_MYRC_CLIENTS,Client Is Eligible for MyRC,Indicates whether the client's MyRC ROI expiration date is on or after the extension execution date.
+_MDD_JCT_X_MYRC_CLIENTS,Source Department,"MyRC source department label for the agency, chosen by MyRC and set in the agency specifics at onboarding. Blank until set."
+_MDD_JCT_X_MYRC_CLIENTS,Source Division,"MyRC source division label for the agency, chosen by MyRC and set in the agency specifics at onboarding. Blank until set."
+_MDD_JCT_X_MYRC_CLIENTS,Extract Created Datetime Central,"Date and time, in US Central time, that this run of the MyRC extension built the extract. Every row of every MyRC table from one run carries the same value."
 _MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client Address ID,Deterministic identifier of the client address row.
 _MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client ID,Unique identifier of the client in the agency's MyRC extract.
 _MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client Address ID Source,"Agency-supplied source identifier for the client address, when available."
@@ -12014,6 +12017,7 @@ _MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client Address State,State or province of the c
 _MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client Address Postal Code,Postal code of the client address.
 _MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client Address County,County of the client address.
 _MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Client Address Is Primary,Indicates whether the source row marked the address as primary.
+_MDD_JCT_X_MYRC_CLIENT_ADDRESSES,Extract Created Datetime Central,"Date and time, in US Central time, that this run of the MyRC extension built the extract. Every row of every MyRC table from one run carries the same value."
 _MDD_JCT_X_MYRC_CLIENT_PHONES,Client Phone ID,Deterministic identifier of the client phone row.
 _MDD_JCT_X_MYRC_CLIENT_PHONES,Client ID,Unique identifier of the client in the agency's MyRC extract.
 _MDD_JCT_X_MYRC_CLIENT_PHONES,Client Phone ID Source,"Agency-supplied source identifier for the client phone, when available."
@@ -12021,23 +12025,35 @@ _MDD_JCT_X_MYRC_CLIENT_PHONES,Client Phone Type,Phone type supplied for the clie
 _MDD_JCT_X_MYRC_CLIENT_PHONES,Client Phone Number,Phone number value supplied for the client phone.
 _MDD_JCT_X_MYRC_CLIENT_PHONES,Client Phone Notes,Notes supplied for the client phone.
 _MDD_JCT_X_MYRC_CLIENT_PHONES,Client Phone Is Primary,Indicates whether the source row marked the phone as primary.
+_MDD_JCT_X_MYRC_CLIENT_PHONES,Extract Created Datetime Central,"Date and time, in US Central time, that this run of the MyRC extension built the extract. Every row of every MyRC table from one run carries the same value."
+_MDD_JCT_X_MYRC_CLIENT_EMAILS,Client Email ID,Deterministic identifier of the client email row.
+_MDD_JCT_X_MYRC_CLIENT_EMAILS,Client ID,Unique identifier of the client in the agency's MyRC extract.
+_MDD_JCT_X_MYRC_CLIENT_EMAILS,Client Email ID Source,"Agency-supplied source identifier for the client email, when available."
+_MDD_JCT_X_MYRC_CLIENT_EMAILS,Client Email Type,Email type supplied for the client email.
+_MDD_JCT_X_MYRC_CLIENT_EMAILS,Client Email Address,"Email address supplied for the client, trimmed and lowercased."
+_MDD_JCT_X_MYRC_CLIENT_EMAILS,Client Email Is Primary,Indicates whether the source row marked the email as primary.
+_MDD_JCT_X_MYRC_CLIENT_EMAILS,Extract Created Datetime Central,"Date and time, in US Central time, that this run of the MyRC extension built the extract. Every row of every MyRC table from one run carries the same value."
 _MDD_JCT_X_MYRC_CLIENT_RACES,Client Race ID,Deterministic identifier of the client race row.
 _MDD_JCT_X_MYRC_CLIENT_RACES,Client ID,Unique identifier of the client in the agency's MyRC extract.
 _MDD_JCT_X_MYRC_CLIENT_RACES,Client Race ID Source,"Agency-supplied source identifier for the client race, when available."
 _MDD_JCT_X_MYRC_CLIENT_RACES,Client Race,Race value associated with the client.
 _MDD_JCT_X_MYRC_CLIENT_RACES,Client Race Is Primary,Indicates whether the source row marked the race value as primary.
+_MDD_JCT_X_MYRC_CLIENT_RACES,Extract Created Datetime Central,"Date and time, in US Central time, that this run of the MyRC extension built the extract. Every row of every MyRC table from one run carries the same value."
 _MDD_JCT_X_MYRC_CLIENT_ETHNICITIES,Client Ethnicity ID,Deterministic identifier of the client ethnicity row.
 _MDD_JCT_X_MYRC_CLIENT_ETHNICITIES,Client ID,Unique identifier of the client in the agency's MyRC extract.
 _MDD_JCT_X_MYRC_CLIENT_ETHNICITIES,Client Ethnicity ID Source,"Agency-supplied source identifier for the client ethnicity, when available."
 _MDD_JCT_X_MYRC_CLIENT_ETHNICITIES,Client Ethnicity,Ethnicity value associated with the client.
 _MDD_JCT_X_MYRC_CLIENT_ETHNICITIES,Client Ethnicity Is Primary,Indicates whether the source row marked the ethnicity value as primary.
+_MDD_JCT_X_MYRC_CLIENT_ETHNICITIES,Extract Created Datetime Central,"Date and time, in US Central time, that this run of the MyRC extension built the extract. Every row of every MyRC table from one run carries the same value."
 _MDD_JCT_X_MYRC_CLIENT_GENDERS,Client Gender ID,Deterministic identifier of the client gender row.
 _MDD_JCT_X_MYRC_CLIENT_GENDERS,Client ID,Unique identifier of the client in the agency's MyRC extract.
 _MDD_JCT_X_MYRC_CLIENT_GENDERS,Client Gender ID Source,"Agency-supplied source identifier for the client gender value, when available."
 _MDD_JCT_X_MYRC_CLIENT_GENDERS,Client Gender,Gender value associated with the client.
 _MDD_JCT_X_MYRC_CLIENT_GENDERS,Client Gender Is Primary,Indicates whether the source row marked the gender value as primary.
+_MDD_JCT_X_MYRC_CLIENT_GENDERS,Extract Created Datetime Central,"Date and time, in US Central time, that this run of the MyRC extension built the extract. Every row of every MyRC table from one run carries the same value."
 _MDD_JCT_X_MYRC_PROGRAMS,Program ID,Unique identifier of the program in the agency's MyRC extract.
 _MDD_JCT_X_MYRC_PROGRAMS,Program Name,Name of the program supplied by the agency to avoid MyRC-side translation of program IDs.
+_MDD_JCT_X_MYRC_PROGRAMS,Extract Created Datetime Central,"Date and time, in US Central time, that this run of the MyRC extension built the extract. Every row of every MyRC table from one run carries the same value."
 _MDD_JCT_X_MYRC_ENROLLMENTS,Enrollment ID,Unique identifier of the enrollment or program episode in the agency's MyRC extract.
 _MDD_JCT_X_MYRC_ENROLLMENTS,Client ID,Unique identifier of the client in the agency's MyRC extract.
 _MDD_JCT_X_MYRC_ENROLLMENTS,Program ID,Unique identifier of the program in the agency's MyRC extract.
@@ -12047,6 +12063,7 @@ _MDD_JCT_X_MYRC_ENROLLMENTS,Enrollment Discharge Date,The source-system discharg
 _MDD_JCT_X_MYRC_ENROLLMENTS,Enrollment End Date,"The date the enrollment or service ended, derived from Enrollment Status, Enrollment Discharge Date, and Enrollment Status Change Date."
 _MDD_JCT_X_MYRC_ENROLLMENTS,Enrollment Status,Current status value supplied for the enrollment.
 _MDD_JCT_X_MYRC_ENROLLMENTS,Enrollment Is Eligible for MyRC,Indicates whether the enrollment's client is currently eligible for MyRC.
+_MDD_JCT_X_MYRC_ENROLLMENTS,Extract Created Datetime Central,"Date and time, in US Central time, that this run of the MyRC extension built the extract. Every row of every MyRC table from one run carries the same value."
 _MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,Enrollment Provider ID,Deterministic identifier of the enrollment-provider relationship row.
 _MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,Enrollment ID,Unique identifier of the enrollment or program episode in the agency's MyRC extract.
 _MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,Provider ID,"Agency-supplied source identifier for the provider, when available."
@@ -12056,6 +12073,7 @@ _MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,Provider Name Last,Provider family name sup
 _MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,Provider Name,Full provider name derived from the available provider name components.
 _MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,Provider Role,Role value supplied for the provider assignment.
 _MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,Provider Is Primary,Indicates whether the source row marked the provider assignment as primary.
+_MDD_JCT_X_MYRC_ENROLLMENT_PROVIDERS,Extract Created Datetime Central,"Date and time, in US Central time, that this run of the MyRC extension built the extract. Every row of every MyRC table from one run carries the same value."
 _MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Enrollment Referral ID,Deterministic identifier of the enrollment-referral relationship row.
 _MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Enrollment ID,Unique identifier of the enrollment or program episode in the agency's MyRC extract.
 _MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Referral ID,"Agency-supplied source identifier for the referral, when available."
@@ -12067,3 +12085,4 @@ _MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Referring Provider Name,Full referring prov
 _MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Referring Provider Address,Address supplied for the referring provider.
 _MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Referring Provider Phone,Phone value supplied for the referring provider.
 _MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Referral Information,Free-form referral information supplied in the MyRC extract.
+_MDD_JCT_X_MYRC_ENROLLMENT_REFERRALS,Extract Created Datetime Central,"Date and time, in US Central time, that this run of the MyRC extension built the extract. Every row of every MyRC table from one run carries the same value."
