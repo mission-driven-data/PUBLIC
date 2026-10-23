@@ -1232,7 +1232,7 @@ _MDD_JCT_CREDIBLE_APPOINTMENTS,Program Code,
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Program Group Without Nulls,
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Program Group,
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Program Group > Name,"If the service's program is part of a program group, this is the name of the program group followed by the name of the program, separated with "">""."
-_MDD_JCT_CREDIBLE_APPOINTMENTS,Program Is Residential,
+_MDD_JCT_CREDIBLE_APPOINTMENTS,Program Is Residential,True when the program is set up as residential in the EHR. Drives [Program Tx Setting]. Stored as a bit.
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Program Tx Setting,
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Program Revenue Code,
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Program Created Date,The date the Program record was created.
@@ -1525,14 +1525,14 @@ _MDD_JCT_CREDIBLE_APPOINTMENTS,Enrollment End,
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Enrollment Discharge Date,
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Enrollment Admission Date,
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Enrollment Status,
-_MDD_JCT_CREDIBLE_APPOINTMENTS,Enrollment Outcome,
+_MDD_JCT_CREDIBLE_APPOINTMENTS,Enrollment Outcome,"The outcome or discharge reason recorded for the enrollment. It is meant to be entered at discharge, but staff can enter it while the enrollment is still open, so analyses of discharge reasons usually keep only enrollments with an end date ([Enrollment End]) in the period."
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Enrollment Outcome ID,Unique ID of the Enrollment Outcome.
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Enrollment Updated Date,The date the Enrollment record was last updated.
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Enrollment Created Date,The date the Enrollment record was created.
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Enrollment Updated By User ID,Unique ID of the Enrollment Updated By User.
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Enrollment Date First Billable,
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Enrollment Date Last Billable,
-_MDD_JCT_CREDIBLE_APPOINTMENTS,Enrollment Appointment Completed Count,
+_MDD_JCT_CREDIBLE_APPOINTMENTS,Enrollment Appointment Completed Count,The count of completed services within this time span. One way to check that an enrollment has service activity. Appointment is a legacy term here for a service.
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Enrollment Admission Type,
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Enrollment Admission Source,
 _MDD_JCT_CREDIBLE_APPOINTMENTS,Enrollment Admission Dx,
@@ -1645,7 +1645,7 @@ _MDD_JCT_CREDIBLE_APPOINTMENTS_COMPLETED,Program Code,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_COMPLETED,Program Group Without Nulls,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_COMPLETED,Program Group,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_COMPLETED,Program Group > Name,
-_MDD_JCT_CREDIBLE_APPOINTMENTS_COMPLETED,Program Is Residential,
+_MDD_JCT_CREDIBLE_APPOINTMENTS_COMPLETED,Program Is Residential,True when the program is set up as residential in the EHR. Drives [Program Tx Setting]. Stored as a bit.
 _MDD_JCT_CREDIBLE_APPOINTMENTS_COMPLETED,Program Tx Setting,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_COMPLETED,Program Revenue Code,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_COMPLETED,Program Created Date,The date the Program record was created.
@@ -1736,7 +1736,7 @@ _MDD_JCT_CREDIBLE_APPOINTMENTS_INCOMPLETE,Program Code,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_INCOMPLETE,Program Group Without Nulls,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_INCOMPLETE,Program Group,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_INCOMPLETE,Program Group > Name,
-_MDD_JCT_CREDIBLE_APPOINTMENTS_INCOMPLETE,Program Is Residential,
+_MDD_JCT_CREDIBLE_APPOINTMENTS_INCOMPLETE,Program Is Residential,True when the program is set up as residential in the EHR. Drives [Program Tx Setting]. Stored as a bit.
 _MDD_JCT_CREDIBLE_APPOINTMENTS_INCOMPLETE,Program Tx Setting,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_INCOMPLETE,Program Revenue Code,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_INCOMPLETE,Program Created Date,The date the Program record was created.
@@ -1823,7 +1823,7 @@ _MDD_JCT_CREDIBLE_APPOINTMENTS_PLANNER,Program Code,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_PLANNER,Program Group Without Nulls,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_PLANNER,Program Group,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_PLANNER,Program Group > Name,
-_MDD_JCT_CREDIBLE_APPOINTMENTS_PLANNER,Program Is Residential,
+_MDD_JCT_CREDIBLE_APPOINTMENTS_PLANNER,Program Is Residential,True when the program is set up as residential in the EHR. Drives [Program Tx Setting]. Stored as a bit.
 _MDD_JCT_CREDIBLE_APPOINTMENTS_PLANNER,Program Tx Setting,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_PLANNER,Program Revenue Code,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_PLANNER,Program Created Date,The date the Program record was created.
@@ -3783,9 +3783,9 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Insurance Plan Policy Name,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Insurance Plan Policy Group No,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Insurance Plan Type,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Name,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Is CMS,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Is Medicaid,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Is Medicare,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Is CMS,"True when the payer is flagged as a CMS payer in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Is Medicaid,"True when the payer is flagged as Medicaid in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Is Medicare,"True when the payer is flagged as Medicare in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Type Class Code,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Insurance Plan Status,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Insurance Plan Subscriber,
@@ -3795,8 +3795,8 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Type,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Type ID,Unique ID of the Payer Type.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Type Category,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Type Name,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Is Tricare,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Is Commercial,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Is Tricare,"True when the payer is on the agency's Tricare payer list. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Is Commercial,"True when the payer's type category is Commercially Insured. Stored as the text True or False, not a bit; compare to 'True'."
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Code,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Address 1,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Payer Address 2,
@@ -3847,7 +3847,7 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment ID,Unique ID of the Enrollmen
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Order Item Acknowledged Date,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Order Item Acknowledgement,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Dx ID,Unique ID of the Dx.
-_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Dx ICD10 Code,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Dx ICD10 Code,"The ICD-10-CM diagnosis code, written with its dot."
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Order Item Due Date,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Order Item Ordering External Prescriber ID,Unique ID of the Order Item Ordering External Prescriber.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Order Item Prescriber ID,Unique ID of the Order Item Prescriber.
@@ -3857,14 +3857,14 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment End,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment Discharge Date,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment Admission Date,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment Status,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment Outcome,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment Outcome,"The outcome or discharge reason recorded for the enrollment. It is meant to be entered at discharge, but staff can enter it while the enrollment is still open, so analyses of discharge reasons usually keep only enrollments with an end date ([Enrollment End]) in the period."
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment Outcome ID,Unique ID of the Enrollment Outcome.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment Updated Date,The date the Enrollment record was last updated.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment Created Date,The date the Enrollment record was created.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment Updated By User ID,Unique ID of the Enrollment Updated By User.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment Date First Billable,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment Date Last Billable,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment Appointment Completed Count,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment Appointment Completed Count,The count of completed services within this time span. One way to check that an enrollment has service activity. Appointment is a legacy term here for a service.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment Admission Type,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment Admission Source,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Enrollment Admission Dx,
@@ -3905,7 +3905,7 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Program Code,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Program Group Without Nulls,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Program Group,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Program Group > Name,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Program Is Residential,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Program Is Residential,True when the program is set up as residential in the EHR. Drives [Program Tx Setting]. Stored as a bit.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Program Tx Setting,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Program Revenue Code,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Program Created Date,The date the Program record was created.
@@ -4144,9 +4144,9 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Insurance Plan Policy Name,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Insurance Plan Policy Group No,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Insurance Plan Type,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Name,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Is CMS,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Is Medicaid,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Is Medicare,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Is CMS,"True when the payer is flagged as a CMS payer in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Is Medicaid,"True when the payer is flagged as Medicaid in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Is Medicare,"True when the payer is flagged as Medicare in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Type Class Code,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Insurance Plan Status,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Insurance Plan Subscriber,
@@ -4156,8 +4156,8 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Type,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Type ID,Unique ID of the Payer Type.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Type Category,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Type Name,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Is Tricare,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Is Commercial,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Is Tricare,"True when the payer is on the agency's Tricare payer list. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Is Commercial,"True when the payer's type category is Commercially Insured. Stored as the text True or False, not a bit; compare to 'True'."
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Code,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Address 1,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Payer Address 2,
@@ -4208,7 +4208,7 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment ID,Unique ID of the Enrollment.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Order Item Acknowledged Date,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Order Item Acknowledgement,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Dx ID,Unique ID of the Dx.
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Dx ICD10 Code,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Dx ICD10 Code,"The ICD-10-CM diagnosis code, written with its dot."
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Order Item Due Date,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Order Item Ordering External Prescriber ID,Unique ID of the Order Item Ordering External Prescriber.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Order Item Prescriber ID,Unique ID of the Order Item Prescriber.
@@ -4218,14 +4218,14 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment End,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment Discharge Date,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment Admission Date,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment Status,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment Outcome,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment Outcome,"The outcome or discharge reason recorded for the enrollment. It is meant to be entered at discharge, but staff can enter it while the enrollment is still open, so analyses of discharge reasons usually keep only enrollments with an end date ([Enrollment End]) in the period."
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment Outcome ID,Unique ID of the Enrollment Outcome.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment Updated Date,The date the Enrollment record was last updated.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment Created Date,The date the Enrollment record was created.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment Updated By User ID,Unique ID of the Enrollment Updated By User.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment Date First Billable,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment Date Last Billable,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment Appointment Completed Count,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment Appointment Completed Count,The count of completed services within this time span. One way to check that an enrollment has service activity. Appointment is a legacy term here for a service.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment Admission Type,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment Admission Source,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Enrollment Admission Dx,
@@ -4266,7 +4266,7 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Program Code,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Program Group Without Nulls,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Program Group,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Program Group > Name,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Program Is Residential,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Program Is Residential,True when the program is set up as residential in the EHR. Drives [Program Tx Setting]. Stored as a bit.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Program Tx Setting,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Program Revenue Code,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Program Created Date,The date the Program record was created.
@@ -4508,9 +4508,9 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Insurance Plan Policy Name,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Insurance Plan Policy Group No,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Insurance Plan Type,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Name,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Is CMS,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Is Medicaid,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Is Medicare,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Is CMS,"True when the payer is flagged as a CMS payer in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Is Medicaid,"True when the payer is flagged as Medicaid in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Is Medicare,"True when the payer is flagged as Medicare in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Type Class Code,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Insurance Plan Status,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Insurance Plan Subscriber,
@@ -4520,8 +4520,8 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Type,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Type ID,Unique ID of the Payer Type.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Type Category,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Type Name,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Is Tricare,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Is Commercial,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Is Tricare,"True when the payer is on the agency's Tricare payer list. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Is Commercial,"True when the payer's type category is Commercially Insured. Stored as the text True or False, not a bit; compare to 'True'."
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Code,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Address 1,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Payer Address 2,
@@ -4572,7 +4572,7 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment ID,Unique ID of the Enrollm
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Order Item Acknowledged Date,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Order Item Acknowledgement,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Dx ID,Unique ID of the Dx.
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Dx ICD10 Code,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Dx ICD10 Code,"The ICD-10-CM diagnosis code, written with its dot."
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Order Item Due Date,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Order Item Ordering External Prescriber ID,Unique ID of the Order Item Ordering External Prescriber.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Order Item Prescriber ID,Unique ID of the Order Item Prescriber.
@@ -4582,14 +4582,14 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment End,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment Discharge Date,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment Admission Date,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment Status,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment Outcome,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment Outcome,"The outcome or discharge reason recorded for the enrollment. It is meant to be entered at discharge, but staff can enter it while the enrollment is still open, so analyses of discharge reasons usually keep only enrollments with an end date ([Enrollment End]) in the period."
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment Outcome ID,Unique ID of the Enrollment Outcome.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment Updated Date,The date the Enrollment record was last updated.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment Created Date,The date the Enrollment record was created.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment Updated By User ID,Unique ID of the Enrollment Updated By User.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment Date First Billable,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment Date Last Billable,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment Appointment Completed Count,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment Appointment Completed Count,The count of completed services within this time span. One way to check that an enrollment has service activity. Appointment is a legacy term here for a service.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment Admission Type,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment Admission Source,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Enrollment Admission Dx,
@@ -4630,7 +4630,7 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Program Code,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Program Group Without Nulls,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Program Group,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Program Group > Name,
-_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Program Is Residential,
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Program Is Residential,True when the program is set up as residential in the EHR. Drives [Program Tx Setting]. Stored as a bit.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Program Tx Setting,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Program Revenue Code,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Program Created Date,The date the Program record was created.
@@ -4885,9 +4885,9 @@ _MDD_JCT_CREDIBLE_CLIENT_MEDS,Insurance Plan Policy Name,
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Insurance Plan Policy Group No,
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Insurance Plan Type,
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Name,
-_MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Is CMS,
-_MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Is Medicaid,
-_MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Is Medicare,
+_MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Is CMS,"True when the payer is flagged as a CMS payer in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Is Medicaid,"True when the payer is flagged as Medicaid in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Is Medicare,"True when the payer is flagged as Medicare in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Type Class Code,
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Insurance Plan Status,
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Insurance Plan Subscriber,
@@ -4897,8 +4897,8 @@ _MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Type,
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Type ID,Unique ID of the Payer Type.
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Type Category,
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Type Name,
-_MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Is Tricare,
-_MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Is Commercial,
+_MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Is Tricare,"True when the payer is on the agency's Tricare payer list. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Is Commercial,"True when the payer's type category is Commercially Insured. Stored as the text True or False, not a bit; compare to 'True'."
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Code,
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Address 1,
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Payer Address 2,
@@ -4955,7 +4955,7 @@ _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment ID,Unique ID of the Enrollm
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Order Item Acknowledged Date,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Order Item Acknowledgement,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Dx ID,Unique ID of the Dx.
-_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Dx ICD10 Code,
+_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Dx ICD10 Code,"The ICD-10-CM diagnosis code, written with its dot."
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Order Item Due Date,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Order Item Ordering External Prescriber ID,Unique ID of the Order Item Ordering External Prescriber.
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Order Item Prescriber ID,Unique ID of the Order Item Prescriber.
@@ -5117,9 +5117,9 @@ _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Insurance Plan Policy Name,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Insurance Plan Policy Group No,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Insurance Plan Type,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Name,
-_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Is CMS,
-_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Is Medicaid,
-_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Is Medicare,
+_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Is CMS,"True when the payer is flagged as a CMS payer in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Is Medicaid,"True when the payer is flagged as Medicaid in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Is Medicare,"True when the payer is flagged as Medicare in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Type Class Code,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Insurance Plan Status,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Insurance Plan Subscriber,
@@ -5129,8 +5129,8 @@ _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Type,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Type ID,Unique ID of the Payer Type.
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Type Category,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Type Name,
-_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Is Tricare,
-_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Is Commercial,
+_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Is Tricare,"True when the payer is on the agency's Tricare payer list. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Is Commercial,"True when the payer's type category is Commercially Insured. Stored as the text True or False, not a bit; compare to 'True'."
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Code,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Address 1,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Payer Address 2,
@@ -5149,14 +5149,14 @@ _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment End,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment Discharge Date,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment Admission Date,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment Status,
-_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment Outcome,
+_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment Outcome,"The outcome or discharge reason recorded for the enrollment. It is meant to be entered at discharge, but staff can enter it while the enrollment is still open, so analyses of discharge reasons usually keep only enrollments with an end date ([Enrollment End]) in the period."
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment Outcome ID,Unique ID of the Enrollment Outcome.
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment Updated Date,The date the Enrollment record was last updated.
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment Created Date,The date the Enrollment record was created.
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment Updated By User ID,Unique ID of the Enrollment Updated By User.
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment Date First Billable,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment Date Last Billable,
-_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment Appointment Completed Count,
+_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment Appointment Completed Count,The count of completed services within this time span. One way to check that an enrollment has service activity. Appointment is a legacy term here for a service.
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment Admission Type,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment Admission Source,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Enrollment Admission Dx,
@@ -5197,7 +5197,7 @@ _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Program Code,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Program Group Without Nulls,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Program Group,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Program Group > Name,
-_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Program Is Residential,
+_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Program Is Residential,True when the program is set up as residential in the EHR. Drives [Program Tx Setting]. Stored as a bit.
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Program Tx Setting,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Program Revenue Code,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Program Created Date,The date the Program record was created.
@@ -5249,7 +5249,7 @@ _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Medication Order Status,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Medication Link NLM RxNav,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEM_DX,Lab Order Dx ID,Unique ID of the Lab Order Dx.
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEM_DX,Lab Order Item ID,Unique ID of the Lab Order Item.
-_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEM_DX,Dx ICD10 Code,
+_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEM_DX,Dx ICD10 Code,"The ICD-10-CM diagnosis code, written with its dot."
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEM_DX,Dx Description,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEM_DX,Dx Sequence As Entered,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_RELATIONSHIP,Order ID,Unique ID of the Order.
@@ -5825,21 +5825,21 @@ _MDD_JCT_CREDIBLE_DX,Client ID,Unique ID of the Client.
 _MDD_JCT_CREDIBLE_DX,Dx Fingerprint ID,Unique ID of the Dx Fingerprint.
 _MDD_JCT_CREDIBLE_DX,Dx Snapshot ID,Unique ID of the Dx Snapshot.
 _MDD_JCT_CREDIBLE_DX,Dx Snapshot Start,
-_MDD_JCT_CREDIBLE_DX,Dx Snapshot Start Date,
+_MDD_JCT_CREDIBLE_DX,Dx Snapshot Start Date,The first day this diagnosis snapshot was in effect. A diagnosis is active on a date when the date falls between [Dx Snapshot Start Date] and [Dx Snapshot End Date].
 _MDD_JCT_CREDIBLE_DX,Dx Snapshot Start Date ID,Unique ID of the Dx Snapshot Start Date.
 _MDD_JCT_CREDIBLE_DX,Dx Snapshot End,
-_MDD_JCT_CREDIBLE_DX,Dx Snapshot End Date,
+_MDD_JCT_CREDIBLE_DX,Dx Snapshot End Date,The last day this diagnosis snapshot was in effect. Blank while the snapshot is still in effect. A diagnosis is active on a date when the date falls between [Dx Snapshot Start Date] and [Dx Snapshot End Date].
 _MDD_JCT_CREDIBLE_DX,Dx Snapshot End Date ID,Unique ID of the Dx Snapshot End Date.
 _MDD_JCT_CREDIBLE_DX,Dx Snapshot Sequence Effective ASC,
 _MDD_JCT_CREDIBLE_DX,Dx Snapshot Sequence Effective DESC,
 _MDD_JCT_CREDIBLE_DX,Dx Snapshot Status,
-_MDD_JCT_CREDIBLE_DX,Dx ICD10 Code,
+_MDD_JCT_CREDIBLE_DX,Dx ICD10 Code,"The ICD-10-CM diagnosis code, written with its dot."
 _MDD_JCT_CREDIBLE_DX,Dx DSM,
 _MDD_JCT_CREDIBLE_DX,Dx DSM Axis,
 _MDD_JCT_CREDIBLE_DX,Dx DSM Code,
-_MDD_JCT_CREDIBLE_DX,Dx Is Provisional,
-_MDD_JCT_CREDIBLE_DX,Dx Is Rule-Out,
-_MDD_JCT_CREDIBLE_DX,Dx Order,
+_MDD_JCT_CREDIBLE_DX,Dx Is Provisional,True when the diagnosis is recorded as provisional. Stored as a bit.
+_MDD_JCT_CREDIBLE_DX,Dx Is Rule-Out,"True when the diagnosis is recorded as rule-out (being ruled out, not confirmed). Stored as a bit."
+_MDD_JCT_CREDIBLE_DX,Dx Order,The diagnosis's position in the client's diagnosis list; a lower number is more primary.
 _MDD_JCT_CREDIBLE_DX,Dx Onset Date,
 _MDD_JCT_CREDIBLE_DX,Dx Resolved Date,
 _MDD_JCT_CREDIBLE_DX,Dx Date,
@@ -5857,13 +5857,13 @@ _MDD_JCT_CREDIBLE_DX_DAYS,Client ID,Unique ID of the Client.
 _MDD_JCT_CREDIBLE_DX_DOMAIN,Dx Domain ID FA0,
 _MDD_JCT_CREDIBLE_DX_DOMAIN,Client ID,Unique ID of the Client.
 _MDD_JCT_CREDIBLE_DX_DOMAIN,Dx Snapshot ID,Unique ID of the Dx Snapshot.
-_MDD_JCT_CREDIBLE_DX_DOMAIN,Dx ICD10 Code,
+_MDD_JCT_CREDIBLE_DX_DOMAIN,Dx ICD10 Code,"The ICD-10-CM diagnosis code, written with its dot."
 _MDD_JCT_CREDIBLE_DX_DOMAIN,Dx DSM,
 _MDD_JCT_CREDIBLE_DX_DOMAIN,Dx DSM Axis,
-_MDD_JCT_CREDIBLE_DX_DOMAIN,Dx Order,
+_MDD_JCT_CREDIBLE_DX_DOMAIN,Dx Order,The diagnosis's position in the client's diagnosis list; a lower number is more primary.
 _MDD_JCT_CREDIBLE_DX_DOMAIN,Dx DSM Code,
-_MDD_JCT_CREDIBLE_DX_DOMAIN,Dx Is Provisional,
-_MDD_JCT_CREDIBLE_DX_DOMAIN,Dx Is Rule-Out,
+_MDD_JCT_CREDIBLE_DX_DOMAIN,Dx Is Provisional,True when the diagnosis is recorded as provisional. Stored as a bit.
+_MDD_JCT_CREDIBLE_DX_DOMAIN,Dx Is Rule-Out,"True when the diagnosis is recorded as rule-out (being ruled out, not confirmed). Stored as a bit."
 _MDD_JCT_CREDIBLE_DX_DOMAIN,Dx Onset Date,
 _MDD_JCT_CREDIBLE_DX_DOMAIN,Dx Date,
 _MDD_JCT_CREDIBLE_DX_DOMAIN,Dx Resolved Date,
@@ -5877,13 +5877,13 @@ _MDD_JCT_CREDIBLE_DX_EPISODES,Dx Fingerprint ID,Unique ID of the Dx Fingerprint.
 _MDD_JCT_CREDIBLE_DX_EPISODES,Dx Episode End Date ID,Unique ID of the Dx Episode End Date.
 _MDD_JCT_CREDIBLE_DX_EPISODES,Dx Episode Start Date,The start of the end of the time span.
 _MDD_JCT_CREDIBLE_DX_EPISODES,Dx Episode End Date,The date of the end of the time span.
-_MDD_JCT_CREDIBLE_DX_EPISODES,Dx ICD10 Code,
+_MDD_JCT_CREDIBLE_DX_EPISODES,Dx ICD10 Code,"The ICD-10-CM diagnosis code, written with its dot."
 _MDD_JCT_CREDIBLE_DX_EPISODES,Dx DSM,
 _MDD_JCT_CREDIBLE_DX_EPISODES,Dx DSM Axis,
-_MDD_JCT_CREDIBLE_DX_EPISODES,Dx Order,
+_MDD_JCT_CREDIBLE_DX_EPISODES,Dx Order,The diagnosis's position in the client's diagnosis list; a lower number is more primary.
 _MDD_JCT_CREDIBLE_DX_EPISODES,Dx DSM Code,
-_MDD_JCT_CREDIBLE_DX_EPISODES,Dx Is Provisional,
-_MDD_JCT_CREDIBLE_DX_EPISODES,Dx Is Rule-Out,
+_MDD_JCT_CREDIBLE_DX_EPISODES,Dx Is Provisional,True when the diagnosis is recorded as provisional. Stored as a bit.
+_MDD_JCT_CREDIBLE_DX_EPISODES,Dx Is Rule-Out,"True when the diagnosis is recorded as rule-out (being ruled out, not confirmed). Stored as a bit."
 _MDD_JCT_CREDIBLE_DX_EPISODES,Dx Onset Date,
 _MDD_JCT_CREDIBLE_DX_EPISODES,Dx Date,
 _MDD_JCT_CREDIBLE_DX_EPISODES,Dx Resolved Date,
@@ -5899,13 +5899,13 @@ _MDD_JCT_CREDIBLE_DX_EPISODE_BOOKEND_STARTS,Dx Fingerprint ID,Unique ID of the D
 _MDD_JCT_CREDIBLE_DX_EPISODE_BOOKEND_STARTS,Dx Episode Start Date ID,Unique ID of the Dx Episode Start Date.
 _MDD_JCT_CREDIBLE_DX_EPISODE_BOOKEND_STARTS,Dx Episode Sequence DESC,
 _MDD_JCT_CREDIBLE_DX_FINGERPRINT,Dx Fingerprint ID,Unique ID of the Dx Fingerprint.
-_MDD_JCT_CREDIBLE_DX_FINGERPRINT,Dx ICD10 Code,
+_MDD_JCT_CREDIBLE_DX_FINGERPRINT,Dx ICD10 Code,"The ICD-10-CM diagnosis code, written with its dot."
 _MDD_JCT_CREDIBLE_DX_FINGERPRINT,Dx DSM,
 _MDD_JCT_CREDIBLE_DX_FINGERPRINT,Dx DSM Axis,
-_MDD_JCT_CREDIBLE_DX_FINGERPRINT,Dx Order,
+_MDD_JCT_CREDIBLE_DX_FINGERPRINT,Dx Order,The diagnosis's position in the client's diagnosis list; a lower number is more primary.
 _MDD_JCT_CREDIBLE_DX_FINGERPRINT,Dx DSM Code,
-_MDD_JCT_CREDIBLE_DX_FINGERPRINT,Dx Is Provisional,
-_MDD_JCT_CREDIBLE_DX_FINGERPRINT,Dx Is Rule-Out,
+_MDD_JCT_CREDIBLE_DX_FINGERPRINT,Dx Is Provisional,True when the diagnosis is recorded as provisional. Stored as a bit.
+_MDD_JCT_CREDIBLE_DX_FINGERPRINT,Dx Is Rule-Out,"True when the diagnosis is recorded as rule-out (being ruled out, not confirmed). Stored as a bit."
 _MDD_JCT_CREDIBLE_DX_FINGERPRINT,Dx Onset Date,
 _MDD_JCT_CREDIBLE_DX_FINGERPRINT,Dx Date,
 _MDD_JCT_CREDIBLE_DX_FINGERPRINT,Dx Resolved Date,
@@ -5937,8 +5937,8 @@ _MDD_JCT_CREDIBLE_DX_SNAPSHOTS_HX,Client ID,Unique ID of the Client.
 _MDD_JCT_CREDIBLE_DX_SNAPSHOTS_HX,Dx Snapshot Status,
 _MDD_JCT_CREDIBLE_DX_SNAPSHOTS_HX,Dx Snapshot Start,
 _MDD_JCT_CREDIBLE_DX_SNAPSHOTS_HX,Dx Snapshot End,
-_MDD_JCT_CREDIBLE_DX_SNAPSHOTS_HX,Dx Snapshot Start Date,
-_MDD_JCT_CREDIBLE_DX_SNAPSHOTS_HX,Dx Snapshot End Date,
+_MDD_JCT_CREDIBLE_DX_SNAPSHOTS_HX,Dx Snapshot Start Date,The first day this diagnosis snapshot was in effect. A diagnosis is active on a date when the date falls between [Dx Snapshot Start Date] and [Dx Snapshot End Date].
+_MDD_JCT_CREDIBLE_DX_SNAPSHOTS_HX,Dx Snapshot End Date,The last day this diagnosis snapshot was in effect. Blank while the snapshot is still in effect. A diagnosis is active on a date when the date falls between [Dx Snapshot Start Date] and [Dx Snapshot End Date].
 _MDD_JCT_CREDIBLE_DX_SNAPSHOTS_HX,Dx Snapshot Start Date ID,Unique ID of the Dx Snapshot Start Date.
 _MDD_JCT_CREDIBLE_DX_SNAPSHOTS_HX,Dx Snapshot End Date ID,Unique ID of the Dx Snapshot End Date.
 _MDD_JCT_CREDIBLE_DX_SNAPSHOTS_HX,Dx Snapshot Sequence Effective ASC,
@@ -6405,14 +6405,14 @@ _MDD_JCT_CREDIBLE_ENROLLMENTS,Enrollment Discharge Date,The date the individual 
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Enrollment Admission Date,The date associated with the admission or start. The date the client was admitted.
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Enrollment Status,"The individual's status in the system, typically ""active"", ""inactive"", or ""pending"". The client status value as recorded."
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Client Assigned Employees Primary,
-_MDD_JCT_CREDIBLE_ENROLLMENTS,Enrollment Outcome,
+_MDD_JCT_CREDIBLE_ENROLLMENTS,Enrollment Outcome,"The outcome or discharge reason recorded for the enrollment. It is meant to be entered at discharge, but staff can enter it while the enrollment is still open, so analyses of discharge reasons usually keep only enrollments with an end date ([Enrollment End]) in the period."
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Enrollment Outcome ID,Unique ID of the Enrollment Outcome.
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Enrollment Updated Date,The date the Enrollment record was last updated.
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Enrollment Created Date,The date the Enrollment record was created.
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Enrollment Updated By User ID,Unique ID of the Enrollment Updated By User.
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Enrollment Date First Billable,The date of the first billable service within the time span.
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Enrollment Date Last Billable,The date of the last billable service within the time span.
-_MDD_JCT_CREDIBLE_ENROLLMENTS,Enrollment Appointment Completed Count,The count of completed services with this time span.
+_MDD_JCT_CREDIBLE_ENROLLMENTS,Enrollment Appointment Completed Count,The count of completed services within this time span. One way to check that an enrollment has service activity. Appointment is a legacy term here for a service.
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Enrollment Admission Type,The type of admission.
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Enrollment Admission Source,The referral or source of the admission.
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Enrollment Admission Dx,The diagnosis at the time of admission.
@@ -6589,7 +6589,7 @@ _MDD_JCT_CREDIBLE_ENROLLMENTS,Program Code,
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Program Group Without Nulls,
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Program Group,
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Program Group > Name,
-_MDD_JCT_CREDIBLE_ENROLLMENTS,Program Is Residential,
+_MDD_JCT_CREDIBLE_ENROLLMENTS,Program Is Residential,True when the program is set up as residential in the EHR. Drives [Program Tx Setting]. Stored as a bit.
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Program Tx Setting,
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Program Revenue Code,
 _MDD_JCT_CREDIBLE_ENROLLMENTS,Program Created Date,The date the Program record was created.
@@ -6635,9 +6635,9 @@ _MDD_JCT_CREDIBLE_FORMS,Form Current Form Version Raw XML,
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Appointment ID,Unique ID of the Appointment.
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Client ID,Unique ID of the Client.
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Appointment Type ID,Unique ID of the Appointment Type.
-_MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Question ID,Unique ID of the Question.
-_MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Question Format,
-_MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Answer,
+_MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Question ID,Unique ID of the Question. Matches [Element ID] in the form elements table.
+_MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Question Format,"The question's control type on the form, such as Check Box, Text Box or Calendar Control."
+_MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Answer,"The answer as shown on the form or treatment plan. A choice question gives the text of the chosen answer. In the form answers tables a check-box question lists every checked choice in one row, separated by a semicolon; the multi-select tables give one row per checked choice instead."
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Answer Truncated,
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Answer Checkbox Count,
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Answer Note,
@@ -6653,20 +6653,20 @@ _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Answer Number,
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS,Tx Content ID,"Identifier for the specific treatment plan content element when documentation is linked to TxPlus. A value of -1 means the answer is not linked to a TxPlus content element, including answers associated to Credible Plan or otherwise unattached to treatment plan content."
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS_MULTISELECT,Multiselect ID Fuzzy A1,
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS_MULTISELECT,Appointment ID,Unique ID of the Appointment.
-_MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS_MULTISELECT,Question ID,Unique ID of the Question.
-_MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS_MULTISELECT,Answer,
+_MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS_MULTISELECT,Question ID,Unique ID of the Question. Matches [Element ID] in the form elements table.
+_MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS_MULTISELECT,Answer,"The answer as shown on the form or treatment plan. A choice question gives the text of the chosen answer. In the form answers tables a check-box question lists every checked choice in one row, separated by a semicolon; the multi-select tables give one row per checked choice instead."
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS_MULTISELECT_NOTES,Multiselect ID Fuzzy A1,
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS_MULTISELECT_NOTES,Appointment ID,Unique ID of the Appointment.
-_MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS_MULTISELECT_NOTES,Question ID,Unique ID of the Question.
+_MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS_MULTISELECT_NOTES,Question ID,Unique ID of the Question. Matches [Element ID] in the form elements table.
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_CLIENTS_MULTISELECT_NOTES,Answer Note,
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_USERS,Appointment ID,Unique ID of the Appointment.
-_MDD_JCT_CREDIBLE_FORM_ANSWERS_USERS,Question ID,Unique ID of the Question.
+_MDD_JCT_CREDIBLE_FORM_ANSWERS_USERS,Question ID,Unique ID of the Question. Matches [Element ID] in the form elements table.
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_USERS,Question,
-_MDD_JCT_CREDIBLE_FORM_ANSWERS_USERS,Answer,
+_MDD_JCT_CREDIBLE_FORM_ANSWERS_USERS,Answer,"The answer as shown on the form or treatment plan. A choice question gives the text of the chosen answer. In the form answers tables a check-box question lists every checked choice in one row, separated by a semicolon; the multi-select tables give one row per checked choice instead."
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_USERS_MULTISELECT,Appointment ID,Unique ID of the Appointment.
-_MDD_JCT_CREDIBLE_FORM_ANSWERS_USERS_MULTISELECT,Question ID,Unique ID of the Question.
+_MDD_JCT_CREDIBLE_FORM_ANSWERS_USERS_MULTISELECT,Question ID,Unique ID of the Question. Matches [Element ID] in the form elements table.
 _MDD_JCT_CREDIBLE_FORM_ANSWERS_USERS_MULTISELECT,Question,
-_MDD_JCT_CREDIBLE_FORM_ANSWERS_USERS_MULTISELECT,Answer,
+_MDD_JCT_CREDIBLE_FORM_ANSWERS_USERS_MULTISELECT,Answer,"The answer as shown on the form or treatment plan. A choice question gives the text of the chosen answer. In the form answers tables a check-box question lists every checked choice in one row, separated by a semicolon; the multi-select tables give one row per checked choice instead."
 _MDD_JCT_CREDIBLE_FORM_ELEMENTS,Element ID,Unique ID of the Element.
 _MDD_JCT_CREDIBLE_FORM_ELEMENTS,Page ID,Unique ID of the Page.
 _MDD_JCT_CREDIBLE_FORM_ELEMENTS,Element Text,
@@ -6707,9 +6707,9 @@ _MDD_JCT_CREDIBLE_INSURANCE_PLANS,Insurance Plan Policy Name,The policy name for
 _MDD_JCT_CREDIBLE_INSURANCE_PLANS,Insurance Plan Policy Group No,The policy group number for the insurance plan associated with the time span.
 _MDD_JCT_CREDIBLE_INSURANCE_PLANS,Insurance Plan Type,
 _MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Name,
-_MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Is CMS,
-_MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Is Medicaid,
-_MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Is Medicare,
+_MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Is CMS,"True when the payer is flagged as a CMS payer in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Is Medicaid,"True when the payer is flagged as Medicaid in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Is Medicare,"True when the payer is flagged as Medicare in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
 _MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Type Class Code,
 _MDD_JCT_CREDIBLE_INSURANCE_PLANS,Insurance Plan Status,"The individual's status in the system, typically ""active"", ""inactive"", or ""pending"". The client status value as recorded."
 _MDD_JCT_CREDIBLE_INSURANCE_PLANS,Insurance Plan Subscriber,Associated with an insurance plan. Incidates whether the plan that covers the client is owned by the client or by someone else.
@@ -6719,8 +6719,8 @@ _MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Type,
 _MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Type ID,Unique ID of the Payer Type.
 _MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Type Category,
 _MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Type Name,
-_MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Is Tricare,
-_MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Is Commercial,
+_MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Is Tricare,"True when the payer is on the agency's Tricare payer list. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Is Commercial,"True when the payer's type category is Commercially Insured. Stored as the text True or False, not a bit; compare to 'True'."
 _MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Code,
 _MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Address 1,
 _MDD_JCT_CREDIBLE_INSURANCE_PLANS,Payer Address 2,
@@ -7056,9 +7056,9 @@ _MDD_JCT_CREDIBLE_ORDERS,Insurance Plan Policy Name,
 _MDD_JCT_CREDIBLE_ORDERS,Insurance Plan Policy Group No,
 _MDD_JCT_CREDIBLE_ORDERS,Insurance Plan Type,
 _MDD_JCT_CREDIBLE_ORDERS,Payer Name,
-_MDD_JCT_CREDIBLE_ORDERS,Payer Is CMS,
-_MDD_JCT_CREDIBLE_ORDERS,Payer Is Medicaid,
-_MDD_JCT_CREDIBLE_ORDERS,Payer Is Medicare,
+_MDD_JCT_CREDIBLE_ORDERS,Payer Is CMS,"True when the payer is flagged as a CMS payer in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_ORDERS,Payer Is Medicaid,"True when the payer is flagged as Medicaid in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_ORDERS,Payer Is Medicare,"True when the payer is flagged as Medicare in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
 _MDD_JCT_CREDIBLE_ORDERS,Payer Type Class Code,
 _MDD_JCT_CREDIBLE_ORDERS,Insurance Plan Status,
 _MDD_JCT_CREDIBLE_ORDERS,Insurance Plan Subscriber,
@@ -7068,8 +7068,8 @@ _MDD_JCT_CREDIBLE_ORDERS,Payer Type,
 _MDD_JCT_CREDIBLE_ORDERS,Payer Type ID,Unique ID of the Payer Type.
 _MDD_JCT_CREDIBLE_ORDERS,Payer Type Category,
 _MDD_JCT_CREDIBLE_ORDERS,Payer Type Name,
-_MDD_JCT_CREDIBLE_ORDERS,Payer Is Tricare,
-_MDD_JCT_CREDIBLE_ORDERS,Payer Is Commercial,
+_MDD_JCT_CREDIBLE_ORDERS,Payer Is Tricare,"True when the payer is on the agency's Tricare payer list. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_ORDERS,Payer Is Commercial,"True when the payer's type category is Commercially Insured. Stored as the text True or False, not a bit; compare to 'True'."
 _MDD_JCT_CREDIBLE_ORDERS,Payer Code,
 _MDD_JCT_CREDIBLE_ORDERS,Payer Address 1,
 _MDD_JCT_CREDIBLE_ORDERS,Payer Address 2,
@@ -7115,7 +7115,7 @@ _MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment ID,Unique ID of the Enrollment.
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Order Item Acknowledged Date,*asked Slack.
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Order Item Acknowledgement,*asked Slack.
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Dx ID,Unique ID of the Dx.
-_MDD_JCT_CREDIBLE_ORDER_ITEMS,Dx ICD10 Code,
+_MDD_JCT_CREDIBLE_ORDER_ITEMS,Dx ICD10 Code,"The ICD-10-CM diagnosis code, written with its dot."
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Order Item Due Date,The deadline of a given task associated with a given time span.
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Order Item Ordering External Prescriber ID,Unique ID of the Order Item Ordering External Prescriber.
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Order Item Prescriber ID,Unique ID of the Order Item Prescriber.
@@ -7279,9 +7279,9 @@ _MDD_JCT_CREDIBLE_ORDER_ITEMS,Insurance Plan Policy Name,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Insurance Plan Policy Group No,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Insurance Plan Type,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Name,
-_MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Is CMS,
-_MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Is Medicaid,
-_MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Is Medicare,
+_MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Is CMS,"True when the payer is flagged as a CMS payer in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Is Medicaid,"True when the payer is flagged as Medicaid in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Is Medicare,"True when the payer is flagged as Medicare in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Type Class Code,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Insurance Plan Status,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Insurance Plan Subscriber,
@@ -7291,8 +7291,8 @@ _MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Type,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Type ID,Unique ID of the Payer Type.
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Type Category,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Type Name,
-_MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Is Tricare,
-_MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Is Commercial,
+_MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Is Tricare,"True when the payer is on the agency's Tricare payer list. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Is Commercial,"True when the payer's type category is Commercially Insured. Stored as the text True or False, not a bit; compare to 'True'."
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Code,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Address 1,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Payer Address 2,
@@ -7311,14 +7311,14 @@ _MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment End,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment Discharge Date,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment Admission Date,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment Status,
-_MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment Outcome,
+_MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment Outcome,"The outcome or discharge reason recorded for the enrollment. It is meant to be entered at discharge, but staff can enter it while the enrollment is still open, so analyses of discharge reasons usually keep only enrollments with an end date ([Enrollment End]) in the period."
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment Outcome ID,Unique ID of the Enrollment Outcome.
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment Updated Date,The date the Enrollment record was last updated.
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment Created Date,The date the Enrollment record was created.
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment Updated By User ID,Unique ID of the Enrollment Updated By User.
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment Date First Billable,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment Date Last Billable,
-_MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment Appointment Completed Count,
+_MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment Appointment Completed Count,The count of completed services within this time span. One way to check that an enrollment has service activity. Appointment is a legacy term here for a service.
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment Admission Type,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment Admission Source,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Enrollment Admission Dx,
@@ -7359,7 +7359,7 @@ _MDD_JCT_CREDIBLE_ORDER_ITEMS,Program Code,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Program Group Without Nulls,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Program Group,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Program Group > Name,
-_MDD_JCT_CREDIBLE_ORDER_ITEMS,Program Is Residential,
+_MDD_JCT_CREDIBLE_ORDER_ITEMS,Program Is Residential,True when the program is set up as residential in the EHR. Drives [Program Tx Setting]. Stored as a bit.
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Program Tx Setting,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Program Revenue Code,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Program Created Date,The date the Program record was created.
@@ -7416,11 +7416,11 @@ _MDD_JCT_CREDIBLE_PAYER,Payer Type ID,Unique ID of the Payer Type.
 _MDD_JCT_CREDIBLE_PAYER,Payer Type Class Code,The payer class code.
 _MDD_JCT_CREDIBLE_PAYER,Payer Type Category,The payer category.
 _MDD_JCT_CREDIBLE_PAYER,Payer Type Name,The type of insurer or payer this is.
-_MDD_JCT_CREDIBLE_PAYER,Payer Is CMS,
-_MDD_JCT_CREDIBLE_PAYER,Payer Is Medicaid,
-_MDD_JCT_CREDIBLE_PAYER,Payer Is Medicare,
-_MDD_JCT_CREDIBLE_PAYER,Payer Is Tricare,
-_MDD_JCT_CREDIBLE_PAYER,Payer Is Commercial,
+_MDD_JCT_CREDIBLE_PAYER,Payer Is CMS,"True when the payer is flagged as a CMS payer in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_PAYER,Payer Is Medicaid,"True when the payer is flagged as Medicaid in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_PAYER,Payer Is Medicare,"True when the payer is flagged as Medicare in the EHR. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_PAYER,Payer Is Tricare,"True when the payer is on the agency's Tricare payer list. Stored as the text True or False, not a bit; compare to 'True'."
+_MDD_JCT_CREDIBLE_PAYER,Payer Is Commercial,"True when the payer's type category is Commercially Insured. Stored as the text True or False, not a bit; compare to 'True'."
 _MDD_JCT_CREDIBLE_PAYER,Payer Code,A short code for a specific insurer or payer. Agencies might use this to describe a payer when they wish to refer to the payer but not take up too much space.
 _MDD_JCT_CREDIBLE_PAYER,Payer Address 1,
 _MDD_JCT_CREDIBLE_PAYER,Payer Address 2,
@@ -7466,7 +7466,7 @@ _MDD_JCT_CREDIBLE_PROGRAMS,Program Code,
 _MDD_JCT_CREDIBLE_PROGRAMS,Program Group Without Nulls,
 _MDD_JCT_CREDIBLE_PROGRAMS,Program Group,
 _MDD_JCT_CREDIBLE_PROGRAMS,Program Group > Name,
-_MDD_JCT_CREDIBLE_PROGRAMS,Program Is Residential,
+_MDD_JCT_CREDIBLE_PROGRAMS,Program Is Residential,True when the program is set up as residential in the EHR. Drives [Program Tx Setting]. Stored as a bit.
 _MDD_JCT_CREDIBLE_PROGRAMS,Program Tx Setting,The treatment setting of a given time span. Options are inpatient or outpatient.
 _MDD_JCT_CREDIBLE_PROGRAMS,Program Revenue Code,
 _MDD_JCT_CREDIBLE_PROGRAMS,Program Created Date,The date the Program record was created.
@@ -8090,7 +8090,7 @@ _MDD_JCT_CREDIBLE_TXPLANS,Program Code,
 _MDD_JCT_CREDIBLE_TXPLANS,Program Group Without Nulls,
 _MDD_JCT_CREDIBLE_TXPLANS,Program Group,
 _MDD_JCT_CREDIBLE_TXPLANS,Program Group > Name,
-_MDD_JCT_CREDIBLE_TXPLANS,Program Is Residential,
+_MDD_JCT_CREDIBLE_TXPLANS,Program Is Residential,True when the program is set up as residential in the EHR. Drives [Program Tx Setting]. Stored as a bit.
 _MDD_JCT_CREDIBLE_TXPLANS,Program Tx Setting,
 _MDD_JCT_CREDIBLE_TXPLANS,Program Revenue Code,
 _MDD_JCT_CREDIBLE_TXPLANS,Program Created Date,The date the Program record was created.
@@ -8108,7 +8108,7 @@ _MDD_JCT_CREDIBLE_TXPLAN_ANSWERS,Answer ID,Unique ID of the Answer.
 _MDD_JCT_CREDIBLE_TXPLAN_ANSWERS,Tx Plan ID,Unique ID of the Tx Plan.
 _MDD_JCT_CREDIBLE_TXPLAN_ANSWERS,Element Text,
 _MDD_JCT_CREDIBLE_TXPLAN_ANSWERS,Element ID,Unique ID of the Element.
-_MDD_JCT_CREDIBLE_TXPLAN_ANSWERS,Answer,
+_MDD_JCT_CREDIBLE_TXPLAN_ANSWERS,Answer,"The answer as shown on the form or treatment plan. A choice question gives the text of the chosen answer. In the form answers tables a check-box question lists every checked choice in one row, separated by a semicolon; the multi-select tables give one row per checked choice instead."
 _MDD_JCT_CREDIBLE_TXPLAN_ANSWERS,Answer Date,
 _MDD_JCT_CREDIBLE_TXPLAN_ANSWERS,Answer Number,
 _MDD_JCT_CREDIBLE_TXPLAN_ANSWERS,Tx Plan Field Type,
