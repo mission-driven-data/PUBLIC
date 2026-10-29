@@ -3,10 +3,12 @@
     dataModels: "./data_model_documentation.csv",
     tables: "./table_documentation.csv",
     fields: "./field_documentation.csv",
+    credibleLinks: "./credible_links.csv",
   };
 
   const params = new URLSearchParams(window.location.search);
   const mode = detectMode();
+  const view = normalize(params.get("view"));
 
   const statusBanner = document.getElementById("statusBanner");
   const rowCountEl = document.getElementById("rowCount");
@@ -35,6 +37,16 @@
   init();
 
   async function init() {
+    if (mode === "embedded" && view === "links") {
+      try {
+        initLinksView(await loadCsv(FILES.credibleLinks));
+      } catch (error) {
+        setStatus("Failed to load the Credible links.", true);
+        console.error(error);
+      }
+      return;
+    }
+
     try {
       const [dmRows, tableRows, fieldRows] = await Promise.all([
         loadCsv(FILES.dataModels),
@@ -71,6 +83,7 @@
         download: true,
         header: true,
         skipEmptyLines: true,
+        transformHeader: (header) => clean(header).replace(/^﻿/, ""),
         complete: (results) => resolve(results.data || []),
         error: reject,
       });
@@ -203,10 +216,109 @@
     rows.forEach((row) => {
       lines.push([row.table_name, row.field_name, row.field_description]);
     });
-    const csv = lines.map((values) => values.map(csvQuote).join(",")).join("\r\n") + "\r\n";
 
     const baseName = modelName || "data_model";
     const fileName = clean(table.search()) ? `${baseName}_filtered.csv` : `${baseName}.csv`;
+    downloadCsv(lines, fileName);
+  }
+
+  // view=links: the Credible links list, read from credible_links.csv, which
+  // publish_documentation.py in JCT writes on every release. Names and descriptions are
+  // cleaned up here at display time; the CSV and the URLs are never changed.
+  function initLinksView(csvRows) {
+    const rows = csvRows
+      .map((row) => ({
+        name: cleanLinkName(row["Link Name"]),
+        link: clean(row["Link"]),
+        description: appointmentToService(clean(row["Description"])),
+      }))
+      .filter((row) => row.name && row.link);
+
+    if (embeddedTitle) {
+      embeddedTitle.textContent = "Credible Links";
+    }
+    if (embeddedDescription) {
+      embeddedDescription.textContent =
+        "Links into Credible that Janet builds. Replace each {placeholder} with the record's Credible id.";
+    }
+    document.title = "Credible Links";
+    if (tableSearch) {
+      tableSearch.placeholder = "Search name, link or description";
+      tableSearch.setAttribute("aria-label", "Search name, link or description");
+    }
+
+    setStatus(rows.length ? "" : "No Credible links were found.", !rows.length);
+
+    const table = createLinksTable(rows);
+    updateEmbeddedCount(table);
+    table.on("draw", function () {
+      updateEmbeddedCount(table);
+    });
+
+    tableSearch?.addEventListener("input", () => {
+      table.search(tableSearch.value, false, false).draw();
+    });
+
+    exportCsvBtn?.addEventListener("click", () => {
+      exportLinksCsv(table);
+    });
+  }
+
+  function createLinksTable(rows) {
+    return new DataTable("#modelTable", {
+      data: rows,
+      columns: [
+        { data: "name", name: "name", title: "Name" },
+        { data: "link", name: "link", title: "Link", className: "link-cell" },
+        { data: "description", name: "description", title: "Description" },
+      ],
+      order: [[0, "asc"]],
+      searching: true,
+      layout: {
+        topStart: "pageLength",
+        topEnd: null,
+      },
+      pageLength: 100,
+      lengthMenu: [25, 50, 100, 250, 500],
+      autoWidth: false,
+      deferRender: true,
+    });
+  }
+
+  function exportLinksCsv(table) {
+    const rows = table.rows({ search: "applied", order: "applied" }).data().toArray();
+    if (!rows.length) return;
+
+    const lines = [["Name", "Link", "Description"]];
+    rows.forEach((row) => {
+      lines.push([row.name, row.link, row.description]);
+    });
+
+    const fileName = clean(table.search()) ? "credible_links_filtered.csv" : "credible_links.csv";
+    downloadCsv(lines, fileName);
+  }
+
+  // "Client Link Allergies" becomes "Client Allergies" and "Appointment Link (Completed)"
+  // becomes "Service (Completed)".
+  function cleanLinkName(value) {
+    const withoutLink = clean(value).replace(/\blink\b/gi, "").replace(/\s{2,}/g, " ").trim();
+    return appointmentToService(withoutLink);
+  }
+
+  function appointmentToService(value) {
+    return value.replace(/\b(appointment)(s?)\b/gi, (match, word, plural) => {
+      let service = "service";
+      if (word === word.toUpperCase()) {
+        service = "SERVICE";
+      } else if (word[0] === word[0].toUpperCase()) {
+        service = "Service";
+      }
+      return service + (plural ? (plural === "S" ? "S" : "s") : "");
+    });
+  }
+
+  function downloadCsv(lines, fileName) {
+    const csv = lines.map((values) => values.map(csvQuote).join(",")).join("\r\n") + "\r\n";
 
     const blob = new Blob(["﻿" + csv], { type: "text/csv;charset=utf-8" });
     const url = URL.createObjectURL(blob);
