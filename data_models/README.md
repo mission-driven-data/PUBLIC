@@ -56,3 +56,6 @@ All files are self-contained in `data_models/`.
 ```
 
 Use `embed.html` to pick a model and generate the iframe snippet automatically.
+
+On `embedded.html`, the search box filters rows by table name, field name or field description (case-insensitive, matches anywhere in the text), and the row count shows the filtered total.
+`Export CSV` downloads the rows matching the current search, in the current sort order, as `<data_model_name>.csv` (or `<data_model_name>_filtered.csv` while a search is active) with the columns `Table Name,Field Name,Field Description`.

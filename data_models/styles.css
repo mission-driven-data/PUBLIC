@@ -122,6 +122,37 @@ h1 {
   overflow-x: auto;
 }
 
+.table-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.table-search {
+  flex: 1 1 260px;
+  min-width: 0;
+  min-height: 42px;
+  padding: 0.65rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid var(--mdd-border);
+  background: #fff;
+  color: var(--mdd-text);
+  font: inherit;
+}
+
+.table-search:focus {
+  outline: 2px solid rgba(0, 138, 216, 0.18);
+  border-color: rgba(0, 138, 216, 0.45);
+}
+
+.button-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 .form-card {
   display: grid;
   gap: 1rem;
