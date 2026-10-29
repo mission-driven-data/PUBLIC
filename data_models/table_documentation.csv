@@ -236,6 +236,61 @@ _MDD_JCT_ENTRA,_MDD_JCT_ENTRA_LINKS_GROUPS,Portal link for a Microsoft Entra gro
 _MDD_JCT_ENTRA,_MDD_JCT_ENTRA_USERS_UNPIVOT,Technical unpivot-procedure output for the Microsoft Entra users table.
 _MDD_JCT_ENTRA,_MDD_JCT_ENTRA_GROUPS_UNPIVOT,Technical unpivot-procedure output for the Microsoft Entra groups table.
 _MDD_JCT_ENTRA,_MDD_JCT_ENTRA_USERS_MFA_UNPIVOT,Technical unpivot-procedure output for the Microsoft Entra user MFA table.
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_AGENCY,"The NextGen practices this agency's JCT covers. A NextGen practice is the agency-level unit, and this table also sets which practices every other NextGen table reads."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_LOCATIONS,The service locations linked to a practice in scope. Locations NextGen marks deleted are kept because older services still point at them.
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_PROGRAMS,"The programs available to a practice in scope, with counts of their open enrollments. An open enrollment is one with no discharge date."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_LOOKUP,Every NextGen code value in one list: the agency's pick-list items and the system code sets. Deleted values are kept so older records still decode.
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_CLIENTS,"The people served: every NextGen person with a patient record in a practice in scope, with demographics, admission and discharge dates, status, assigned staff, address and phone. People merged into another record are left out."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_RACE,"Each race recorded for a client, with the federal (OMB) race category it rolls up to."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_ADDRESSES,"Addresses for clients (main and secondary), client contacts, users (business and home, from the user's provider record) and locations. Addresses with no street line and no zip code are skipped."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_ADDRESSES_CLIENT_PRIMARY,"Each client's main address, repeated under the general address field names so it can be used like the address table."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_PHONE,"Phone numbers for clients, client contacts, users (from the user's provider record) and locations. Blank numbers are skipped."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_PHONE_CLIENT_HOME,Each client's home phone number.
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_PHONE_CLIENT_MOBILE,Each client's mobile phone number.
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_EMAIL,"Email addresses for clients and users: the client's email, the user's login email and the email on the user's provider record. Addresses that do not look like an email address are skipped."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_CONTACTS,"The people listed in a client's support roles, such as caregivers, emergency contacts and next of kin, with the client's own fields alongside."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_USERS,"Every NextGen user, staff and system users alike, with the details of the provider record linked to the user. NextGen never deletes users, so [User Status] says whether a user is Active, Inactive or Deleted."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_USER_CREDENTIALS,"The credentials held by each user, with their start and end dates and the user's fields alongside. Credentials belong to provider records, so a provider linked to several users repeats its credentials for each user."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_CREDENTIAL_TYPES,"The kinds of credential an agency tracks, from its NextGen credentialing pick list."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_EMPLOYEE_CLIENT_ASSIGNMENT_PRIMARY,Each client's primary care provider and the staff member linked to that provider. NextGen keeps one primary care provider per client.
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_ENROLLMENTS,"Program enrollments in a practice in scope, with length of stay, billable and completed service counts, and the client and program fields alongside. This is the source for program census from an enrollment perspective, because it shows whether a client is enrolled whether or not a service was delivered."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_ENROLLMENTS_LIKELY_ERR,Enrollments that were probably opened in error: they lasted 0 days or 120 days or more and have no completed services. The flag is also carried on the enrollment table.
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_ENROLLMENT_DAYS,"Each day of each enrollment, from its start to its end, or to today when it is still open. Use it to count who was enrolled on a given date."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_PROGRAM_MEMBERSHIP_CLIENTS,"Which clients have ever been enrolled in which programs, with the client fields alongside. NextGen has no client-to-program assignment apart from enrollment, so membership comes from enrollments. It supports roster-style analysis, not service delivery."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_SERVICES_COMPLETED,Completed NextGen encounters in a practice in scope. Completed means a person closed the visit: it was checked out or locked by a user. An encounter that only locked itself automatically after 72 hours is not complete.
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_SERVICES_INCOMPLETE,"NextGen encounters in a practice in scope that nobody has checked out or locked. Their rates are 0 and their sequences are empty, as in Credible."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_SERVICES_PLANNER,"Client appointments that never became an encounter, including cancelled, rescheduled, missed and future appointments, each with a status."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_SERVICE_TYPES,The scheduling event types defined for a practice in scope. An encounter has a type only through its linked appointment.
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_SERVICES,"Every service in any tense: completed, incomplete and planned, with the client, user, enrollment, program and service type fields alongside. This is the source for census and activity from a service-delivery perspective."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_SERVICE_DX,"The diagnoses recorded on each completed service, in the order they were listed."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_SERVICES_PROCEDURE_CODES_UNIQUE,The distinct procedure codes charged on completed services. Only codes of exactly five characters with no spaces are kept.
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_SERVICES_PROCEDURE_CODES_MODIFIERS_UNIQUE,"The distinct combinations of procedure code and modifiers charged on completed services, with the same code filter as the procedure code list."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_SERVICES_PROCEDURE_MODIFIERS,"Each procedure modifier used on a completed service, across all of the service's charges. A modifier repeated on several charges of one service repeats here."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_SERVICES_PROCEDURE_MODIFIERS_UNIQUE,The distinct procedure modifiers used on completed services.
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_DX,"Client diagnoses as dated snapshots of the diagnosis list. NextGen copies the chart's diagnosis list onto every encounter, so a new snapshot starts only when the list changes. Each snapshot runs until the next one starts, and the latest snapshot is the Active one."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_DX_NAMES,"The ICD-10-CM code list from the MDD reference data, used to name diagnosis codes. This is not NextGen data, and the table is empty when the reference list is not installed."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_CLIENT_MEDS,"Client medications recorded in a practice in scope, with drug facts from First Databank and the client fields alongside. A renewal is a new row, so every row is kept. Deleted prescriptions are left out."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_VITALS,Vital signs records taken in a practice in scope. A record marked refused with no measure at all is left out.
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_VITAL_MEASURES,"Each measure on each vital signs record that has a value, with the same measure types, units and LOINC codes as Credible."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_VITALS_CURRENT,Each client's latest vital signs record.
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_ORDERS,"Clinical orders placed in a practice in scope, with the client fields alongside. Documented events, reminders and deleted orders are left out. NextGen orders have no line items, so each order has exactly one order item."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_ORDER_ITEMS,"The order items, one for each order, with the order and client fields alongside. [Order Item ID] and [Order ID] hold the same value."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_ORDERS_LABS,"Lab and diagnostic study orders sent from a practice in scope that are not deleted, linked to the earliest order that names them."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_CLIENT_LAB_TESTS,"Resulted lab tests received for a practice in scope, with the lab order, order, order item and client fields alongside. Results that arrived without a NextGen-placed order are kept. Use it for lab work, not program census."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_CLIENT_LAB_TEST_RESULTS,"The individual result values reported for each lab test, with the test, order and client fields alongside. A text result split over several lines stays several rows. Use it for lab results, not program census."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_CLIENT_LAB_FACILITIES,The labs (lab interfaces) that a practice in scope has sent lab orders to.
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_FILES,"Files scanned or attached to client charts in a practice in scope. The files live on disk, so their size is not known."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_FORMS,"The top-level NextGen templates, which play the role of forms. NextGen keeps no template versions, so the build date is the last time the template changed."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_PAYER_TRICARE,"The payers whose name suggests Tricare, CHAMPUS or CHAMPVA, using the same name patterns as Credible. Agency specifics can redefine this list."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_PAYER_CHIP,"The payers whose name suggests the Children's Health Insurance Program (CHIP), using the same name patterns as Credible."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_PAYER_TYPES,"The agency's financial classes, which NextGen uses as payer types. The category is read from the class name, so a class whose name gives no clue is Unknown."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_PAYER,"Every payer (insurer), with its type, category and contact details. Deleted payers are kept so older coverage still resolves. The category comes from the payer's claim filing indicator."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_INSURANCE_PLANS,"Client insurance policies attached to a practice in scope, with the payer and client fields alongside. Deleted policies are kept and marked Deleted."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_INSURANCE_PLANS_DAYS,"Each day each insurance policy was in effect, from its start to its end or to today when it is open. Deleted policies are left out. When the agency sets a years-lookback window in agency specifics, the days start that many years ago."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_BILLING_CPT_CODES,"The valid procedure codes in the agency's NextGen service item library, the counterpart of Credible's billing matrix."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_FISCAL_PERIOD,"The agency's fiscal months. NextGen keeps no accounting period table that JCT can read, so each fiscal month is a period."
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_AGE_GROUPS,Every age from 0 to 150 with the age group it falls in. The groups come from agency specifics; without them every age has no group.
+_MDD_JCT_NEXTGEN,_MDD_JCT_NEXTGEN_EXCLUDED_RECORDS,"Records the agency's reports should leave out: deleted users, records outside the years-lookback and years-lookforward window set in agency specifics, the agency's own exclusion list, and the services and orders of excluded clients and users."
 _MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_AGENCY,"The Paycom client company. The API has no company record, so the agency is taken from the company establishments and identified by FEIN."
 _MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_COST_CENTERS,"Paycom departments, modeled as cost centers as in the PaycomPR, Paylocity and Rippling modules."
 _MDD_JCT_PAYCOM,_MDD_JCT_PAYCOM_LABOR_ALLOCATION_CATEGORIES,"The labor allocation categories a Paycom client has configured, such as program, grant or funding source."
