@@ -14,6 +14,8 @@
 
   const embeddedTitle = document.getElementById("embeddedTitle");
   const embeddedDescription = document.getElementById("embeddedDescription");
+  const tableSearch = document.getElementById("tableSearch");
+  const exportCsvBtn = document.getElementById("exportCsvBtn");
 
   const modelSelect = document.getElementById("modelSelect");
   const embedUrl = document.getElementById("embedUrl");
@@ -171,10 +173,54 @@
     }
 
     const table = createEmbeddedTable(modelRows);
-    updateCount(table.rows({ search: "applied" }).count());
+    updateEmbeddedCount(table);
     table.on("draw", function () {
-      updateCount(table.rows({ search: "applied" }).count());
+      updateEmbeddedCount(table);
     });
+
+    tableSearch?.addEventListener("input", () => {
+      table.search(tableSearch.value, false, false).draw();
+    });
+
+    exportCsvBtn?.addEventListener("click", () => {
+      exportEmbeddedCsv(table, modelName);
+    });
+  }
+
+  function updateEmbeddedCount(table) {
+    const count = table.rows({ search: "applied" }).count();
+    updateCount(count);
+    if (exportCsvBtn) {
+      exportCsvBtn.disabled = count === 0;
+    }
+  }
+
+  function exportEmbeddedCsv(table, modelName) {
+    const rows = table.rows({ search: "applied", order: "applied" }).data().toArray();
+    if (!rows.length) return;
+
+    const lines = [["Table Name", "Field Name", "Field Description"]];
+    rows.forEach((row) => {
+      lines.push([row.table_name, row.field_name, row.field_description]);
+    });
+    const csv = lines.map((values) => values.map(csvQuote).join(",")).join("\r\n") + "\r\n";
+
+    const baseName = modelName || "data_model";
+    const fileName = clean(table.search()) ? `${baseName}_filtered.csv` : `${baseName}.csv`;
+
+    const blob = new Blob(["﻿" + csv], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 0);
+  }
+
+  function csvQuote(value) {
+    return `"${(value ?? "").toString().replaceAll('"', '""')}"`;
   }
 
   function initEmbedGeneratorPage(context) {
@@ -302,7 +348,11 @@
         [0, "asc"],
         [1, "asc"],
       ],
-      searching: false,
+      searching: true,
+      layout: {
+        topStart: "pageLength",
+        topEnd: null,
+      },
       pageLength: 100,
       lengthMenu: [25, 50, 100, 250, 500],
       autoWidth: false,
