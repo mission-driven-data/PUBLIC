@@ -47,6 +47,17 @@
       return;
     }
 
+    if (mode === "embedded" && view === "builder") {
+      try {
+        initBuilderView(await loadCsv(FILES.credibleLinks));
+      } catch (error) {
+        showBuilder();
+        setBuilderStatus("Failed to load the Credible links.");
+        console.error(error);
+      }
+      return;
+    }
+
     try {
       const [dmRows, tableRows, fieldRows] = await Promise.all([
         loadCsv(FILES.dataModels),
@@ -315,6 +326,253 @@
       }
       return service + (plural ? (plural === "S" ? "S" : "s") : "");
     });
+  }
+
+  // view=builder: the Credible Link Builder. The reader picks a link from credible_links.csv,
+  // names their table and the field that holds each {placeholder} id, and copies a SQL SELECT or
+  // a DAX calculated column that builds the link for every row.
+  const DEFAULT_TABLE = "dbo.mytable";
+  const PLACEHOLDER_MEANINGS = {
+    client_id: "Credible client id",
+    emp_id: "Credible staff (employee) id",
+    clientvisit_id: "Credible service (visit) id",
+    plan_id: "Credible planner id",
+    episode_id: "Credible enrollment (episode) id",
+    form_ver_id: "Credible form version id",
+  };
+  const BUILDER_TIPS = {
+    sql: "Run it as is, or paste the link expression into your own SELECT. It adds one column with a working Credible link for each row.",
+    dax: "In Power BI Desktop, select the table, choose New column, and paste this. Then set the column's Data category to Web URL so it shows as a link.",
+  };
+
+  function initBuilderView(csvRows) {
+    const rows = csvRows
+      .map((row) => ({
+        name: cleanLinkName(row["Link Name"]),
+        link: clean(row["Link"]),
+        description: appointmentToService(clean(row["Description"])),
+      }))
+      .filter((row) => row.name && row.link)
+      .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }));
+
+    showBuilder();
+    if (embeddedTitle) {
+      embeddedTitle.textContent = "Credible Link Builder";
+    }
+    if (embeddedDescription) {
+      embeddedDescription.textContent =
+        "Pick a link, tell us where your ids live, and copy the SQL or DAX that builds it.";
+    }
+    document.title = "Credible Link Builder";
+    if (rowCountEl) {
+      rowCountEl.textContent = `${rows.length} link types`;
+    }
+    setBuilderStatus(rows.length ? "" : "No Credible links were found.");
+    if (!rows.length) return;
+
+    const linkSelect = document.getElementById("builderLink");
+    const linkDescription = document.getElementById("builderLinkDescription");
+    const tableInput = document.getElementById("builderTable");
+    const fieldsEl = document.getElementById("builderFields");
+    const sqlBtn = document.getElementById("builderSqlBtn");
+    const daxBtn = document.getElementById("builderDaxBtn");
+    const copyBtn = document.getElementById("builderCopyBtn");
+    const output = document.getElementById("builderOutput");
+    const tip = document.getElementById("builderTip");
+    const pattern = document.getElementById("builderPattern");
+
+    // What the reader typed for each placeholder, kept across link types.
+    const fieldValues = new Map();
+    let outputType = "sql";
+    let copyTimer = 0;
+
+    rows.forEach((row, index) => {
+      const option = document.createElement("option");
+      option.value = String(index);
+      option.textContent = row.name;
+      linkSelect.appendChild(option);
+    });
+
+    function currentRow() {
+      return rows[Number(linkSelect.value)] || rows[0];
+    }
+
+    function renderFields() {
+      fieldsEl.innerHTML = "";
+      linkPlaceholders(currentRow().link).forEach((placeholder) => {
+        const id = `builderField-${placeholder}`;
+        const wrap = document.createElement("div");
+        wrap.className = "builder-field";
+
+        const label = document.createElement("label");
+        label.htmlFor = id;
+        const code = document.createElement("code");
+        code.textContent = `{${placeholder}}`;
+        const meaning = document.createElement("span");
+        meaning.textContent = PLACEHOLDER_MEANINGS[placeholder] || "Credible id";
+        label.append(code, meaning);
+
+        const input = document.createElement("input");
+        input.id = id;
+        input.type = "text";
+        input.className = "form-control builder-control";
+        input.autocomplete = "off";
+        input.spellcheck = false;
+        input.dataset.placeholder = placeholder;
+        input.value = fieldValues.has(placeholder) ? fieldValues.get(placeholder) : placeholder;
+        input.addEventListener("input", () => {
+          fieldValues.set(placeholder, input.value);
+          renderOutput();
+        });
+
+        wrap.append(label, input);
+        fieldsEl.appendChild(wrap);
+      });
+    }
+
+    function renderOutput() {
+      const row = currentRow();
+      const fields = {};
+      fieldsEl.querySelectorAll("input[data-placeholder]").forEach((input) => {
+        fields[input.dataset.placeholder] = clean(input.value) || input.dataset.placeholder;
+      });
+      const table = clean(tableInput.value) || DEFAULT_TABLE;
+      const columnName = `${row.name} Link`;
+      output.textContent =
+        outputType === "dax"
+          ? buildDaxColumn(row.link, table, fields, columnName)
+          : buildSqlSelect(row.link, table, fields, columnName);
+      tip.textContent = BUILDER_TIPS[outputType];
+      pattern.textContent = row.link;
+    }
+
+    function selectLink() {
+      linkDescription.textContent = currentRow().description;
+      renderFields();
+      renderOutput();
+    }
+
+    function setOutputType(type) {
+      outputType = type;
+      sqlBtn.setAttribute("aria-pressed", String(type === "sql"));
+      daxBtn.setAttribute("aria-pressed", String(type === "dax"));
+      renderOutput();
+    }
+
+    function flashCopyLabel(text) {
+      copyBtn.textContent = text;
+      clearTimeout(copyTimer);
+      copyTimer = setTimeout(() => {
+        copyBtn.textContent = "Copy";
+      }, 1600);
+    }
+
+    linkSelect.addEventListener("change", selectLink);
+    tableInput.addEventListener("input", renderOutput);
+    sqlBtn.addEventListener("click", () => setOutputType("sql"));
+    daxBtn.addEventListener("click", () => setOutputType("dax"));
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(output.textContent);
+        flashCopyLabel("Copied");
+      } catch (err) {
+        // The clipboard can be blocked inside an iframe. Select the text so the reader can copy it.
+        const range = document.createRange();
+        range.selectNodeContents(output);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        let copied = false;
+        try {
+          copied = document.execCommand("copy");
+        } catch (ignored) {
+          copied = false;
+        }
+        flashCopyLabel(copied ? "Copied" : "Selected");
+      }
+    });
+
+    selectLink();
+  }
+
+  function showBuilder() {
+    document.body.classList.add("builder-mode");
+    const tableCard = document.getElementById("tableCard");
+    const builderView = document.getElementById("builderView");
+    if (tableCard) tableCard.hidden = true;
+    if (builderView) builderView.hidden = false;
+  }
+
+  function setBuilderStatus(message) {
+    const builderStatus = document.getElementById("builderStatus");
+    if (!builderStatus) return;
+    builderStatus.textContent = message || "";
+    builderStatus.classList.toggle("error", !!message);
+  }
+
+  // Distinct placeholder names in the order they first appear: "...?client_id={client_id}&plan_id={plan_id}"
+  // gives ["client_id", "plan_id"].
+  function linkPlaceholders(link) {
+    const names = [];
+    for (const match of link.matchAll(/\{(\w+)\}/g)) {
+      if (!names.includes(match[1])) names.push(match[1]);
+    }
+    return names;
+  }
+
+  // Splits a link into literal text and placeholders, dropping empty literals.
+  function linkPieces(link) {
+    return link
+      .split(/(\{\w+\})/)
+      .filter((piece) => piece !== "")
+      .map((piece) => {
+        const match = /^\{(\w+)\}$/.exec(piece);
+        return match ? { placeholder: match[1] } : { literal: piece };
+      });
+  }
+
+  // "dbo.mytable" gives ["dbo", "mytable"]; a part already in brackets keeps its brackets and dots.
+  function identifierParts(value) {
+    return clean(value).match(/\[(?:[^\]]|\]\])*\]|[^.]+/g) || [];
+  }
+
+  function sqlBracket(part) {
+    const trimmed = part.trim();
+    if (/^\[.*\]$/.test(trimmed)) return trimmed;
+    return `[${trimmed.replaceAll("]", "]]")}]`;
+  }
+
+  function unbracket(part) {
+    const trimmed = part.trim();
+    return /^\[.*\]$/.test(trimmed) ? trimmed.slice(1, -1).replaceAll("]]", "]") : trimmed;
+  }
+
+  function buildSqlSelect(link, table, fields, columnName) {
+    const tableRef = identifierParts(table).map(sqlBracket).join(".");
+    const terms = linkPieces(link).map((piece) =>
+      piece.literal !== undefined
+        ? `'${piece.literal.replaceAll("'", "''")}'`
+        : `CAST(${tableRef}.${sqlBracket(fields[piece.placeholder])} AS VARCHAR(20))`
+    );
+    const lines = ["SELECT", `    ${tableRef}.*`, `    ,${terms[0]}`];
+    terms.slice(1).forEach((term) => lines.push(`        + ${term}`));
+    lines.push(`        AS [${columnName.replaceAll("]", "]]")}]`);
+    lines.push(`FROM ${tableRef}`);
+    return lines.join("\n");
+  }
+
+  function buildDaxColumn(link, table, fields, columnName) {
+    const parts = identifierParts(table).map(unbracket);
+    if (parts.length > 1 && parts[0].toLowerCase() === "dbo") parts.shift();
+    const tableRef = `'${parts.join(".").replaceAll("'", "''")}'`;
+    const terms = linkPieces(link).map((piece) =>
+      piece.literal !== undefined
+        ? `"${piece.literal.replaceAll('"', '""')}"`
+        : `${tableRef}[${unbracket(fields[piece.placeholder]).replaceAll("]", "]]")}]`
+    );
+    const lines = [`${columnName} =`, terms[0]];
+    terms.slice(1).forEach((term) => lines.push(`    & ${term}`));
+    return lines.join("\n");
   }
 
   function downloadCsv(lines, fileName) {

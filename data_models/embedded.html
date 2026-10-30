@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css" />
-  <link rel="stylesheet" href="./styles.css?v=2026-10-29" />
+  <link rel="stylesheet" href="./styles.css?v=2026-10-29b" />
 </head>
 <body>
   <main class="page">
@@ -24,7 +24,7 @@
         </div>
       </div>
 
-      <div class="card table-card">
+      <div id="tableCard" class="card table-card">
         <div id="statusBanner" class="status-banner" aria-live="polite"></div>
         <div class="table-toolbar">
           <input id="tableSearch" class="table-search" type="search" placeholder="Search table, field or description" aria-label="Search table, field or description" autocomplete="off" />
@@ -43,12 +43,46 @@
           </table>
         </div>
       </div>
+
+      <div id="builderView" class="builder-grid" hidden>
+        <div class="card builder-card">
+          <div id="builderStatus" class="status-banner" aria-live="polite"></div>
+          <div class="builder-step">
+            <label class="builder-label" for="builderLink"><span class="step-num" aria-hidden="true">1</span>Link type</label>
+            <select id="builderLink" class="form-control builder-control"></select>
+            <p id="builderLinkDescription" class="builder-help"></p>
+          </div>
+          <div class="builder-step">
+            <label class="builder-label" for="builderTable"><span class="step-num" aria-hidden="true">2</span>Your table</label>
+            <input id="builderTable" class="form-control builder-control" type="text" value="dbo.mytable" autocomplete="off" spellcheck="false" />
+          </div>
+          <fieldset class="builder-step builder-fieldset">
+            <legend class="builder-label"><span class="step-num" aria-hidden="true">3</span>Your field for each id</legend>
+            <div id="builderFields" class="builder-fields"></div>
+          </fieldset>
+        </div>
+
+        <div class="card builder-card">
+          <div class="builder-toolbar">
+            <div class="builder-toggle" role="group" aria-label="Output">
+              <button id="builderSqlBtn" class="toggle-option" type="button" aria-pressed="true">SQL select</button>
+              <button id="builderDaxBtn" class="toggle-option" type="button" aria-pressed="false">DAX column</button>
+            </div>
+            <button id="builderCopyBtn" class="button-secondary builder-copy" type="button">Copy</button>
+          </div>
+          <pre id="builderOutput" class="builder-code" tabindex="0" aria-label="Generated code"></pre>
+          <p id="builderTip" class="builder-help"></p>
+          <hr class="builder-divider" />
+          <p class="label">Link pattern</p>
+          <code id="builderPattern" class="builder-pattern"></code>
+        </div>
+      </div>
     </section>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
-  <script src="./app.js?v=2026-10-29"></script>
+  <script src="./app.js?v=2026-10-29b"></script>
 </body>
 </html>

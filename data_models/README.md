@@ -7,8 +7,9 @@ Static HTML/JavaScript app powered by DataTables that joins:
 
 Output rows are field-level, enriched with table and data model descriptions.
 
-`embedded.html` also has a Credible links view (`view=links`) that reads
-`credible_links.csv`. See [Credible links view](#credible-links-view).
+`embedded.html` also has a Credible links view (`view=links`) and a Credible Link Builder view
+(`view=builder`), both reading `credible_links.csv`. See [Credible links view](#credible-links-view)
+and [Credible Link Builder view](#credible-link-builder-view).
 
 ## Files
 - `index.html`
@@ -25,8 +26,8 @@ All files are self-contained in `data_models/`.
 - `field_name`: case-insensitive partial match
 - `cols`: comma-separated visible columns
 - `expand`: initial grouping expansion mode
-- `view` (`embedded.html` only): `links` shows the Credible links list instead of the field
-  table. Any other value, or none, shows the field table.
+- `view` (`embedded.html` only): `links` shows the Credible links list and `builder` shows the
+  Credible Link Builder instead of the field table. Any other value, or none, shows the field table.
 
 ### `cols` values
 - `data_model_name`
@@ -99,3 +100,11 @@ example `_MDD_JCT_CREDIBLE.sql`). Nobody edits the CSV by hand.
 To change what is on the list, change the link column in the module SQL (for example
 `_MDD_JCT_CREDIBLE.sql`). The next release rewrites `credible_links.csv` and the view picks it
 up on its next load.
+
+## Credible Link Builder view
+
+`https://mission-driven-data.github.io/PUBLIC/data_models/embedded.html?data_model_name=_MDD_JCT_CREDIBLE&view=builder`
+
+The reader picks a link type from `credible_links.csv`, names their table and the field that holds
+each `{placeholder}` id, and copies a SQL `SELECT` or a Power BI DAX calculated column that builds
+that Credible link for every row.
