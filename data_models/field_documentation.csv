@@ -13432,6 +13432,27 @@ _MDD_JCT_X_CREDIBLE_FINANCIALS_SERVICES,Program Name,The name of the program in 
 _MDD_JCT_X_CREDIBLE_FINANCIALS_SERVICES,Program Group > Name,"If the service's program is part of a program group, this is the name of the program group followed by the name of the program, separated with "">"" in the Credible financials extension context."
 _MDD_JCT_X_CREDIBLE_FINANCIALS_SERVICES,Bx ID,Unique ID of the Bx.
 _MDD_JCT_X_CREDIBLE_FINANCIALS_SERVICES,Bx Description,Financial extension attribute captured in [Bx Description].
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR By GL ID,Unique ID of the AR By GL row.
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Service ID,Unique identifier for [Service ID] in the Credible financials extension context.
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Account Number,General-ledger account attribute represented by [Account Number].
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Account ID,Unique identifier for [Account ID] in the Credible financials extension context.
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Balance,The part of the service's open A/R balance that sits on this GL account during the date range. Positive values are owed to the agency.
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Service Balance,"The service's total A/R balance across all A/R accounts during the date range. Never zero in this table, because services that net to zero are left out."
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Service Accounts With Balance,How many A/R accounts hold a non-zero piece of the service's balance during the date range.
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Service Is Split,True when the service's open balance sits on two or more A/R accounts during the date range.
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Valid From Date,First accounting date on which the row's balances apply.
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Valid From Date ID,"Unique ID of the AR Valid From Date, as days since 01/01/1900."
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Valid To Date,Accounting date on which the row stops applying; the row covers dates before it. 12/31/9999 when the row is still current.
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Valid To Date ID,"Unique ID of the AR Valid To Date, as days since 01/01/1900."
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Is Current,"True when the row is the service's latest date range, so it holds today's open balance."
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Service Start Date,Calendar date captured for [Service Start Date] in financial processing.
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Service Start Date ID,Unique identifier for [Service Start Date ID] in the Credible financials extension context.
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Program Name,The name of the program in which the service took place in the Credible financials extension context.
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Payer ID,Unique ID of the Payer.
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Payer Name,The full name for a specific insurer or payer. Agencies would typically use this to describe a payer in conversation in the Credible financials extension context.
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Payer Type,The payer type in the Credible financials extension context.
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Payer Type Name,The type of insurer or payer this is in the Credible financials extension context.
+_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Payer Type Category,The payer category in the Credible financials extension context.
 _MDD_JCT_X_CREDIBLE_FINANCIALS_REPORT_DESIGN,slicer_label_program_name,Display name used for [slicer_label_program_name] in financial reporting outputs.
 _MDD_JCT_X_CREDIBLE_FINANCIALS_REPORT_DESIGN,slicer_label_service_id,Service-level attribute represented by [slicer_label_service_id] for revenue and ledger analysis.
 _MDD_JCT_X_CREDIBLE_FINANCIALS_REPORT_DESIGN,slicer_label_service_type,Type/category value represented by [slicer_label_service_type] for financial classification.
@@ -13997,7 +14018,7 @@ _MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VITALSIGNSET,CreatedDate,Day record was cre
 _MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VITALSIGNSET,CreatedTime,Time record was created in source system
 _MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VITALSIGNSET,UpdatedDate,Day record was updated in source system if applicable
 _MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VITALSIGNSET,UpdatedTime,Day record was created in source system if applicable
-_MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VOCABULARY,CodedEntryID,Unique ID of the Vitals.
+_MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VOCABULARY,CodedEntryID,Unique ID of one measure in a vital sign set.
 _MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VOCABULARY,Code,The loinc code mapped for the measure type.
 _MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VOCABULARY,CodeSystem,The code system value sent in the NPH extract.
 _MDD_JCT_X_CREDIBLE_NPH_VITALSIGNSET_VOCABULARY,DisplayName,A human-friendly name for the measure type.
