@@ -1505,7 +1505,8 @@ _MDD_JCT_CREDIBLE_APPOINTMENTS,User Link Message Log,
 _MDD_JCT_CREDIBLE_APPOINTMENTS,User Link MessagingHub,
 _MDD_JCT_CREDIBLE_APPOINTMENTS,User Link Notes,
 _MDD_JCT_CREDIBLE_APPOINTMENTS,User Link Notification,
-_MDD_JCT_CREDIBLE_APPOINTMENTS,User Link Overview,
+_MDD_JCT_CREDIBLE_APPOINTMENTS,User Link Caseload,
+_MDD_JCT_CREDIBLE_APPOINTMENTS,User Link Overview,"Legacy alias of User Link Caseload, with the same URL (employee/my_cw_emp.asp). Kept for legacy support only, because agencies that depend on the old name would have that field break. New work should use User Link Caseload."
 _MDD_JCT_CREDIBLE_APPOINTMENTS,User Link Password,
 _MDD_JCT_CREDIBLE_APPOINTMENTS,User Link Provider Profile,
 _MDD_JCT_CREDIBLE_APPOINTMENTS,User Link Profile,
@@ -1869,6 +1870,7 @@ _MDD_JCT_CREDIBLE_APPOINTMENTS_USERS,Appointment Sequence User (For) ASC,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_USERS,Appointment Sequence User (For) DESC,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_USERS,Appointment Sequence User(For)-Type-ASC,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_USERS,Appointment Sequence User(For)-Type-DESC,
+_MDD_JCT_CREDIBLE_APPOINTMENTS_USERS,Appointment Link,The URL that opens this employee visit in Credible (employee/empform_view.asp).
 _MDD_JCT_CREDIBLE_APPOINTMENTS_USERS,Appointment Type ID,Unique ID of the Appointment Type.
 _MDD_JCT_CREDIBLE_APPOINTMENTS_USERS,Appointment Type,
 _MDD_JCT_CREDIBLE_APPOINTMENTS_USERS,Appointment Type Name,
@@ -3948,6 +3950,9 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Medication Reason,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Medication Prescription Status,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Medication Supervised By,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Medication Supervised By User ID,Unique ID of the Medication Supervised By User.
+_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Ordering Provider User ID,"Credible employee id of the provider who prescribed the medication (Meds.provider_id_int). 0 in Credible is sent as blank. On meds that came from an order it matches the order's prescriber nearly every time. Use this, not [Medication Supervised By], for who prescribed."
+_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Ordering Provider User Name First,"First name of the ordering provider, from the Credible Employees record for [Ordering Provider User ID]."
+_MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Ordering Provider User Name Last,"Last name of the ordering provider, from the Credible Employees record for [Ordering Provider User ID]."
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Medication Created By,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Medication Created By User ID,Unique ID of the Medication Created By User.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_ACCESSIONS,Medication Created Date,The date the Medication record was created.
@@ -4309,6 +4314,9 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Medication Reason,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Medication Prescription Status,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Medication Supervised By,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Medication Supervised By User ID,Unique ID of the Medication Supervised By User.
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Ordering Provider User ID,"Credible employee id of the provider who prescribed the medication (Meds.provider_id_int). 0 in Credible is sent as blank. On meds that came from an order it matches the order's prescriber nearly every time. Use this, not [Medication Supervised By], for who prescribed."
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Ordering Provider User Name First,"First name of the ordering provider, from the Credible Employees record for [Ordering Provider User ID]."
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Ordering Provider User Name Last,"Last name of the ordering provider, from the Credible Employees record for [Ordering Provider User ID]."
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Medication Created By,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Medication Created By User ID,Unique ID of the Medication Created By User.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TESTS,Medication Created Date,The date the Medication record was created.
@@ -4673,6 +4681,9 @@ _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Medication Reason,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Medication Prescription Status,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Medication Supervised By,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Medication Supervised By User ID,Unique ID of the Medication Supervised By User.
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Ordering Provider User ID,"Credible employee id of the provider who prescribed the medication (Meds.provider_id_int). 0 in Credible is sent as blank. On meds that came from an order it matches the order's prescriber nearly every time. Use this, not [Medication Supervised By], for who prescribed."
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Ordering Provider User Name First,"First name of the ordering provider, from the Credible Employees record for [Ordering Provider User ID]."
+_MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Ordering Provider User Name Last,"Last name of the ordering provider, from the Credible Employees record for [Ordering Provider User ID]."
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Medication Created By,
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Medication Created By User ID,Unique ID of the Medication Created By User.
 _MDD_JCT_CREDIBLE_CLIENT_LAB_TEST_RESULTS,Medication Created Date,The date the Medication record was created.
@@ -4720,6 +4731,9 @@ _MDD_JCT_CREDIBLE_CLIENT_MEDS,Medication Prescription Status,"Indicates whether 
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Order ID,Unique ID of the Order.
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Medication Supervised By,
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Medication Supervised By User ID,Unique ID of the Medication Supervised By User.
+_MDD_JCT_CREDIBLE_CLIENT_MEDS,Ordering Provider User ID,"Credible employee id of the provider who prescribed the medication (Meds.provider_id_int). 0 in Credible is sent as blank. On meds that came from an order it matches the order's prescriber nearly every time. Use this, not [Medication Supervised By], for who prescribed."
+_MDD_JCT_CREDIBLE_CLIENT_MEDS,Ordering Provider User Name First,"First name of the ordering provider, from the Credible Employees record for [Ordering Provider User ID]."
+_MDD_JCT_CREDIBLE_CLIENT_MEDS,Ordering Provider User Name Last,"Last name of the ordering provider, from the Credible Employees record for [Ordering Provider User ID]."
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Medication Created By,
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Medication Created By User ID,Unique ID of the Medication Created By User.
 _MDD_JCT_CREDIBLE_CLIENT_MEDS,Medication Created Date,The date the Medication record was created.
@@ -5240,6 +5254,9 @@ _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Medication Reason,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Medication Prescription Status,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Medication Supervised By,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Medication Supervised By User ID,Unique ID of the Medication Supervised By User.
+_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Ordering Provider User ID,"Credible employee id of the provider who prescribed the medication (Meds.provider_id_int). 0 in Credible is sent as blank. On meds that came from an order it matches the order's prescriber nearly every time. Use this, not [Medication Supervised By], for who prescribed."
+_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Ordering Provider User Name First,"First name of the ordering provider, from the Credible Employees record for [Ordering Provider User ID]."
+_MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Ordering Provider User Name Last,"Last name of the ordering provider, from the Credible Employees record for [Ordering Provider User ID]."
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Medication Created By,
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Medication Created By User ID,Unique ID of the Medication Created By User.
 _MDD_JCT_CREDIBLE_CLIENT_ORDERS_LAB_ITEMS,Medication Created Date,The date the Medication record was created.
@@ -6390,6 +6407,7 @@ _MDD_JCT_CREDIBLE_EMPLOYEE_CLIENT_ASSIGNMENT,Assignment Hierarchy,
 _MDD_JCT_CREDIBLE_EMPLOYEE_CLIENT_ASSIGNMENT,Assignment Provenance,
 _MDD_JCT_CREDIBLE_EMPLOYEE_CLIENT_ASSIGNMENT,Program ID,Unique ID of the Program.
 _MDD_JCT_CREDIBLE_EMPLOYEE_CLIENT_ASSIGNMENT,Role ID,Unique ID of the Role.
+_MDD_JCT_CREDIBLE_EMPLOYEE_CLIENT_ASSIGNMENT,Assignment Updated Date,"The date the staff-to-client assignment record was last touched in Credible (EmployeeClients.date_updated). It is Credible's only date on an assignment and is filled from 02/2026. Changing the assignment's role, its primary flag, or switching it from team to direct assignment also updates it, so it is not an assignment start date and must not be used to decide which assignment is most recent."
 _MDD_JCT_CREDIBLE_EMPLOYEE_CLIENT_ASSIGNMENT_PRIMARY,Client ID,Unique ID of the Client.
 _MDD_JCT_CREDIBLE_EMPLOYEE_CLIENT_ASSIGNMENT_PRIMARY,Client Assigned Users Active Primary Count,
 _MDD_JCT_CREDIBLE_EMPLOYEE_CLIENT_ASSIGNMENT_PRIMARY,Client Assigned Users Primary Count,
@@ -7403,6 +7421,9 @@ _MDD_JCT_CREDIBLE_ORDER_ITEMS,Medication Reason,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Medication Prescription Status,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Medication Supervised By,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Medication Supervised By User ID,Unique ID of the Medication Supervised By User.
+_MDD_JCT_CREDIBLE_ORDER_ITEMS,Ordering Provider User ID,"Credible employee id of the provider who prescribed the medication (Meds.provider_id_int). 0 in Credible is sent as blank. On meds that came from an order it matches the order's prescriber nearly every time. Use this, not [Medication Supervised By], for who prescribed."
+_MDD_JCT_CREDIBLE_ORDER_ITEMS,Ordering Provider User Name First,"First name of the ordering provider, from the Credible Employees record for [Ordering Provider User ID]."
+_MDD_JCT_CREDIBLE_ORDER_ITEMS,Ordering Provider User Name Last,"Last name of the ordering provider, from the Credible Employees record for [Ordering Provider User ID]."
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Medication Created By,
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Medication Created By User ID,Unique ID of the Medication Created By User.
 _MDD_JCT_CREDIBLE_ORDER_ITEMS,Medication Created Date,The date the Medication record was created.
@@ -7794,7 +7815,8 @@ _MDD_JCT_CREDIBLE_TEAMS,Team Leader User Link Message Log,
 _MDD_JCT_CREDIBLE_TEAMS,Team Leader User Link MessagingHub,
 _MDD_JCT_CREDIBLE_TEAMS,Team Leader User Link Notes,
 _MDD_JCT_CREDIBLE_TEAMS,Team Leader User Link Notification,
-_MDD_JCT_CREDIBLE_TEAMS,Team Leader User Link Overview,
+_MDD_JCT_CREDIBLE_TEAMS,Team Leader User Link Caseload,
+_MDD_JCT_CREDIBLE_TEAMS,Team Leader User Link Overview,"Legacy alias of Team Leader User Link Caseload, with the same URL (employee/my_cw_emp.asp). Kept for legacy support only, because agencies that depend on the old name would have that field break. New work should use Team Leader User Link Caseload."
 _MDD_JCT_CREDIBLE_TEAMS,Team Leader User Link Password,
 _MDD_JCT_CREDIBLE_TEAMS,Team Leader User Link Provider Profile,
 _MDD_JCT_CREDIBLE_TEAMS,Team Leader User Link Profile,
@@ -7921,7 +7943,8 @@ _MDD_JCT_CREDIBLE_TEAM_MEMBERSHIPS_USERS,Team Leader User Link Message Log,
 _MDD_JCT_CREDIBLE_TEAM_MEMBERSHIPS_USERS,Team Leader User Link MessagingHub,
 _MDD_JCT_CREDIBLE_TEAM_MEMBERSHIPS_USERS,Team Leader User Link Notes,
 _MDD_JCT_CREDIBLE_TEAM_MEMBERSHIPS_USERS,Team Leader User Link Notification,
-_MDD_JCT_CREDIBLE_TEAM_MEMBERSHIPS_USERS,Team Leader User Link Overview,
+_MDD_JCT_CREDIBLE_TEAM_MEMBERSHIPS_USERS,Team Leader User Link Caseload,
+_MDD_JCT_CREDIBLE_TEAM_MEMBERSHIPS_USERS,Team Leader User Link Overview,"Legacy alias of Team Leader User Link Caseload, with the same URL (employee/my_cw_emp.asp). Kept for legacy support only, because agencies that depend on the old name would have that field break. New work should use Team Leader User Link Caseload."
 _MDD_JCT_CREDIBLE_TEAM_MEMBERSHIPS_USERS,Team Leader User Link Password,
 _MDD_JCT_CREDIBLE_TEAM_MEMBERSHIPS_USERS,Team Leader User Link Provider Profile,
 _MDD_JCT_CREDIBLE_TEAM_MEMBERSHIPS_USERS,Team Leader User Link Profile,
@@ -8239,7 +8262,8 @@ _MDD_JCT_CREDIBLE_USERS,User Link Message Log,
 _MDD_JCT_CREDIBLE_USERS,User Link MessagingHub,
 _MDD_JCT_CREDIBLE_USERS,User Link Notes,
 _MDD_JCT_CREDIBLE_USERS,User Link Notification,
-_MDD_JCT_CREDIBLE_USERS,User Link Overview,
+_MDD_JCT_CREDIBLE_USERS,User Link Caseload,
+_MDD_JCT_CREDIBLE_USERS,User Link Overview,"Legacy alias of User Link Caseload, with the same URL (employee/my_cw_emp.asp). Kept for legacy support only, because agencies that depend on the old name would have that field break. New work should use User Link Caseload."
 _MDD_JCT_CREDIBLE_USERS,User Link Password,
 _MDD_JCT_CREDIBLE_USERS,User Link Provider Profile,
 _MDD_JCT_CREDIBLE_USERS,User Link Profile,
@@ -8356,7 +8380,8 @@ _MDD_JCT_CREDIBLE_USER_CREDENTIALS,User Link Message Log,
 _MDD_JCT_CREDIBLE_USER_CREDENTIALS,User Link MessagingHub,
 _MDD_JCT_CREDIBLE_USER_CREDENTIALS,User Link Notes,
 _MDD_JCT_CREDIBLE_USER_CREDENTIALS,User Link Notification,
-_MDD_JCT_CREDIBLE_USER_CREDENTIALS,User Link Overview,
+_MDD_JCT_CREDIBLE_USER_CREDENTIALS,User Link Caseload,
+_MDD_JCT_CREDIBLE_USER_CREDENTIALS,User Link Overview,"Legacy alias of User Link Caseload, with the same URL (employee/my_cw_emp.asp). Kept for legacy support only, because agencies that depend on the old name would have that field break. New work should use User Link Caseload."
 _MDD_JCT_CREDIBLE_USER_CREDENTIALS,User Link Password,
 _MDD_JCT_CREDIBLE_USER_CREDENTIALS,User Link Provider Profile,
 _MDD_JCT_CREDIBLE_USER_CREDENTIALS,User Link Profile,
@@ -13432,27 +13457,6 @@ _MDD_JCT_X_CREDIBLE_FINANCIALS_SERVICES,Program Name,The name of the program in 
 _MDD_JCT_X_CREDIBLE_FINANCIALS_SERVICES,Program Group > Name,"If the service's program is part of a program group, this is the name of the program group followed by the name of the program, separated with "">"" in the Credible financials extension context."
 _MDD_JCT_X_CREDIBLE_FINANCIALS_SERVICES,Bx ID,Unique ID of the Bx.
 _MDD_JCT_X_CREDIBLE_FINANCIALS_SERVICES,Bx Description,Financial extension attribute captured in [Bx Description].
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR By GL ID,Unique ID of the AR By GL row.
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Service ID,Unique identifier for [Service ID] in the Credible financials extension context.
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Account Number,General-ledger account attribute represented by [Account Number].
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Account ID,Unique identifier for [Account ID] in the Credible financials extension context.
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Balance,The part of the service's open A/R balance that sits on this GL account during the date range. Positive values are owed to the agency.
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Service Balance,"The service's total A/R balance across all A/R accounts during the date range. Never zero in this table, because services that net to zero are left out."
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Service Accounts With Balance,How many A/R accounts hold a non-zero piece of the service's balance during the date range.
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Service Is Split,True when the service's open balance sits on two or more A/R accounts during the date range.
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Valid From Date,First accounting date on which the row's balances apply.
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Valid From Date ID,"Unique ID of the AR Valid From Date, as days since 01/01/1900."
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Valid To Date,Accounting date on which the row stops applying; the row covers dates before it. 12/31/9999 when the row is still current.
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Valid To Date ID,"Unique ID of the AR Valid To Date, as days since 01/01/1900."
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,AR Is Current,"True when the row is the service's latest date range, so it holds today's open balance."
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Service Start Date,Calendar date captured for [Service Start Date] in financial processing.
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Service Start Date ID,Unique identifier for [Service Start Date ID] in the Credible financials extension context.
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Program Name,The name of the program in which the service took place in the Credible financials extension context.
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Payer ID,Unique ID of the Payer.
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Payer Name,The full name for a specific insurer or payer. Agencies would typically use this to describe a payer in conversation in the Credible financials extension context.
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Payer Type,The payer type in the Credible financials extension context.
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Payer Type Name,The type of insurer or payer this is in the Credible financials extension context.
-_MDD_JCT_X_CREDIBLE_FINANCIALS_AR_BY_GL,Payer Type Category,The payer category in the Credible financials extension context.
 _MDD_JCT_X_CREDIBLE_FINANCIALS_REPORT_DESIGN,slicer_label_program_name,Display name used for [slicer_label_program_name] in financial reporting outputs.
 _MDD_JCT_X_CREDIBLE_FINANCIALS_REPORT_DESIGN,slicer_label_service_id,Service-level attribute represented by [slicer_label_service_id] for revenue and ledger analysis.
 _MDD_JCT_X_CREDIBLE_FINANCIALS_REPORT_DESIGN,slicer_label_service_type,Type/category value represented by [slicer_label_service_type] for financial classification.
