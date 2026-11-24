@@ -17,4 +17,5 @@ _MDD_JCT_X_CREDIBLE_FINANCIALS,"Semantic documentation for Credible financial, a
 _MDD_JCT_X_CREDIBLE_MEDICAL_PROFILE,BMI percentile curve and BMI plot-point extension for Credible EHR medical profile analytics.
 _MDD_JCT_X_CREDIBLE_NPH,"Semantic documentation for the Credible NPH extension, with field/table context derived from inline and block SQL comments."
 _MDD_JCT_X_CREDIBLE_QUICKMAR,Semantic documentation for the Credible QuickMAR extension that aligns clients across Credible and QuickMAR and reconciles active medication records across both systems.
+_MDD_JCT_X_HR1,"Estimates, per client per Medicaid month, whether each client is likely exempt from, meeting, needing review for, or at risk under the HR1 Medicaid community engagement (work) requirement (SSA 1902(xx); 42 CFR 435.552 to 435.555). Works on Credible and NextGen through agency specifics tables that default to each module."
 _MDD_JCT_X_MYRC,"Normalizes an agency-supplied MyRC enrollment extract into client, address, phone, email, race, ethnicity, gender, program, enrollment, provider, and referral entities."

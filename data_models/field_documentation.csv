@@ -57,12 +57,16 @@ _MDD_JCT_ADP_PAY_CODES_CUSTOM,Reason,Why the pay code is classified as worked or
 _MDD_JCT_ADP_AGENCY,Agency ID,"Unique ID of the Agency. ADP's payrollGroupCode on the primary work assignment (""The payroll group relevant to payroll processing for this work assignment"", the WFN company code). It stands in for the agency because worker demographics carries no company ID."
 _MDD_JCT_ADP_AGENCY,Agency ID FEIN,Federal employer ID of the agency. Always empty: worker demographics carries no FEIN.
 _MDD_JCT_ADP_AGENCY,Agency Name,Name of the agency. Always empty: worker demographics carries no company name.
-_MDD_JCT_ADP_CUSTOM_FIELDS,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
 _MDD_JCT_ADP_CUSTOM_FIELDS,Field Category,"Code of the custom field, from the field's nameCode.codeValue on the employee's primary work assignment."
+_MDD_JCT_ADP_CUSTOM_FIELDS,Field ID,ID of the custom field: field code + '_' + field name. The same key [Lookup Category] uses without its 'cf_' prefix.
+_MDD_JCT_ADP_CUSTOM_FIELDS,Table Name,"Source table of the custom field. Always blank for ADP: custom fields come from the API, not a table."
+_MDD_JCT_ADP_CUSTOM_FIELDS,Field Name Static,"ADP's fixed code for the custom field (nameCode.codeValue), which does not change when the label does."
 _MDD_JCT_ADP_CUSTOM_FIELDS,Field Name,"Label of the custom field, from the field's nameCode.shortName."
-_MDD_JCT_ADP_CUSTOM_FIELDS,Field Type,Kind of custom field. Always Dropdown: only ADP code fields are collected.
+_MDD_JCT_ADP_CUSTOM_FIELDS,Field Data Type,"Kind of custom field, in the shared JCT list (Text, Date, Number, Boolean, Drop-Down, Unknown - Please Report). Always Drop-Down: only ADP code fields are collected."
 _MDD_JCT_ADP_CUSTOM_FIELDS,Field Is Lookup,True for every row: code fields take their values from a list.
 _MDD_JCT_ADP_CUSTOM_FIELDS,Lookup Category,"For CUSTOM_FIELDS, 'cf_' + field code + '_' + field name, grouping the values of one custom field. For LOOKUP, the kind of list the code belongs to: CostCenter, Department or JobCode."
+_MDD_JCT_ADP_CUSTOM_FIELDS,Field Is In Use,Whether the custom field is in use. Always True for ADP: only fields an employee holds are collected.
+_MDD_JCT_ADP_CUSTOM_FIELDS,Employee ID,"Unique ID of the Employee: ADP's associateOID, ""A unique identifier of an associate"". Used for every join between ADP tables."
 _MDD_JCT_ADP_CUSTOM_FIELDS,Field Value Code,"Code of the value chosen for the custom field (ADP: ""The code for the related entity"")."
 _MDD_JCT_ADP_CUSTOM_FIELDS,Field Value Label,"Label of the value chosen for the custom field (ADP: ""Short description of the related code"")."
 _MDD_JCT_ADP_CUSTOM_FIELDS,Custom Field Item ID NEW,ADP's itemID of the custom field entry on the work assignment.
@@ -5827,16 +5831,15 @@ _MDD_JCT_CREDIBLE_CREDENTIAL_TYPES,Credential,DO NOT USE.
 _MDD_JCT_CREDIBLE_CREDENTIAL_TYPES,Credential Name,
 _MDD_JCT_CREDIBLE_CREDENTIAL_TYPES,Credential Group ID,Unique ID of the Credential Group.
 _MDD_JCT_CREDIBLE_CREDENTIAL_TYPES,Credential Group Name,
+_MDD_JCT_CREDIBLE_CUSTOM_FIELDS,Field Category,"Label of the nearest section header above the field on the same table, by display order. Blank when the table has no section header above it."
 _MDD_JCT_CREDIBLE_CUSTOM_FIELDS,Field ID,Unique ID of the Field.
 _MDD_JCT_CREDIBLE_CUSTOM_FIELDS,Table Name,
 _MDD_JCT_CREDIBLE_CUSTOM_FIELDS,Field Name Static,
-_MDD_JCT_CREDIBLE_CUSTOM_FIELDS,Field Name List,
-_MDD_JCT_CREDIBLE_CUSTOM_FIELDS,Field Name View,
-_MDD_JCT_CREDIBLE_CUSTOM_FIELDS,Field Name Update,
+_MDD_JCT_CREDIBLE_CUSTOM_FIELDS,Field Name,The agency's label for the field (the Credible data dictionary view label).
 _MDD_JCT_CREDIBLE_CUSTOM_FIELDS,Field Data Type,
-_MDD_JCT_CREDIBLE_CUSTOM_FIELDS,Field Is In Use,
 _MDD_JCT_CREDIBLE_CUSTOM_FIELDS,Field Is Lookup,
-_MDD_JCT_CREDIBLE_CUSTOM_FIELDS,Table Row Count,
+_MDD_JCT_CREDIBLE_CUSTOM_FIELDS,Lookup Category,"For a drop-down that reads LookupDict, the lookup category it lists; the key into _MDD_JCT_CREDIBLE_LOOKUP.[Lookup Category]. Blank otherwise."
+_MDD_JCT_CREDIBLE_CUSTOM_FIELDS,Field Is In Use,
 _MDD_JCT_CREDIBLE_DX,Dx ID,Unique ID of the Dx.
 _MDD_JCT_CREDIBLE_DX,Client ID,Unique ID of the Client.
 _MDD_JCT_CREDIBLE_DX,Dx Fingerprint ID,Unique ID of the Dx Fingerprint.
@@ -6906,7 +6909,9 @@ _MDD_JCT_CREDIBLE_LOCATIONS,Location Address State,
 _MDD_JCT_CREDIBLE_LOCATIONS,Location Address Zip,
 _MDD_JCT_CREDIBLE_LOCATIONS,Location Address Country,
 _MDD_JCT_CREDIBLE_LOOKUP,Lookup ID,Unique ID of the Lookup.
-_MDD_JCT_CREDIBLE_LOOKUP,Lookup Cateogry,
+_MDD_JCT_CREDIBLE_LOOKUP,Lookup Category,The lookup list this value belongs to (LookupDict lookup_category).
+_MDD_JCT_CREDIBLE_LOOKUP,Lookup Classification,Standard lookup column; same value as Lookup Category in Credible.
+_MDD_JCT_CREDIBLE_LOOKUP,Lookup Cateogry,"Deprecated misspelled alias of Lookup Category, kept for one release. Remove in the first release after 11/24/2026."
 _MDD_JCT_CREDIBLE_LOOKUP,Lookup Shortcode,
 _MDD_JCT_CREDIBLE_LOOKUP,Lookup Description,
 _MDD_JCT_CREDIBLE_LOOKUP,Lookup Description Short,
@@ -9251,12 +9256,21 @@ _MDD_JCT_NEXTGEN_PROGRAMS,Program Updated By Employee ID,Unique ID of the Progra
 _MDD_JCT_NEXTGEN_PROGRAMS,Program Active Episode Count,Count of active program episodes (open enrollments) in the program. On enrollment and service rows it supports census analysis; on lab rows it is supplemental and not a preferred census measure.
 _MDD_JCT_NEXTGEN_PROGRAMS,Program Active Client Assignment Count,"The number of distinct clients on open enrollments in the program that name a provider, the closest NextGen has to a staff assignment."
 _MDD_JCT_NEXTGEN_LOOKUP,Lookup ID,Unique ID of the Lookup.
-_MDD_JCT_NEXTGEN_LOOKUP,Lookup Cateogry,"The code set the value belongs to, such as a pick list name or system code type. The spelling of the field name matches Credible."
+_MDD_JCT_NEXTGEN_LOOKUP,Lookup Category,"The code set the value belongs to: the mstr_lists type of a pick-list item (for example 'ud_demo1') or the code_tables code type. _MDD_JCT_NEXTGEN_CUSTOM_FIELDS.[Lookup Category] uses the same values, so it is the key from a lookup slot to its values."
+_MDD_JCT_NEXTGEN_LOOKUP,Lookup Classification,"The classification of the value. NextGen has no separate classification, so this repeats [Lookup Category], as the JCT custom fields and lookups standard sets for NextGen and Credible."
 _MDD_JCT_NEXTGEN_LOOKUP,Lookup Shortcode,The short code of the value.
 _MDD_JCT_NEXTGEN_LOOKUP,Lookup Description,"The description of the value, as shown to users."
 _MDD_JCT_NEXTGEN_LOOKUP,Lookup Description Short,"A short description of the value, where the code set has one."
 _MDD_JCT_NEXTGEN_LOOKUP,Lookup External ID,Unique ID of the Lookup External.
-_MDD_JCT_NEXTGEN_LOOKUP,A1,"An extra attribute of the value, where the code set has one."
+_MDD_JCT_NEXTGEN_CUSTOM_FIELDS,Field ID,"Unique ID of the custom field: the practice id, the NextGen table and the slot, joined by underscores, for example '0001_patient_user_defined1'. The demographic labels are set for the whole enterprise, so those slots repeat once per practice."
+_MDD_JCT_NEXTGEN_CUSTOM_FIELDS,Field Category,The NextGen label group the slot belongs to.
+_MDD_JCT_NEXTGEN_CUSTOM_FIELDS,Table Name,"The NextGen table that holds the slot's values. With [Field Name Static] it is the exact address of the value. For Patient Provider it is patient_provider, whose ud_pat_prov_nbr picks the role."
+_MDD_JCT_NEXTGEN_CUSTOM_FIELDS,Field Name Static,"The raw NextGen slot column, for example user_defined1, ud_demo1_id or ud_specific1. It is also the column name in the matching _VALUES table. For Patient Provider it is the label slot ud_pat_prov1 to 12, which has no value column."
+_MDD_JCT_NEXTGEN_CUSTOM_FIELDS,Field Name,"The agency's label for the slot, as set in NextGen. Empty when the agency has not labelled it."
+_MDD_JCT_NEXTGEN_CUSTOM_FIELDS,Field Data Type,"The kind of value the slot holds: 'Drop-Down' for a lookup slot, otherwise the SQL type of the value column read from INFORMATION_SCHEMA, as Text, Date, Number or Boolean, or 'Unknown - Please Report' for any other type (for example the uniqueidentifier appointment slots 5 to 8)."
+_MDD_JCT_NEXTGEN_CUSTOM_FIELDS,Field Is Lookup,"'True' when the slot holds a mstr_lists item id (the ud_demo slots), so its values decode through _MDD_JCT_NEXTGEN_LOOKUP. It decides which columns the _VALUES tables decode."
+_MDD_JCT_NEXTGEN_CUSTOM_FIELDS,Lookup Category,"The mstr_lists type of a lookup slot (for example 'ud_demo1'), the key into _MDD_JCT_NEXTGEN_LOOKUP.[Lookup Category]. Empty for other slots."
+_MDD_JCT_NEXTGEN_CUSTOM_FIELDS,Field Is In Use,'True' when the agency has labelled the slot.
 _MDD_JCT_NEXTGEN_CLIENTS,Client ID,Unique ID of the Client.
 _MDD_JCT_NEXTGEN_CLIENTS,Client ID Anonymous,"A random number assigned to the client each run, for sharing data without identifying the client. It changes every run."
 _MDD_JCT_NEXTGEN_CLIENTS,Client ID External,The unique ID of the entity in an external system.
@@ -9345,6 +9359,44 @@ _MDD_JCT_NEXTGEN_CLIENTS,Client Age Group Sort Order,The order by which age grou
 _MDD_JCT_NEXTGEN_CLIENTS,Client Age In Years Old,The individual's age in years (used in everyday vernacular).
 _MDD_JCT_NEXTGEN_CLIENTS,Client ID FA0,A copy of [Client ID JCT Fuzzy A0].
 _MDD_JCT_NEXTGEN_CLIENTS,Client ID FA1,A copy of [Client ID JCT Fuzzy A1].
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,person_id,"Unique ID of the client: the NextGen person_id, the same value as _MDD_JCT_NEXTGEN_CLIENTS.[Client ID]."
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,practice_id,"The practice of the patient row the slots come from: the client's first practice in scope, as in _MDD_JCT_NEXTGEN_CLIENTS."
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,user_defined1,"The raw value of NextGen user-defined slot patient.user_defined1. Its label is practice_ud.ud_chart1 (Chart); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,user_defined2,"The raw value of NextGen user-defined slot patient.user_defined2. Its label is practice_ud.ud_chart2 (Chart); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,user_defined3,"The raw value of NextGen user-defined slot patient.user_defined3. Its label is practice_ud.ud_chart3 (Chart); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,user_defined4,"The raw value of NextGen user-defined slot patient.user_defined4. Its label is practice_ud.ud_chart4 (Chart); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,user_defined5,"The raw value of NextGen user-defined slot patient.user_defined5. Its label is practice_ud.ud_chart5 (Chart); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,user_defined6,"The raw value of NextGen user-defined slot patient.user_defined6. Its label is practice_ud.ud_chart6 (Chart); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,user_defined7,"The raw value of NextGen user-defined slot patient.user_defined7. Its label is practice_ud.ud_chart7 (Chart); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,user_defined8,"The raw value of NextGen user-defined slot patient.user_defined8. Its label is practice_ud.ud_chart8 (Chart); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo1_id,The decoded value of NextGen slot person_ud.ud_demo1_id: the mstr_lists description of the item it points to (list type 'ud_demo1'). Its label is enterprise_prefs.ud_demo1 (Demographics); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo1_id_id,The raw mstr_lists item id stored in NextGen slot person_ud.ud_demo1_id.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo2_id,The decoded value of NextGen slot person_ud.ud_demo2_id: the mstr_lists description of the item it points to (list type 'ud_demo2'). Its label is enterprise_prefs.ud_demo2 (Demographics); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo2_id_id,The raw mstr_lists item id stored in NextGen slot person_ud.ud_demo2_id.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo3_id,The decoded value of NextGen slot person_ud.ud_demo3_id: the mstr_lists description of the item it points to (list type 'ud_demo3'). Its label is enterprise_prefs.ud_demo3 (Demographics); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo3_id_id,The raw mstr_lists item id stored in NextGen slot person_ud.ud_demo3_id.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo4_id,The decoded value of NextGen slot person_ud.ud_demo4_id: the mstr_lists description of the item it points to (list type 'ud_demo4'). Its label is enterprise_prefs.ud_demo4 (Demographics); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo4_id_id,The raw mstr_lists item id stored in NextGen slot person_ud.ud_demo4_id.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo5_id,The decoded value of NextGen slot person_ud.ud_demo5_id: the mstr_lists description of the item it points to (list type 'ud_demo5'). Its label is enterprise_prefs.ud_demo5 (Demographics); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo5_id_id,The raw mstr_lists item id stored in NextGen slot person_ud.ud_demo5_id.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo6_id,The decoded value of NextGen slot person_ud.ud_demo6_id: the mstr_lists description of the item it points to (list type 'ud_demo6'). Its label is enterprise_prefs.ud_demo6 (Demographics); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo6_id_id,The raw mstr_lists item id stored in NextGen slot person_ud.ud_demo6_id.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo7_id,The decoded value of NextGen slot person_ud.ud_demo7_id: the mstr_lists description of the item it points to (list type 'ud_demo7'). Its label is enterprise_prefs.ud_demo7 (Demographics); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo7_id_id,The raw mstr_lists item id stored in NextGen slot person_ud.ud_demo7_id.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo8_id,The decoded value of NextGen slot person_ud.ud_demo8_id: the mstr_lists description of the item it points to (list type 'ud_demo8'). Its label is enterprise_prefs.ud_demo8 (Demographics); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo8_id_id,The raw mstr_lists item id stored in NextGen slot person_ud.ud_demo8_id.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo9_id,The decoded value of NextGen slot person_ud.ud_demo9_id: the mstr_lists description of the item it points to (list type 'ud_demo9'). Its label is enterprise_prefs.ud_demo9 (Demographics); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo9_id_id,The raw mstr_lists item id stored in NextGen slot person_ud.ud_demo9_id.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo10_id,The decoded value of NextGen slot person_ud.ud_demo10_id: the mstr_lists description of the item it points to (list type 'ud_demo10'). Its label is enterprise_prefs.ud_demo10 (Demographics); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo10_id_id,The raw mstr_lists item id stored in NextGen slot person_ud.ud_demo10_id.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo11_id,The decoded value of NextGen slot person_ud.ud_demo11_id: the mstr_lists description of the item it points to (list type 'ud_demo11'). Its label is enterprise_prefs.ud_demo11 (Demographics); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo11_id_id,The raw mstr_lists item id stored in NextGen slot person_ud.ud_demo11_id.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo12_id,The decoded value of NextGen slot person_ud.ud_demo12_id: the mstr_lists description of the item it points to (list type 'ud_demo12'). Its label is enterprise_prefs.ud_demo12 (Demographics); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo12_id_id,The raw mstr_lists item id stored in NextGen slot person_ud.ud_demo12_id.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo13_id,The decoded value of NextGen slot person_ud.ud_demo13_id: the mstr_lists description of the item it points to (list type 'ud_demo13'). Its label is enterprise_prefs.ud_demo13 (Demographics); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo13_id_id,The raw mstr_lists item id stored in NextGen slot person_ud.ud_demo13_id.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo14_id,The decoded value of NextGen slot person_ud.ud_demo14_id: the mstr_lists description of the item it points to (list type 'ud_demo14'). Its label is enterprise_prefs.ud_demo14 (Demographics); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS.
+_MDD_JCT_NEXTGEN_CLIENTS_VALUES,ud_demo14_id_id,The raw mstr_lists item id stored in NextGen slot person_ud.ud_demo14_id.
 _MDD_JCT_NEXTGEN_RACE,Race ID,Unique ID of the Race.
 _MDD_JCT_NEXTGEN_RACE,Race ID Fuzzy A0,"A whole-number ID for the race row that is quicker to join on than [Race ID]. It is recalculated every run, so do not store it."
 _MDD_JCT_NEXTGEN_RACE,Object Category,"The kind of record the row belongs to: Client, Contact, User or Location."
@@ -10353,6 +10405,80 @@ _MDD_JCT_NEXTGEN_SERVICES,Enrollment LoS Years,"The length of stay in the time s
 _MDD_JCT_NEXTGEN_SERVICES,Enrollment Sequence ASC,"An integer, starting at 1, in the sequence of events in chronological order associated with the time span."
 _MDD_JCT_NEXTGEN_SERVICES,Enrollment Sequence DESC,"An integer, ending at 1, in the sequence of events in chronological order associated with the time span."
 _MDD_JCT_NEXTGEN_SERVICES,Enrollment Likely Error,True when the enrollment was probably opened in error: it lasted 0 days or 120 days or more and has no completed services.
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,Service ID Universal,"The service's key in _MDD_JCT_NEXTGEN_SERVICES: the encounter id for tense 1 and 2, the appointment id for tense 3."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,Service Tense ID,"1 completed, 2 incomplete, 3 planner, as in _MDD_JCT_NEXTGEN_SERVICES."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,enc_id,"The NextGen encounter behind the service, for tense 1 and 2. Empty for planner services."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,appt_id,The NextGen appointment behind the service ([Planner ID] in _MDD_JCT_NEXTGEN_SERVICES).
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,user_defined1,"The raw value of NextGen user-defined slot patient_encounter.user_defined1. Its label is not known (no NextGen label column found) (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,user_defined2,"The raw value of NextGen user-defined slot patient_encounter.user_defined2. Its label is not known (no NextGen label column found) (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,user_defined3,"The raw value of NextGen user-defined slot patient_encounter.user_defined3. Its label is not known (no NextGen label column found) (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,user_defined4,"The raw value of NextGen user-defined slot patient_encounter.user_defined4. Its label is not known (no NextGen label column found) (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_billing_collections1,"The raw value of NextGen user-defined slot patient_encounter.ud_billing_collections1. Its label is practice_ud.ud_billing_collections1 (Billing Collections); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_billing_collections2,"The raw value of NextGen user-defined slot patient_encounter.ud_billing_collections2. Its label is practice_ud.ud_billing_collections2 (Billing Collections); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_billing_collections3,"The raw value of NextGen user-defined slot patient_encounter.ud_billing_collections3. Its label is practice_ud.ud_billing_collections3 (Billing Collections); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_billing_collections4,"The raw value of NextGen user-defined slot patient_encounter.ud_billing_collections4. Its label is practice_ud.ud_billing_collections4 (Billing Collections); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_clinical1,"The raw value of NextGen user-defined slot patient_encounter.ud_clinical1. Its label is practice_ud.ud_clinical1 (Clinical); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_clinical2,"The raw value of NextGen user-defined slot patient_encounter.ud_clinical2. Its label is practice_ud.ud_clinical2 (Clinical); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_clinical3,"The raw value of NextGen user-defined slot patient_encounter.ud_clinical3. Its label is practice_ud.ud_clinical3 (Clinical); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_clinical4,"The raw value of NextGen user-defined slot patient_encounter.ud_clinical4. Its label is practice_ud.ud_clinical4 (Clinical); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific1,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific1. Its label is practice_ud.ud_enc1, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific2,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific2. Its label is practice_ud.ud_enc2, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific3,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific3. Its label is practice_ud.ud_enc3, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific4,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific4. Its label is practice_ud.ud_enc4, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific5,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific5. Its label is practice_ud.ud_enc5, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific6,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific6. Its label is practice_ud.ud_enc6, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific7,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific7. Its label is practice_ud.ud_enc7, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific8,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific8. Its label is practice_ud.ud_enc8, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific9,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific9. Its label is practice_ud.ud_enc9, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific10,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific10. Its label is practice_ud.ud_enc10, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific11,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific11. Its label is practice_ud.ud_enc11, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific12,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific12. Its label is practice_ud.ud_enc12, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific13,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific13. Its label is practice_ud.ud_enc13, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific14,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific14. Its label is practice_ud.ud_enc14, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific15,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific15. Its label is practice_ud.ud_enc15, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific16,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific16. Its label is practice_ud.ud_enc16, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific17,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific17. Its label is practice_ud.ud_enc17, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific18,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific18. Its label is practice_ud.ud_enc18, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific19,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific19. Its label is practice_ud.ud_enc19, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific20,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific20. Its label is practice_ud.ud_enc20, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific21,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific21. Its label is practice_ud.ud_enc21, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific22,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific22. Its label is practice_ud.ud_enc22, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific23,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific23. Its label is practice_ud.ud_enc23, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific24,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific24. Its label is practice_ud.ud_enc24, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific25,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific25. Its label is practice_ud.ud_enc25, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific26,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific26. Its label is practice_ud.ud_enc26, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific27,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific27. Its label is practice_ud.ud_enc27, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific28,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific28. Its label is practice_ud.ud_enc28, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific29,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific29. Its label is practice_ud.ud_enc29, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific30,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific30. Its label is practice_ud.ud_enc30, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific31,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific31. Its label is practice_ud.ud_enc31, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific32,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific32. Its label is practice_ud.ud_enc32, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific33,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific33. Its label is practice_ud.ud_enc33, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific34,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific34. Its label is practice_ud.ud_enc34, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific35,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific35. Its label is practice_ud.ud_enc35, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific36,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific36. Its label is practice_ud.ud_enc36, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific37,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific37. Its label is practice_ud.ud_enc37, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific38,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific38. Its label is practice_ud.ud_enc38, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific39,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific39. Its label is practice_ud.ud_enc39, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific40,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific40. Its label is practice_ud.ud_enc40, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific41,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific41. Its label is practice_ud.ud_enc41, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific42,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific42. Its label is practice_ud.ud_enc42, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific43,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific43. Its label is practice_ud.ud_enc43, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific44,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific44. Its label is practice_ud.ud_enc44, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific45,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific45. Its label is practice_ud.ud_enc45, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific46,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific46. Its label is practice_ud.ud_enc46, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific47,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific47. Its label is practice_ud.ud_enc47, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific48,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific48. Its label is practice_ud.ud_enc48, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific49,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific49. Its label is practice_ud.ud_enc49, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,ud_specific50,"The raw value of NextGen user-defined slot encounters_ud_specific.ud_specific50. Its label is practice_ud.ud_enc50, paired by position only (Encounter); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,appointments_user_defined1,"The raw value of NextGen user-defined slot appointments.user_defined1. Its label is practice_as.as_user_defined_one, paired by name only (Appointment); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,appointments_user_defined2,"The raw value of NextGen user-defined slot appointments.user_defined2. Its label is practice_as.as_user_defined_two, paired by name only (Appointment); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,appointments_user_defined3,"The raw value of NextGen user-defined slot appointments.user_defined3. Its label is practice_as.as_user_defined_3, paired by name only (Appointment); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,appointments_user_defined4,"The raw value of NextGen user-defined slot appointments.user_defined4. Its label is practice_as.as_user_defined_4, paired by name only (Appointment); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,user_defined5,"The raw value of NextGen user-defined slot appointments.user_defined5. Its label is practice_as.as_user_defined_5, paired by name only (Appointment); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,user_defined6,"The raw value of NextGen user-defined slot appointments.user_defined6. Its label is practice_as.as_user_defined_6, paired by name only (Appointment); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,user_defined7,"The raw value of NextGen user-defined slot appointments.user_defined7. Its label is practice_as.as_user_defined_7, paired by name only (Appointment); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
+_MDD_JCT_NEXTGEN_SERVICES_VALUES,user_defined8,"The raw value of NextGen user-defined slot appointments.user_defined8. Its label is practice_as.as_user_defined_8, paired by name only (Appointment); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
 _MDD_JCT_NEXTGEN_SERVICE_DX,Service ID,Unique ID of the completed service. Empty for incomplete and planned services.
 _MDD_JCT_NEXTGEN_SERVICE_DX,Service Dx Order,The position of the diagnosis in the service's diagnosis list.
 _MDD_JCT_NEXTGEN_SERVICE_DX,Dx Code,The ICD-10 diagnosis code recorded on the service.
@@ -10397,6 +10523,59 @@ _MDD_JCT_NEXTGEN_DX,Dx Date ID,Unique ID of the Dx Date.
 _MDD_JCT_NEXTGEN_DX,Dx Ledger Condition,"A number from 0 to 8 saying which of [Dx Date], [Dx Resolved Date] and [Dx Onset Date] are filled: 1 none, 2 onset only, 3 resolved only, 4 diagnosed only, 5 resolved and onset, 6 diagnosed and resolved, 7 diagnosed and onset, 8 all three."
 _MDD_JCT_NEXTGEN_DX,Dx Sequence ASC,"An integer, starting at 1, numbering the diagnoses in a snapshot by priority."
 _MDD_JCT_NEXTGEN_DX,Dx Sequence DESC,"An integer, starting at 1, numbering the diagnoses in a snapshot by reverse priority."
+_MDD_JCT_NEXTGEN_DX_SNAPSHOTS,Dx Snapshot ID,The snapshot: the enc_id of the first encounter of a run of encounters with the same diagnosis list.
+_MDD_JCT_NEXTGEN_DX_SNAPSHOTS,Client ID,The client (person_id).
+_MDD_JCT_NEXTGEN_DX_SNAPSHOTS,Dx Snapshot Status,"'Active' for the client's latest snapshot, else 'Inactive'."
+_MDD_JCT_NEXTGEN_DX_SNAPSHOTS,Dx Snapshot Start,When the snapshot starts: the encounter date and time.
+_MDD_JCT_NEXTGEN_DX_SNAPSHOTS,Dx Snapshot End,One second before the next snapshot starts; NULL for the Active snapshot.
+_MDD_JCT_NEXTGEN_DX_SNAPSHOTS,Dx Snapshot Created,When the encounter was created. Differs from the start when the encounter was back-dated.
+_MDD_JCT_NEXTGEN_DX_SNAPSHOTS,Dx Snapshot Start Date,[Dx Snapshot Start] as a date.
+_MDD_JCT_NEXTGEN_DX_SNAPSHOTS,Dx Snapshot End Date,[Dx Snapshot End] as a date.
+_MDD_JCT_NEXTGEN_DX_SNAPSHOTS,Dx Snapshot Start Date ID,[Dx Snapshot Start Date] as a day number.
+_MDD_JCT_NEXTGEN_DX_SNAPSHOTS,Dx Snapshot End Date ID,[Dx Snapshot End Date] as a day number.
+_MDD_JCT_NEXTGEN_DX_SNAPSHOTS,Dx Snapshot Sequence Effective ASC,"The snapshot's number among the client's snapshots, oldest first."
+_MDD_JCT_NEXTGEN_DX_SNAPSHOTS,Dx Snapshot Sequence Effective DESC,"The snapshot's number among the client's snapshots, latest first."
+_MDD_JCT_NEXTGEN_DX_SNAPSHOTS_CURRENT,Client ID,The client (person_id).
+_MDD_JCT_NEXTGEN_DX_SNAPSHOTS_CURRENT,Dx Snapshot ID,The snapshot: the enc_id of the first encounter of a run of encounters with the same diagnosis list.
+_MDD_JCT_NEXTGEN_DX_SNAPSHOTS_CURRENT,Dx Snapshot Start,When the snapshot starts: the encounter date and time.
+_MDD_JCT_NEXTGEN_DX_SNAPSHOTS_CURRENT,Dx Snapshot Created,When the encounter was created. Differs from the start when the encounter was back-dated.
+_MDD_JCT_NEXTGEN_DX_FINGERPRINT,Dx Fingerprint ID,"SHA2-256 hash, as hex text, of the code, order and stored onset, diagnosed and resolved dates."
+_MDD_JCT_NEXTGEN_DX_FINGERPRINT,Dx ICD10 Code,The ICD-10 code.
+_MDD_JCT_NEXTGEN_DX_FINGERPRINT,Dx DSM,"'Axis I: ' (and so on) plus the code, when the assessment gives an axis; from the fingerprint's latest copy."
+_MDD_JCT_NEXTGEN_DX_FINGERPRINT,Dx DSM Axis,"The DSM axis from the assessment, when there is one; from the fingerprint's latest copy."
+_MDD_JCT_NEXTGEN_DX_FINGERPRINT,Dx Order,"The diagnosis's priority on the encounter, -1 when none."
+_MDD_JCT_NEXTGEN_DX_FINGERPRINT,Dx Is Provisional,1 when the verification status is provisional or unconfirmed; from the fingerprint's latest copy.
+_MDD_JCT_NEXTGEN_DX_FINGERPRINT,Dx Is Rule-Out,1 when the verification status is differential; from the fingerprint's latest copy.
+_MDD_JCT_NEXTGEN_DX_FINGERPRINT,Dx Onset Date,The stored onset date.
+_MDD_JCT_NEXTGEN_DX_FINGERPRINT,Dx Date,"The stored diagnosed date; NULL when none (unlike [Dx Date] in _MDD_JCT_NEXTGEN_DX, which falls back to the row's create date)."
+_MDD_JCT_NEXTGEN_DX_FINGERPRINT,Dx Resolved Date,The stored resolved date.
+_MDD_JCT_NEXTGEN_DX_FINGERPRINT,Dx Date ID,[Dx Date] as a day number.
+_MDD_JCT_NEXTGEN_DX_FINGERPRINT,Dx Onset Date ID,[Dx Onset Date] as a day number.
+_MDD_JCT_NEXTGEN_DX_FINGERPRINT,Dx Resolved Date ID,[Dx Resolved Date] as a day number.
+_MDD_JCT_NEXTGEN_DX_FINGERPRINT_SNAPSHOTS,Client ID,The client (person_id).
+_MDD_JCT_NEXTGEN_DX_FINGERPRINT_SNAPSHOTS,Dx Snapshot ID,The snapshot: the enc_id of the first encounter of a run of encounters with the same diagnosis list.
+_MDD_JCT_NEXTGEN_DX_FINGERPRINT_SNAPSHOTS,Dx Fingerprint ID,The fingerprint in the snapshot.
+_MDD_JCT_NEXTGEN_DX_DATES,Date ID,The day as a number of days since 1/1/1900.
+_MDD_JCT_NEXTGEN_DX_DATES,Date,The day.
+_MDD_JCT_NEXTGEN_DX_DAYS,Date ID,"The day, as a number of days since 1/1/1900."
+_MDD_JCT_NEXTGEN_DX_DAYS,Dx ICD10 Code,The ICD-10 code.
+_MDD_JCT_NEXTGEN_DX_DAYS,Dx Verification Status,"The episode's verification status. The diagnosis's verification status, lower case (for example confirmed, provisional, differential, refuted, unknown); NULL when none is stored. Refuted, differential and provisional diagnoses are kept."
+_MDD_JCT_NEXTGEN_DX_DAYS,Client ID,The client.
+_MDD_JCT_NEXTGEN_DX_EPISODES,Client ID,The client (person_id).
+_MDD_JCT_NEXTGEN_DX_EPISODES,Dx ICD10 Code,The ICD-10 code.
+_MDD_JCT_NEXTGEN_DX_EPISODES,Dx Episode Start Date ID,"The episode's first day, as a day number."
+_MDD_JCT_NEXTGEN_DX_EPISODES,Dx Episode End Date ID,"The episode's last day, as a day number; NULL while open."
+_MDD_JCT_NEXTGEN_DX_EPISODES,Dx Episode Start Date,The service date of the encounter that started the episode.
+_MDD_JCT_NEXTGEN_DX_EPISODES,Dx Episode End Date,"The resolved date that ended the episode, or the day before a change of status; NULL while open."
+_MDD_JCT_NEXTGEN_DX_EPISODES,Dx Episode Is Open,"1 when the episode has no end yet, else 0."
+_MDD_JCT_NEXTGEN_DX_EPISODES,Dx Episode End Reason,Why the episode ended: Resolved or Status Changed; NULL while open.
+_MDD_JCT_NEXTGEN_DX_EPISODES,Dx Episode Start Encounter ID,The encounter (enc_id) that started the episode.
+_MDD_JCT_NEXTGEN_DX_EPISODES,Dx Episode End Encounter ID,The encounter (enc_id) that carried the resolved date or the new status; NULL while open.
+_MDD_JCT_NEXTGEN_DX_EPISODES,Dx Verification Status,"The diagnosis's verification status, lower case (for example confirmed, provisional, differential, refuted, unknown); NULL when none is stored. Refuted, differential and provisional diagnoses are kept."
+_MDD_JCT_NEXTGEN_DX_EPISODES,Dx Is Provisional,"1 when the status is provisional or unconfirmed, as in Dx."
+_MDD_JCT_NEXTGEN_DX_EPISODES,Dx Is Rule-Out,"1 when the status is differential, as in Dx."
+_MDD_JCT_NEXTGEN_DX_EPISODES,Dx Episode Sequence ASC,"The episode's number among the client code's episodes, oldest first."
+_MDD_JCT_NEXTGEN_DX_EPISODES,Dx Episode Sequence DESC,"The episode's number among the client code's episodes, latest first."
 _MDD_JCT_NEXTGEN_DX_NAMES,ICD10 ID,The position of the code in the ICD-10-CM code list.
 _MDD_JCT_NEXTGEN_DX_NAMES,ICD10 Code Raw,The ICD-10-CM code without its dot.
 _MDD_JCT_NEXTGEN_DX_NAMES,ICD10 Is Header,Whether the entry is a header (a category that is not billable on its own).
@@ -11145,6 +11324,54 @@ _MDD_JCT_NEXTGEN_FORMS,Form ID,Unique ID of the Form.
 _MDD_JCT_NEXTGEN_FORMS,Form Name,The name of the form (template).
 _MDD_JCT_NEXTGEN_FORMS,Form Created Date,The date the Form record was created.
 _MDD_JCT_NEXTGEN_FORMS,Form Current Form Version Build Date,The date the form was last changed. NextGen keeps no form versions.
+_MDD_JCT_NEXTGEN_FORM_PAGES,Page ID,"Unique ID of the page: the template ID and the panel name, joined by a period."
+_MDD_JCT_NEXTGEN_FORM_PAGES,Form ID,The template the page belongs to.
+_MDD_JCT_NEXTGEN_FORM_PAGES,Page Panel Name,"The NextGen panel name, blank when the control sits on no panel."
+_MDD_JCT_NEXTGEN_FORM_PAGES,Page Name,"The page heading: the topmost label on the panel, or the panel name when the panel has no label."
+_MDD_JCT_NEXTGEN_FORM_PAGES,Page Name Source,How [Page Name] was found: 'Heading Label' or 'Panel Name'.
+_MDD_JCT_NEXTGEN_FORM_PAGES,Page Order,"The page's position in the template, by template page and then top edge."
+_MDD_JCT_NEXTGEN_FORM_PAGES,Page Element Count,The number of distinct data columns on the page.
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS,Element ID,"Unique ID of the question: the answer table and column, joined by a period (for example Social_Hx2_.txt_work_week_hrs)."
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS,Element Text,The question text most templates use. Ties go to the lowest template ID. A caption that is only the column name (NextGen's design templates) is used only when there is no other. Labels with no letter or digit (separator lines) are never captions.
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS,Element Caption Source,"How [Element Text] was found on the lowest template that uses it: 'Check Box Caption', 'Label Same Row', 'Label Above', or 'None' when no template gives a caption."
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS,Element Caption Variants,The number of different captions templates give the question. 2 or more means templates disagree; each template's caption is in the bridge. 0 when none has a caption.
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS,Element Format,"'Radio Button' or 'Check Box' if any template shows it that way, else 'Pick List' if any template gives it one, else its most common NextGen field type."
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS,Element Data Type,The NextGen field type most templates give the control.
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS,Element Pick List,"For a drop-down, the mstr_lists type most templates name. Drop-down answers are saved as the item text."
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS,Element Form Count,The number of templates that show the question.
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS,Element Table Name,The NextGen table the answer is saved to.
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS,Element Field Name,The column in [Element Table Name] the answer is saved to.
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS_FORMS,Form ID,The template the question is on.
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS_FORMS,Element ID,"The question: the answer table and column, joined by a period."
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS_FORMS,Page ID,The page (panel) of the question's first control on this template.
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS_FORMS,Element Order,"The question's position on this template, by template page, top edge and left edge."
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS_FORMS,Element Text,"The question text on this template: the check box caption, else the nearest label on the same row to the left, else the nearest label above."
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS_FORMS,Element Caption Source,"How [Element Text] was found: 'Check Box Caption', 'Label Same Row', 'Label Above' or 'None'."
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS_FORMS,Element Format,"The kind of control on this template: 'Radio Button', 'Check Box', 'Pick List', or the NextGen field type."
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS_FORMS,Element Data Type,The NextGen field type of the control.
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS_FORMS,Element Pick List,"For a drop-down, the mstr_lists type this template's trigger names."
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS_FORMS,Element Required (Form),'True' when any of the question's controls on this template is marked required.
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS_FORMS,Element Table Name,The NextGen table the answer is saved to.
+_MDD_JCT_NEXTGEN_FORM_ELEMENTS_FORMS,Element Field Name,The column in [Element Table Name] the answer is saved to.
+_MDD_JCT_NEXTGEN_FORM_ELEMENT_OPTIONS,Element ID,The radio button question (answer table and column).
+_MDD_JCT_NEXTGEN_FORM_ELEMENT_OPTIONS,Option Value,The value saved to the answer column when this option is chosen.
+_MDD_JCT_NEXTGEN_FORM_ELEMENT_OPTIONS,Option Caption,"The caption shown beside the option, from the lowest template ID that shows it."
+_MDD_JCT_NEXTGEN_FORM_ELEMENT_OPTIONS,Option Order,"The option's position: by the template it was taken from, then top, then left."
+_MDD_JCT_NEXTGEN_FORM_ANSWERS_CLIENTS,Client ID,The client (person_id) the answer is about.
+_MDD_JCT_NEXTGEN_FORM_ANSWERS_CLIENTS,Service ID,The encounter (enc_id) the answer was saved on. NULL for person-level grids.
+_MDD_JCT_NEXTGEN_FORM_ANSWERS_CLIENTS,Seq No,The grid row (seq_no) for tables keyed by seq_no; NULL otherwise.
+_MDD_JCT_NEXTGEN_FORM_ANSWERS_CLIENTS,Element ID,"The question: the answer table and column, joined by a period."
+_MDD_JCT_NEXTGEN_FORM_ANSWERS_CLIENTS,Answer,The saved value as text. Dates are written yyyy-mm-dd hh:mi:ss.mmm.
+_MDD_JCT_NEXTGEN_FORM_ANSWERS_CLIENTS,Answer Truncated,The first 255 characters of [Answer].
+_MDD_JCT_NEXTGEN_FORM_ANSWERS_CLIENTS,Answer Decoded,"For a radio button, the caption of the saved option. Drop-down answers are already the item text."
+_MDD_JCT_NEXTGEN_FORM_ANSWERS_CLIENTS,Answer Date,"When the answer row was last saved (modify_timestamp). Unlike Credible, this is not the value of a date question."
+_MDD_JCT_NEXTGEN_FORM_ANSWERS_CLIENTS,Form ID,"The template that owns the answer table, when only one template saves to it. NULL for shared tables."
+_MDD_JCT_NEXTGEN_FORM_ANSWERS_CLIENTS,Form Link Method,"'Table Owner' when one template saves the table, so [Form ID] is that template; 'Shared Table' when several do, so [Form ID] is NULL and the form is found through the bridge and patient_documents."
+_MDD_JCT_NEXTGEN_FORM_ANSWERS_CLIENTS,Question,The question text ([Element Text] of the question).
+_MDD_JCT_NEXTGEN_FORM_ANSWERS_CLIENTS,Question Format,The question's format ([Element Format]).
+_MDD_JCT_NEXTGEN_FORM_ANSWERS_CLIENTS,Page ID,The question's page on the owning template. NULL for shared tables.
+_MDD_JCT_NEXTGEN_FORM_ANSWERS_CLIENTS,Element Table Name,The NextGen table the answer was read from.
+_MDD_JCT_NEXTGEN_FORM_ANSWERS_CLIENTS,Element Field Name,The column the answer was read from.
 _MDD_JCT_NEXTGEN_PAYER_TRICARE,Payer ID,Unique ID of the Payer.
 _MDD_JCT_NEXTGEN_PAYER_CHIP,Payer ID,Unique ID of the Payer.
 _MDD_JCT_NEXTGEN_PAYER_TYPES,Payer Type ID,Unique ID of the Payer Type.
@@ -11183,6 +11410,9 @@ _MDD_JCT_NEXTGEN_PAYER,Payer Fax,The payer's contact fax number.
 _MDD_JCT_NEXTGEN_PAYER,Payer Created Date,The date the Payer record was created.
 _MDD_JCT_NEXTGEN_PAYER,Payer Created By User ID,Unique ID of the Payer Created By User.
 _MDD_JCT_NEXTGEN_PAYER,Payer Updated Date,The date the Payer record was last updated.
+_MDD_JCT_NEXTGEN_PAYER_VALUES,payer_id,"The NextGen payer, the same value as _MDD_JCT_NEXTGEN_PAYER.[Payer ID]."
+_MDD_JCT_NEXTGEN_PAYER_VALUES,practice_id,The practice the payer settings belong to.
+_MDD_JCT_NEXTGEN_PAYER_VALUES,user_defined1,"The raw value of NextGen user-defined slot practice_payers.user_defined1. Its label is practice_ud.ud_practice_payer1, paired by name only (Practice Payer); see _MDD_JCT_NEXTGEN_CUSTOM_FIELDS for the label, data type and whether it is in use."
 _MDD_JCT_NEXTGEN_INSURANCE_PLANS,Insurance Plan ID,Unique ID of the Insurance Plan.
 _MDD_JCT_NEXTGEN_INSURANCE_PLANS,Client ID,Unique ID of the Client.
 _MDD_JCT_NEXTGEN_INSURANCE_PLANS,Payer ID,Unique ID of the Payer.
@@ -13654,6 +13884,7 @@ _MDD_JCT_X_CREDIBLE_NPH_INCLUSION_ENROLLMENTS_X,Client ID,Client identifier asso
 _MDD_JCT_X_CREDIBLE_NPH_INCLUSION_ENROLLMENTS_X,Program ID,Program identifier associated with the included enrollment.
 _MDD_JCT_X_CREDIBLE_NPH_INCLUSION_PROGRAMS,Program ID,The program id value sent in the NPH extract.
 _MDD_JCT_X_CREDIBLE_NPH_INCLUSION_USERS,User ID,The user id value sent in the NPH extract.
+_MDD_JCT_X_CREDIBLE_NPH_INCLUSION_ORDERING_PROVIDERS,User ID,The user id value sent in the NPH extract.
 _MDD_JCT_X_CREDIBLE_NPH_INCLUSION_VISITS,Appointment ID,Unique ID of the Appointment.
 _MDD_JCT_X_CREDIBLE_NPH_INSURANCEPOLICY_INSURANCEPOLICY,ClientID,Unique ID of the Client.
 _MDD_JCT_X_CREDIBLE_NPH_INSURANCEPOLICY_INSURANCEPOLICY,ProgramCode,ProgramCode from ProgramAdmission collection
@@ -14131,6 +14362,235 @@ _MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Flag Credible Active Not In QuickMAR,Fl
 _MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Filter 2,Filter 2 value represented in the Credible QuickMAR extension output.
 _MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Filter 2 Label,Filter 2 Label value represented in the Credible QuickMAR extension output.
 _MDD_JCT_X_CREDIBLE_QUICKMAR_MEDICATIONS,Flag QuickMAR Active Not In Credible,Flag QuickMAR Active Not In Credible value represented in the Credible QuickMAR extension output.
+_MDD_JCT_X_HR1_METADATA,Parameter,"Name of the agency specifics variable, for example @hr1_check_frequency_months."
+_MDD_JCT_X_HR1_METADATA,Value Text,Text value of the variable.
+_MDD_JCT_X_HR1_METADATA,Value Datetime,Date and time value of the variable.
+_MDD_JCT_X_HR1_METADATA,Value Integer,Whole number value of the variable.
+_MDD_JCT_X_HR1_CLIENTS_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_CLIENTS_CUSTOM,Client Date of Birth,The client's date of birth; drives the federal 19 through 64 age scope and the former foster youth under-26 rule.
+_MDD_JCT_X_HR1_CLIENTS_CUSTOM,Client Medicaid State,"The state that provides the client's Medicaid, which can differ from the address state. In the Clients section, as the agency gives it (default: the module's address state); in the extension's tables, the two-letter USPS abbreviation after trimming and turning full names into abbreviations, blank when it is not one of the 50 states or DC."
+_MDD_JCT_X_HR1_DX_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_DX_CUSTOM,Dx ID,Unique identifier of the diagnosis or diagnosis episode.
+_MDD_JCT_X_HR1_DX_CUSTOM,Dx Start Date,Date the diagnosis took effect.
+_MDD_JCT_X_HR1_DX_CUSTOM,Dx End Date,Date the diagnosis ended; blank while open.
+_MDD_JCT_X_HR1_DX_CUSTOM,Dx ICD10 Code,"ICD-10-CM code of the diagnosis, with or without the dot."
+_MDD_JCT_X_HR1_COVERED_BY_MEDICAID_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_COVERED_BY_MEDICAID_CUSTOM,Insurance Plan ID,Identifier of the client's Medicaid insurance plan.
+_MDD_JCT_X_HR1_COVERED_BY_MEDICAID_CUSTOM,Payer ID,Identifier of the payer.
+_MDD_JCT_X_HR1_COVERED_BY_MEDICAID_CUSTOM,Insurance Plan Start Date,Date the Medicaid coverage began.
+_MDD_JCT_X_HR1_COVERED_BY_MEDICAID_CUSTOM,Insurance Plan End Date,Date the Medicaid coverage ended; blank while open.
+_MDD_JCT_X_HR1_COVERED_BY_MEDICAID_CUSTOM,Policy Number,Policy or case number of the Medicaid coverage (Berks: DHS case number).
+_MDD_JCT_X_HR1_COVERED_BY_MEDICAID_CUSTOM,Next Renewal Date,Date the state next checks the client for the requirement.
+_MDD_JCT_X_HR1_PAYERS_CUSTOM,Payer ID,Identifier of the payer.
+_MDD_JCT_X_HR1_PAYERS_CUSTOM,Payer Name,Name of the payer.
+_MDD_JCT_X_HR1_PAYERS_CUSTOM,Payer Type,"Payer type (Medicaid, Medicare, Commercially Insured, Tricare, Self-Pay, Other)."
+_MDD_JCT_X_HR1_EX_DEPENDENTS_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EX_DEPENDENTS_CUSTOM,Dependent Date of Birth,Birth date of the client's child; blank means the client reported a child with no birth date (review only).
+_MDD_JCT_X_HR1_EX_DEPENDENTS_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_EX_DEPENDENTS_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_EX_DISABLED_DEPENDENTS_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EX_DISABLED_DEPENDENTS_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_EX_DISABLED_DEPENDENTS_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_EX_DISABLED_DEPENDENTS_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_EX_DISABLED_DEPENDENTS_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_EX_PREGNANCY_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EX_PREGNANCY_CUSTOM,Pregnancy Estimated Due Date,Estimated due date of the pregnancy.
+_MDD_JCT_X_HR1_EX_PREGNANCY_CUSTOM,Pregnancy End Date,"Last day of the pregnancy, whatever the outcome; starts the postpartum window."
+_MDD_JCT_X_HR1_EX_PREGNANCY_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_EX_PREGNANCY_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_EX_VISUALLY_IMPAIRED_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EX_VISUALLY_IMPAIRED_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_EX_VISUALLY_IMPAIRED_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_EX_VISUALLY_IMPAIRED_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_EX_VISUALLY_IMPAIRED_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_EX_DISABILITY_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EX_DISABILITY_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_EX_DISABILITY_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_EX_DISABILITY_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_EX_DISABILITY_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_EX_IDD_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EX_IDD_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_EX_IDD_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_EX_IDD_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_EX_IDD_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_EX_PHYSICAL_DISABILITY_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EX_PHYSICAL_DISABILITY_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_EX_PHYSICAL_DISABILITY_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_EX_PHYSICAL_DISABILITY_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_EX_PHYSICAL_DISABILITY_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_EX_SUD_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EX_SUD_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_EX_SUD_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_EX_SUD_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_EX_SUD_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_EX_MENTAL_DISORDER_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EX_MENTAL_DISORDER_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_EX_MENTAL_DISORDER_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_EX_MENTAL_DISORDER_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_EX_MENTAL_DISORDER_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_EX_SERIOUS_CONDITION_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EX_SERIOUS_CONDITION_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_EX_SERIOUS_CONDITION_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_EX_SERIOUS_CONDITION_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_EX_SERIOUS_CONDITION_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_EX_MEDICARE_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EX_MEDICARE_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_EX_MEDICARE_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_EX_MEDICARE_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_EX_MEDICARE_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_EX_AIAN_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EX_AIAN_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_EX_AIAN_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_EX_AIAN_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_EX_AIAN_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_EX_VETERAN_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EX_VETERAN_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_EX_VETERAN_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_EX_VETERAN_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_EX_VETERAN_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_EX_SNAP_TANF_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EX_SNAP_TANF_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_EX_SNAP_TANF_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_EX_SNAP_TANF_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_EX_SNAP_TANF_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_EX_FOSTER_YOUTH_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EX_FOSTER_YOUTH_CUSTOM,Foster Care Aged Out Date,Date the client aged out of foster care.
+_MDD_JCT_X_HR1_EX_INCARCERATION_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EX_INCARCERATION_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_EX_INCARCERATION_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_EX_INCARCERATION_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_EX_INCARCERATION_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_EX_HARDSHIP_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EX_HARDSHIP_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_EX_HARDSHIP_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_EX_HARDSHIP_CUSTOM,Hardship Type,"Short-term hardship type: Institutional stay, Declared disaster, High unemployment or Travel for care."
+_MDD_JCT_X_HR1_EX_HARDSHIP_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_EX_HARDSHIP_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_MTR_EMPLOYMENT_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_MTR_EMPLOYMENT_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_MTR_EMPLOYMENT_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_MTR_EMPLOYMENT_CUSTOM,Estimated Hours Per Week,Estimated hours per week of the activity; the extension multiplies by 4.33 for the month.
+_MDD_JCT_X_HR1_MTR_EMPLOYMENT_CUSTOM,Estimated Hourly Rate,Estimated hourly pay of the job.
+_MDD_JCT_X_HR1_MTR_EMPLOYMENT_CUSTOM,Monthly Earnings,Monthly earnings for salaried or other pay (salary / 12).
+_MDD_JCT_X_HR1_MTR_EMPLOYMENT_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_MTR_EMPLOYMENT_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_MTR_COMMUNITY_SERVICE_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_MTR_COMMUNITY_SERVICE_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_MTR_COMMUNITY_SERVICE_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_MTR_COMMUNITY_SERVICE_CUSTOM,Estimated Hours Per Week,Estimated hours per week of the activity; the extension multiplies by 4.33 for the month.
+_MDD_JCT_X_HR1_MTR_COMMUNITY_SERVICE_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_MTR_COMMUNITY_SERVICE_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_MTR_EDUCATION_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_MTR_EDUCATION_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_MTR_EDUCATION_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_MTR_EDUCATION_CUSTOM,Enrollment Status,"School enrollment status as the school determines it: Full-time, Half-time or Less than half-time."
+_MDD_JCT_X_HR1_MTR_EDUCATION_CUSTOM,Estimated Hours Per Week,Estimated hours per week of the activity; the extension multiplies by 4.33 for the month.
+_MDD_JCT_X_HR1_MTR_EDUCATION_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_MTR_EDUCATION_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_MTR_WORK_PROGRAM_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_MTR_WORK_PROGRAM_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_MTR_WORK_PROGRAM_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_MTR_WORK_PROGRAM_CUSTOM,Estimated Hours Per Week,Estimated hours per week of the activity; the extension multiplies by 4.33 for the month.
+_MDD_JCT_X_HR1_MTR_WORK_PROGRAM_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_MTR_WORK_PROGRAM_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_RV_DEPENDENTS_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_RV_DEPENDENTS_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_RV_DEPENDENTS_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_RV_AIAN_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_RV_AIAN_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_RV_AIAN_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_RV_AIAN_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_RV_AIAN_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_RV_EMPLOYMENT_CUSTOM,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_RV_EMPLOYMENT_CUSTOM,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_RV_EMPLOYMENT_CUSTOM,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_RV_EMPLOYMENT_CUSTOM,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_RV_EMPLOYMENT_CUSTOM,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_DX_LIST,Exemption,"Name of the exemption (for example Medicare, IDD, Dependents 13 and Under)."
+_MDD_JCT_X_HR1_DX_LIST,Dx Code Prefix,ICD-10-CM code prefix without the dot; matches every code that starts with it.
+_MDD_JCT_X_HR1_DX_LIST,Tier,1 = exempt from the diagnosis alone; 2 = review.
+_MDD_JCT_X_HR1_DX_LIST,Dx Description,Description of the diagnosis range.
+_MDD_JCT_X_HR1_DX_LIST,Use Diagnoses Parameter,The agency specifics flag that turns this list on.
+_MDD_JCT_X_HR1_DX_LIST,Dx List Source,Where the list came from; MDD defaults are to be replaced by the state's list.
+_MDD_JCT_X_HR1_STATES,State,Two-letter USPS state abbreviation.
+_MDD_JCT_X_HR1_STATES,State Name,Full state name.
+_MDD_JCT_X_HR1_STATES,Postpartum Days,"Postpartum period in days for the client's Medicaid state, from _MDD_JCT_X_HR1_STATES; 365 when the state is blank or unknown."
+_MDD_JCT_X_HR1_STATES,Postpartum Days Source,"Where the postpartum days came from: the KFF tracker for a state, or the 365-day fallback."
+_MDD_JCT_X_HR1_STATES,Postpartum Days As Of,Date the state's postpartum days were last checked against the source.
+_MDD_JCT_X_HR1_CLIENTS,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_CLIENTS,Client Date of Birth,The client's date of birth; drives the federal 19 through 64 age scope and the former foster youth under-26 rule.
+_MDD_JCT_X_HR1_CLIENTS,Client Medicaid State,"The state that provides the client's Medicaid, which can differ from the address state. In the Clients section, as the agency gives it (default: the module's address state); in the extension's tables, the two-letter USPS abbreviation after trimming and turning full names into abbreviations, blank when it is not one of the 50 states or DC."
+_MDD_JCT_X_HR1_CLIENTS,Client Medicaid State Issue,"Why the Medicaid state could not be used: Blank, Territory, not in state table, Not a state, More than one state, or (client months only) Client not in the Clients section. Blank when the state is fine."
+_MDD_JCT_X_HR1_CLIENTS,Postpartum Days,"Postpartum period in days for the client's Medicaid state, from _MDD_JCT_X_HR1_STATES; 365 when the state is blank or unknown."
+_MDD_JCT_X_HR1_CLIENTS,Postpartum Days Source,"Where the postpartum days came from: the KFF tracker for a state, or the 365-day fallback."
+_MDD_JCT_X_HR1_MONTHS,Month Start,First day of the month.
+_MDD_JCT_X_HR1_MONTHS,Month End,Last day of the month.
+_MDD_JCT_X_HR1_MONTHS,Month Name,Month as YYYY-MM.
+_MDD_JCT_X_HR1_MONTHS,Month Offset,"Months from the current month (0 = current, negative = past)."
+_MDD_JCT_X_HR1_MONTHS,Is Current Month,1 for the current month.
+_MDD_JCT_X_HR1_MEDICAID_MONTHS,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_MEDICAID_MONTHS,Month Start,First day of the month.
+_MDD_JCT_X_HR1_MEDICAID_MONTHS,Month End,Last day of the month.
+_MDD_JCT_X_HR1_MEDICAID_MONTHS,Client Month ID,Client ID and month start joined with |; one value per client month.
+_MDD_JCT_X_HR1_MEDICAID_MONTHS,Insurance Plan ID,Identifier of the client's Medicaid insurance plan.
+_MDD_JCT_X_HR1_MEDICAID_MONTHS,Payer ID,Identifier of the payer.
+_MDD_JCT_X_HR1_MEDICAID_MONTHS,Policy Number,Policy or case number of the Medicaid coverage (Berks: DHS case number).
+_MDD_JCT_X_HR1_MEDICAID_MONTHS,Next Renewal Date,Date the state next checks the client for the requirement.
+_MDD_JCT_X_HR1_MEDICAID_MONTHS,Next Renewal Date Source,Agency when the agency supplied the renewal date; Estimated when worked out from the plan start and the check frequency.
+_MDD_JCT_X_HR1_MEDICAID_MONTHS,In Look-Back Window,1 when the month is one of the months the state looks back at before the next renewal.
+_MDD_JCT_X_HR1_EXEMPTIONS,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_EXEMPTIONS,Month Start,First day of the month.
+_MDD_JCT_X_HR1_EXEMPTIONS,Client Month ID,Client ID and month start joined with |; one value per client month.
+_MDD_JCT_X_HR1_EXEMPTIONS,Exemption,"Name of the exemption (for example Medicare, IDD, Dependents 13 and Under)."
+_MDD_JCT_X_HR1_EXEMPTIONS,Exemption Kind,Exempt (counts toward Likely exempt) or Review (counts toward Needs review).
+_MDD_JCT_X_HR1_EXEMPTIONS,Exemption Source,"Federal rule, Agency specifics or Diagnoses."
+_MDD_JCT_X_HR1_EXEMPTIONS,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_EXEMPTIONS,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_EXEMPTIONS,Dx ICD10 Code,"ICD-10-CM code of the diagnosis, with or without the dot."
+_MDD_JCT_X_HR1_EXEMPTIONS,Dx Tier,Tier of the matched diagnosis.
+_MDD_JCT_X_HR1_EXEMPTIONS,Detail,"Extra detail, such as the hardship type or the matched diagnosis tier."
+_MDD_JCT_X_HR1_EXEMPTIONS,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_EXEMPTIONS,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_ACTIVITIES,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_ACTIVITIES,Month Start,First day of the month.
+_MDD_JCT_X_HR1_ACTIVITIES,Client Month ID,Client ID and month start joined with |; one value per client month.
+_MDD_JCT_X_HR1_ACTIVITIES,Activity,"Employment, Community Service, Education or Work Program."
+_MDD_JCT_X_HR1_ACTIVITIES,Start Date,Date the exemption or activity began; blank when unknown.
+_MDD_JCT_X_HR1_ACTIVITIES,End Date,Date the exemption or activity ended; blank when open or unknown.
+_MDD_JCT_X_HR1_ACTIVITIES,Estimated Hours Per Week,Estimated hours per week of the activity; the extension multiplies by 4.33 for the month.
+_MDD_JCT_X_HR1_ACTIVITIES,Estimated Monthly Hours,Estimated hours for the month (weekly hours x 4.33).
+_MDD_JCT_X_HR1_ACTIVITIES,Estimated Hourly Rate,Estimated hourly pay of the job.
+_MDD_JCT_X_HR1_ACTIVITIES,Estimated Monthly Earnings,Estimated employment earnings for the month.
+_MDD_JCT_X_HR1_ACTIVITIES,Enrollment Status,"School enrollment status as the school determines it: Full-time, Half-time or Less than half-time."
+_MDD_JCT_X_HR1_ACTIVITIES,Education Half-Time or More,"1 when the client is in school half-time or more, which meets the requirement by itself."
+_MDD_JCT_X_HR1_ACTIVITIES,Service ID,"The visit where the fact was recorded, so staff can open the note; blank when not from a visit."
+_MDD_JCT_X_HR1_ACTIVITIES,Service Start,Start of the visit where the fact was recorded.
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Client ID,"Identifier of the client, as text so Credible numbers and NextGen GUIDs fit one column; the same Client ID the JCT module uses."
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Month Start,First day of the month.
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Month End,Last day of the month.
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Client Month ID,Client ID and month start joined with |; one value per client month.
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Client Age at Month End,Client age in whole years on the last day of the month.
+_MDD_JCT_X_HR1_CLIENT_MONTHS,HR1 Status,"Likely exempt, Meeting the requirement, Needs review or At risk."
+_MDD_JCT_X_HR1_CLIENT_MONTHS,HR1 Status Sort Order,"1 At risk, 2 Needs review, 3 Meeting the requirement, 4 Likely exempt."
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Exemption Count,Number of distinct exemptions found for the month.
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Exemptions,"The exemptions found for the month, separated by semicolons."
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Review Reason Count,Number of distinct review signals for the month.
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Review Reasons,"The review signals for the month, separated by semicolons."
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Activities,"The qualifying activities found for the month, separated by semicolons."
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Estimated Monthly Hours,Estimated hours for the month (weekly hours x 4.33).
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Estimated Monthly Earnings,Estimated employment earnings for the month.
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Earnings Threshold,80 x the federal minimum wage ($580 in 2026).
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Meets Hours,1 when estimated monthly hours are 80 or more.
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Meets Earnings,1 when estimated monthly earnings meet the earnings threshold.
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Education Half-Time or More,"1 when the client is in school half-time or more, which meets the requirement by itself."
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Client Medicaid State,"The state that provides the client's Medicaid, which can differ from the address state. In the Clients section, as the agency gives it (default: the module's address state); in the extension's tables, the two-letter USPS abbreviation after trimming and turning full names into abbreviations, blank when it is not one of the 50 states or DC."
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Client Medicaid State Issue,"Why the Medicaid state could not be used: Blank, Territory, not in state table, Not a state, More than one state, or (client months only) Client not in the Clients section. Blank when the state is fine."
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Postpartum Days,"Postpartum period in days for the client's Medicaid state, from _MDD_JCT_X_HR1_STATES; 365 when the state is blank or unknown."
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Insurance Plan ID,Identifier of the client's Medicaid insurance plan.
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Payer ID,Identifier of the payer.
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Next Renewal Date,Date the state next checks the client for the requirement.
+_MDD_JCT_X_HR1_CLIENT_MONTHS,Next Renewal Date Source,Agency when the agency supplied the renewal date; Estimated when worked out from the plan start and the check frequency.
+_MDD_JCT_X_HR1_CLIENT_MONTHS,In Look-Back Window,1 when the month is one of the months the state looks back at before the next renewal.
 _MDD_JCT_X_MYRC_CLIENTS,Client ID,Unique identifier of the client in the agency's MyRC extract.
 _MDD_JCT_X_MYRC_CLIENTS,Client Name First,Client given name supplied in the MyRC extract.
 _MDD_JCT_X_MYRC_CLIENTS,Client Name Middle,Client middle name or middle initial supplied in the MyRC extract.
